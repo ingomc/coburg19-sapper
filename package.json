@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
+    "export": "sapper export --basepath coburg19-sapper --legacy ",
     "start": "node __sapper__/build",
     "data": "node --experimental-json-modules ./scripts/fetch-data.mjs"
   },
