@@ -14,8 +14,9 @@
 </script>
 
 <script>
+  import Chart from "svelte-frappe-charts";
   export let city;
-  console.log(city.statistics);
+  //   console.log(city.statistics);
 </script>
 
 <style>
@@ -43,4 +44,6 @@
     </li>
     <li>Bundesland: {city.BL}</li>
   </ul>
+
+  <Chart data={city.statistics} type="bar" />
 </div>

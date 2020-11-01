@@ -43,7 +43,7 @@ const getStatisticsEndpoint = (data) => {
 
 const wellFormStatistics = (data) => {
   const newJson = {
-    labels: ["0-4", "5-14", "35-59", "60-79", "80+"],
+    labels: ["0-4", "5-14", "15-14", "35-59", "60-79", "80+"],
     datasets: [
       {
         name: "Männlich",
@@ -100,7 +100,7 @@ const handleLocation = async (location) => {
     newCases,
     statistics,
   });
-  console.log(statistics);
+  // console.log(statistics);
 };
 
 fetch(getLocationsEndpoint())
