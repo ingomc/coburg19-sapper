@@ -16,7 +16,10 @@
 <script>
   import Chart from "svelte-frappe-charts";
   export let city;
-  //   console.log(city.statistics);
+
+  console.log(city.allCases);
+
+  //   city.statistics.tooltipOptions = { formatTooltipX: (d) => d + " Jahre" };
 </script>
 
 <style>
@@ -45,5 +48,10 @@
     <li>Bundesland: {city.BL}</li>
   </ul>
 
-  <Chart data={city.statistics} type="bar" />
+  <h2>COVID-19-Fälle nach Altersgruppe und Geschlecht</h2>
+  <Chart
+    data={city.statistics}
+    type="bar"
+    tooltipOptions={{ formatTooltipX: (d) => d + ' Jahre', formatTooltipY: (d) => d + ' Erkrankte' }}
+    colors={['black', '#ffa3ef', 'light-blue']} />
 </div>
