@@ -3,8 +3,8 @@ import fetch from "node-fetch";
 import fs from "fs";
 import moment from "moment";
 
-const allCasesMonths = 2; // last 6 moths
-const allCasesPeriod = 14; // every 2 weeks data point
+const allCasesMonths = 1; // last 6 moths
+const allCasesPeriod = 7; // every 2 weeks data point
 
 const jsTemplate = (jsonLocations, jsonUpdate) => `
 const data = {
@@ -52,7 +52,7 @@ const getAllCasesEndpoint = (data) => {
   let _endpoint = endpointAllCases
     .replace("${data.RS}", data.RS)
     .replace("${date}", date);
-    console.log(_endpoint);
+    // console.log(_endpoint);
   return _endpoint;
 };
 
@@ -97,6 +97,11 @@ const wellFormAllCases = (data) => {
         chartType: "line",
         values: [],
       },
+      {
+        name: "Aktive Fälle*",
+        chartType: "line",
+        values: [],
+      },
     ],
   };
 
@@ -108,9 +113,11 @@ const wellFormAllCases = (data) => {
       const day = moment(item.attributes.Meldedatum).format("DD.MM");
       const cases = item.attributes.SummeFall;
       const recovered = item.attributes.SummeGenesen;
+      const activeCases = item.attributes.SummeFall - item.attributes.SummeGenesen;
       newJson.labels.push(day);
       newJson.datasets[0].values.push(cases);
       newJson.datasets[1].values.push(recovered);
+      newJson.datasets[2].values.push(activeCases);
     });
   return newJson;
 };

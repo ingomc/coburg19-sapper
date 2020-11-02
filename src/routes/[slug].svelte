@@ -50,11 +50,13 @@
 
   <h2>COVID-19-Fälle nach Altersgruppe und Geschlecht</h2>
   <Chart
-    data={city.statistics}
-    type="bar"
-    tooltipOptions={{ formatTooltipX: (d) => d + ' Jahre', formatTooltipY: (d) => d + ' Erkrankte' }}
-    colors={['black', '#ffa3ef', 'light-blue']} />
-    <small>... und was mit divers 🤷🏻‍♂️ ?</small>
+  data={city.statistics}
+  type="bar"
+  tooltipOptions={{ formatTooltipX: (d) => d + ' Jahre', formatTooltipY: (d) => d + ' Erkrankte' }}
+  colors={['black', '#ffa3ef', 'light-blue']} />
+  <small>... und was mit divers 🤷🏻‍♂️ ?</small>
+
+  <h2>COVID-19 Fälle / Genesen / Aktive Fälle in {city.name}</h2>
   <Chart
     data={city.allCases}
     type="line"
