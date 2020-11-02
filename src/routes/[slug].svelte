@@ -23,6 +23,7 @@
 </script>
 
 <style>
+
 </style>
 
 <svelte:head>
@@ -34,6 +35,7 @@
 
 <div class="content">
   <ul>
+    <li>{city.cases_in_7_days} Fälle in den letzten 7 Tagen</li>
     <li>Inzidenz: {Number(city.incidence).toFixed(2)}</li>
     <li>Einwohnerzahl: {city.population}</li>
     <li>Fälle: {city.cases}</li>
@@ -61,7 +63,7 @@
     data={city.allCases}
     type="line"
     colors={['black', '#ffa3ef', 'light-blue']}
-    xAxisMode="tick"
+    xaxismode="tick"
     lineOptions={{ spline: 1, hideDots: 1 }} />
     <small>*Die Genesenen-Statistik ist umstritten</small>
 </div>

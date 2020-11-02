@@ -149,11 +149,14 @@ const handleLocation = async (location) => {
     slug: `${location.BEZ}-${location.GEN}`.replace(/\s+/g, "-").toLowerCase(),
     district: location.BEZ,
     name: location.GEN,
-    incidence: location.cases7_per_100k,
+    incidence: Number(location.cases7_per_100k).toFixed(2),
     population: location.EWZ,
     cases: location.cases,
     deaths: location.deaths,
     death_rate: location.death_rate,
+    cases_in_7_days: Number(
+      location.cases7_per_100k / (100000 / location.EWZ)
+    ).toFixed(0),
     cases7_bl_per_100k: location.cases7_bl_per_100k,
     BL: location.BL,
     newCases,

@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "Corona-Ampel Coburg",
+  "description": "Corona-Ampel Coburg",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",

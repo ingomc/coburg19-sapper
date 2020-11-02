@@ -2,6 +2,7 @@
   import { stores } from "@sapper/app";
   const { preloading } = stores();
   import Nav from "../components/Nav.svelte";
+  import Loading from "../components/Loading.svelte";
 
   export let segment;
 </script>
@@ -10,19 +11,21 @@
   main {
     position: relative;
     max-width: 56em;
-    background-color: white;
-    padding: .5rem;
+    padding: 0.5rem;
     margin: 0 auto;
     box-sizing: border-box;
+  }
+  .loading {
+    opacity: 0.5;
   }
 </style>
 
 {#if $preloading}
-  <h1>LOADING</h1>
+  <Loading />
 {/if}
 
 <Nav {segment} />
 
-<main>
+<main class:loading={$preloading}>
   <slot />
 </main>

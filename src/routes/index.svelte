@@ -46,5 +46,7 @@
     {city.incidence}
     / Neue Fälle:
     {city.newCases > 0 ? city.newCases : 0}
+    / Fälle der letzten 7 Tage:
+    {city.cases_in_7_days}
   </li>
 {/each}

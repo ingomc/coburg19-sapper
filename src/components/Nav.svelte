@@ -51,6 +51,7 @@
 <nav>
 	<ul>
 		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
+		<li><a aria-current="{segment === 'corona-ampel-regeln' ? 'page' : undefined}" href="corona-ampel-regeln">corona-ampel-regeln</a></li>
 		<li><a rel=prefetch aria-current="{segment === 'impressum' ? 'page' : undefined}" href="impressum">Impressum</a></li>
 	</ul>
 </nav>
