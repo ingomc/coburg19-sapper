@@ -1,4 +1,5 @@
 <script context="module">
+  import Card from "../components/Card.svelte";
   export function preload() {
     return this.fetch(`index.json`)
       .then((r) => r.json())
@@ -14,21 +15,37 @@
 </script>
 
 <style>
-  h1 {
-    text-align: center;
-    margin: 0 auto;
+  a {
+    text-decoration: none;
   }
 
-  h1 {
-    font-size: 2.8em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0 0 0.5em 0;
+  /* reset liststyling */
+  /* Remove default padding */
+  ul,
+  li {
+    padding: 0;
+    list-style: none;
   }
-  @media (min-width: 480px) {
-    h1 {
-      font-size: 4em;
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: var(--spacing);
+  }
+  @media (min-width: 768px) {
+    ul {
+      grid-template-columns: 1fr 1fr;
     }
+  }
+  @media (min-width: 1024px) {
+    ul {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  li,
+  a {
+    display: grid;
   }
 </style>
 
@@ -36,17 +53,15 @@
   <title>Sapper project template</title>
 </svelte:head>
 
-<h1>Great success!</h1>
-<h2>Last update: {update}</h2>
-
-{#each citys as city}
-  <li>
-    <a rel="prefetch" href={city.slug}>{city.district} {city.name} </a>
-    / Inzidenz:
-    {city.incidence}
-    / Neue Fälle:
-    {city.newCases > 0 ? city.newCases : 0}
-    / Fälle der letzten 7 Tage:
-    {city.cases_in_7_days}
-  </li>
-{/each}
+<nav>
+  <ul>
+    {#each citys as city}
+      <li>
+        <a rel="prefetch" href={city.slug}>
+          <Card data={city} />
+        </a>
+      </li>
+    {/each}
+  </ul>
+</nav>
+<div><small>Stand:&nbsp;{update}</small></div>

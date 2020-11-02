@@ -4,9 +4,16 @@
 
 <style>
 	nav {
+		background-color: var(--body-bg);
+		position: sticky;
+		top:0;
+		right:0;
+		left:0;
+		grid-area: header;
 		border-bottom: 1px solid rgba(255,62,0,0.1);
 		font-weight: 300;
 		padding: 0 1em;
+		z-index: 10;
 	}
 
 	ul {
