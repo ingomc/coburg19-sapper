@@ -17,7 +17,7 @@
   import Chart from "svelte-frappe-charts";
   export let city;
 
-  console.log(city.allCases);
+  // console.log("allcases: ", city.allCases);
 
   //   city.statistics.tooltipOptions = { formatTooltipX: (d) => d + " Jahre" };
 </script>
@@ -54,4 +54,12 @@
     type="bar"
     tooltipOptions={{ formatTooltipX: (d) => d + ' Jahre', formatTooltipY: (d) => d + ' Erkrankte' }}
     colors={['black', '#ffa3ef', 'light-blue']} />
+    <small>... und was mit divers 🤷🏻‍♂️ ?</small>
+  <Chart
+    data={city.allCases}
+    type="line"
+    colors={['black', '#ffa3ef', 'light-blue']}
+    xAxisMode="tick"
+    lineOptions={{ spline: 1, hideDots: 1 }} />
+    <small>*Die Genesenen-Statistik ist umstritten</small>
 </div>
