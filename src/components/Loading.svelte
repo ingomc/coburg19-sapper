@@ -14,6 +14,7 @@
     border: 2px solid rgba(255, 255, 255, 0.4);
     border-bottom-color: var(--color);
     animation: rotate 0.3s linear infinite;
+    z-index:var(--z-index--loading);
   }
   @keyframes rotate {
     from {

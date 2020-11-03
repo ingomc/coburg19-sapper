@@ -13,7 +13,7 @@
 		border-bottom: 1px solid rgba(255,62,0,0.1);
 		font-weight: 300;
 		padding: 0 1em;
-		z-index: 10;
+		z-index: var(--z-index--header);
 	}
 
 	ul {

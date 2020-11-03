@@ -19,6 +19,9 @@
 
   --card-bg: var(--warning-bg);
   --card-color: var(--warning-contrast);
+
+  --z-index--header: 10;
+  --z-index--loading: 100;
 }
 
 html,
