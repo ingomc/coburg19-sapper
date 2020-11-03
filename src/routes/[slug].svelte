@@ -66,4 +66,9 @@
     xaxismode="tick"
     lineOptions={{ spline: 1, hideDots: 1 }} />
     <small>*Die Genesenen-Statistik ist umstritten</small>
+
+    <hr>
+    <h2>
+      Neue Fälle und Aktive Fälle in eine Statistik
+    </h2>
 </div>

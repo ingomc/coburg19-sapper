@@ -3,6 +3,7 @@
   const { preloading } = stores();
   import Nav from "../components/Nav.svelte";
   import Footer from "../components/Footer.svelte";
+  import Breadcrumb from "../components/Breadcrumb.svelte";
   import Loading from "../components/Loading.svelte";
 
   export let segment;
@@ -14,7 +15,7 @@
     position: relative;
     width: 100%;
     max-width: 76em;
-    padding: var(--spacing);
+    padding: var(--spacing-sm);
     margin: 0 auto;
     box-sizing: border-box;
     overflow: hidden;
@@ -29,6 +30,10 @@
 {/if}
 
 <Nav {segment} />
+
+{#if segment}
+  <Breadcrumb data={segment} />
+{/if}
 
 <main class:loading={$preloading}>
   <slot />

@@ -57,7 +57,7 @@
   <ul>
     {#each citys as city}
       <li>
-        <a rel="prefetch" href={city.slug}>
+        <a rel="prefetch" href={city.slug} title={`Zu ${city.district} ${city.district} &rsaquo;`}>
           <Card data={city} />
         </a>
       </li>
