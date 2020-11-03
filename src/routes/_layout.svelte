@@ -12,7 +12,8 @@
   main {
     grid-area: main;
     position: relative;
-    max-width: 92em;
+    width: 100%;
+    max-width: 76em;
     padding: var(--spacing);
     margin: 0 auto;
     box-sizing: border-box;
