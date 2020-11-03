@@ -1,7 +1,7 @@
-import data from "../data/locations.json";
-import fetch from "node-fetch";
-import fs from "fs";
-import moment from "moment";
+import data from '../data/locations.json';
+import fetch from 'node-fetch';
+import fs from 'fs';
+import moment from 'moment';
 
 const allCasesMonths = 1; // last 6 moths
 const allCasesPeriod = 7; // every 2 weeks data point
@@ -15,16 +15,16 @@ const data = {
 export default data;
 `;
 
-const endFileDataJs = "./src/routes/_data.js";
+const endFileDataJs = './src/routes/_data.js';
 
 const endpoint =
-  "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?outFields=*&returnGeometry=false&f=json&outSR=4326&where=";
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?outFields=*&returnGeometry=false&f=json&outSR=4326&where=';
 const endpointNewCases =
-  "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true";
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
 const endpointSexes =
-  "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(Geschlecht%3C%3E%27unbekannt%27%20AND%20Altersgruppe%3C%3E%27unbekannt%27%20AND%20NeuerFall%20IN(0%2C%201))%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&groupByFieldsForStatistics=Altersgruppe%2CGeschlecht&orderByFields=Altersgruppe%20asc&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true";
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(Geschlecht%3C%3E%27unbekannt%27%20AND%20Altersgruppe%3C%3E%27unbekannt%27%20AND%20NeuerFall%20IN(0%2C%201))%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&groupByFieldsForStatistics=Altersgruppe%2CGeschlecht&orderByFields=Altersgruppe%20asc&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
 const endpointAllCases =
-  "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/Covid19_RKI_Sums/FeatureServer/0/query?f=json&where=(Meldedatum%3Etimestamp%20%27${date}%2022%3A59%3A59%27)%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Meldedatum%20asc&resultOffset=0&resultRecordCount=32000&resultType=standard&cacheHint=true";
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/Covid19_RKI_Sums/FeatureServer/0/query?f=json&where=(Meldedatum%3Etimestamp%20%27${date}%2022%3A59%3A59%27)%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Meldedatum%20asc&resultOffset=0&resultRecordCount=32000&resultType=standard&cacheHint=true';
 
 const getLocationsEndpoint = () => {
   let _endpoint = endpoint;
@@ -33,50 +33,48 @@ const getLocationsEndpoint = () => {
   const locations = data.locations.map((location) => {
     return `GEN = '${location.toUpperCase()}'`;
   });
-  _endpoint += encodeURI(locations.join(" OR "));
+  _endpoint += encodeURI(locations.join(' OR '));
   return _endpoint;
 };
 
 const getNewCasesEndpoint = (data) => {
-  let _endpoint = endpointNewCases.replace("${data.RS}", data.RS);
+  let _endpoint = endpointNewCases.replace('${data.RS}', data.RS);
   return _endpoint;
 };
 
 const getStatisticsEndpoint = (data) => {
-  let _endpoint = endpointSexes.replace("${data.RS}", data.RS);
+  let _endpoint = endpointSexes.replace('${data.RS}', data.RS);
   return _endpoint;
 };
 
 const getAllCasesEndpoint = (data) => {
-  let date = moment().subtract(allCasesMonths, "months").format("YYYY-MM-DD");
-  let _endpoint = endpointAllCases
-    .replace("${data.RS}", data.RS)
-    .replace("${date}", date);
-    // console.log(_endpoint);
+  let date = moment().subtract(allCasesMonths, 'months').format('YYYY-MM-DD');
+  let _endpoint = endpointAllCases.replace('${data.RS}', data.RS).replace('${date}', date);
+  // console.log(_endpoint);
   return _endpoint;
 };
 
 const wellFormStatistics = (data) => {
   const newJson = {
-    labels: ["0-4", "5-14", "15-34", "35-59", "60-79", "80+"],
+    labels: ['0-4', '5-14', '15-34', '35-59', '60-79', '80+'],
     datasets: [
       {
-        name: "Männlich",
-        chartType: "bar",
+        name: 'Männlich',
+        chartType: 'bar',
         values: [],
       },
       {
-        name: "Weiblich",
-        chartType: "bar",
+        name: 'Weiblich',
+        chartType: 'bar',
         values: [],
       },
     ],
   };
   data.map((item) => {
-    if (item.attributes.Geschlecht == "M") {
+    if (item.attributes.Geschlecht == 'M') {
       newJson.datasets[0].values.push(item.attributes.value);
     }
-    if (item.attributes.Geschlecht == "W") {
+    if (item.attributes.Geschlecht == 'W') {
       newJson.datasets[1].values.push(item.attributes.value);
     }
   });
@@ -88,18 +86,18 @@ const wellFormAllCases = (data) => {
     labels: [],
     datasets: [
       {
-        name: "Erkrankte",
-        chartType: "line",
+        name: 'Erkrankte',
+        chartType: 'line',
         values: [],
       },
       {
-        name: "Genesene*",
-        chartType: "line",
+        name: 'Genesene*',
+        chartType: 'line',
         values: [],
       },
       {
-        name: "Aktive Fälle*",
-        chartType: "line",
+        name: 'Aktive Fälle*',
+        chartType: 'line',
         values: [],
       },
     ],
@@ -110,7 +108,7 @@ const wellFormAllCases = (data) => {
       return index % allCasesPeriod == 0;
     })
     .map((item) => {
-      const day = moment(item.attributes.Meldedatum).format("DD.MM");
+      const day = moment(item.attributes.Meldedatum).format('DD.MM');
       const cases = item.attributes.SummeFall;
       const recovered = item.attributes.SummeGenesen;
       const activeCases = item.attributes.SummeFall - item.attributes.SummeGenesen;
@@ -146,7 +144,7 @@ const handleLocation = async (location) => {
 
   json.locations.push({
     id: location.OBJECTID,
-    slug: `${location.BEZ}-${location.GEN}`.replace(/\s+/g, "-").toLowerCase(),
+    slug: `${location.BEZ}-${location.GEN}`.replace(/\s+/g, '-').toLowerCase(),
     district: location.BEZ,
     name: location.GEN,
     incidence: Number(location.cases7_per_100k).toFixed(2),
@@ -154,9 +152,7 @@ const handleLocation = async (location) => {
     cases: location.cases,
     deaths: location.deaths,
     death_rate: location.death_rate,
-    cases_in_7_days: Number(
-      location.cases7_per_100k / (100000 / location.EWZ)
-    ).toFixed(0),
+    cases_in_7_days: Number(location.cases7_per_100k / (100000 / location.EWZ)).toFixed(0),
     cases7_bl_per_100k: location.cases7_bl_per_100k,
     BL: location.BL,
     newCases,
@@ -176,19 +172,17 @@ fetch(getLocationsEndpoint())
             if (_location.attributes.GEN === location) {
               await handleLocation(_location.attributes);
             }
-          })
+          }),
         );
-      })
+      }),
     );
 
     const jsonLocations = JSON.stringify(json.locations);
     const jsonDate = JSON.stringify(json.date);
     fs.writeFileSync(endFileDataJs, jsTemplate(jsonLocations, jsonDate));
-    console.log(
-      "\x1b[42m\x1b[30m%s\x1b[0m",
-      ` ✔ Datei gespeichert: ${endFileDataJs}`
-    );
-  }).catch((error) => {
-    console.log("\x1b[31m%s\x1b[0m", ` x Error fetching getLocationsEndpoint`);
+    console.log('\x1b[42m\x1b[30m%s\x1b[0m', ` ✔ Datei gespeichert: ${endFileDataJs}`);
+  })
+  .catch((error) => {
+    console.log('\x1b[31m%s\x1b[0m', ` x Error fetching getLocationsEndpoint`);
     console.log(error);
   });

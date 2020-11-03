@@ -1,7 +1,3 @@
-<script>
-  import { fade } from "svelte/transition";
-</script>
-
 <style>
   .spinner {
     position: fixed;
@@ -14,7 +10,7 @@
     border: 2px solid rgba(255, 255, 255, 0.4);
     border-bottom-color: var(--color);
     animation: rotate 0.3s linear infinite;
-    z-index:var(--z-index--loading);
+    z-index: var(--z-index--loading);
   }
   @keyframes rotate {
     from {
@@ -26,6 +22,10 @@
   }
 </style>
 
+<script>
+  import { fade } from 'svelte/transition';
+</script>
+
 <div transition:fade>
-  <div class="spinner" />
+  <div class="spinner"></div>
 </div>

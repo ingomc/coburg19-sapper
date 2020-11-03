@@ -1,14 +1,3 @@
-<script>
-  import { stores } from "@sapper/app";
-  const { preloading } = stores();
-  import Nav from "../components/Nav.svelte";
-  import Footer from "../components/Footer.svelte";
-  import Breadcrumb from "../components/Breadcrumb.svelte";
-  import Loading from "../components/Loading.svelte";
-
-  export let segment;
-</script>
-
 <style>
   main {
     grid-area: main;
@@ -25,17 +14,28 @@
   }
 </style>
 
+<script>
+  import { stores } from '@sapper/app';
+  const { preloading } = stores();
+  import Nav from '../components/Nav.svelte';
+  import Footer from '../components/Footer.svelte';
+  import Breadcrumb from '../components/Breadcrumb.svelte';
+  import Loading from '../components/Loading.svelte';
+
+  export let segment;
+</script>
+
 {#if $preloading}
   <Loading />
 {/if}
 
-<Nav {segment} />
+<Nav segment="{segment}" />
 
 {#if segment}
-  <Breadcrumb data={segment} />
+  <Breadcrumb data="{segment}" />
 {/if}
 
-<main class:loading={$preloading}>
+<main class:loading="{$preloading}">
   <slot />
 </main>
 

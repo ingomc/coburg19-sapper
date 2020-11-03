@@ -1,19 +1,3 @@
-<script context="module">
-  import Card from "../components/Card.svelte";
-  export function preload() {
-    return this.fetch(`index.json`)
-      .then((r) => r.json())
-      .then((data) => {
-        return { data };
-      });
-  }
-</script>
-
-<script>
-  export let data;
-  const { citys, update } = data;
-</script>
-
 <style>
   a {
     text-decoration: none;
@@ -49,6 +33,22 @@
   }
 </style>
 
+<script context="module">
+  import Card from '../components/Card.svelte';
+  export function preload() {
+    return this.fetch(`index.json`)
+      .then((r) => r.json())
+      .then((data) => {
+        return { data };
+      });
+  }
+</script>
+
+<script>
+  export let data;
+  const { citys, update } = data;
+</script>
+
 <svelte:head>
   <title>Sapper project template</title>
 </svelte:head>
@@ -57,8 +57,12 @@
   <ul>
     {#each citys as city}
       <li>
-        <a rel="prefetch" href={city.slug} title={`Zu ${city.district} ${city.district} &rsaquo;`}>
-          <Card data={city} />
+        <a
+          rel="prefetch"
+          href="{city.slug}"
+          title="{`Zu ${city.district} ${city.district} &rsaquo;`}"
+        >
+          <Card data="{city}" />
         </a>
       </li>
     {/each}

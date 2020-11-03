@@ -31,16 +31,14 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-
-  
 }
 
 body {
   background-color: var(--body-bg);
   color: var(--color);
   position: relative;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
 }
 
 /* Box sizing rules */
@@ -55,10 +53,10 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto;
   grid-template-areas:
-    "header"
-    "breadcrumb"
-    "main"
-    "footer";
+    'header'
+    'breadcrumb'
+    'main'
+    'footer';
   min-height: 95%;
 }
 

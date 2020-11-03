@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Impressum</title>
+  <title>Impressum</title>
 </svelte:head>
 
 <h1>Impressum</h1>

@@ -7,7 +7,8 @@
     "build": "sapper build --legacy",
     "export": "sapper export --basepath coburg19-sapper --legacy ",
     "start": "node __sapper__/build",
-    "data": "node --experimental-json-modules ./scripts/fetch-data.mjs"
+    "data": "node --experimental-json-modules ./scripts/fetch-data.mjs",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "compression": "^1.7.1",
@@ -26,12 +27,26 @@
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@rollup/plugin-replace": "^2.2.0",
     "@rollup/plugin-url": "^5.0.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
     "node-fetch": "^2.6.1",
+    "prettier": "^2.1.2",
+    "prettier-plugin-svelte": "^1.4.1",
     "rollup": "^2.3.4",
     "rollup-plugin-svelte": "^6.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "sapper": "^0.28.0",
     "svelte": "^3.29.4",
     "svelte-frappe-charts": "^1.3.0"
-  }
+  },
+  "lint-staged": {
+    "*.{svelte,js,css,md}": "prettier --write"
+  },
+  "ignore": [
+    "node_modules",
+    "static",
+    "__sapper__",
+    "src/node_modules/@sapper",
+    "package-lock.json"
+  ]
 }

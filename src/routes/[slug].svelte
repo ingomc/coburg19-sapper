@@ -1,3 +1,6 @@
+<style>
+</style>
+
 <script context="module">
   export async function preload({ params }) {
     // the `slug` parameter is available because
@@ -14,17 +17,13 @@
 </script>
 
 <script>
-  import Chart from "svelte-frappe-charts";
+  import Chart from 'svelte-frappe-charts';
   export let city;
 
   // console.log("allcases: ", city.allCases);
 
   //   city.statistics.tooltipOptions = { formatTooltipX: (d) => d + " Jahre" };
 </script>
-
-<style>
-
-</style>
 
 <svelte:head>
   <title>{city.name}</title>
@@ -42,33 +41,29 @@
     <li>Tote: {city.deaths}</li>
     <li>Neue Fälle: {city.newCases}</li>
     <li>Totesrate: {Number(city.death_rate).toFixed(2)} %</li>
-    <li>
-      7 Tage Inzidenz im Bundesland
-      {city.BL}:
-      {Number(city.cases7_bl_per_100k).toFixed(2)}
-    </li>
+    <li>7 Tage Inzidenz im Bundesland {city.BL}: {Number(city.cases7_bl_per_100k).toFixed(2)}</li>
     <li>Bundesland: {city.BL}</li>
   </ul>
 
   <h2>COVID-19-Fälle nach Altersgruppe und Geschlecht</h2>
   <Chart
-  data={city.statistics}
-  type="bar"
-  tooltipOptions={{ formatTooltipX: (d) => d + ' Jahre', formatTooltipY: (d) => d + ' Erkrankte' }}
-  colors={['black', '#ffa3ef', 'light-blue']} />
+    data="{city.statistics}"
+    type="bar"
+    tooltipOptions="{{ formatTooltipX: (d) => d + ' Jahre', formatTooltipY: (d) => d + ' Erkrankte' }}"
+    colors="{['black', '#ffa3ef', 'light-blue']}"
+  />
   <small>... und was mit divers 🤷🏻‍♂️ ?</small>
 
   <h2>COVID-19 Fälle / Genesen / Aktive Fälle in {city.name}</h2>
   <Chart
-    data={city.allCases}
+    data="{city.allCases}"
     type="line"
-    colors={['black', '#ffa3ef', 'light-blue']}
+    colors="{['black', '#ffa3ef', 'light-blue']}"
     xaxismode="tick"
-    lineOptions={{ spline: 1, hideDots: 1 }} />
-    <small>*Die Genesenen-Statistik ist umstritten</small>
+    lineOptions="{{ spline: 1, hideDots: 1 }}"
+  />
+  <small>*Die Genesenen-Statistik ist umstritten</small>
 
-    <hr>
-    <h2>
-      Neue Fälle und Aktive Fälle in eine Statistik
-    </h2>
+  <hr />
+  <h2>Neue Fälle und Aktive Fälle in eine Statistik</h2>
 </div>

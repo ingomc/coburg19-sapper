@@ -14,34 +14,30 @@
 
 <div>
   <p>
-    <strong><span class="darkbluetext"><span class="greentext">Grün -
-          Inzidenz&nbsp;bis 35</span></span></strong>
+    <strong><span class="darkbluetext"><span class="greentext">Grün - Inzidenz&nbsp;bis 35</span></span></strong>
   </p>
   <ul>
+    <li>Allgemeine AHA + L-Regeln&nbsp;&nbsp;(Abstand, Hygiene, Alltagsmaske und Lüften)</li>
     <li>
-      Allgemeine AHA + L-Regeln&nbsp;&nbsp;(Abstand, Hygiene, Alltagsmaske und
-      Lüften)
+      Kontaktbeschränkungen: Bis zu 10 Personen oder zwei Haushalte in der Öffentlichkeit treffen
+      ist erlaubt
     </li>
     <li>
-      Kontaktbeschränkungen: Bis zu 10 Personen oder zwei Haushalte in der
-      Öffentlichkeit treffen ist erlaubt
+      Maskenpflicht im ÖPNV, in Geschäften und im Einzelhandel, sowie in der Gastronomie bis zum
+      Platz&nbsp;
     </li>
     <li>
-      Maskenpflicht im ÖPNV, in Geschäften und im Einzelhandel, sowie in der
-      Gastronomie bis zum Platz&nbsp;
-    </li>
-    <li>
-      Empfehlung, aber keine Pflicht: Private Feierlichkeiten mit bis zu 25
-      Personen sind erlaubt
+      Empfehlung, aber keine Pflicht: Private Feierlichkeiten mit bis zu 25 Personen sind erlaubt
     </li>
   </ul>
   <p>
-    <span class="yellowtext"><strong><span class="yellowtext"><span
-            class="darkbluetext"><span class="yellowtext">Gelb -</span>&nbsp;</span></span></strong><span
-        class="darkbluetext"><strong><span
-            class="yellowtext">Inzidenz</span></strong></span></span><b
-      style="background-color: initial;"><span class="darkbluetext"><span
-          class="yellowtext"><span class="darkbluetext">&nbsp;</span>35 bis 50</span></span></b>
+    <span class="yellowtext"><strong><span class="yellowtext"><span class="darkbluetext"><span
+              class="yellowtext"
+            >Gelb -</span>&nbsp;</span></span></strong><span class="darkbluetext"><strong><span
+            class="yellowtext"
+          >Inzidenz</span></strong></span></span><b style="background-color: initial;"><span
+        class="darkbluetext"
+      ><span class="yellowtext"><span class="darkbluetext">&nbsp;</span>35 bis 50</span></span></b>
   </p>
   <ul>
     <li>
@@ -51,25 +47,23 @@
         <li>Maskenpflicht an Hochschulen&nbsp;</li>
         <li>in öffentlichen Gebäuden</li>
         <li>
-          am Arbeitsplatz, wenn der Abstand von 1,5m&nbsp;nicht eingehalten
-          werden kann. Im Betrieb, sobald man den Platz verlässt.
+          am Arbeitsplatz, wenn der Abstand von 1,5m&nbsp;nicht eingehalten werden kann. Im Betrieb,
+          sobald man den Platz verlässt.
         </li>
         <li>Öffentlichen Plätzen, die stark frequentiert sind.</li>
       </ul>
     </li>
     <li>Allgemeine Sperrstunde ab 23 Uhr&nbsp;</li>
-    <li>
-      Generelles Alkoholverkaufsverbot&nbsp;an Tankstellen ab 23 Uhr&nbsp;
-    </li>
+    <li>Generelles Alkoholverkaufsverbot&nbsp;an Tankstellen ab 23 Uhr&nbsp;</li>
     <li>Auf öffentlichen Plätzen besteht ab 23 Uhr ein Alkoholverbot.</li>
     <li>
-      private Feiern und Treffen&nbsp;sind auf zwei Haushalte oder maximal 10
-      Personen beschränkt. Egal ob draußen, daheim oder im Lokal.
+      private Feiern und Treffen&nbsp;sind auf zwei Haushalte oder maximal 10 Personen beschränkt.
+      Egal ob draußen, daheim oder im Lokal.
     </li>
   </ul>
   <p>
-    <span class="redtext"><strong>Rot - Inzidenz&nbsp;</strong></span><span
-      class="redtext"><strong>ab 50</strong></span>
+    <span class="redtext"><strong>Rot - Inzidenz&nbsp;</strong></span><span class="redtext"><strong
+      >ab 50</strong></span>
   </p>
   <ul>
     <li>
@@ -80,8 +74,8 @@
     <li>Generelles Alkoholverkaufsverbot an Tankstellen ab 22 Uhr&nbsp;</li>
     <li>Auf öffentlichen Plätzen besteht ab 22 Uhr ein Alkoholverbot.</li>
     <li>
-      private Feiern und Treffen&nbsp;sind auf 5 Personen oder zwei
-      Haushalte&nbsp;beschränkt. Egal ob draußen, daheim oder im Lokal.
+      private Feiern und Treffen&nbsp;sind auf 5 Personen oder zwei Haushalte&nbsp;beschränkt. Egal
+      ob draußen, daheim oder im Lokal.
     </li>
   </ul>
 </div>
