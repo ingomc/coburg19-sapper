@@ -184,4 +184,11 @@ fetch(getLocationsEndpoint())
     const jsonLocations = JSON.stringify(json.locations);
     const jsonDate = JSON.stringify(json.date);
     fs.writeFileSync(endFileDataJs, jsTemplate(jsonLocations, jsonDate));
+    console.log(
+      "\x1b[42m\x1b[30m%s\x1b[0m",
+      ` ✔ Datei gespeichert: ${endFileDataJs}`
+    );
+  }).catch((error) => {
+    console.log("\x1b[31m%s\x1b[0m", ` x Error fetching getLocationsEndpoint`);
+    console.log(error);
   });

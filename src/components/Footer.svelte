@@ -1,6 +1,7 @@
 <style>
   div {
     grid-area: footer;
+    font-size: 0.75rem;
   }
 </style>
 
