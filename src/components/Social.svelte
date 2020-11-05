@@ -7,7 +7,7 @@
 
   .resp-sharing-button__link {
     text-decoration: none;
-    color: #fff;
+    color: var(--color);
     margin: 0.5em;
   }
 
@@ -15,7 +15,6 @@
     border-radius: 5px;
     transition: 25ms ease-out;
     padding: 0.5em 0.75em;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   }
 
   .resp-sharing-button__icon svg {
@@ -27,13 +26,13 @@
 
   /* Non solid icons get a stroke */
   .resp-sharing-button__icon {
-    stroke: #fff;
+    stroke: var(--color);
     fill: none;
   }
 
   /* Solid icons get a fill */
   .resp-sharing-button__icon--solid {
-    fill: #fff;
+    fill: var(--color);
     stroke: none;
   }
 
