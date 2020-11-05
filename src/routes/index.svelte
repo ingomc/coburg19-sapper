@@ -35,17 +35,19 @@
 </style>
 
 <script context="module">
-  import Card from '../components/Card.svelte';
   export function preload() {
-    return this.fetch(`index.json`)
+    const index = this.fetch(`index.json`)
       .then((r) => r.json())
       .then((data) => {
         return { data };
       });
+    const sitemap = this.fetch('sitemap.xml');
+    return index;
   }
 </script>
 
 <script>
+  import Card from '../components/Card.svelte';
   export let data;
   const { citys, update } = data;
 </script>
