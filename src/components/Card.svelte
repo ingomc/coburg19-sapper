@@ -4,7 +4,7 @@
     position: relative;
     padding: var(--spacing);
     padding-right: var(--spacing-xl);
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     width: 100%;
     background-color: var(--card-bg);

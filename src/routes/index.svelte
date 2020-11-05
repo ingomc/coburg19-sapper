@@ -29,6 +29,7 @@
 
   li,
   a {
+    /* damit die Höhe 100% auf allen Browsern hat */
     display: grid;
   }
 </style>
@@ -50,7 +51,7 @@
 </script>
 
 <svelte:head>
-  <title>Sapper project template</title>
+  <title>Corona-Ampel-Coburg</title>
 </svelte:head>
 
 <nav>
@@ -68,4 +69,3 @@
     {/each}
   </ul>
 </nav>
-<div><small>Stand:&nbsp;{update}</small></div>

@@ -1,6 +1,8 @@
 :root {
-  --body-bg: #292f36;
-  --header-bg: #3b424b;
+  --bg-100: #5d6773;
+  --bg-200: #3b424b;
+  --bg-400: #292f36;
+  --body-bg: var(--bg-400);
   --color: #fffafb;
   --danger-bg: #f63e02;
   --danger-contrast: #4a190d;
@@ -16,6 +18,8 @@
   --spacing: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
+
+  --border-radius: 4px;
 
   --card-bg: var(--warning-bg);
   --card-color: var(--warning-contrast);
@@ -57,7 +61,7 @@ body {
     'breadcrumb'
     'main'
     'footer';
-  min-height: 95%;
+  min-height: 100%;
 }
 
 a {

@@ -14,22 +14,43 @@
   }
 </style>
 
+<script context="module">
+  import Card from '../components/Card.svelte';
+  export function preload() {
+    return this.fetch(`index.json`)
+      .then((r) => r.json())
+      .then((data) => {
+        return { update: data.update };
+      });
+  }
+</script>
+
 <script>
   import { stores } from '@sapper/app';
-  const { preloading } = stores();
-  import Nav from '../components/Nav.svelte';
-  import Footer from '../components/Footer.svelte';
-  import Breadcrumb from '../components/Breadcrumb.svelte';
   import Loading from '../components/Loading.svelte';
+  import Header from '../components/Header.svelte';
+  import UpdateMessage from '../components/UpdateMessage.svelte';
+  import Breadcrumb from '../components/Breadcrumb.svelte';
+  import Footer from '../components/Footer.svelte';
 
+  export let update;
   export let segment;
+
+  const { preloading } = stores();
 </script>
 
 {#if $preloading}
   <Loading />
 {/if}
 
-<Nav segment="{segment}" />
+<Header>
+  {#if !segment}
+    <UpdateMessage>Stand: {update}</UpdateMessage>
+  {/if}
+</Header>
+
+<!-- 
+<Nav segment="{segment}" /> -->
 
 {#if segment}
   <Breadcrumb data="{segment}" />
@@ -39,4 +60,4 @@
   <slot />
 </main>
 
-<Footer />
+<Footer update="{update}" />
