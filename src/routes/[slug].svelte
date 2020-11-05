@@ -1,4 +1,9 @@
 <style>
+  .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
 
 <script context="module">
@@ -17,6 +22,7 @@
 </script>
 
 <script>
+  import Social from '../components/Social.svelte';
   import Chart from 'svelte-frappe-charts';
   export let city;
 
@@ -26,7 +32,7 @@
 </script>
 
 <svelte:head>
-  <title>{city.name}</title>
+  <title>{city.name} - Corona-Ampel für Franken und mehr</title>
 </svelte:head>
 
 <h1>{city.name}</h1>
@@ -66,4 +72,7 @@
 
   <hr />
   <h2>Neue Fälle und Aktive Fälle in eine Statistik</h2>
+  <div class="social">
+    <Social />
+  </div>
 </div>

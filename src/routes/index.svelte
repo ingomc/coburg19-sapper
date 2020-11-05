@@ -32,6 +32,11 @@
     /* damit die Höhe 100% auf allen Browsern hat */
     display: grid;
   }
+  .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
 
 <script context="module">
@@ -48,6 +53,7 @@
 </script>
 
 <script>
+  import Social from '../components/Social.svelte';
   import Card from '../components/Card.svelte';
   export let data;
   const { citys, update } = data;
@@ -70,5 +76,8 @@
         </a>
       </li>
     {/each}
+    <div class="social">
+      <Social />
+    </div>
   </ul>
 </nav>
