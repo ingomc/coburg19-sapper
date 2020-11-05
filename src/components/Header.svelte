@@ -11,7 +11,7 @@
     position: relative;
     background-color: var(--bg-200);
     text-align: center;
-    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.6);
+    box-shadow: var(--box-shadow);
     z-index: 10;
   }
 
