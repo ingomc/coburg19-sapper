@@ -83,7 +83,7 @@
   {#if visible}
     <div
       class="message"
-      in:fly="{{ y: -100, duration: 1000 }}"
+      in:fly="{{ y: -100, duration: 500 }}"
       out:fly="{{ y: -100, duration: 1000 }}"
     >
       <slot />

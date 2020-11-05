@@ -36,12 +36,13 @@
 
 <script context="module">
   export function preload() {
+    // needs this for starting generation
+    const sitemap = this.fetch('sitemap.xml');
     const index = this.fetch(`index.json`)
       .then((r) => r.json())
       .then((data) => {
         return { data };
       });
-    const sitemap = this.fetch('sitemap.xml');
     return index;
   }
 </script>
