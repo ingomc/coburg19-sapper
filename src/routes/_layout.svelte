@@ -60,4 +60,6 @@
   <slot />
 </main>
 
-<Footer update="{update}" />
+{#if segment !== 'impressum'}
+  <Footer update="{update}" />
+{/if}

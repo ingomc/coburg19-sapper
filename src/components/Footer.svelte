@@ -13,18 +13,18 @@
     color: var(--bg-100);
     padding: var(--spacing-sm);
   }
-  aside a {
+  nav a {
     display: block;
     text-decoration: none;
   }
   @media (min-width: 768px) {
-    aside {
+    nav {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
     }
-    aside a {
+    nav a {
       margin: var(--spacing);
     }
   }
@@ -41,14 +41,28 @@
 </script>
 
 <section>
-  <aside>
+  <nav>
     <div class="update">Stand: {update}</div>
-    <a
-      href="https://npgeo-corona-npgeo-de.hub.arcgis.com/datasets/917fc37a709542548cc3be077a786c17_0"
-      target="_blank"
-      rel="noopener"
-      title="Zum RKI"
-    >
+    <a href="./corona-ampel-regeln" title="Alle Regeln erklärt">
+      <FooterCard>
+        <div slot="icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            aria-hidden="true"
+            focusable="false"
+            role="img"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 64 64"
+          ><path
+              d="M32 2c-8.25 0-15 6.751-15 15v30c0 8.25 6.75 15 15 15s15-6.75 15-15V17c0-8.249-6.75-15-15-15m0 56.25a7.5 7.5 0 0 1-7.5-7.5a7.5 7.5 0 1 1 7.5 7.5m0-18.75a7.5 7.5 0 0 1-7.5-7.5a7.5 7.5 0 1 1 7.5 7.5m0-18.75a7.5 7.5 0 0 1-7.5-7.5a7.5 7.5 0 1 1 7.5 7.5"
+              fill="currentColor"
+            ></path></svg>
+        </div>
+        <div slot="label">Corona-Ampel-Regeln</div>
+      </FooterCard>
+    </a>
+    <a href="./impressum" title="Zum Impressum">
       <FooterCard>
         <div slot="icon">
           <svg
@@ -67,7 +81,7 @@
         <div slot="label">Impressum</div>
       </FooterCard>
     </a>
-  </aside>
+  </nav>
 
   <footer>
     Crafted with ❤️ from
