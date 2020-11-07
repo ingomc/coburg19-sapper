@@ -82,6 +82,9 @@
     .container--header {
       grid-template-columns: 1fr 1fr;
     }
+    .container--details {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>
 
