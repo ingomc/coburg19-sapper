@@ -3,7 +3,7 @@
     grid-area: main;
     position: relative;
     width: 100%;
-    max-width: 76em;
+    max-width: var(--max-width);
     padding: var(--spacing-sm);
     margin: 0 auto;
     box-sizing: border-box;
@@ -15,7 +15,6 @@
 </style>
 
 <script context="module">
-  import Card from '../components/Card.svelte';
   export function preload() {
     return this.fetch(`index.json`)
       .then((r) => r.json())

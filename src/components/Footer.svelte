@@ -30,13 +30,14 @@
   }
 
   svg {
+    display: block;
     width: 1.5em;
     height: 1.5em;
   }
 </style>
 
 <script>
-  import FooterCard from '../components/FooterCard.svelte';
+  import FooterButton from './FooterButton.svelte';
   export let update;
 </script>
 
@@ -44,7 +45,7 @@
   <nav>
     <div class="update">Stand: {update}</div>
     <a href="./corona-ampel-regeln" title="Alle Regeln erklärt">
-      <FooterCard>
+      <FooterButton>
         <div slot="icon">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -60,10 +61,10 @@
             ></path></svg>
         </div>
         <div slot="label">Corona-Ampel-Regeln</div>
-      </FooterCard>
+      </FooterButton>
     </a>
     <a href="./impressum" title="Zum Impressum">
-      <FooterCard>
+      <FooterButton>
         <div slot="icon">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +80,7 @@
             ></path></svg>
         </div>
         <div slot="label">Impressum</div>
-      </FooterCard>
+      </FooterButton>
     </a>
   </nav>
 

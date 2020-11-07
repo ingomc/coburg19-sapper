@@ -1,4 +1,5 @@
 :root {
+  --bg-50: #8e9aa8;
   --bg-100: #5d6773;
   --bg-200: #3b424b;
   --bg-400: #292f36;
@@ -12,6 +13,8 @@
   --warning-contrast: #443604;
   --info-bg: #4e8d26;
   --info-contrast: #0c2f08;
+
+  --max-width: 76em;
 
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -68,11 +71,6 @@ body {
 
 a {
   color: var(--color);
-}
-
-.container {
-  max-width: 1024px;
-  margin: 0 auto;
 }
 
 .info {
