@@ -27,6 +27,8 @@
     padding: var(--spacing);
     background-color: var(--card-bg);
     color: var(--card-color);
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .card--light {
@@ -44,6 +46,28 @@
     border: 1px solid var(--bg-100);
     --card-bg: var(--body-bg);
     --card-color: var(--color);
+  }
+
+  .text--big {
+    display: block;
+    padding-top: var(--spacing-xs);
+    font-size: 1.5em;
+    font-weight: 600;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .incidence {
+    flex: 0 0 auto;
+    padding-left: 1rem;
+  }
+
+  .label {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: var(--spacing);
   }
 
   .number {
@@ -104,12 +128,12 @@
     <div class="container container--inzidenz">
       <div class="{`card ${warningclass}`}">
         <div class="row">
-          <div>{city.district}</div>
-          <div>7-Tage Inzidenz pro 100.000</div>
+          <div><small>{city.district}</small></div>
+          <div><small>7-Tage Inzidenz pro 100.000</small></div>
         </div>
         <div class="row">
-          <div>{city.name}</div>
-          <div>{city.incidence}</div>
+          <div class="text--big">{city.name}</div>
+          <div class="text--big incidence">{city.incidence}</div>
         </div>
       </div>
     </div>
@@ -147,23 +171,7 @@
     </div>
   </div>
 </div>
-
-<h1>{city.name}</h1>
-<h2>{city.district}</h2>
-
-<div class="content">
-  <ul>
-    <li>{city.cases_in_7_days} Fälle in den letzten 7 Tagen</li>
-    <li>Inzidenz: {Number(city.incidence).toFixed(2)}</li>
-    <li>Einwohnerzahl: {city.population}</li>
-    <li>Fälle: {city.cases}</li>
-    <li>Tote: {city.deaths}</li>
-    <li>Neue Fälle: {city.newCases}</li>
-    <li>Totesrate: {Number(city.death_rate).toFixed(2)} %</li>
-    <li>7 Tage Inzidenz im Bundesland {city.BL}: {Number(city.cases7_bl_per_100k).toFixed(2)}</li>
-    <li>Bundesland: {city.BL}</li>
-  </ul>
-
+<div>
   <h2>COVID-19-Fälle nach Altersgruppe und Geschlecht</h2>
   <Chart
     data="{city.statistics}"
