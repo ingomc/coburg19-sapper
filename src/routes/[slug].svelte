@@ -104,34 +104,12 @@
 <script>
   import moment from 'moment';
   import Line from 'svelte-chartjs/src/Line.svelte';
+  import Social from '../components/Social.svelte';
 
-  let dataLine = {
-    datasets: [
-      {
-        type: 'line',
-        label: 'Demo!',
-        fillColor: "rgba(195, 40, 96, 0.1)",
-      strokeColor: "rgba(195, 40, 96, 1)",
-      pointColor: "rgba(195, 40, 96, 1)",
-      pointStrokeColor: "#202b33",
-      pointHighlightStroke: "rgba(225,225,225,0.9)",
-        data: [
-          {
-            t: new Date('2020-3-15'),
-            y: 12,
-          },
-          {
-            t: new Date('2020-4-25'),
-            y: 21,
-          },
-          {
-            t: new Date('2020-8-25'),
-            y: 32,
-          },
-        ],
-      },
-    ],
-  };
+  export let city;
+
+  // console.log(city.allCases);
+
 
   let options = {
     responsive: true,
@@ -140,22 +118,30 @@
         {
           type: 'time',
           time: {
-            unit: 'months',
-            displayFormats: {months: 'MMM YY'},
+            unit: 'days',
+            displayFormats: { days: 'DD MMM' },
           },
           ticks: {
-            min: moment().subtract(1, 'years'),
+            min: moment().subtract(1, 'months'),
             max: new Date(),
-
-          }
+          },
+          gridLines: {
+            color: 'rgba(200, 200, 200, 0.1)',
+            lineWidth: 1,
+          },
+        },
+      ],
+      yAxes: [
+        {
+          gridLines: {
+            color: 'rgba(200, 200, 200, 0.1)',
+            lineWidth: 1,
+          },
         },
       ],
     },
   };
 
-  import Social from '../components/Social.svelte';
-
-  export let city;
 
   let warningclass = 'warning';
 
@@ -226,7 +212,7 @@
 </div>
 <div>
   <h2>COVID-19-Fälle nach Altersgruppe und Geschlecht</h2>
-  <Line data="{dataLine}" options="{options}" />
+  <Line data="{city.allCases}" options="{options}" />
   <!-- <Chart
     data="{city.statistics}"
     type="bar"
@@ -247,6 +233,8 @@
 
   <hr />
   <h2>Neue Fälle und Aktive Fälle in eine Statistik</h2>
+  <h2>Inzidenverlauf</h2>
+  <h2>Wenn click auf die letzten 3 monate scale adjust 1m / 3m / 12m</h2>
   <div class="social">
     <Social />
   </div>

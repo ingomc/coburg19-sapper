@@ -4,7 +4,7 @@ import fs from 'fs';
 import moment from 'moment';
 
 const allCasesMonths = 1; // last 6 moths
-const allCasesPeriod = 7; // every 2 weeks data point
+const allCasesPeriod = 1; // every 2 weeks data point
 
 const jsTemplate = (jsonLocations, jsonUpdate) => `
 const data = {
@@ -48,7 +48,7 @@ const getStatisticsEndpoint = (data) => {
 };
 
 const getAllCasesEndpoint = (data) => {
-  let date = moment().subtract(allCasesMonths, 'months').format('YYYY-MM-DD');
+  let date = moment('2020-03-01').format('YYYY-MM-DD');
   let _endpoint = endpointAllCases.replace('${data.RS}', data.RS).replace('${date}', date);
   // console.log(_endpoint);
   return _endpoint;
@@ -83,39 +83,55 @@ const wellFormStatistics = (data) => {
 
 const wellFormAllCases = (data) => {
   const newJson = {
-    labels: [],
     datasets: [
       {
-        name: 'Erkrankte',
-        chartType: 'line',
-        values: [],
+        label: 'Erkrankte',
+        type: 'line',
+        backgroundColor: 'rgba(255,0,0,0.1)',
+        pointBackgroundColor: 'rgba(255,0,0,0.4)',
+        borderWidth: 1,
+        borderColor: 'rgba(255,0,0,1)',
+        data: [],
       },
       {
-        name: 'Genesene*',
-        chartType: 'line',
-        values: [],
+        label: 'Genesene*',
+        type: 'line',
+        backgroundColor: 'rgba(0,255,0,0.1)',
+        pointBackgroundColor: 'rgba(0,255,0,0.4)',
+        borderWidth: 1,
+        borderColor: 'rgba(0,255,0,1)',
+        data: [],
       },
       {
-        name: 'Aktive Fälle*',
-        chartType: 'line',
-        values: [],
+        label: 'Aktive Fälle*',
+        type: 'line',
+        backgroundColor: 'rgba(0,0,255,0.1)',
+        pointBackgroundColor: 'rgba(0,0,255,0.4)',
+        borderWidth: 1,
+        borderColor: 'rgba(0,0,255,1)',
+        data: [],
       },
     ],
   };
 
   data
-    .filter(function (value, index, Arr) {
-      return index % allCasesPeriod == 0;
-    })
+  .filter(function (value, index, Arr) {
+    return index % allCasesPeriod == 0;
+  })
     .map((item) => {
-      const day = moment(item.attributes.Meldedatum).format('DD.MM');
+      const day = new Date(item.attributes.Meldedatum);
       const cases = item.attributes.SummeFall;
       const recovered = item.attributes.SummeGenesen;
       const activeCases = item.attributes.SummeFall - item.attributes.SummeGenesen;
-      newJson.labels.push(day);
-      newJson.datasets[0].values.push(cases);
-      newJson.datasets[1].values.push(recovered);
-      newJson.datasets[2].values.push(activeCases);
+      function setDataObject(category) {
+        return {
+          t: day,
+          y: category
+        }
+      }
+      newJson.datasets[0].data.push(setDataObject(cases));
+      newJson.datasets[1].data.push(setDataObject(recovered));
+      newJson.datasets[2].data.push(setDataObject(activeCases));
     });
   return newJson;
 };
