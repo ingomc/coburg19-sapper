@@ -102,6 +102,7 @@
 </script>
 
 <script>
+  import moment from 'moment';
   import Line from 'svelte-chartjs/src/Line.svelte';
 
   let dataLine = {
@@ -109,6 +110,11 @@
       {
         type: 'line',
         label: 'Demo!',
+        fillColor: "rgba(195, 40, 96, 0.1)",
+      strokeColor: "rgba(195, 40, 96, 1)",
+      pointColor: "rgba(195, 40, 96, 1)",
+      pointStrokeColor: "#202b33",
+      pointHighlightStroke: "rgba(225,225,225,0.9)",
         data: [
           {
             t: new Date('2020-3-15'),
@@ -136,9 +142,12 @@
           time: {
             unit: 'months',
             displayFormats: {months: 'MMM YY'},
-            min: '2020',
-            max: '2021',
           },
+          ticks: {
+            min: moment().subtract(1, 'years'),
+            max: new Date(),
+
+          }
         },
       ],
     },
