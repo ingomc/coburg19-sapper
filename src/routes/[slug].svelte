@@ -102,8 +102,49 @@
 </script>
 
 <script>
+  import Line from 'svelte-chartjs/src/Line.svelte';
+
+  let dataLine = {
+    datasets: [
+      {
+        type: 'line',
+        label: 'Demo!',
+        data: [
+          {
+            t: new Date('2020-3-15'),
+            y: 12,
+          },
+          {
+            t: new Date('2020-4-25'),
+            y: 21,
+          },
+          {
+            t: new Date('2020-8-25'),
+            y: 32,
+          },
+        ],
+      },
+    ],
+  };
+
+  let options = {
+    responsive: true,
+    scales: {
+      xAxes: [
+        {
+          type: 'time',
+          time: {
+            unit: 'months',
+            displayFormats: {months: 'MMM YY'},
+            min: '2020',
+            max: '2021',
+          },
+        },
+      ],
+    },
+  };
+
   import Social from '../components/Social.svelte';
-  import Chart from 'svelte-frappe-charts';
 
   export let city;
 
@@ -176,22 +217,23 @@
 </div>
 <div>
   <h2>COVID-19-Fälle nach Altersgruppe und Geschlecht</h2>
-  <Chart
+  <Line data="{dataLine}" options="{options}" />
+  <!-- <Chart
     data="{city.statistics}"
     type="bar"
     tooltipOptions="{{ formatTooltipX: (d) => d + ' Jahre', formatTooltipY: (d) => d + ' Erkrankte' }}"
     colors="{['black', '#ffa3ef', 'light-blue']}"
-  />
+  /> -->
   <small>... und was mit divers 🤷🏻‍♂️ ?</small>
 
   <h2>COVID-19 Fälle / Genesen / Aktive Fälle in {city.name}</h2>
-  <Chart
+  <!-- <Chart
     data="{city.allCases}"
     type="line"
     colors="{['black', '#ffa3ef', 'light-blue']}"
     xaxismode="tick"
     lineOptions="{{ spline: 1, hideDots: 1 }}"
-  />
+  /> -->
   <small>*Die Genesenen-Statistik ist umstritten</small>
 
   <hr />

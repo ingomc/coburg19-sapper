@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
-    "moment": "^2.29.1",
     "polka": "next",
-    "sirv": "^1.0.0"
+    "sirv": "^1.0.0",
+    "svelte-chartjs": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -36,8 +36,8 @@
     "rollup-plugin-svelte": "^6.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "sapper": "^0.28.0",
-    "svelte": "^3.29.4",
-    "svelte-frappe-charts": "^1.3.0"
+    "moment": "^2.29.1",
+    "svelte": "^3.29.4"
   },
   "lint-staged": {
     "*.{svelte,js,css,md}": "prettier --write"
