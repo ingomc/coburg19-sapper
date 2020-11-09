@@ -57,6 +57,26 @@
   import Card from '../components/Card.svelte';
   export let data;
   const { citys, update } = data;
+  let sortedData = [];
+  citys.sort((a, b) => {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 0;
+    }
+    return 0;
+  });
+  citys.forEach((item) => {
+    // SORT COBURG TO THE TOP
+    const city = item.name.toLowerCase();
+    const myCity = 'Coburg';
+    if (city == myCity.toLowerCase()) {
+      sortedData.unshift(item);
+    } else {
+      sortedData.push(item);
+    }
+  });
 </script>
 
 <svelte:head>
@@ -65,7 +85,7 @@
 
 <nav>
   <ul>
-    {#each citys as city}
+    {#each sortedData as city}
       <li>
         <a
           rel="prefetch"

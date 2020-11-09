@@ -3,8 +3,8 @@ import fetch from 'node-fetch';
 import fs from 'fs';
 import moment from 'moment';
 
-const allCasesMonths = 1; // last 6 moths
-const allCasesPeriod = 7; // every 2 weeks data point
+const allCasesMonths = 2; // last 6 moths
+const allCasesPeriod = 3; // every 2 weeks data point
 
 const jsTemplate = (jsonLocations, jsonUpdate) => `
 const data = {
@@ -48,7 +48,7 @@ const getStatisticsEndpoint = (data) => {
 };
 
 const getAllCasesEndpoint = (data) => {
-  let date = moment('2020-03-01').format('YYYY-MM-DD');
+  let date =  moment().subtract(allCasesMonths, 'months').format('YYYY-MM-DD');
   let _endpoint = endpointAllCases.replace('${data.RS}', data.RS).replace('${date}', date);
   // console.log(_endpoint);
   return _endpoint;
@@ -83,38 +83,44 @@ const wellFormStatistics = (data) => {
 
 const wellFormAllCases = (data) => {
   const newJson = {
-    datasets: [
-      {
-        label: 'Erkrankte',
-        type: 'line',
-        backgroundColor: 'rgba(255,0,0,0.2)',
-        pointRadius: 1,
-        pointBackgroundColor: 'rgba(255,0,0,1)',
-        borderWidth: 3,
-        borderColor: 'rgba(255,0,0,1)',
-        data: [],
-      },
-      {
-        label: 'Genesene*',
-        type: 'line',
-        backgroundColor: 'rgba(0,255,0,0.2)',
-        pointRadius: 1,
-        pointBackgroundColor: 'rgba(0,255,0,1)',
-        borderWidth: 3,
-        borderColor: 'rgba(0,255,0,1)',
-        data: [],
-      },
-      {
-        label: 'Aktive Fälle*',
-        type: 'line',
-        backgroundColor: 'rgba(0,0,255,0.2)',
-        pointRadius: 1,
-        pointBackgroundColor: 'rgba(0,0,255,1)',
-        borderWidth: 3,
-        borderColor: 'rgba(0,0,255,1)',
-        data: [],
-      },
-    ],
+    sick: {
+      datasets: [
+        {
+          label: 'Erkrankte',
+          type: 'line',
+          backgroundColor: 'rgba(246,62,2,0.1)',
+          pointRadius: 1,
+          pointBackgroundColor: '#f63e02',
+          borderWidth: 3,
+          borderColor: '#f63e02',
+          data: [],
+        },
+        {
+          label: 'Genesene*',
+          type: 'line',
+          backgroundColor: 'rgba(78,141,38,0.1)',
+          pointRadius: 1,
+          pointBackgroundColor: '#4e8d26',
+          borderWidth: 3,
+          borderColor: '#4e8d26',
+          data: [],
+        },
+      ]
+    },
+    recovered: {
+      datasets: [
+        {
+          label: 'Aktive Fälle*',
+          type: 'line',
+          backgroundColor: 'rgba(243,183,0,0.1)',
+          pointRadius: 1,
+          pointBackgroundColor: ' #f3b700',
+          borderWidth: 3,
+          borderColor: ' #f3b700',
+          data: [],
+        },
+      ]
+    }
   };
 
   data
@@ -132,9 +138,9 @@ const wellFormAllCases = (data) => {
           y: category
         }
       }
-      newJson.datasets[0].data.push(setDataObject(cases));
-      newJson.datasets[1].data.push(setDataObject(recovered));
-      newJson.datasets[2].data.push(setDataObject(activeCases));
+      newJson.sick.datasets[0].data.push(setDataObject(cases));
+      newJson.sick.datasets[1].data.push(setDataObject(recovered));
+      newJson.recovered.datasets[0].data.push(setDataObject(activeCases));
     });
   return newJson;
 };

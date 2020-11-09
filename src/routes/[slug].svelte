@@ -37,13 +37,13 @@
     align-items: center;
     text-align: center;
     justify-content: space-between;
-    --card-bg: var(--bg-100);
+    --card-bg: var(--bg-200);
     --card-color: var(--color);
     font-size: var(--font-size-small);
   }
 
   .card--ghost {
-    border: 1px solid var(--bg-100);
+    border: 1px solid var(--bg-200);
     --card-bg: var(--body-bg);
     --card-color: var(--color);
   }
@@ -78,11 +78,32 @@
     font-size: 3em;
   }
 
+  .charts-section {
+      margin-top: 2rem;
+      display: grid;
+      grid-gap: var(--spacing);
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: var(--border-radius);
+    background-color: var(--bg-200);
+    padding: var(--spacing-xs) var(--spacing);
+  }
+
   @media (min-width: 1024px) {
     .container--header {
       grid-template-columns: 1fr 1fr;
     }
     .container--details {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .charts-section {
       grid-template-columns: 1fr 1fr;
     }
   }
@@ -109,6 +130,7 @@
   export let city;
 
   // console.log(city.allCases);
+  let months = 2
 
   let options = {
     responsive: true,
@@ -130,12 +152,16 @@
           type: 'time',
           color: 'rgba(255,255,255,1)',
           time: {
-            unit: 'months',
-            tooltipFormat: "DD.MM.YYYY",
-            displayFormats: { months: 'MMM YY' },
+            unit: 'days',
+            tooltipFormat: 'DD.MM.YYYY',
+            displayFormats: { 
+              months: 'DD.MM.YYYY', 
+              days: 'DD.MM.' 
+            },
           },
           ticks: {
-            min: moment().subtract(7, 'months'),
+            fontColor: 'rgba(255,255,255,1)',
+            min: moment().subtract(months, 'months'),
             max: new Date(),
           },
           gridLines: {
@@ -150,6 +176,11 @@
             display: true,
             labelString: 'Anzahl Fälle',
             fontColor: 'white',
+          },
+          ticks: {
+            maxTicksLimit: 5,
+            beginAtZero: false,
+            fontColor: 'rgba(255,255,255,1)',
           },
           gridLines: {
             color: 'rgba(200, 200, 200, 0.1)',
@@ -227,31 +258,30 @@
     </div>
   </div>
 </div>
-<div>
-  <h2>COVID-19-Fälle nach Altersgruppe und Geschlecht</h2>
-  <Line data="{city.allCases}" options="{options}" />
+<!-- <h2>COVID-19-Fälle nach Altersgruppe und Geschlecht</h2> -->
+<div class="charts-section">
+  <section>
+    <h2>Aktive Fälle in {city.name}</h2>
+    <Line data="{city.allCases.recovered}" options="{options}" />
+      <p>
+        <small><b>Hinweis:</b>
+          Genesene Patienten können niemals zu 100% korrekt in der Statistik auftauchen, deswegen ist
+          diese Statistik wahrscheinlich nicht zu 100% korrekt.</small>
+      </p>
+  </section>
+  
+  <section>
+    <h2>Aktive und Erholte Personen in {city.name}</h2>
+    <Line data="{city.allCases.sick}" options="{options}" />
+  </section>
+
   <!-- <Chart
     data="{city.statistics}"
     type="bar"
     tooltipOptions="{{ formatTooltipX: (d) => d + ' Jahre', formatTooltipY: (d) => d + ' Erkrankte' }}"
     colors="{['black', '#ffa3ef', 'light-blue']}"
   /> -->
-  <small>... und was mit divers 🤷🏻‍♂️ ?</small>
 
-  <h2>COVID-19 Fälle / Genesen / Aktive Fälle in {city.name}</h2>
-  <!-- <Chart
-    data="{city.allCases}"
-    type="line"
-    colors="{['black', '#ffa3ef', 'light-blue']}"
-    xaxismode="tick"
-    lineOptions="{{ spline: 1, hideDots: 1 }}"
-  /> -->
-  <small>*Die Genesenen-Statistik ist umstritten</small>
-
-  <hr />
-  <h2>Neue Fälle und Aktive Fälle in eine Statistik</h2>
-  <h2>Inzidenverlauf</h2>
-  <h2>Wenn click auf die letzten 3 monate scale adjust 1m / 3m / 12m</h2>
   <div class="social">
     <Social />
   </div>
