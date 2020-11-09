@@ -79,7 +79,7 @@
   }
 
   .charts-section {
-    margin-top: 2rem;
+    margin: 2rem 0;
     display: grid;
     grid-gap: var(--spacing);
     grid-template-columns: 1fr;
