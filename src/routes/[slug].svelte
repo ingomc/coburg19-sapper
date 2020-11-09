@@ -115,7 +115,7 @@
     const data = await res.json();
 
     if (res.status === 200) {
-      return { city: data };
+      return { city: data, slug: params.slug };
     } else {
       this.error(res.status, data.message);
     }
@@ -128,6 +128,7 @@
   import Social from '../components/Social.svelte';
 
   export let city;
+  export let slug;
 
   // console.log(city.allCases);
   let months = 2;
@@ -209,6 +210,12 @@
 
 <svelte:head>
   <title>{city.name} - Corona-Ampel für Franken und mehr</title>
+  <meta property="og:title" content="{`Corona-Ampel für ${city.name} (${city.district})`}" />
+  <meta
+    property="og:description"
+    content="{`🚦 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für ${city.name}!  ⚠️ Alle aktuellen Zahlen`}"
+  />
+  <meta property="og:url" content="{`https://www.corona-ampel-coburg.de/${slug}`}" />
 </svelte:head>
 
 <div class="container">
@@ -217,7 +224,7 @@
       <div class="{`card ${warningclass}`}">
         <div class="row">
           <div><small>{city.district}</small></div>
-          <div><small>7-Tage Inzidenz pro 100.000</small></div>
+          <div><small>7 Tage Inzidenz pro 100.000</small></div>
         </div>
         <div class="row">
           <div class="text--big">{city.name}</div>
@@ -254,7 +261,7 @@
       <div class="number">{city.population.toLocaleString('de')}</div>
     </div>
     <div class="card row card--ghost">
-      <div class="label">7-Tage Inzidenz in {city.BL}</div>
+      <div class="label">7 Tage Inzidenz in {city.BL}</div>
       <div class="number">{Number(city.cases7_bl_per_100k).toFixed(2)}</div>
     </div>
   </div>

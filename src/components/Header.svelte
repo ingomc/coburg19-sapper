@@ -77,7 +77,7 @@
   <header>
     <a class="wrapper" href="./" title="Zur Startseite &rsaquo;">
       <h1>🚦 Corona-Ampel für Coburg 🚦</h1>
-      <h2>7 Tage Inzidenz für Coburg und Landkreis</h2>
+      <h2>7 Tage Inzidenz für Coburg und Umgebung</h2>
     </a>
   </header>
   {#if visible}

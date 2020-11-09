@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Impressum</title>
+  <title>Impressum - Corona-Ampel</title>
 </svelte:head>
 
 <h1>Impressum</h1>

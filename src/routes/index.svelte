@@ -55,7 +55,9 @@
 <script>
   import Social from '../components/Social.svelte';
   import Card from '../components/Card.svelte';
+
   export let data;
+
   const { citys, update } = data;
   let sortedData = [];
   citys.sort((a, b) => {
@@ -81,6 +83,12 @@
 
 <svelte:head>
   <title>Corona-Ampel-Coburg</title>
+  <meta property="og:title" content="Coburg: aktuelle 7 Tage Corona Inzidenz" />
+  <meta
+    property="og:description"
+    content="🚦 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Coburg, Bamberg, Schweinfurt, Lichtenfels, Haßberge und mehr!  ⚠️ Alle aktuelle Zahlen"
+  />
+  <meta property="og:url" content="https://www.corona-ampel-coburg.de/" />
 </svelte:head>
 
 <nav>
