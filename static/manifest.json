@@ -1,5 +1,10 @@
 {
   "name": "Corona-Inzidenz",
+	"short_name": "TODO",
+  "background_color": "#3b424b",
+	"theme_color": "#5d6773",
+	"display": "minimal-ui",
+	"start_url": "/",
   "icons": [
     {
       "src": "./favicon/android-icon-36x36.png",
