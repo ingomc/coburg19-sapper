@@ -135,6 +135,7 @@
   let options = {
     responsive: true,
     maintainAspectRatio: true,
+    aspectRatio: 1.5,
     animation: {
       easing: 'easeInOutQuad',
       duration: 520,

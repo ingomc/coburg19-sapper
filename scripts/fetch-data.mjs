@@ -21,8 +21,6 @@ const endpoint =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?outFields=*&returnGeometry=false&f=json&outSR=4326&where=';
 const endpointNewCases =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
-const endpointSexes =
-  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(Geschlecht%3C%3E%27unbekannt%27%20AND%20Altersgruppe%3C%3E%27unbekannt%27%20AND%20NeuerFall%20IN(0%2C%201))%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&groupByFieldsForStatistics=Altersgruppe%2CGeschlecht&orderByFields=Altersgruppe%20asc&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
 const endpointAllCases =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/Covid19_RKI_Sums/FeatureServer/0/query?f=json&where=(Meldedatum%3Etimestamp%20%27${date}%2022%3A59%3A59%27)%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Meldedatum%20asc&resultOffset=0&resultRecordCount=32000&resultType=standard&cacheHint=true';
 
@@ -42,43 +40,11 @@ const getNewCasesEndpoint = (data) => {
   return _endpoint;
 };
 
-const getStatisticsEndpoint = (data) => {
-  let _endpoint = endpointSexes.replace('${data.RS}', data.RS);
-  return _endpoint;
-};
-
 const getAllCasesEndpoint = (data) => {
   let date =  moment().subtract(allCasesMonths, 'months').format('YYYY-MM-DD');
   let _endpoint = endpointAllCases.replace('${data.RS}', data.RS).replace('${date}', date);
   // console.log(_endpoint);
   return _endpoint;
-};
-
-const wellFormStatistics = (data) => {
-  const newJson = {
-    labels: ['0-4', '5-14', '15-34', '35-59', '60-79', '80+'],
-    datasets: [
-      {
-        name: 'Männlich',
-        chartType: 'bar',
-        values: [],
-      },
-      {
-        name: 'Weiblich',
-        chartType: 'bar',
-        values: [],
-      },
-    ],
-  };
-  data.map((item) => {
-    if (item.attributes.Geschlecht == 'M') {
-      newJson.datasets[0].values.push(item.attributes.value);
-    }
-    if (item.attributes.Geschlecht == 'W') {
-      newJson.datasets[1].values.push(item.attributes.value);
-    }
-  });
-  return newJson;
 };
 
 const wellFormAllCases = (data) => {
@@ -90,6 +56,7 @@ const wellFormAllCases = (data) => {
           type: 'line',
           backgroundColor: 'rgba(246,62,2,0.1)',
           pointRadius: 1,
+          pointHitRadius: 10,
           pointBackgroundColor: '#f63e02',
           borderWidth: 3,
           borderColor: '#f63e02',
@@ -100,6 +67,7 @@ const wellFormAllCases = (data) => {
           type: 'line',
           backgroundColor: 'rgba(78,141,38,0.1)',
           pointRadius: 1,
+          pointHitRadius: 10,
           pointBackgroundColor: '#4e8d26',
           borderWidth: 3,
           borderColor: '#4e8d26',
@@ -114,6 +82,7 @@ const wellFormAllCases = (data) => {
           type: 'line',
           backgroundColor: 'rgba(243,183,0,0.1)',
           pointRadius: 1,
+          pointHitRadius: 10,
           pointBackgroundColor: ' #f3b700',
           borderWidth: 3,
           borderColor: ' #f3b700',
@@ -155,11 +124,6 @@ const handleLocation = async (location) => {
     .then((res) => res.json())
     .then((_json) => _json.features[0].attributes.value);
 
-  // Get sex statistics form API
-  const statistics = await fetch(getStatisticsEndpoint(location))
-    .then((res) => res.json())
-    .then((_json) => wellFormStatistics(_json.features));
-
   // Get all cases from API
   const allCases = await fetch(getAllCasesEndpoint(location))
     .then((res) => res.json())
@@ -181,7 +145,6 @@ const handleLocation = async (location) => {
     cases7_bl_per_100k: location.cases7_bl_per_100k,
     BL: location.BL,
     newCases,
-    statistics,
     allCases,
   });
   // console.log(statistics);
