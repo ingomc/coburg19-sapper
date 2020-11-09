@@ -4,7 +4,7 @@ import fs from 'fs';
 import moment from 'moment';
 
 const allCasesMonths = 1; // last 6 moths
-const allCasesPeriod = 1; // every 2 weeks data point
+const allCasesPeriod = 7; // every 2 weeks data point
 
 const jsTemplate = (jsonLocations, jsonUpdate) => `
 const data = {
@@ -87,27 +87,30 @@ const wellFormAllCases = (data) => {
       {
         label: 'Erkrankte',
         type: 'line',
-        backgroundColor: 'rgba(255,0,0,0.1)',
-        pointBackgroundColor: 'rgba(255,0,0,0.4)',
-        borderWidth: 1,
+        backgroundColor: 'rgba(255,0,0,0.2)',
+        pointRadius: 1,
+        pointBackgroundColor: 'rgba(255,0,0,1)',
+        borderWidth: 3,
         borderColor: 'rgba(255,0,0,1)',
         data: [],
       },
       {
         label: 'Genesene*',
         type: 'line',
-        backgroundColor: 'rgba(0,255,0,0.1)',
-        pointBackgroundColor: 'rgba(0,255,0,0.4)',
-        borderWidth: 1,
+        backgroundColor: 'rgba(0,255,0,0.2)',
+        pointRadius: 1,
+        pointBackgroundColor: 'rgba(0,255,0,1)',
+        borderWidth: 3,
         borderColor: 'rgba(0,255,0,1)',
         data: [],
       },
       {
         label: 'Aktive Fälle*',
         type: 'line',
-        backgroundColor: 'rgba(0,0,255,0.1)',
-        pointBackgroundColor: 'rgba(0,0,255,0.4)',
-        borderWidth: 1,
+        backgroundColor: 'rgba(0,0,255,0.2)',
+        pointRadius: 1,
+        pointBackgroundColor: 'rgba(0,0,255,1)',
+        borderWidth: 3,
         borderColor: 'rgba(0,0,255,1)',
         data: [],
       },

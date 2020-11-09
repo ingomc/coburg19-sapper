@@ -110,19 +110,32 @@
 
   // console.log(city.allCases);
 
-
   let options = {
     responsive: true,
+    maintainAspectRatio: true,
+    animation: {
+      easing: 'easeInOutQuad',
+      duration: 520,
+    },
+    legend: {
+      display: true,
+      labels: {
+        fontColor: 'rgb(255, 255, 255)',
+        usePointStyle: true,
+      },
+    },
     scales: {
       xAxes: [
         {
           type: 'time',
+          color: 'rgba(255,255,255,1)',
           time: {
-            unit: 'days',
-            displayFormats: { days: 'DD MMM' },
+            unit: 'months',
+            tooltipFormat: "DD.MM.YYYY",
+            displayFormats: { months: 'MMM YY' },
           },
           ticks: {
-            min: moment().subtract(6, 'months'),
+            min: moment().subtract(7, 'months'),
             max: new Date(),
           },
           gridLines: {
@@ -133,6 +146,11 @@
       ],
       yAxes: [
         {
+          scaleLabel: {
+            display: true,
+            labelString: 'Anzahl Fälle',
+            fontColor: 'white',
+          },
           gridLines: {
             color: 'rgba(200, 200, 200, 0.1)',
             lineWidth: 1,
@@ -141,7 +159,6 @@
       ],
     },
   };
-
 
   let warningclass = 'warning';
 
