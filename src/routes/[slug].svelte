@@ -271,7 +271,7 @@
   <section>
     <h2>Aktive Fälle in {city.name}</h2>
     <p>
-      <small><b>Hinweis:</b>
+      <small>*<b>Hinweis:</b>
         Genesene Patienten können niemals zu 100% korrekt in der Statistik auftauchen, deswegen ist
         diese Statistik wahrscheinlich nicht zu 100% korrekt.</small>
     </p>
