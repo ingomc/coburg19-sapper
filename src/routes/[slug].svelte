@@ -122,7 +122,7 @@
             displayFormats: { days: 'DD MMM' },
           },
           ticks: {
-            min: moment().subtract(1, 'months'),
+            min: moment().subtract(6, 'months'),
             max: new Date(),
           },
           gridLines: {
