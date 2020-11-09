@@ -79,12 +79,12 @@
   }
 
   .charts-section {
-      margin-top: 2rem;
-      display: grid;
-      grid-gap: var(--spacing);
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
+    margin-top: 2rem;
+    display: grid;
+    grid-gap: var(--spacing);
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
   section {
     display: flex;
@@ -130,7 +130,7 @@
   export let city;
 
   // console.log(city.allCases);
-  let months = 2
+  let months = 2;
 
   let options = {
     responsive: true,
@@ -154,9 +154,9 @@
           time: {
             unit: 'days',
             tooltipFormat: 'DD.MM.YYYY',
-            displayFormats: { 
-              months: 'DD.MM.YYYY', 
-              days: 'DD.MM.' 
+            displayFormats: {
+              months: 'DD.MM.YYYY',
+              days: 'DD.MM.',
             },
           },
           ticks: {
@@ -269,7 +269,7 @@
     </p>
     <Line data="{city.allCases.recovered}" options="{options}" />
   </section>
-  
+
   <section>
     <h2>Aktive und Erholte Personen in {city.name}</h2>
     <Line data="{city.allCases.sick}" options="{options}" />
@@ -281,8 +281,7 @@
     tooltipOptions="{{ formatTooltipX: (d) => d + ' Jahre', formatTooltipY: (d) => d + ' Erkrankte' }}"
     colors="{['black', '#ffa3ef', 'light-blue']}"
   /> -->
-
 </div>
-    <div class="social">
-      <Social />
-    </div>
+<div class="social">
+  <Social />
+</div>
