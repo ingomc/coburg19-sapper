@@ -27,5 +27,5 @@
 </script>
 
 <div class="container">
-  <div class="breadcrumb"><a href="./">&lsaquo; Zurück</a> | {data.replace('-', ' ')}</div>
+  <div class="breadcrumb"><a href="./">&lsaquo; Zurück</a> | {data.replace(/-/g, ' ')}</div>
 </div>
