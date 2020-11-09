@@ -271,7 +271,7 @@
   </section>
 
   <section>
-    <h2>Aktive und Erholte Personen in {city.name}</h2>
+    <h2>Bisher erkrankte und bisher erholte Personen in {city.name}</h2>
     <Line data="{city.allCases.sick}" options="{options}" />
   </section>
 
