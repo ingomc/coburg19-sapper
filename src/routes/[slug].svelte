@@ -262,12 +262,12 @@
 <div class="charts-section">
   <section>
     <h2>Aktive Fälle in {city.name}</h2>
+    <p>
+      <small><b>Hinweis:</b>
+        Genesene Patienten können niemals zu 100% korrekt in der Statistik auftauchen, deswegen ist
+        diese Statistik wahrscheinlich nicht zu 100% korrekt.</small>
+    </p>
     <Line data="{city.allCases.recovered}" options="{options}" />
-      <p>
-        <small><b>Hinweis:</b>
-          Genesene Patienten können niemals zu 100% korrekt in der Statistik auftauchen, deswegen ist
-          diese Statistik wahrscheinlich nicht zu 100% korrekt.</small>
-      </p>
   </section>
   
   <section>
@@ -282,7 +282,7 @@
     colors="{['black', '#ffa3ef', 'light-blue']}"
   /> -->
 
-  <div class="social">
-    <Social />
-  </div>
 </div>
+    <div class="social">
+      <Social />
+    </div>
