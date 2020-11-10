@@ -26,6 +26,7 @@
 
 <script>
   import { stores } from '@sapper/app';
+  import { onMount } from 'svelte';
   import Loading from '../components/Loading.svelte';
   import Header from '../components/Header.svelte';
   import UpdateMessage from '../components/UpdateMessage.svelte';
@@ -36,6 +37,27 @@
   export let segment;
 
   const { preloading } = stores();
+
+  onMount(async () => {
+    var siteID = '5';
+    var _paq = (window._paq = window._paq || []);
+    _paq.push(['disableCookies']);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+      var u = '//tracking.andre-bellmann.de/';
+      _paq.push(['setTrackerUrl', u + 'phpfortr.php']);
+      _paq.push(['setSiteId', siteID]);
+      var d = document,
+        g = d.createElement('script'),
+        s = d.getElementsByTagName('script')[0];
+      g.type = 'text/javascript';
+      g.async = true;
+      g.crossorigin = 'anonymous';
+      g.src = u + 'jsfortr.js';
+      s.parentNode.insertBefore(g, s);
+    })();
+  });
 </script>
 
 {#if $preloading}
