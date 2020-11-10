@@ -38,7 +38,10 @@
 
   const { page, preloading } = stores();
 
+
+
   onMount(async () => {
+    // normal site tracking
     var siteID = '5';
     var _paq = (window._paq = window._paq || []);
     _paq.push(['disableCookies']);
@@ -57,11 +60,16 @@
       g.src = u + 'jsfortr.js';
       s.parentNode.insertBefore(g, s);
     })();
+
+    // SPA Tracking
+    page.subscribe(({ path, params, query }) => {
+      _paq.push(['setCustomUrl', $page.path]);
+      _paq.push(['setDocumentTitle', params.slug]);
+      _paq.push(['trackPageView']);
+  })
+
   });
-  window.addEventListener('hashchange', function () {
-    _paq.push(['setCustomUrl', $page.path]);
-    _paq.push(['trackPageView']);
-  });
+  
 </script>
 
 {#if $preloading}
