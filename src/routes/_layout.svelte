@@ -36,7 +36,7 @@
   export let update;
   export let segment;
 
-  const { preloading } = stores();
+  const { page, preloading } = stores();
 
   onMount(async () => {
     var siteID = '5';
@@ -57,6 +57,10 @@
       g.src = u + 'jsfortr.js';
       s.parentNode.insertBefore(g, s);
     })();
+  });
+  window.addEventListener('hashchange', function () {
+    _paq.push(['setCustomUrl', $page.path]);
+    _paq.push(['trackPageView']);
   });
 </script>
 
