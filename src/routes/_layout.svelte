@@ -38,8 +38,6 @@
 
   const { page, preloading } = stores();
 
-
-
   onMount(async () => {
     // normal site tracking
     var siteID = '5';
@@ -65,11 +63,20 @@
     page.subscribe(({ path, params, query }) => {
       _paq.push(['setCustomUrl', $page.path]);
       _paq.push(['setDocumentTitle', params.slug]);
-      _paq.push(['trackPageView']);
-  })
 
+    // remove all previously assigned custom variables, requires Matomo (formerly Piwik) 3.0.2
+    _paq.push(['deleteCustomVariables', 'page']); 
+    _paq.push(['setGenerationTimeMs', 0]);
+    _paq.push(['trackPageView']);
+
+    // make Matomo aware of newly added content
+    var content = document.getElementById('sapper');
+    _paq.push(['trackContentImpressionsWithinNode', content]);
+    _paq.push(['enableLinkTracking']);
+
+
+    });
   });
-  
 </script>
 
 {#if $preloading}
