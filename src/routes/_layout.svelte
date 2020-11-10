@@ -45,6 +45,7 @@
 
 
   page.subscribe(({ path }) => {
+    console.log(path);
     matomo.setCustomUrl(path);
     matomo.trackPageView();
   });
