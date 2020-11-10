@@ -1,3 +1,16 @@
+<style>
+  button {
+    cursor: pointer;
+  }
+  .spende {
+    display: inline-block;
+    border:0;
+    outline: none;
+    border-radius: 2rem;
+    padding: var(--spacing-xs) var(--spacing);
+    background-color: var(--warning-bg);
+  }
+</style>
 <script>
   import { onMount } from 'svelte';
 
@@ -37,19 +50,38 @@
 
 <div class="impressum">
   <h1>Impressum</h1>
+
+  <div>Hinweis:</div>
+  <ul>
+    <li>Absolut keine Daten werden weitergegeben</li>
+    <li>Es werden keine Cookies gespeichert</li>
+  </ul>
+
+  <p>
+    Wer diese Seite gut findet und mir vielleicht ein 🍦 oder 🍺 ausgeben mag, der kann mir gerne etwas
+    Spenden:
+  </p>
+  <form action="https://www.paypal.com/donate" method="post" target="_top">
+    <input type="hidden" name="hosted_button_id" value="TFHBVMBB9LMM2" />
+    <button class="spende" type="submit">Jetzt Spenden</button>
+  </form>
+
   <p>Diese Seite benutzt:</p>
   <ul>
     <li><a href="https://sapper.svelte.dev/" target="_blank">Sapper</a></li>
-    <li>
-      Datenquelle:
+    <li><a href="https://matomo.org/" target="_blank">Matomo Tracking</a> (selfhosted)</li>
+  </ul>
+  <p>
+    Datenquelle:
       <a
         href="https://npgeo-corona-npgeo-de.hub.arcgis.com/datasets/917fc37a709542548cc3be077a786c17_0"
         target="_blank"
         rel="noopener"
         title="Zum RKI"
       >RKI</a>
-    </li>
-  </ul>
+      <br />
+      <small>Alle Angaben auf der gesamten Website sind ohne Gewähr und können sich jederzeit ändern.</small>
+  </p>
   <p>Angaben gemäß § 5 TMG</p>
   <p>{vn} {nn} <br /> {adrs}<br /> {adrp} {adrst} <br /></p>
   <p><strong>Vertreten durch: </strong><br /> {vn} {nn}<br /></p>
