@@ -3,8 +3,8 @@ import fetch from 'node-fetch';
 import fs from 'fs';
 import moment from 'moment';
 
-const allCasesMonths = 2; // last 6 moths
-const allCasesPeriod = 3; // every 2 weeks data point
+const allCasesMonths = 2; // last 2 moths
+const allCasesPeriod = 2; // every second day
 
 const jsTemplate = (jsonLocations, jsonUpdate) => `
 const data = {
