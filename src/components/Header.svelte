@@ -41,7 +41,7 @@
     }
 
     h2 {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
     }
   }
   @media (min-width: 1024px) {

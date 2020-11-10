@@ -40,7 +40,7 @@
   }
 
   .area {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
 
   .city {
@@ -51,7 +51,7 @@
   }
 
   .cases {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
 
   #arrow-right-mini {
