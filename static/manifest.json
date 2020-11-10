@@ -1,10 +1,10 @@
 {
-  "name": "Corona-Inzidenz",
-	"short_name": "Corona-Inzidenz",
+  "name": "Corona-Ampel Coburg",
+	"short_name": "Corona-Ampel",
   "background_color": "#3b424b",
 	"theme_color": "#5d6773",
 	"display": "minimal-ui",
-	"start_url": "/",
+	"start_url": "/?pk_campaign=Appinstall",
   "icons": [
     {
       "src": "./favicon/android-icon-36x36.png",
