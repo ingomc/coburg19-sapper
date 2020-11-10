@@ -28,7 +28,6 @@
   let d = {};
 
   function handleClick() {
-    console.log('click');
     e1 = d.e1;
     e3 = d.e3;
     addi = `${e1}${e2}${e3}de`;
@@ -40,7 +39,6 @@
   }
   onMount(async () => {
     d = await fetch('./impr.json').then((res) => res.json());
-    console.log(d);
   });
 </script>
 

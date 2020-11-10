@@ -42,14 +42,18 @@
   const url = 'https://tracking.andre-bellmann.de';
   const siteId = 5;
   const cookies = false;
-
+  let title = '';
 
   page.subscribe(({ path }) => {
-    console.log(path);
+    if (path == '/') {
+      title = 'Home';
+    } else {
+      title = path.substring(1).toUpperCase();
+    }
     matomo.setCustomUrl(path);
+    matomo.setDocumentTitle(title);
     matomo.trackPageView();
   });
-
 
   onMount(() => {
     matomo.trackPageView();
