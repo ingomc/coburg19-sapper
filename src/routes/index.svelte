@@ -104,8 +104,10 @@
         </a>
       </li>
     {/each}
-    <div class="social">
-      <Social />
-    </div>
+    <li>
+      <div class="social">
+        <Social />
+      </div>
+    </li>
   </ul>
 </nav>
