@@ -4,6 +4,7 @@
     position: sticky;
     top: 0;
     z-index: 10;
+    grid-area: header;
   }
 
   header {
