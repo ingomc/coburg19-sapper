@@ -39,7 +39,11 @@
   const { page, preloading } = stores();
 
   onMount(async () => {
-    // normal site tracking
+   
+
+    // SPA Tracking
+    page.subscribe(({ path, params, query }) => {
+      // normal site tracking
     var siteID = '5';
     var _paq = (window._paq = window._paq || []);
     _paq.push(['disableCookies']);
@@ -58,22 +62,6 @@
       g.src = u + 'jsfortr.js';
       s.parentNode.insertBefore(g, s);
     })();
-
-    // SPA Tracking
-    page.subscribe(({ path, params, query }) => {
-      _paq.push(['setCustomUrl', $page.path]);
-      _paq.push(['setDocumentTitle', params.slug]);
-
-    // remove all previously assigned custom variables, requires Matomo (formerly Piwik) 3.0.2
-    _paq.push(['deleteCustomVariables', 'page']); 
-    _paq.push(['setGenerationTimeMs', 0]);
-    _paq.push(['trackPageView']);
-
-    // make Matomo aware of newly added content
-    var content = document.getElementById('sapper');
-    _paq.push(['trackContentImpressionsWithinNode', content]);
-    _paq.push(['enableLinkTracking']);
-
 
     });
   });
