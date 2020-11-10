@@ -41,8 +41,14 @@
 
   const url = 'https://tracking.andre-bellmann.de';
   const siteId = 5;
+  const cookies = false;
 
-  $: if ($page) matomo.trackPageView();
+
+  page.subscribe(({ path }) => {
+    matomo.setCustomUrl(path);
+    matomo.trackPageView();
+  });
+
 
   onMount(() => {
     matomo.trackPageView();
@@ -74,4 +80,4 @@
   <Footer update="{update}" />
 {/if}
 
-<Matomo url="{url}" siteId="{siteId}" />
+<Matomo url="{url}" siteId="{siteId}" cookies="{cookies}" />
