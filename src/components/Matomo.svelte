@@ -22,7 +22,7 @@
     export let consentRequired = false
     // export let consentExpires = 0
     export let doNotTrack = false
-    export let heartBeat = 2000
+    // export let heartBeat = 2000
     // export let blockLoading = false
     // export let addNoProxyWorkaround = true
   

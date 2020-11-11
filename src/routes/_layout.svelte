@@ -56,6 +56,7 @@
   });
 
   onMount(() => {
+    matomo.disableCookies();
     matomo.trackPageView();
     matomo.trackAllContentImpressions();
   });
