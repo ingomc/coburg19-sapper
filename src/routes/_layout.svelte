@@ -39,7 +39,7 @@
 
   const { page, preloading } = stores();
 
-  const url = 'https://tracking.andre-bellmann.de';
+  const url = '//tracking.andre-bellmann.de';
   const siteId = 5;
   const cookies = false;
   let title = '';
@@ -56,7 +56,8 @@
   });
 
   onMount(() => {
-    // matomo.trackPageView();
+    matomo.trackPageView();
+    matomo.trackAllContentImpressions();
   });
 </script>
 
