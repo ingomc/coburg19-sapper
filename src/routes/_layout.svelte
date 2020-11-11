@@ -56,7 +56,7 @@
   });
 
   onMount(() => {
-    matomo.trackPageView();
+    // matomo.trackPageView();
   });
 </script>
 

@@ -15,10 +15,10 @@
     export let url
     export let siteId
     // export let onMetaChange = false
-    export let debug = false
+    export let debug = true
     // export let verbose = false
   
-    export let cookies = true
+    export let cookies = false
     export let consentRequired = false
     // export let consentExpires = 0
     export let doNotTrack = false
