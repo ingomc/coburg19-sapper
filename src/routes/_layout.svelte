@@ -41,7 +41,7 @@
 
   let title = 'Corona';
   let siteId = '5';
-  let url = 'https://tracking.andre-bellmann.de/matomo.php';
+  let url = 'https://tracking.andre-bellmann.de/phpfortr.php';
 
   
   page.subscribe(({ path, params, query }) => {
