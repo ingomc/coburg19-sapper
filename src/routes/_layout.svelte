@@ -26,8 +26,7 @@
 
 <script>
   import { stores } from '@sapper/app';
-  import { onMount } from 'svelte';
-  import Matomo, { matomo } from '../components/Matomo.svelte';
+  import { afterUpdate, onMount } from 'svelte';
   import Loading from '../components/Loading.svelte';
   import Header from '../components/Header.svelte';
   import UpdateMessage from '../components/UpdateMessage.svelte';
@@ -38,27 +37,35 @@
   export let segment;
 
   const { page, preloading } = stores();
+  const { host } = $page;
 
-  const url = '//tracking.andre-bellmann.de';
-  const siteId = 5;
-  const cookies = false;
-  let title = '';
+  let title = 'Corona';
+  let siteId = '5';
+  let url = 'https://tracking.andre-bellmann.de/matomo.php';
 
-  page.subscribe(({ path }) => {
-    if (path == '/') {
-      title = 'Home';
-    } else {
-      title = path.substring(1).toUpperCase();
+  
+  page.subscribe(({ path, params, query }) => {
+    if (typeof fetch == 'function') {
+    const urlParams = [
+      `?action_name=${title}`,
+      `&rec=1`,
+      `&idsite=${siteId}`
+    ];
+    
+    urlParams.map((item) => {
+      url += item;
+    });
+    url = encodeURI(url.replace(/\n|\r/g, ''));
+    
+    console.log(path);
+    console.log($page.path);
+    console.log(url);
+      const tracking = fetch(url, {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'default',
+      }).then((_res) => _res);
     }
-    matomo.setCustomUrl(path);
-    matomo.setDocumentTitle(title);
-    matomo.trackPageView();
-  });
-
-  onMount(() => {
-    matomo.disableCookies();
-    matomo.trackPageView();
-    matomo.trackAllContentImpressions();
   });
 </script>
 
@@ -86,5 +93,3 @@
 {#if segment !== 'impressum'}
   <Footer update="{update}" />
 {/if}
-
-<Matomo url="{url}" siteId="{siteId}" cookies="{cookies}" />
