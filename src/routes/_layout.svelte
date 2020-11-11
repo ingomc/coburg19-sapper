@@ -63,7 +63,7 @@
       const tracking = fetch(url, {
         method: 'GET',
         mode: 'cors',
-        cache: 'default',
+        cache: 'no-cache',
       }).then((_res) => _res);
     }
   });
