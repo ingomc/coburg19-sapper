@@ -37,7 +37,6 @@
   export let segment;
 
   const { page, preloading } = stores();
-  const { host } = $page;
 
   let title = 'Corona';
   let siteId = '5';
@@ -57,9 +56,9 @@
     });
     url = encodeURI(url.replace(/\n|\r/g, ''));
     
-    console.log(path);
-    console.log($page.path);
-    console.log(url);
+    // console.log(path);
+    // console.log($page.path);
+    // console.log(url);
       const tracking = fetch(url, {
         method: 'GET',
         mode: 'cors',
