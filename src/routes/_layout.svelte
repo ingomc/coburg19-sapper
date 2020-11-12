@@ -40,30 +40,30 @@
 
   let title = 'Corona';
   let siteId = '5';
-  let url = 'https://tracking.andre-bellmann.de/phpfortr.php';
 
-  
   page.subscribe(({ path, params, query }) => {
+    let url = 'https://tracking.andre-bellmann.de/phpfortr.php';
     if (typeof fetch == 'function') {
-    const urlParams = [
-      `?action_name=${title}`,
-      `&rec=1`,
-      `&idsite=${siteId}`
-    ];
-    
-    urlParams.map((item) => {
-      url += item;
-    });
-    url = encodeURI(url.replace(/\n|\r/g, ''));
-    
-    // console.log(path);
-    // console.log($page.path);
-    // console.log(url);
+      let urlParams = [`?action_name=${title} - ${$page.path}`, `&rec=1`, `&idsite=${siteId}`];
+
+      urlParams.map((item) => {
+        url += item;
+      });
+      url = encodeURI(url.replace(/\n|\r/g, ''));
+
+      // console.log(path);
+      // console.log($page.path);
+      // console.log(url);
       const tracking = fetch(url, {
         method: 'GET',
         mode: 'cors',
         cache: 'no-cache',
-      }).then((_res) => _res);
+      })
+        .then((_res) => _res)
+        .then(() => {
+          // console.log("delete params");
+          urlParams = [];
+        });
     }
   });
 </script>
