@@ -209,13 +209,18 @@
 </script>
 
 <svelte:head>
-  <title>{city.name} - Corona-Ampel für Franken und mehr</title>
+  <title>Corona-Ampel für {city.name} und mehr: ⚠️ Alle aktuellen Zahlen</title>
+  <meta
+    content="{`⚠️ Alle aktuellen Zahlen für ${city.name}: ⚠️ ${city.newCases} neue Fälle - ⚠️ Aktuelle Inzidenz: {city.incidence}`}"
+    name="description"
+  />
   <meta property="og:title" content="{`Corona-Ampel für ${city.name} (${city.district})`}" />
   <meta
     property="og:description"
-    content="{`🚦 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für ${city.name}!  ⚠️ Alle aktuellen Zahlen`}"
+    content="{`⚠️ Alle aktuellen Zahlen für ${city.name}: ⚠️ ${city.newCases} neue Fälle - ⚠️ Aktuelle Inzidenz: {city.incidence}`}"
   />
   <meta property="og:url" content="{`https://www.corona-ampel-coburg.de/${slug}`}" />
+  <link rel="canonical" href="{`https://www.corona-ampel-coburg.de/${slug}`}" />
 </svelte:head>
 
 <div class="container">

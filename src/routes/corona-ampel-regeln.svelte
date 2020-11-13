@@ -12,6 +12,18 @@
   }
 </style>
 
+<svelte:head>
+  <title>🚦 Corona-Ampel Regeln: ⚠️ Aktuelle Regelung in Bayern</title>
+  <meta content="Alle Corona-Ampel Regeln: ⚠️ Aktuelle Regelung in Bayern" name="description" />
+  <meta property="og:title" content="🚦 Corona-Ampel Regeln: ⚠️ Aktuelle Regelung in Bayern" />
+  <meta
+    property="og:description"
+    content="Alle Corona-Ampel Regeln und  ⚠️ alle aktuellen Zahlen für Coburg und Umgebung!"
+  />
+  <meta property="og:url" content="https://www.corona-ampel-coburg.de/corona-ampel-regeln" />
+  <link rel="canonical" href="https://www.corona-ampel-coburg.de/corona-ampel-regeln" />
+</svelte:head>
+
 <div>
   <p>
     <strong><span class="darkbluetext"><span class="greentext">Grün - Inzidenz&nbsp;bis 35</span></span></strong>
@@ -24,20 +36,21 @@
     </li>
     <li>
       Maskenpflicht im ÖPNV, in Geschäften und im Einzelhandel, sowie in der Gastronomie bis zum
-      Platz&nbsp;
+      Platz
     </li>
     <li>
       Empfehlung, aber keine Pflicht: Private Feierlichkeiten mit bis zu 25 Personen sind erlaubt
     </li>
   </ul>
   <p>
-    <span class="yellowtext"><strong><span class="yellowtext"><span class="darkbluetext"><span
-              class="yellowtext"
-            >Gelb -</span>&nbsp;</span></span></strong><span class="darkbluetext"><strong><span
-            class="yellowtext"
-          >Inzidenz</span></strong></span></span><b style="background-color: initial;"><span
+    <span class="yellowtext">
+      <strong><span class="yellowtext"><span class="darkbluetext">
+            <span class="yellowtext">Gelb -</span>&nbsp;</span></span></strong><span
         class="darkbluetext"
-      ><span class="yellowtext"><span class="darkbluetext">&nbsp;</span>35 bis 50</span></span></b>
+      ><strong> <span class="yellowtext">Inzidenz</span></strong></span></span><b
+      style="background-color: initial;"
+    ><span class="darkbluetext"><span class="yellowtext"><span class="darkbluetext">&nbsp;</span>35
+          bis 50</span></span></b>
   </p>
   <ul>
     <li>
