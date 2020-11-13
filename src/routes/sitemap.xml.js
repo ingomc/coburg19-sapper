@@ -31,7 +31,7 @@ const render = (pages, citys) => `<?xml version="1.0" encoding="UTF-8" ?>
       (city) => `
       <url>
         <loc>${BASE_URL}/${city.slug}/</loc>
-        <priority>0.69</priority>
+        <priority>0.90</priority>
       </url>
     `,
     )
