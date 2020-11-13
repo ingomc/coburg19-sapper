@@ -20,7 +20,7 @@ const render = (pages, citys) => `<?xml version="1.0" encoding="UTF-8" ?>
   ${pages
     .map(
       (page) => `
-    <url><loc>${BASE_URL}/${page}</loc><priority>${
+    <url><loc>${BASE_URL}/${page}/</loc><priority>${
         page == 'impressum' ? '0.50' : '0.85'
       }</priority></url>
   `,
@@ -30,7 +30,7 @@ const render = (pages, citys) => `<?xml version="1.0" encoding="UTF-8" ?>
     .map(
       (city) => `
       <url>
-        <loc>${BASE_URL}/${city.slug}</loc>
+        <loc>${BASE_URL}/${city.slug}/</loc>
         <priority>0.69</priority>
       </url>
     `,
