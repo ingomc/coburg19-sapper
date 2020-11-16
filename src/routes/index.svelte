@@ -82,9 +82,9 @@
 </script>
 
 <svelte:head>
-  <title>Corona-Ampel-Coburg</title>
+  <title>Corona-Ampel-Coburg: 🚦 Aktuelle Fälle und Zahlen</title>
   <meta
-    content="🚦 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Coburg, Bamberg, Schweinfurt, Lichtenfels, Haßberge und mehr!  ⚠️ Alle aktuelle Zahlen"
+    content="🚦 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Coburg, Bamberg, Kronach, Schweinfurt, Lichtenfels, Haßberge, Hildburghausen und Sonneberg !  ⚠️ Alle aktuellen Zahlen ⚠️ Alle aktuellen Fälle"
     name="description"
   />
   <meta
@@ -93,7 +93,7 @@
   />
   <meta
     property="og:description"
-    content="🚦 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Coburg, Bamberg, Schweinfurt, Lichtenfels, Haßberge und mehr!  ⚠️ Alle aktuelle Zahlen"
+    content="🚦 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Coburg, Bamberg, Kronach, Schweinfurt, Lichtenfels, Haßberge, Hildburghausen und Sonneberg !  ⚠️ Alle aktuellen Zahlen ⚠️ Alle aktuellen Fälle"
   />
   <meta property="og:url" content="https://www.corona-ampel-coburg.de" />
   <link rel="canonical" href="https://www.corona-ampel-coburg.de" />
