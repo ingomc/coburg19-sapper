@@ -4,13 +4,14 @@
   }
   .spende {
     display: inline-block;
-    border:0;
+    border: 0;
     outline: none;
     border-radius: 2rem;
     padding: var(--spacing-xs) var(--spacing);
     background-color: var(--warning-bg);
   }
 </style>
+
 <script>
   import { onMount } from 'svelte';
 
@@ -56,13 +57,21 @@
   </ul>
 
   <p>
-    Wer diese Seite gut findet und mir vielleicht ein 🍦 oder 🍺 ausgeben mag, der kann mir gerne etwas
-    Spenden:
+    Wer diese Seite gut findet und mir vielleicht ein 🥙 oder 🍕 ausgeben mag, der kann mir gerne
+    etwas Spenden:
   </p>
   <form action="https://www.paypal.com/donate" method="post" target="_top">
     <input type="hidden" name="hosted_button_id" value="TFHBVMBB9LMM2" />
     <button class="spende" type="submit">Jetzt Spenden</button>
   </form>
+
+  <p>Danke an meine bisherigen Gönner 👍🏻:</p>
+  <ul>
+    <li>Nici</li>
+    <li>Hohni</li>
+    <li>Nina</li>
+    <li>Flo</li>
+  </ul>
 
   <p>Diese Seite benutzt:</p>
   <ul>
@@ -71,14 +80,14 @@
   </ul>
   <p>
     Datenquelle:
-      <a
-        href="https://npgeo-corona-npgeo-de.hub.arcgis.com/datasets/917fc37a709542548cc3be077a786c17_0"
-        target="_blank"
-        rel="noopener"
-        title="Zum RKI"
-      >RKI</a>
-      <br />
-      <small>Alle Angaben auf der gesamten Website sind ohne Gewähr und können sich jederzeit ändern.</small>
+    <a
+      href="https://npgeo-corona-npgeo-de.hub.arcgis.com/datasets/917fc37a709542548cc3be077a786c17_0"
+      target="_blank"
+      rel="noopener"
+      title="Zum RKI"
+    >RKI</a>
+    <br />
+    <small>Alle Angaben auf der gesamten Website sind ohne Gewähr und können sich jederzeit ändern.</small>
   </p>
   <p>Angaben gemäß § 5 TMG</p>
   <p>{vn} {nn} <br /> {adrs}<br /> {adrp} {adrst} <br /></p>
