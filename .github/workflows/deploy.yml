@@ -37,6 +37,9 @@ jobs:
       - name: Install
         run: npm i
 
+      - name: Write Version
+        run: npm run version
+
       - name: Fetch Data
         run: npm run data
 

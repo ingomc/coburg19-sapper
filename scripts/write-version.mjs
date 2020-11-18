@@ -2,7 +2,7 @@ import fs from 'fs';
 import packageJson from '../package.json';
 const { version } = packageJson;
 
-const layoutFile = './src/routes/_layout.svelte';
+const layoutFile = './src/template.html';
 
 fs.readFile(layoutFile, 'utf8', function (err, data) {
   if (err) {

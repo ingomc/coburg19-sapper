@@ -92,5 +92,3 @@
 {#if segment !== 'impressum'}
   <Footer update="{update}" />
 {/if}
-
-<div class="hidden">v2.0.1</div>
