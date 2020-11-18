@@ -47,7 +47,7 @@
 
 <section>
   <nav>
-    <div class="update">Stand: {update}</div>
+    <div class="update">Stand: <time itemprop="datePublished">{update}</time></div>
     <a href="./corona-ampel-regeln" title="Alle Regeln erklärt">
       <FooterButton>
         <div slot="icon">
@@ -88,10 +88,10 @@
     </a>
   </nav>
 
-  <footer>
+  <footer itemscope itemtype="https://schema.org/Person">
     Crafted with ❤️ from
     <a
       href="https://www.andre-bellmann.de/?utm_source=social-media&utm_medium=corona&utm_campaign=website"
-    >Andre Bellmann</a>
+    ><span itemprop="name">Andre Bellmann</span></a>
   </footer>
 </section>
