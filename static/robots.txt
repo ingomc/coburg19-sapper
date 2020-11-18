@@ -1,14 +1,9 @@
-# Erstellt am: 10.11.2020, 12:42
+# Erstellt am: 18.11.2020, 23:00
 # Webseite: http://http://www.corona-ampel-coburg.de
 # ===================================
 
 Sitemap: http://www.corona-ampel-coburg.de/sitemap.xml
 
-# ===================================
-# Folgende Seiten sollen nicht indexiert werden:
-# ===================================
-
-# User-agent: *
 
 # ===================================
 # Schließe folgende Spider komplett aus:
