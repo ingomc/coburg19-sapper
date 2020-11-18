@@ -41,13 +41,20 @@
 </style>
 
 <script>
+  import moment from 'moment';
   import FooterButton from './FooterButton.svelte';
   export let update;
 </script>
 
 <section>
   <nav>
-    <div class="update">Stand: <time itemprop="datePublished">{update}</time></div>
+    <div class="update">
+      Stand:
+      <time
+        itemprop="dateModified"
+        datetime="{moment(update.replace(' Uhr', ''), 'DD.MM.YYYY, HH:mm').toISOString()}"
+      >{update}</time>
+    </div>
     <a href="./corona-ampel-regeln" title="Alle Regeln erklärt">
       <FooterButton>
         <div slot="icon">
