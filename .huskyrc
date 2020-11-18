@@ -1,12 +1,12 @@
 {
   "hooks": {
-    "pre-commit": "lint-staged",
-    "pre-push": "npm version patch"
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "**/*.{css,html,js,md,mjs,svelte,svg,ts}": [
       "prettier --write .",
-      "lint:css"
+      "lint:css",
+      "version patch"
     ]
   }
 }
