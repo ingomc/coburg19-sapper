@@ -8,7 +8,7 @@ Sitemap: http://www.corona-ampel-coburg.de/sitemap.xml
 # Folgende Seiten sollen nicht indexiert werden:
 # ===================================
 
-User-agent: *
+# User-agent: *
 
 # ===================================
 # Schließe folgende Spider komplett aus:
