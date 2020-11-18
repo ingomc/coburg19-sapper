@@ -1,16 +1,11 @@
 <script>
   import { onMount } from 'svelte';
 
-
   let title = 'Coburg%20-%20Corona-Ampel%20f%C3%BCr%20Franken%20und%20mehr';
   let siteId = '5';
   let url = 'https://tracking.andre-bellmann.de/matomo.php';
 
-  const params = [
-    `?action_name=${title}`,
-    `&rec=1`, 
-    `&idsite=${siteId}`
-  ];
+  const params = [`?action_name=${title}`, `&rec=1`, `&idsite=${siteId}`];
 
   params.map((item) => {
     url += item;

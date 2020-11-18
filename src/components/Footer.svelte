@@ -55,7 +55,7 @@
         datetime="{moment(update.replace(' Uhr', ''), 'DD.MM.YYYY, HH:mm').toISOString()}"
       >{update}</time>
     </div>
-    <a href="./corona-ampel-regeln" title="Alle Regeln erklärt">
+    <a href="./corona-ampel-regeln/" title="Alle Regeln erklärt">
       <FooterButton>
         <div slot="icon">
           <svg
@@ -74,7 +74,7 @@
         <div slot="label">Corona-Ampel-Regeln</div>
       </FooterButton>
     </a>
-    <a href="./impressum" title="Zum Impressum">
+    <a href="./impressum/" title="Zum Impressum">
       <FooterButton>
         <div slot="icon">
           <svg

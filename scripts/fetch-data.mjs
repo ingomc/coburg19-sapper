@@ -41,7 +41,7 @@ const getNewCasesEndpoint = (data) => {
 };
 
 const getAllCasesEndpoint = (data) => {
-  let date =  moment().subtract(allCasesMonths, 'months').format('YYYY-MM-DD');
+  let date = moment().subtract(allCasesMonths, 'months').format('YYYY-MM-DD');
   let _endpoint = endpointAllCases.replace('${data.RS}', data.RS).replace('${date}', date);
   // console.log(_endpoint);
   return _endpoint;
@@ -73,7 +73,7 @@ const wellFormAllCases = (data) => {
           borderColor: '#4e8d26',
           data: [],
         },
-      ]
+      ],
     },
     recovered: {
       datasets: [
@@ -88,14 +88,14 @@ const wellFormAllCases = (data) => {
           borderColor: ' #f3b700',
           data: [],
         },
-      ]
-    }
+      ],
+    },
   };
 
   data
-  .filter(function (value, index, Arr) {
-    return index % allCasesPeriod == 0;
-  })
+    .filter(function (value, index, Arr) {
+      return index % allCasesPeriod == 0;
+    })
     .map((item) => {
       const day = new Date(item.attributes.Meldedatum);
       const cases = item.attributes.SummeFall;
@@ -104,8 +104,8 @@ const wellFormAllCases = (data) => {
       function setDataObject(category) {
         return {
           t: day,
-          y: category
-        }
+          y: category,
+        };
       }
       newJson.sick.datasets[0].data.push(setDataObject(cases));
       newJson.sick.datasets[1].data.push(setDataObject(recovered));

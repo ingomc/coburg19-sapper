@@ -69,9 +69,13 @@
 </script>
 
 <svelte:head>
+  <meta
+    property="og:url"
+    href="{`https://www.corona-ampel-coburg.de${!!segment ? `/${segment}/` : ''}`}"
+  />
   <link
     rel="canonical"
-    href="{`https://www.corona-ampel-coburg.de${!!segment ? `/${segment}` : ''}`}"
+    href="{`https://www.corona-ampel-coburg.de${!!segment ? `/${segment}/` : ''}`}"
   />
 </svelte:head>
 

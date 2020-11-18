@@ -130,7 +130,6 @@
   import Social from '../components/Social.svelte';
 
   export let city;
-  export let slug;
 
   // console.log(city.allCases);
   let months = 2;
@@ -221,8 +220,6 @@
     property="og:description"
     content="{`⚠️ Alle aktuellen Zahlen für ${city.name}: ⚠️ ${city.newCases} neue Fälle - ⚠️ Aktuelle Inzidenz: {city.incidence}`}"
   />
-  <meta property="og:url" content="{`https://www.corona-ampel-coburg.de/${slug}`}" />
-  <link rel="canonical" href="{`https://www.corona-ampel-coburg.de/${slug}`}" />
 </svelte:head>
 
 <div class="container">

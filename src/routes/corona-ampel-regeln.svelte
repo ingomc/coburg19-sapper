@@ -20,8 +20,6 @@
     property="og:description"
     content="Alle Corona-Ampel Regeln und  ⚠️ alle aktuellen Zahlen für Coburg und Umgebung!"
   />
-  <meta property="og:url" content="https://www.corona-ampel-coburg.de/corona-ampel-regeln" />
-  <link rel="canonical" href="https://www.corona-ampel-coburg.de/corona-ampel-regeln" />
 </svelte:head>
 
 <div>

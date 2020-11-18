@@ -10,7 +10,6 @@ self.addEventListener('activate', function (e) {
     });
 });
 
-
 // import { timestamp, files, shell } from '@sapper/service-worker';
 
 // const ASSETS = `cache${timestamp}`;
