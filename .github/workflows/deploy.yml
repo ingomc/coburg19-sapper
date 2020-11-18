@@ -27,6 +27,13 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: ${{ runner.os }}-node-
 
+      - name: 'Automated Version Bump'
+        uses: 'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          skip-tag: 'true'
+
       - name: Install
         run: npm i
 
@@ -41,9 +48,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./__sapper__/export
-
-      - name: Bump Version
-        run: npm version patch
 
       - name: Artifact
         uses: actions/upload-artifact@v2
