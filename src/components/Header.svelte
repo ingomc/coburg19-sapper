@@ -1,18 +1,18 @@
 <style>
   .header {
     display: block;
+    grid-area: header;
     position: sticky;
     top: 0;
     z-index: 10;
-    grid-area: header;
   }
 
   header {
+    background-color: var(--bg-200);
+    box-shadow: var(--box-shadow);
     display: block;
     position: relative;
-    background-color: var(--bg-200);
     text-align: center;
-    box-shadow: var(--box-shadow);
     z-index: 10;
   }
 
@@ -24,15 +24,15 @@
 
   h1 {
     font-size: 5vw;
-    text-transform: uppercase;
     margin: 0;
     padding: 0;
+    text-transform: uppercase;
   }
 
   h2 {
     font-size: 2.2vw;
-    padding: 0 1rem;
     margin: 0;
+    padding: 0 1rem;
   }
 
   @media (min-width: 768px) {
@@ -46,17 +46,16 @@
   }
   @media (min-width: 1024px) {
     .wrapper {
-      display: inline-flex;
-      justify-content: flex-start;
       align-items: center;
+      display: inline-flex;
       justify-content: center;
     }
   }
 
   .message {
-    position: absolute;
     bottom: -3rem;
     left: 0;
+    position: absolute;
     right: 0;
     text-align: center;
     z-index: 5;

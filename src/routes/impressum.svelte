@@ -2,13 +2,14 @@
   button {
     cursor: pointer;
   }
+
   .spende {
-    display: inline-block;
-    border: 0;
-    outline: none;
-    border-radius: 2rem;
-    padding: var(--spacing-xs) var(--spacing);
     background-color: var(--warning-bg);
+    border: 0;
+    border-radius: 2rem;
+    display: inline-block;
+    outline: none;
+    padding: var(--spacing-xs) var(--spacing);
   }
 </style>
 

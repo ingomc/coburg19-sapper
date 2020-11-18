@@ -6,28 +6,28 @@
   }
 
   .resp-sharing-button__link {
-    text-decoration: none;
     color: var(--color);
     margin: 0.5em;
+    text-decoration: none;
   }
 
   .resp-sharing-button {
     border-radius: 5px;
-    transition: 25ms ease-out;
     padding: 0.5em 0.75em;
+    transition: 25ms ease-out;
   }
 
   .resp-sharing-button__icon svg {
-    width: 1em;
     height: 1em;
     margin-right: 0.4em;
     vertical-align: top;
+    width: 1em;
   }
 
   /* Non solid icons get a stroke */
   .resp-sharing-button__icon {
-    stroke: var(--color);
     fill: none;
+    stroke: var(--color);
   }
 
   /* Solid icons get a fill */

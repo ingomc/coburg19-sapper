@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json.schemastore.org/stylelintrc.json",
+  "extends": "stylelint-config-sass-guidelines",
+  "defaultSeverity": "error",
+  "ignoreFiles": [
+    "__sapper__",
+    "static",
+    "node_modules"
+  ],
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-declaration-block-no-ignored-properties",
+    "stylelint-high-performance-animation"
+  ],
+  "rules": {
+    "selector-class-pattern": "^[a-z][a-z0-9_-]+$",
+    "selector-id-pattern": "^[a-z][a-z0-9_-]+$",
+    "declaration-no-important": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "function-parentheses-space-inside": null,
+    "no-descending-specificity": null,
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-no-shorthand-property-overrides": true,
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignore": [
+          "custom-elements"
+        ]
+      }
+    ],
+    "order/order": null,
+    "plugin/declaration-block-no-ignored-properties": true,
+    "plugin/no-low-performance-animation-properties": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "scss/dollar-variable-pattern": null
+  }
+}

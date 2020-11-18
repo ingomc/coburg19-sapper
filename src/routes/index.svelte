@@ -7,14 +7,14 @@
   /* Remove default padding */
   ul,
   li {
-    padding: 0;
     list-style: none;
+    padding: 0;
   }
 
   ul {
     display: grid;
-    grid-template-columns: 1fr;
     grid-gap: var(--spacing);
+    grid-template-columns: 1fr;
   }
   @media (min-width: 768px) {
     ul {
@@ -32,10 +32,11 @@
     /* damit die Höhe 100% auf allen Browsern hat */
     display: grid;
   }
+
   .social {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
   }
 </style>
 

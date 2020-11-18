@@ -9,7 +9,6 @@ Sitemap: http://www.corona-ampel-coburg.de/sitemap.xml
 # ===================================
 
 User-agent: *
-Disallow: /impressum/
 
 # ===================================
 # Schließe folgende Spider komplett aus:

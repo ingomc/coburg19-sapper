@@ -1,13 +1,13 @@
 <style>
   .message {
-    display: inline-flex;
-    justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    padding: var(--spacing-sm) var(--spacing);
     background-color: var(--bg-200);
     border-radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0 auto;
     max-width: 700px;
+    padding: var(--spacing-sm) var(--spacing);
     text-align: center;
   }
 
@@ -16,14 +16,15 @@
   }
 
   .icon {
-    margin-right: var(--spacing);
     animation: rotate 0.7s ease-in-out infinite forwards;
+    margin-right: var(--spacing);
     transform-origin: 50% 50%;
   }
   @keyframes rotate {
     from {
       transform: rotate(0deg) scaleX(-1);
     }
+
     to {
       transform: rotate(360deg) scaleX(-1);
     }

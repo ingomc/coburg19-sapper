@@ -1,21 +1,22 @@
 <style>
   .spinner {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
+    animation: rotate 0.3s linear infinite;
     border: 2px solid rgba(255, 255, 255, 0.4);
     border-bottom-color: var(--color);
-    animation: rotate 0.3s linear infinite;
+    border-radius: 50%;
+    display: inline-block;
+    height: 1rem;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    width: 1rem;
     z-index: var(--z-index--loading);
   }
   @keyframes rotate {
     from {
       transform: rotate(0deg);
     }
+
     to {
       transform: rotate(360deg);
     }

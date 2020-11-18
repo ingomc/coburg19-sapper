@@ -1,14 +1,15 @@
 <style>
   main {
+    box-sizing: border-box;
     grid-area: main;
+    margin: 0 auto;
+    max-width: var(--max-width);
+    overflow: hidden;
+    padding: var(--spacing-sm);
     position: relative;
     width: 100%;
-    max-width: var(--max-width);
-    padding: var(--spacing-sm);
-    margin: 0 auto;
-    box-sizing: border-box;
-    overflow: hidden;
   }
+
   .loading {
     opacity: 0.5;
   }

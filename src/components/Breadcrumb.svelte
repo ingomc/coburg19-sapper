@@ -1,22 +1,24 @@
 <style>
   .container {
-    width: 100%;
     grid-area: breadcrumb;
     margin: 0 auto;
     max-width: var(--max-width);
+    width: 100%;
   }
 
   .breadcrumb {
-    text-transform: uppercase;
+    color: var(--bg-50);
     font-size: 80%;
     padding: var(--spacing);
-    color: var(--bg-50);
+    text-transform: uppercase;
   }
+
   a {
     color: var(--bg-50);
-    transition: color 0.3s ease-in-out;
     text-decoration: none;
+    transition: color 0.3s ease-in-out;
   }
+
   a:hover {
     color: var(--color);
   }

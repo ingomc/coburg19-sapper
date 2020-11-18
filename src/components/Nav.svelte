@@ -1,14 +1,14 @@
 <style>
   nav {
     background-color: var(--body-bg);
-    position: sticky;
-    top: 0;
-    right: 0;
-    left: 0;
-    grid-area: header;
     border-bottom: 1px solid rgba(255, 62, 0, 0.1);
     font-weight: 300;
+    grid-area: header;
+    left: 0;
     padding: 0 1em;
+    position: sticky;
+    right: 0;
+    top: 0;
     z-index: var(--z-index--header);
   }
 
@@ -19,9 +19,9 @@
 
   /* clearfix */
   ul::after {
+    clear: both;
     content: '';
     display: block;
-    clear: both;
   }
 
   li {
@@ -30,24 +30,24 @@
   }
 
   [aria-current] {
-    position: relative;
     display: inline-block;
+    position: relative;
   }
 
   [aria-current]::after {
-    position: absolute;
-    content: '';
-    width: calc(100% - 1em);
-    height: 2px;
     background-color: rgb(255, 62, 0);
-    display: block;
     bottom: -1px;
+    content: '';
+    display: block;
+    height: 2px;
+    position: absolute;
+    width: calc(100% - 1em);
   }
 
   a {
-    text-decoration: none;
-    padding: 1em 0.5em;
     display: block;
+    padding: 1em 0.5em;
+    text-decoration: none;
   }
 </style>
 

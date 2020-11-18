@@ -2,28 +2,32 @@
   section {
     grid-area: footer;
   }
+
   footer {
-    padding: var(--spacing);
     background-color: var(--bg-200);
     font-size: 0.75rem;
+    padding: var(--spacing);
     text-align: center;
   }
+
   .update {
-    text-align: center;
     color: var(--bg-100);
     padding: var(--spacing-sm);
+    text-align: center;
   }
+
   nav a {
     display: block;
     text-decoration: none;
   }
   @media (min-width: 768px) {
     nav {
+      align-items: center;
       display: flex;
       flex-direction: row;
       justify-content: center;
-      align-items: center;
     }
+
     nav a {
       margin: var(--spacing);
     }
@@ -31,8 +35,8 @@
 
   svg {
     display: block;
-    width: 1.5em;
     height: 1.5em;
+    width: 1.5em;
   }
 </style>
 

@@ -2,8 +2,8 @@
   .container {
     --font-size-small: 60%;
     display: grid;
-    width: 100%;
     grid-gap: var(--spacing);
+    width: 100%;
   }
 
   .container--aside {
@@ -11,35 +11,35 @@
   }
 
   .row {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
 
   .social {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
   }
 
   .card {
-    border-radius: 4px;
-    padding: var(--spacing);
     background-color: var(--card-bg);
+    border-radius: 4px;
     color: var(--card-color);
     max-width: 100%;
     overflow: hidden;
+    padding: var(--spacing);
   }
 
   .card--light {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    font-size: var(--font-size-small);
     justify-content: space-between;
+    text-align: center;
     --card-bg: var(--bg-200);
     --card-color: var(--color);
-    font-size: var(--font-size-small);
   }
 
   .card--ghost {
@@ -50,12 +50,12 @@
 
   .text--big {
     display: block;
-    padding-top: var(--spacing-xs);
     font-size: 1.5em;
     font-weight: 600;
     max-width: 100%;
-    text-overflow: ellipsis;
     overflow: hidden;
+    padding-top: var(--spacing-xs);
+    text-overflow: ellipsis;
   }
 
   .incidence {
@@ -65,33 +65,34 @@
 
   .label {
     max-width: 100%;
-    text-overflow: ellipsis;
     overflow: hidden;
     padding-right: var(--spacing);
+    text-overflow: ellipsis;
   }
 
   .number {
     font-weight: 600;
   }
+
   .number--big {
-    padding-top: var(--spacing-xs);
     font-size: 3em;
+    padding-top: var(--spacing-xs);
   }
 
   .charts-section {
-    margin: 2rem 0;
     display: grid;
     grid-gap: var(--spacing);
     grid-template-columns: 1fr;
+    margin: 2rem 0;
     text-align: center;
   }
 
   section {
+    background-color: var(--bg-200);
+    border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: var(--border-radius);
-    background-color: var(--bg-200);
     padding: var(--spacing-xs) var(--spacing);
   }
 
@@ -99,6 +100,7 @@
     .container--header {
       grid-template-columns: 1fr 1fr;
     }
+
     .container--details {
       grid-template-columns: 1fr 1fr;
     }
