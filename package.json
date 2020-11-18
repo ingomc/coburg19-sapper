@@ -8,6 +8,7 @@
     "export": "sapper export --legacy --concurrent 1",
     "start": "node __sapper__/build",
     "data": "node --experimental-json-modules ./scripts/fetch-data.mjs",
+    "version": "node --experimental-json-modules ./scripts/write-version.mjs",
     "prettier": "prettier --write .",
     "lint:css": "stylelint **/*.{css,html,js,md,mjs,svelte,svg,ts} --fix"
   },

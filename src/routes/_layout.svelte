@@ -27,7 +27,6 @@
 
 <script>
   import { stores } from '@sapper/app';
-  import { afterUpdate, onMount } from 'svelte';
   import Loading from '../components/Loading.svelte';
   import Header from '../components/Header.svelte';
   import UpdateMessage from '../components/UpdateMessage.svelte';
@@ -93,3 +92,5 @@
 {#if segment !== 'impressum'}
   <Footer update="{update}" />
 {/if}
+
+<div class="hidden">v2.0.1</div>
