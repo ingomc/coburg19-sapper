@@ -68,6 +68,13 @@
   });
 </script>
 
+<svelte:head>
+  <link
+    rel="canonical"
+    href="{`https://www.corona-ampel-coburg.de${!!segment ? `/${segment}` : ''}`}"
+  />
+</svelte:head>
+
 {#if $preloading}
   <Loading />
 {/if}
