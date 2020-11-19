@@ -41,10 +41,17 @@
   let title = 'Corona';
   let siteId = '5';
 
-  page.subscribe(({ path, params, query }) => {
+  page.subscribe(({ host, path, params, query }) => {
     let url = 'https://tracking.andre-bellmann.de/phpfortr.php';
     if (typeof fetch == 'function') {
-      let urlParams = [`?action_name=${title} - ${$page.path}`, `&rec=1`, `&idsite=${siteId}`];
+      let urlParams = [
+        `?action_name=${title} - ${$page.path}`,
+        `&rec=1`,
+        `&idsite=${siteId}`,
+        `&url=${host}${path.length > 1 ? path : ''}${
+          Object.entries(query).length !== 0 ? encodeURIComponent(JSON.stringify(query)) : ''
+        }`,
+      ];
 
       urlParams.map((item) => {
         url += item;
