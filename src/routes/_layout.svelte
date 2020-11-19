@@ -48,9 +48,7 @@
         `?action_name=${title} - ${$page.path}`,
         `&rec=1`,
         `&idsite=${siteId}`,
-        `&url=${host}${path.length > 1 ? path : ''}${
-          Object.entries(query).length !== 0 ? encodeURIComponent(JSON.stringify(query)) : ''
-        }`,
+        `&rand=${Date.now()}`,
       ];
 
       urlParams.map((item) => {
