@@ -6,7 +6,7 @@
     "**/*.{css,html,js,md,mjs,svelte,svg,ts}": [
       "prettier --write .",
       "lint:css",
-      "npm run version"
+      "npm run version --"
     ]
   }
 }
