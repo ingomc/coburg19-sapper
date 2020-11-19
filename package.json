@@ -1,7 +1,7 @@
 {
   "name": "Corona-Ampel-Coburg",
   "description": "Corona-Ampel-Coburg",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
