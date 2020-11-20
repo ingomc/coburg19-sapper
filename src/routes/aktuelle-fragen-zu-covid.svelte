@@ -76,4 +76,17 @@
       </div>
     </div>
   </div>
+
+  <!-- Frage -->
+  <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Sind Fahrgemeinschaften erlaubt?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <div itemprop="text">
+        Private Fahrgemeinschaften sind unter Einhaltung der Kontaktbeschränkungen möglich. Das
+        heißt diese sind mit den Angehörigen des eigenen Hausstands sowie zusätzlich den Angehörigen
+        eines weiteren Hausstands, solange dabei eine Gesamtzahl von insgesamt höchstens zehn
+        Personen nicht überschritten wird, möglich.
+      </div>
+    </div>
+  </div>
 </div>
