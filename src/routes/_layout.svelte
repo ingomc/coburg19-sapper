@@ -32,45 +32,12 @@
   import UpdateMessage from '../components/UpdateMessage.svelte';
   import Breadcrumb from '../components/Breadcrumb.svelte';
   import Footer from '../components/Footer.svelte';
+  import Matomo from '../components/Matomo.svelte';
 
   export let update;
   export let segment;
 
-  const { page, preloading } = stores();
-
-  let title = 'Corona';
-  let siteId = '5';
-
-  page.subscribe(({ host, path, params, query }) => {
-    let url = 'https://tracking.andre-bellmann.de/phpfortr.php';
-    if (typeof fetch == 'function') {
-      let urlParams = [
-        `?action_name=${title} - ${$page.path}`,
-        `&rec=1`,
-        `&idsite=${siteId}`,
-        `&rand=${Date.now()}`,
-      ];
-
-      urlParams.map((item) => {
-        url += item;
-      });
-      url = encodeURI(url.replace(/\n|\r/g, ''));
-
-      // console.log(path);
-      // console.log($page.path);
-      // console.log(url);
-      const tracking = fetch(url, {
-        method: 'GET',
-        mode: 'cors',
-        cache: 'no-cache',
-      })
-        .then((_res) => _res)
-        .then(() => {
-          // console.log("delete params");
-          urlParams = [];
-        });
-    }
-  });
+  const { preloading } = stores();
 </script>
 
 <svelte:head>
@@ -94,9 +61,6 @@
   {/if}
 </Header>
 
-<!-- 
-<Nav segment="{segment}" /> -->
-
 {#if segment}
   <Breadcrumb data="{segment}" />
 {/if}
@@ -108,3 +72,5 @@
 {#if segment !== 'impressum'}
   <Footer update="{update}" />
 {/if}
+
+<Matomo />
