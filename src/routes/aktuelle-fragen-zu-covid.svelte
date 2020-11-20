@@ -83,9 +83,9 @@
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <div itemprop="text">
         Private Fahrgemeinschaften sind unter Einhaltung der Kontaktbeschränkungen möglich. Das
-        heißt diese sind mit den Angehörigen des eigenen Hausstands sowie zusätzlich den Angehörigen
-        eines weiteren Hausstands, solange dabei eine Gesamtzahl von insgesamt höchstens zehn
-        Personen nicht überschritten wird, möglich.
+        heißt bei roter Wanrstufe: Fahrgemeinschaften sind mit den Angehörigen des eigenen
+        Hausstands sowie zusätzlich den Angehörigen eines weiteren Hausstands, solange dabei eine
+        Gesamtzahl von insgesamt höchstens FÜNF Personen nicht überschritten wird, möglich.
       </div>
     </div>
   </div>
