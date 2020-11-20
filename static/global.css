@@ -13,6 +13,7 @@
   --warning-contrast: #443604;
   --info-bg: #4e8d26;
   --info-contrast: #0c2f08;
+  --font-size-base: 0.2rem;
 
   --max-width: 76em;
 
@@ -92,4 +93,28 @@ a {
 small {
   font-size: 0.75rem;
   font-weight: 400;
+}
+
+h1 {
+  font-size: calc(8 * var(--font-size-base));
+}
+
+h2 {
+  font-size: calc(7 * var(--font-size-base));
+}
+
+h3 {
+  font-size: calc(6 * var(--font-size-base));
+}
+
+h4 {
+  font-size: calc(5 * var(--font-size-base));
+}
+
+h5 {
+  font-size: calc(4 * var(--font-size-base));
+}
+
+h6 {
+  font-size: calc(3 * var(--font-size-base));
 }

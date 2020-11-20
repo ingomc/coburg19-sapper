@@ -6,10 +6,12 @@ import moment from 'moment';
 const allCasesMonths = 2; // last 2 moths
 const allCasesPeriod = 2; // every second day
 
-const jsTemplate = (jsonLocations, jsonUpdate) => `
+const jsTemplate = (jsonLocations, jsonUpdate, jsonGermanNew, jsonBavariaNew) => `
 const data = {
   "citys": ${jsonLocations},
-  "update": ${jsonUpdate}
+  "update": ${jsonUpdate},
+  "germannew": ${jsonGermanNew},
+  "bavarianew": ${jsonBavariaNew},
 }
 
 export default data;
@@ -23,6 +25,10 @@ const endpointNewCases =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
 const endpointAllCases =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/Covid19_RKI_Sums/FeatureServer/0/query?f=json&where=(Meldedatum%3Etimestamp%20%27${date}%2022%3A59%3A59%27)%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Meldedatum%20asc&resultOffset=0&resultRecordCount=32000&resultType=standard&cacheHint=true';
+const endpointGermanNewCases =
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=NeuerFall%20IN(1%2C%20-1)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
+const endpointBavariaNewCases =
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(Bundesland%3D%27Bayern%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
 
 const getLocationsEndpoint = () => {
   let _endpoint = endpoint;
@@ -167,7 +173,20 @@ fetch(getLocationsEndpoint())
 
     const jsonLocations = JSON.stringify(json.locations);
     const jsonDate = JSON.stringify(json.date);
-    fs.writeFileSync(endFileDataJs, jsTemplate(jsonLocations, jsonDate));
+    const jsonGermanNew = JSON.stringify(
+      await fetch(endpointGermanNewCases)
+        .then((res) => res.json())
+        .then((_json) => _json.features[0].attributes.value),
+    );
+    const jsonBavariaNew = JSON.stringify(
+      await fetch(endpointBavariaNewCases)
+        .then((res) => res.json())
+        .then((_json) => _json.features[0].attributes.value),
+    );
+    fs.writeFileSync(
+      endFileDataJs,
+      jsTemplate(jsonLocations, jsonDate, jsonGermanNew, jsonBavariaNew),
+    );
     console.log('\x1b[42m\x1b[30m%s\x1b[0m', ` ✔ Datei gespeichert: ${endFileDataJs}`);
   })
   .catch((error) => {

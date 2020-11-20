@@ -12,7 +12,7 @@
 
   .update {
     color: var(--bg-100);
-    padding: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-xl);
     text-align: center;
   }
 
@@ -20,7 +20,7 @@
     display: block;
     text-decoration: none;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     nav {
       align-items: center;
       display: flex;
@@ -29,7 +29,7 @@
     }
 
     nav a {
-      margin: var(--spacing);
+      margin: var(--spacing) var(--spacing-xs);
     }
   }
 
@@ -55,6 +55,24 @@
         datetime="{moment(update.replace(' Uhr', ''), 'DD.MM.YYYY, HH:mm').toISOString()}"
       >{update}</time>
     </div>
+    <a href="./aktuelle-fragen-zu-covid/" title="FAQ">
+      <FooterButton>
+        <div slot="icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            aria-hidden="true"
+            focusable="false"
+            role="img"
+            viewBox="0 0 24 24"
+          ><path
+              d="M13 8a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4a4 4 0 0 1 4 4m4 10v2H1v-2c0-2.21 3.58-4 8-4s8 1.79 8 4m3.5-3.5V16H19v-1.5h1.5m-2-5H17V9a3 3 0 0 1 3-3a3 3 0 0 1 3 3c0 .97-.5 1.88-1.29 2.41l-.3.19c-.57.4-.91 1.01-.91 1.7v.2H19v-.2c0-1.19.6-2.3 1.59-2.95l.29-.19c.39-.26.62-.69.62-1.16A1.5 1.5 0 0 0 20 7.5A1.5 1.5 0 0 0 18.5 9v.5z"
+              fill="currentColor"
+            ></path></svg>
+        </div>
+        <div slot="label">Häufige Fragen</div>
+      </FooterButton>
+    </a>
     <a href="./corona-ampel-regeln/" title="Alle Regeln erklärt">
       <FooterButton>
         <div slot="icon">
