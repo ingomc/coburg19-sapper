@@ -130,7 +130,7 @@
             besprechen)
           </li>
           <li>Kontakt zu Corona-Kranken hatten</li>
-          <li>in einem Gesundheitsberuf</li>
+          <li>in einem Gesundheitsberuf arbeiten</li>
           <li>nach bestimmten Reisen</li>
         </ul>
       </div>
