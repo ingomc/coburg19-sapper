@@ -1,4 +1,6 @@
 import data from './_data';
+import moment from 'moment';
+
 const fs = require('fs');
 
 const BASE_URL = 'https://www.corona-ampel-coburg.de';
@@ -20,9 +22,12 @@ const render = (pages, citys) => `<?xml version="1.0" encoding="UTF-8" ?>
   ${pages
     .map(
       (page) => `
-    <url><loc>${BASE_URL}${!!page ? `/${page}/` : ''}</loc><priority>${
-        page == 'impressum' ? '0.50' : '0.85'
-      }</priority></url>
+    <url>
+      <loc>${BASE_URL}${!!page ? `/${page}/` : ''}</loc>
+      <lastmod>${moment.utc().format()}</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>${page == 'impressum' ? '0.50' : '0.85'}</priority>
+    </url>
   `,
     )
     .join('\n')}
@@ -31,6 +36,8 @@ const render = (pages, citys) => `<?xml version="1.0" encoding="UTF-8" ?>
       (city) => `
       <url>
         <loc>${BASE_URL}/${city.slug}/</loc>
+        <lastmod>${moment.utc().format()}</lastmod>
+        <changefreq>daily</changefreq>
         <priority>0.90</priority>
       </url>
     `,
