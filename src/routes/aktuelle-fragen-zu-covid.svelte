@@ -92,6 +92,89 @@
 
   <!-- Frage -->
   <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Wie lange ist eine mit COVID-19 infizierte Person ansteckend?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <div itemprop="text">
+        Der genaue Zeitraum, in dem eine mit dem Coronavirus SARS-CoV-2 infizierte Person andere
+        anstecken kann, ist noch nicht klar festgelegt. Man geht aktuell davon aus, dass die
+        Ansteckungsfähigkeit zu Beginn am größten ist und dass ein erheblicher Teil der
+        Übertragungen bereits vor dem Auftreten erster Krankheitszeichen erfolgt. Die
+        Ansteckungsfähigkeit nimmt im Laufe der Erkrankung ab. Bei milden Verlauf der Krankheit ist
+        eine Ansteckung nach mehr als 10 Tagen unwahrscheinlich. Bei schweren Erkrankungen können
+        Betroffene auch noch wesentlich länger ansteckend sein.
+      </div>
+    </div>
+  </div>
+
+  <!-- Frage -->
+  <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Wie wird Corona übertragen</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <div itemprop="text">
+        Das Coronavirus wird durch Tröpfchen- oder Schmierinfektion übertragen, d.h. die Übertragung
+        kann über die Schleimhäute oder auch indirekt über die Hände erfolgen. Unsere Schleimhäute
+        nehmen das Virus unter anderem auch durch die eingeatmete Luft auf.
+      </div>
+    </div>
+  </div>
+
+  <!-- Frage -->
+  <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Wann muss ich mich auf Corona testen lassen</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <div itemprop="text">
+        Wenn Sie ...
+        <ul>
+          <li>
+            typische Symptome (siehe Oben) für Corona aufweisen (Vorher mit Hausarzt telefonisch
+            besprechen)
+          </li>
+          <li>Kontakt zu Corona-Kranken hatten</li>
+          <li>in einem Gesundheitsberuf</li>
+          <li>nach bestimmten Reisen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frage -->
+  <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Sind Fahrgemeinschaften erlaubt?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <div itemprop="text">
+        Die häufigsten Symptome sind Fieber über 38°C, Husten, Schnupfen, Kopf- und
+        Gliederschmerzen, Abgeschlagenheit sowie Kratzen im Hals. Bei einigen Personen kommt es zu
+        einem vorübergehenden Verlust des Geruchs- und Geschmackssinns, dessen Ursache derzeit
+        erforscht wird.
+        <br />
+        <br />
+        Typische Symptome sind:
+        <ul>
+          <li>Husten</li>
+          <li>Fieber</li>
+          <li>Schnupfen</li>
+          <li>Geruchs- und Geschmacksstörungen</li>
+        </ul>
+        Auch diese Symptome können auf COVID-19 hinweisen:
+
+        <ul>
+          <li>Kurzatmigkeit, Atemnot</li>
+          <li>Halsschmerzen</li>
+          <li>Kopf- und Gliederschmerzen</li>
+          <li>Bauchschmerzen</li>
+          <li>Magen-Darm-Symptome</li>
+          <li>Hautausschlag</li>
+          <li>Augenbindehautentzündung</li>
+          <li>Lymphknotenschwellung</li>
+          <li>Schläfrigkeit</li>
+          <li>Bewusstseinsstörungen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frage -->
+  <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <h3 itemprop="name">Sind Fahrgemeinschaften erlaubt?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <div itemprop="text">
