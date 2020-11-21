@@ -9,6 +9,7 @@
     position: relative;
     width: 100%;
     text-align: center;
+    margin: var(--spacing-lg) auto;
   }
   .statistics:after {
     content: '';
@@ -22,12 +23,14 @@
   }
   .column {
     flex: 1;
+    padding: var(--spacing-sm);
   }
 
   .label {
     margin-top: 0;
+    margin-bottom: var(--spacing-sm);
     color: var(--bg-100);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 400;
   }
   .cases {
