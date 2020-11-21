@@ -139,7 +139,7 @@
 
   <!-- Frage -->
   <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Sind Fahrgemeinschaften erlaubt?</h3>
+    <h3 itemprop="name">Was sind die Symptome von Corona (COVID-19)?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <div itemprop="text">
         Die häufigsten Symptome sind Fieber über 38°C, Husten, Schnupfen, Kopf- und
@@ -156,7 +156,6 @@
           <li>Geruchs- und Geschmacksstörungen</li>
         </ul>
         Auch diese Symptome können auf COVID-19 hinweisen:
-
         <ul>
           <li>Kurzatmigkeit, Atemnot</li>
           <li>Halsschmerzen</li>
