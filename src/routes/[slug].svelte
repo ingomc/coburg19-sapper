@@ -26,6 +26,11 @@
     text-align: center;
     color: var(--bg-50);
   }
+  .percent {
+    color: var(--bg-50);
+    font-weight: 100;
+    padding-right: var(--spacing-sm);
+  }
   .card {
     background-color: var(--card-bg);
     border-radius: 4px;
@@ -278,7 +283,10 @@
     <div class="container container--details">
       <div class="card row card--ghost">
         <div class="label">Betten frei</div>
-        <div class="number">{city.betten_frei}</div>
+        <div class="number">
+          <span class="percent">({Number(city.Anteil_betten_frei).toFixed(0)}%)</span>
+          {city.betten_frei}
+        </div>
       </div>
       <div class="card row card--ghost">
         <div class="label">Betten belegt</div>
@@ -286,7 +294,10 @@
       </div>
       <div class="card row card--ghost">
         <div class="label">Betten belegt mit Covid-19</div>
-        <div class="number">{city.faelle_covid_aktuell}</div>
+        <div class="number">
+          <span class="percent">({Number(city.Anteil_COVID_betten).toFixed(0)}%)</span>
+          {city.faelle_covid_aktuell}
+        </div>
       </div>
       <div class="card row card--ghost">
         <div class="label">Covid-19-Fälle die beatmet werden</div>
