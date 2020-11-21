@@ -3,6 +3,65 @@
     text-decoration: none;
   }
 
+  /* Allgemeine Statistiken  */
+  .statistics {
+    display: flex;
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+  .statistics:after {
+    content: '';
+    background-color: var(--bg-100);
+    display: block;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+  }
+  .column {
+    flex: 1;
+  }
+
+  .label {
+    margin-top: 0;
+    color: var(--bg-100);
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  .cases {
+    color: var(--bg-50);
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  @media (min-width: 768px) {
+    .statistics {
+      display: block;
+      width: auto;
+      text-align: center;
+      white-space: nowrap;
+      margin: 0 auto;
+    }
+    .statistics:after {
+      display: none;
+    }
+    .column {
+      display: inline-flex;
+    }
+    .label {
+      margin: 0 0.5rem;
+      font-size: 0.8rem;
+    }
+    .cases {
+      margin: 0 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  /* Landkreise  */
+
   /* reset liststyling */
   /* Remove default padding */
   ul,
@@ -59,7 +118,7 @@
 
   export let data;
 
-  const { citys, update } = data;
+  const { citys, germannew, bavarianew } = data;
   let sortedData = [];
   citys.sort((a, b) => {
     if (a.name < b.name) {
@@ -97,6 +156,17 @@
     content="🚦 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Coburg, Bamberg, Kronach, Schweinfurt, Lichtenfels, Haßberge, Hildburghausen und Sonneberg !  ⚠️ Alle aktuellen Zahlen ⚠️ Alle aktuellen Fälle"
   />
 </svelte:head>
+
+<section class="statistics">
+  <div class="column left">
+    <h3 class="label">Neue Fälle in Deutschland</h3>
+    <div class="cases">+{germannew.toLocaleString('de')}</div>
+  </div>
+  <div class="column right">
+    <h3 class="label">Neue Fälle in Bayern</h3>
+    <div class="cases">+{bavarianew.toLocaleString('de')}</div>
+  </div>
+</section>
 
 <nav>
   <ul>
