@@ -22,6 +22,10 @@
     justify-content: center;
   }
 
+  .title {
+    text-align: center;
+    color: var(--bg-50);
+  }
   .card {
     background-color: var(--card-bg);
     border-radius: 4px;
@@ -269,6 +273,33 @@
       <div class="number">{Number(city.cases7_bl_per_100k).toFixed(2)}</div>
     </div>
   </div>
+  {#if city.betten_frei !== null}
+    <div class="title">Intensivstation</div>
+    <div class="container container--details">
+      <div class="card row card--ghost">
+        <div class="label">Betten frei</div>
+        <div class="number">{city.betten_frei}</div>
+      </div>
+      <div class="card row card--ghost">
+        <div class="label">Betten belegt</div>
+        <div class="number">{city.betten_belegt}</div>
+      </div>
+      <div class="card row card--ghost">
+        <div class="label">Betten belegt mit Covid-19</div>
+        <div class="number">{city.faelle_covid_aktuell}</div>
+      </div>
+      <div class="card row card--ghost">
+        <div class="label">Covid-19-Fälle die beatmet werden</div>
+        <div class="number">{city.faelle_covid_aktuell_beatmet}</div>
+      </div>
+    </div>
+  {:else}
+    <div class="title">
+      <small>
+        Keine Intensivstation-Informationen vorhanden. Intensivpatienten werden in der Regel im
+        nächsten Stadtkreis behandelt</small>
+    </div>
+  {/if}
 </div>
 <!-- <h2>COVID-19-Fälle nach Altersgruppe und Geschlecht</h2> -->
 <div class="charts-section">

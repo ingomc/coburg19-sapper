@@ -29,6 +29,8 @@ const endpointGermanNewCases =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=NeuerFall%20IN(1%2C%20-1)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
 const endpointBavariaNewCases =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(Bundesland%3D%27Bayern%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
+const endpointITS =
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/DIVI_Intensivregister_Landkreise/FeatureServer/0/query?f=json&where=AGS%3D%27${data.RS}%27&returnGeometry=false&spatialRel=esriSpatialRelIntersects&geometry=%7B%22xmin%22%3A405955.5271232863%2C%22ymin%22%3A5873740.100125852%2C%22xmax%22%3A1222914.4854350328%2C%22ymax%22%3A7507658.016749346%2C%22spatialReference%22%3A%7B%22wkid%22%3A102100%7D%7D&geometryType=esriGeometryEnvelope&inSR=102100&outFields=*&orderByFields=betten_belegt%20desc&outSR=102100&resultOffset=0&resultRecordCount=25&resultType=standard&cacheHint=false';
 
 const getLocationsEndpoint = () => {
   let _endpoint = endpoint;
@@ -38,7 +40,7 @@ const getLocationsEndpoint = () => {
     return `county = '${location.toUpperCase()}'`;
   });
   _endpoint += encodeURI(locations.join(' OR '));
-  console.log(_endpoint);
+  // console.log(_endpoint);
   return _endpoint;
 };
 
@@ -51,6 +53,11 @@ const getAllCasesEndpoint = (data) => {
   let date = moment().subtract(allCasesMonths, 'months').format('YYYY-MM-DD');
   let _endpoint = endpointAllCases.replace('${data.RS}', data.RS).replace('${date}', date);
   // console.log(_endpoint);
+  return _endpoint;
+};
+
+const getITS = (data) => {
+  let _endpoint = endpointITS.replace('${data.RS}', data.RS);
   return _endpoint;
 };
 
@@ -136,9 +143,41 @@ const handleLocation = async (location) => {
     .then((res) => res.json())
     .then((_json) => wellFormAllCases(_json.features));
 
+  // Get new Cases from API for this city
+  let itsData = await fetch(getITS(location))
+    .then((res) => res.json())
+    .then((_json) => _json.features[0]);
+
   json.date = location.last_update;
 
+  let itsDataFinalJson = {
+    betten_frei: null,
+    betten_belegt: null,
+    betten_gesamt: null,
+    Anteil_betten_frei: null,
+    faelle_covid_aktuell: null,
+    faelle_covid_aktuell_beatmet: null,
+    Anteil_covid_beatmet: null,
+    Anteil_COVID_betten: null,
+    daten_stand: null,
+  };
+
+  if (typeof itsData !== 'undefined') {
+    itsDataFinalJson = {
+      betten_frei: itsData.attributes.betten_frei,
+      betten_belegt: itsData.attributes.betten_belegt,
+      betten_gesamt: itsData.attributes.betten_gesamt,
+      Anteil_betten_frei: itsData.attributes.Anteil_betten_frei,
+      faelle_covid_aktuell: itsData.attributes.faelle_covid_aktuell,
+      faelle_covid_aktuell_beatmet: itsData.attributes.faelle_covid_aktuell_beatmet,
+      Anteil_covid_beatmet: itsData.attributes.Anteil_covid_beatmet,
+      Anteil_COVID_betten: itsData.attributes.Anteil_COVID_betten,
+      daten_stand: itsData.attributes.daten_stand,
+    };
+  }
+
   json.locations.push({
+    ...itsDataFinalJson,
     id: location.OBJECTID,
     slug: `${location.BEZ}-${location.county}`
       .replace(/\s+/g, '-')
