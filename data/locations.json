@@ -1,13 +1,16 @@
 {
   "city": "Coburg",
   "locations": [
-    "Coburg",
-    "Schweinfurt",
-    "Bamberg",
-    "Kronach",
-    "Lichtenfels",
-    "Haßberge",
-    "Hildburghausen",
-    "Sonneberg"
+    "SK Coburg",
+    "LK Coburg",
+    "SK Schweinfurt",
+    "LK Schweinfurt",
+    "SK Bamberg",
+    "LK Bamberg",
+    "LK Kronach",
+    "LK Lichtenfels",
+    "LK Haßberge",
+    "LK Hildburghausen",
+    "LK Sonneberg"
   ]
 }

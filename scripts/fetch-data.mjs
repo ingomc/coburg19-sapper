@@ -35,9 +35,10 @@ const getLocationsEndpoint = () => {
   // endpoint
   // + escape(GEN = '' OR GEN = '')
   const locations = data.locations.map((location) => {
-    return `GEN = '${location.toUpperCase()}'`;
+    return `county = '${location.toUpperCase()}'`;
   });
   _endpoint += encodeURI(locations.join(' OR '));
+  console.log(_endpoint);
   return _endpoint;
 };
 
@@ -139,7 +140,10 @@ const handleLocation = async (location) => {
 
   json.locations.push({
     id: location.OBJECTID,
-    slug: `${location.BEZ}-${location.GEN}`.replace(/\s+/g, '-').replace(/ß/g, 'ss').toLowerCase(),
+    slug: `${location.BEZ}-${location.county}`
+      .replace(/\s+/g, '-')
+      .replace(/ß/g, 'ss')
+      .toLowerCase(),
     district: location.BEZ,
     name: location.GEN,
     incidence: Number(location.cases7_per_100k).toFixed(2),
@@ -163,7 +167,7 @@ fetch(getLocationsEndpoint())
       data.locations.map(async (location) => {
         await Promise.all(
           _json.features.map(async (_location) => {
-            if (_location.attributes.GEN === location) {
+            if (_location.attributes.county === location) {
               await handleLocation(_location.attributes);
             }
           }),
