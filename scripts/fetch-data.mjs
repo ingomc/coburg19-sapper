@@ -179,10 +179,7 @@ const handleLocation = async (location) => {
   json.locations.push({
     ...itsDataFinalJson,
     id: location.OBJECTID,
-    slug: `${location.BEZ}-${location.county}`
-      .replace(/\s+/g, '-')
-      .replace(/ß/g, 'ss')
-      .toLowerCase(),
+    slug: `${location.BEZ}-${location.GEN}`.replace(/\s+/g, '-').replace(/ß/g, 'ss').toLowerCase(),
     district: location.BEZ,
     name: location.GEN,
     incidence: Number(location.cases7_per_100k).toFixed(2),
