@@ -1,6 +1,7 @@
 {
   "hooks": {
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "pre-push": "test"
   },
   "lint-staged": {
     "**/*.{css,html,js,md,mjs,svelte,svg,ts}": [
