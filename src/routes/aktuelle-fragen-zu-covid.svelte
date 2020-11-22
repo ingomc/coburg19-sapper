@@ -46,7 +46,7 @@
 
   <!-- Frage -->
   <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Wieviel neue Fälle Corona gibt es aktuell in Deutschland</h3>
+    <h3 itemprop="name">Wieviel neue Fälle Corona gibt es aktuell in Deutschland?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <div itemprop="text">
         Seit gestern gibt es
@@ -59,7 +59,7 @@
 
   <!-- Frage -->
   <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Wieviel neue Fälle Corona gibt es aktuell in Bayern</h3>
+    <h3 itemprop="name">Wieviel neue Fälle Corona gibt es aktuell in Bayern?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <div itemprop="text">
         Seit gestern gibt es
@@ -108,7 +108,7 @@
 
   <!-- Frage -->
   <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Wie wird Corona übertragen</h3>
+    <h3 itemprop="name">Wie wird Corona übertragen?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <div itemprop="text">
         Das Coronavirus wird durch Tröpfchen- oder Schmierinfektion übertragen, d.h. die Übertragung
@@ -120,7 +120,7 @@
 
   <!-- Frage -->
   <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Wann muss ich mich auf Corona testen lassen</h3>
+    <h3 itemprop="name">Wann muss ich mich auf Corona testen lassen?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <div itemprop="text">
         Wenn Sie ...

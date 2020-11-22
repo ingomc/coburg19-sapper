@@ -172,7 +172,7 @@
 </section>
 
 <nav>
-  <ul>
+  <ul id="hp-cardlist">
     {#each sortedData as city}
       <li>
         <a

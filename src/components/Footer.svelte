@@ -47,7 +47,7 @@
 </script>
 
 <section>
-  <nav>
+  <nav id="footer-nav">
     <div class="update">
       Stand:
       <time
