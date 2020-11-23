@@ -95,7 +95,7 @@
     <h3 itemprop="name">Wie lange ist eine mit COVID-19 infizierte Person ansteckend?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <div itemprop="text">
-        Der genaue Zeitraum, in dem eine mit dem Coronavirus SARS-CoV-2 infizierte Person andere
+        Der genaue Zeitraum, in dem eine mit dem Corona-Virus SARS-CoV-2 infizierte Person andere
         anstecken kann, ist noch nicht klar festgelegt. Man geht aktuell davon aus, dass die
         Ansteckungsfähigkeit zu Beginn am größten ist und dass ein erheblicher Teil der
         Übertragungen bereits vor dem Auftreten erster Krankheitszeichen erfolgt. Die
@@ -108,12 +108,12 @@
 
   <!-- Frage -->
   <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Wie wird Corona übertragen?</h3>
+    <h3 itemprop="name">Wie wird das Corona-Virus übertragen?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <div itemprop="text">
-        Das Coronavirus wird durch Tröpfchen- oder Schmierinfektion übertragen, d.h. die Übertragung
-        kann über die Schleimhäute oder auch indirekt über die Hände erfolgen. Unsere Schleimhäute
-        nehmen das Virus unter anderem auch durch die eingeatmete Luft auf.
+        Das Corona-Virus SARS-CoV-2 wird durch Tröpfchen- oder Schmierinfektion übertragen, d.h. die
+        Übertragung kann über die Schleimhäute oder auch indirekt über die Hände erfolgen. Unsere
+        Schleimhäute nehmen das Virus unter anderem auch durch die eingeatmete Luft auf.
       </div>
     </div>
   </div>
@@ -126,7 +126,7 @@
         Wenn Sie ...
         <ul>
           <li>
-            typische Symptome (siehe Oben) für Corona aufweisen (Vorher mit Hausarzt telefonisch
+            typische Symptome (siehe Unten) für Corona aufweisen (Vorher mit Hausarzt telefonisch
             besprechen)
           </li>
           <li>Kontakt zu Corona-Kranken hatten</li>
