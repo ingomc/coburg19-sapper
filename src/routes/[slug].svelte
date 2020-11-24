@@ -248,7 +248,7 @@
     <div class="container container--aside">
       <div class="card card--light">
         <div>Neue Fälle von gestern</div>
-        <div class="number number--big">+{city.newCases > 0 ? city.cases : '0'}</div>
+        <div class="number number--big">{city.newCases > 0 ? '+' + city.cases : '0'}</div>
       </div>
       <div class="card card--light">
         <div>Fälle der letzten 7 Tage</div>
