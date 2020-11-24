@@ -241,7 +241,7 @@
         </div>
         <div class="row">
           <div class="text--big">{city.name}</div>
-          <div class="text--big incidence">{city.incidence}</div>
+          <div class="text--big incidence">{city.incidence > 0 ? city.incidence : '0'}</div>
         </div>
       </div>
     </div>
