@@ -78,11 +78,11 @@
 <script>
   import { onMount } from 'svelte';
   let url = 'https://www.corona-ampel-coburg.de';
-  let waMessage = `Das hier ist ne coole Website ${url}`;
+  let waMessage = `Ich habe folgende Seite gefunden. Zeigt die aktuelle Corona Inzidenz der Region an. ${url}`;
 
   onMount(async () => {
     url = window.location;
-    waMessage = `Das hier ist ne coole Website ${url}`;
+    waMessage = `Ich habe folgende Seite gefunden. Zeigt die aktuelle Corona Inzidenz der Region an. ${url}`;
   });
 </script>
 

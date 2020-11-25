@@ -23,6 +23,7 @@
 </svelte:head>
 
 <div>
+  <h1>Was bedeuten die Farben der Corona-Ampel?</h1>
   <p>
     <strong><span class="darkbluetext"><span class="greentext">Grün - Inzidenz&nbsp;bis 35</span></span></strong>
   </p>
@@ -74,7 +75,7 @@
   </ul>
   <p>
     <span class="redtext"><strong>Rot - Inzidenz&nbsp;</strong></span><span class="redtext"><strong
-      >ab 50</strong></span>
+      >50 bis 100</strong></span>
   </p>
   <ul>
     <li>
@@ -88,5 +89,16 @@
       private Feiern und Treffen&nbsp;sind auf 5 Personen oder zwei Haushalte&nbsp;beschränkt. Egal
       ob draußen, daheim oder im Lokal.
     </li>
+  </ul>
+  <p>
+    <span class="redtext"><strong>Dunkel-Rot - Inzidenz&nbsp;</strong></span><span
+      class="redtext"
+    ><strong>ab 100</strong></span>
+  </p>
+  <ul>
+    <li>Es gelten die gleichen Regeln der Stufe Rot und nis auf ...</li>
+    <li>Allgemeine Sperrstunde ab 21 Uhr</li>
+    <li>Generelles Alkoholverkaufsverbot an Tankstellen ab 21 Uhr&nbsp;</li>
+    <li>Auf öffentlichen Plätzen besteht ab 21 Uhr ein Alkoholverbot.</li>
   </ul>
 </div>

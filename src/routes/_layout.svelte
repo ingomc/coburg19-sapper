@@ -55,7 +55,7 @@
   <Loading />
 {/if}
 
-<Header>
+<Header segment="{segment}">
   {#if !segment}
     <UpdateMessage>Stand: {update}</UpdateMessage>
   {/if}

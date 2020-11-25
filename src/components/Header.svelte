@@ -22,25 +22,33 @@
     text-decoration: none;
   }
 
-  h1 {
-    font-size: 5vw;
+  .h1 {
+    font-size: 4vw;
     margin: 0;
     padding: 0;
-    text-transform: uppercase;
+    font-weight: 100;
   }
 
-  h2 {
+  .h1 strong {
+    font-size: 5vw;
+  }
+
+  .h2 {
     font-size: 2.2vw;
     margin: 0;
     padding: 0 1rem;
+    font-weight: 400;
   }
 
   @media (min-width: 768px) {
-    h1 {
+    .h1 {
+      font-size: 1rem;
+    }
+    .h1 strong {
       font-size: 1.4rem;
     }
 
-    h2 {
+    .h2 {
       font-size: 0.75rem;
     }
   }
@@ -65,6 +73,9 @@
 <script>
   import { fade, fly } from 'svelte/transition';
   let visible = false;
+  export let segment;
+
+  // Message einblenden
   setTimeout(function () {
     visible = true;
   }, 1000);
@@ -76,8 +87,13 @@
 <div class="header">
   <header>
     <a class="wrapper" href="./" title="Zur Startseite &rsaquo;">
-      <h1>🚦 Corona-Ampel für Coburg 🚦</h1>
-      <h2>7 Tage Inzidenz für Coburg und Umgebung</h2>
+      {#if segment}
+        <div class="h1">🚦 www.<strong>Corona-Ampel-Coburg</strong>.de 🚦</div>
+        <div class="h2">7 Tage Inzidenz für Coburg und Umgebung</div>
+      {:else}
+        <h1 class="h1">🚦 www.<strong>Corona-Ampel-Coburg</strong>.de 🚦</h1>
+        <h2 class="h2">7 Tage Inzidenz für Coburg und Umgebung</h2>
+      {/if}
     </a>
   </header>
   {#if visible}

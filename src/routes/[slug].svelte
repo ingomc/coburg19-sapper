@@ -204,17 +204,21 @@
   };
 
   let warningclass = 'warning';
+  let ampelColor = 'GELB';
 
   if (city.incidence < 35) {
     warningclass = 'info';
+    ampelColor = 'GRÜN';
   }
 
   if (city.incidence >= 50 && city.incidence < 100) {
     warningclass = 'danger';
+    ampelColor = 'ROT';
   }
 
   if (city.incidence >= 100) {
     warningclass = 'superdanger';
+    ampelColor = 'DUNKEL-ROT';
   }
 </script>
 
@@ -338,4 +342,48 @@
 </div>
 <div class="social">
   <Social />
+</div>
+
+<div class="seo">
+  <h1>Die Corona-Ampel für {city.name} ist auf {ampelColor}!</h1>
+  <p>
+    Die aktuelle 7-Tage Inzidenz pro 100.000 Einwohner in
+    {city.name}
+    ist aktuell
+    <strong> {city.incidence > 0 ? city.incidence : '0'}. </strong>
+    {#if warningclass == 'info'}
+      Das ist die geringste Corona Warnstufe für den Bereich
+      {city.district}
+      {city.name}.
+    {/if}
+    {#if warningclass == 'warning'}
+      Somit gilt im Bereich
+      {city.district}
+      {city.name}
+      die gelbe (mittlere) Corona Warnstufe.
+    {/if}
+    {#if warningclass == 'danger'}
+      Somit gilt im Bereich
+      {city.district}
+      {city.name}
+      die rote (hohe) Corona Warnstufe ⚠️.
+    {/if}
+    {#if warningclass == 'superdanger'}
+      Somit gilt im Bereich
+      {city.district}
+      {city.name}
+      die dunkelrote (höchste) Corona Warnstufe ⚠️.
+    {/if}
+  </p>
+  <p>
+    {city.district}
+    {city.name}
+    hat insgesamt
+    {city.population}
+    Einwohner. Es gab bisher schon
+    {city.cases}
+    positive Tests in der Region. Insgesamt sind in der Region schon
+    {city.deaths}
+    Menschen mit oder an den Folgen des Corona-Virus gestorben.
+  </p>
 </div>
