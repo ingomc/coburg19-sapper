@@ -1,5 +1,5 @@
 # Welcome to Corona-Ampel-Coburg 👋
-
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M12RXW7)
 [![Twitter: ingomc](https://img.shields.io/twitter/follow/ingomc.svg?style=social)](https://twitter.com/ingomc)
 
 > Little Project with Svelte/Sapper and a little node script, to pull only some data from official Corona API (Robert Koch Institut) to show our 7 day incidence per 100k population in our region.
