@@ -38,6 +38,18 @@
     height: 1.5em;
     width: 1.5em;
   }
+  button {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    border: none;
+    outline: 0;
+    display: block;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+  }
 </style>
 
 <script>
@@ -92,12 +104,15 @@
         <div slot="label">Corona-Ampel-Regeln</div>
       </FooterButton>
     </a>
-    <a href="https://ko-fi.com/coronaampelcoburg" target="_blank" title="Zum Impressum">
-      <FooterButton>
-        <div slot="icon">❤️</div>
-        <div slot="label">Unterstütze mich</div>
-      </FooterButton>
-    </a>
+    <form action="https://www.paypal.com/donate" method="post" target="_top">
+      <input type="hidden" name="hosted_button_id" value="TFHBVMBB9LMM2" />
+      <button class="spende" type="submit">
+        <FooterButton>
+          <div slot="icon">❤️</div>
+          <div slot="label">Unterstütze mich</div>
+        </FooterButton>
+      </button>
+    </form>
   </nav>
 
   <footer itemscope itemtype="https://schema.org/Person">
