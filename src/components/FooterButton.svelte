@@ -2,6 +2,7 @@
   .card {
     border: 2px solid var(--bg-200);
     border-radius: var(--border-radius);
+    font-size: 1rem;
     color: var(--color);
     display: flex;
     padding-right: var(--spacing-xl);
