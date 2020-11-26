@@ -139,10 +139,14 @@
   import Social from '../components/Social.svelte';
 
   export let city;
+  // get active Cases with date
+  let activeCasesObj =
+    city.allCases.recovered.datasets[0].data[city.allCases.recovered.datasets[0].data.length - 1];
 
-  // console.log(city.allCases);
+  // how many months in graphs
   let months = 2;
 
+  // options for graphs
   let options = {
     responsive: true,
     maintainAspectRatio: true,
@@ -203,6 +207,7 @@
     },
   };
 
+  // manage warning state
   let warningclass = 'warning';
   let ampelColor = 'GELB';
 
@@ -219,6 +224,14 @@
   if (city.incidence >= 100) {
     warningclass = 'superdanger';
     ampelColor = 'DUNKEL-ROT';
+  }
+
+  // workaround for sapperbug for hash navigation
+  function scrollTo({ target }) {
+    document.querySelector(target.getAttribute('href')).scrollIntoView({
+      block: 'start',
+      behavior: 'smooth',
+    });
   }
 </script>
 
@@ -317,12 +330,12 @@
   {/if}
 </div>
 <!-- <h2>COVID-19-Fälle nach Altersgruppe und Geschlecht</h2> -->
-<div class="charts-section">
+<div class="charts-section" id="hinweis">
   <section>
     <h2>Aktive Fälle in {city.name}</h2>
     <p>
       <small>*<b>Hinweis:</b>
-        Genesene Patienten können niemals zu 100% korrekt in der Statistik auftauchen, deswegen ist
+        Genesene Patienten können niemals zu 100% richtig in der Statistik auftauchen, deswegen ist
         diese Statistik wahrscheinlich nicht zu 100% korrekt.</small>
     </p>
     <Line data="{city.allCases.recovered}" options="{options}" />
@@ -344,7 +357,7 @@
   <Social />
 </div>
 
-<div class="seo">
+<div class="seo" itemscope itemtype="https://schema.org/FAQPage">
   <h1>Die Corona-Ampel für {city.name} ({city.district}) ist aktuell auf {ampelColor}!</h1>
   <p>
     Die 7-Tage Inzidenz pro 100.000 Einwohner in
@@ -382,6 +395,7 @@
     ${city.deaths}  Menschen mit oder an den Folgen des Corona-Virus gestorben.
     `}
   </p>
+
   <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <h2 itemprop="name">
       Wieviel Intensivbetten sind in
@@ -405,6 +419,22 @@
         {Number(city.Anteil_COVID_betten).toFixed(0)}%. Davon werden aktuell
         {city.faelle_covid_aktuell_beatmet}
         beatmet.
+      </p>
+    </div>
+  </div>
+
+  <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h2 itemprop="name">Wieviele aktive Fälle gibt es in {city.name} ({city.district})?</h2>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p>
+        Aktuell gibt es in
+        {city.name}
+        ({city.district})
+        {activeCasesObj.y}
+        aktive Fälle<a class="stern" href="#hinweis" on:click|preventDefault="{scrollTo}">*</a>
+        (Stand:
+        {moment(activeCasesObj.t).format('DD.MM.YYYY, hh:mm')}
+        Uhr).
       </p>
     </div>
   </div>

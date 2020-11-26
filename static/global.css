@@ -118,3 +118,7 @@ h5 {
 h6 {
   font-size: calc(3 * var(--font-size-base));
 }
+
+a.stern {
+  text-decoration: none;
+}
