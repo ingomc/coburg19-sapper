@@ -345,9 +345,9 @@
 </div>
 
 <div class="seo">
-  <h1>Die Corona-Ampel für {city.name} ist auf {ampelColor}!</h1>
+  <h1>Die Corona-Ampel für {city.name} ({city.district}) ist aktuell auf {ampelColor}!</h1>
   <p>
-    Die aktuelle 7-Tage Inzidenz pro 100.000 Einwohner in
+    Die 7-Tage Inzidenz pro 100.000 Einwohner in
     {city.name}
     ist aktuell
     <strong> {city.incidence > 0 ? city.incidence : '0'}. </strong>
@@ -376,14 +376,36 @@
     {/if}
   </p>
   <p>
-    {city.district}
-    {city.name}
-    hat insgesamt
-    {city.population}
-    Einwohner. Es gab bisher schon
-    {city.cases}
-    positive Tests in der Region. Insgesamt sind in der Region schon
-    {city.deaths}
-    Menschen mit oder an den Folgen des Corona-Virus gestorben.
+    {`
+    ${city.district} ${city.name} hat insgesamt ${city.population.toLocaleString('de')} Einwohner. 
+    Es gab bisher schon ${city.cases} positive Tests in der Region. Insgesamt sind hier schon 
+    ${city.deaths}  Menschen mit oder an den Folgen des Corona-Virus gestorben.
+    `}
   </p>
+  <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h2 itemprop="name">
+      Wieviel Intensivbetten sind in
+      {city.name}
+      ({city.district}) frei oder belegt?
+    </h2>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p>
+        Aktuell sind
+        {city.betten_frei}
+        Betten frei, das entspricht
+        {Number(city.Anteil_betten_frei).toFixed(0)}% aller Intensivbetten. Belegt sind
+        {city.betten_belegt}
+        Betten ({100 - Number(city.Anteil_betten_frei).toFixed(0)}%) der insgesamt
+        {city.betten_frei + city.betten_belegt}
+        vorhandenen Intensivbetten. Von den
+        {city.betten_belegt}
+        belegten Betten sind
+        {city.faelle_covid_aktuell}
+        mit Covid-19 Patienten belegt, das entspricht etwa
+        {Number(city.Anteil_COVID_betten).toFixed(0)}%. Davon werden aktuell
+        {city.faelle_covid_aktuell_beatmet}
+        beatmet.
+      </p>
+    </div>
+  </div>
 </div>
