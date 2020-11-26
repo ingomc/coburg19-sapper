@@ -16,8 +16,10 @@
     text-align: center;
   }
 
-  nav a {
+  nav a,
+  nav form {
     display: block;
+    margin: var(--spacing-sm);
     text-decoration: none;
   }
   @media (min-width: 1024px) {
@@ -38,17 +40,17 @@
     height: 1.5em;
     width: 1.5em;
   }
+
   button {
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
     appearance: none;
-    border: none;
-    outline: 0;
-    display: block;
-    color: white;
-    width: 100%;
+    background-color: transparent;
+    border: 0;
     cursor: pointer;
+    display: block;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    width: 100%;
   }
 </style>
 

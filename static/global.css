@@ -119,6 +119,7 @@ h6 {
   font-size: calc(3 * var(--font-size-base));
 }
 
-a.stern {
+/* hash href */
+.hashlink {
   text-decoration: none;
 }

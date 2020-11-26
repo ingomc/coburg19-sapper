@@ -24,9 +24,9 @@
 
   .h1 {
     font-size: 4vw;
+    font-weight: 100;
     margin: 0;
     padding: 0;
-    font-weight: 100;
   }
 
   .h1 strong {
@@ -35,15 +35,16 @@
 
   .h2 {
     font-size: 2.2vw;
+    font-weight: 400;
     margin: 0;
     padding: 0 1rem;
-    font-weight: 400;
   }
 
   @media (min-width: 768px) {
     .h1 {
       font-size: 1rem;
     }
+
     .h1 strong {
       font-size: 1.4rem;
     }

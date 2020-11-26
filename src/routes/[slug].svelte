@@ -23,14 +23,16 @@
   }
 
   .title {
-    text-align: center;
     color: var(--bg-50);
+    text-align: center;
   }
+
   .percent {
     color: var(--bg-50);
     font-weight: 100;
     padding-right: var(--spacing-sm);
   }
+
   .card {
     background-color: var(--card-bg);
     border-radius: 4px;
@@ -431,7 +433,7 @@
         {city.name}
         ({city.district})
         {activeCasesObj.y}
-        aktive Fälle<a class="stern" href="#hinweis" on:click|preventDefault="{scrollTo}">*</a>
+        aktive Fälle<a class="hashlink" href="#hinweis" on:click|preventDefault="{scrollTo}">*</a>
         (Stand:
         {moment(activeCasesObj.t).format('DD.MM.YYYY, hh:mm')}
         Uhr).
