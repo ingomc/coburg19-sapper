@@ -405,22 +405,39 @@
       ({city.district}) frei oder belegt?
     </h2>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p>
-        Aktuell sind
-        {city.betten_frei}
-        Betten frei, das entspricht
-        {Number(city.Anteil_betten_frei).toFixed(0)}% aller Intensivbetten. Belegt sind
-        {city.betten_belegt}
-        Betten ({100 - Number(city.Anteil_betten_frei).toFixed(0)}%) der insgesamt
+      <p itemprop="text">
+        Aktuell
+        {#if city.betten_frei == 1}
+          ist ein Bett frei,
+        {:else if city.betten_frei > 1}
+          sind
+          {city.betten_frei}
+          Betten frei,
+        {:else}ist kein Bett frei,{/if}
+        das entspricht
+        {Number(city.Anteil_betten_frei).toFixed(0)}% aller Intensivbetten.
+        {#if city.betten_belegt == 1}
+          Belegt ist ein
+          {city.betten_belegt}
+          Bett
+        {:else if city.betten_belegt > 1}
+          Belegt sind
+          {city.betten_belegt}
+          Betten
+        {:else}Belegt ist kein Bett{/if}
+        ({100 - Number(city.Anteil_betten_frei).toFixed(0)}%) der insgesamt
         {city.betten_frei + city.betten_belegt}
         vorhandenen Intensivbetten. Von den
         {city.betten_belegt}
         belegten Betten sind
         {city.faelle_covid_aktuell}
         mit Covid-19 Patienten belegt, das entspricht etwa
-        {Number(city.Anteil_COVID_betten).toFixed(0)}%. Davon werden aktuell
-        {city.faelle_covid_aktuell_beatmet}
-        beatmet.
+        {Number(city.Anteil_COVID_betten).toFixed(0)}%.
+        {#if city.faelle_covid_aktuell_beatmet < 1}
+          Aktuell wird niemand beatmet.
+        {:else if city.faelle_covid_aktuell_beatmet == 1}
+          Davon wird aktuell einer beatmet.
+        {:else}Davon werden aktuell {city.faelle_covid_aktuell_beatmet} beatmet.{/if}
       </p>
     </div>
   </div>
@@ -428,7 +445,7 @@
   <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <h2 itemprop="name">Wieviele aktive Fälle gibt es in {city.name} ({city.district})?</h2>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p>
+      <p itemprop="text">
         Aktuell gibt es in
         {city.name}
         ({city.district})

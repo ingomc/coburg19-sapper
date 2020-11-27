@@ -73,6 +73,8 @@
     <li>Nina</li>
     <li>Flo</li>
     <li>Daniela</li>
+    <li>Kerstin</li>
+    <li>Steffen</li>
   </ul>
 
   <p>Diese Seite benutzt:</p>
