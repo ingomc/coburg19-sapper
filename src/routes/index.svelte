@@ -182,11 +182,7 @@
   <ul id="hp-cardlist">
     {#each sortedData as city}
       <li>
-        <a
-          rel="prefetch"
-          href="{city.slug}/"
-          title="{`Zu ${city.district} ${city.district} &rsaquo;`}"
-        >
+        <a rel="prefetch" href="{city.slug}/" title="{`Zu ${city.district} ${city.name} ›`}">
           <Card data="{city}" />
         </a>
       </li>
