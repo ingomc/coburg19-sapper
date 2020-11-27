@@ -66,7 +66,7 @@
     <button class="spende" type="submit">Jetzt Spenden</button>
   </form>
 
-  <p>Danke an meine bisherigen Gönner 👍🏻:</p>
+  <p>Danke an meine bisherigen Gönner ❤️❤️❤️:</p>
   <ul>
     <li>Nici</li>
     <li>Hohni</li>
@@ -75,6 +75,7 @@
     <li>Daniela</li>
     <li>Kerstin</li>
     <li>Steffen</li>
+    <li>Leonhard</li>
   </ul>
 
   <p>Diese Seite benutzt:</p>
