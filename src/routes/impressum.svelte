@@ -76,6 +76,11 @@
     <li>Kerstin</li>
     <li>Steffen</li>
     <li>Leonhard</li>
+    <li>
+      <a href="https://www.killerartworx.de/" target="_blank">Chris</a>
+      (schaut mal in seine Designs)
+    </li>
+    <li>Bettina</li>
   </ul>
 
   <p>Diese Seite benutzt:</p>
