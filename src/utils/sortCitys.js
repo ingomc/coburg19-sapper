@@ -19,6 +19,5 @@ export function sortCitys(allCitys) {
       sortedCitys.push(item);
     }
   });
-  console.log('sortcitysjs');
   return sortedCitys;
 }
