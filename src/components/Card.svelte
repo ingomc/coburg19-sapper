@@ -66,10 +66,6 @@
   }
 </style>
 
-<script context="module">
-  console.log('module');
-</script>
-
 <script>
   export let data;
   let warningclass = 'warning';
@@ -88,8 +84,6 @@
       warningclass = 'superdanger';
     }
   }
-
-  console.log(warningclass);
 </script>
 
 <div class="{`card ${warningclass}`}">
