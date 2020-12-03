@@ -46,13 +46,14 @@ const getLocationsEndpoint = () => {
 
 const getNewCasesEndpoint = (data) => {
   let _endpoint = endpointNewCases.replace('${data.RS}', data.RS);
+  // console.log(_endpoint);
   return _endpoint;
 };
 
 const getAllCasesEndpoint = (data) => {
   let date = moment().subtract(allCasesMonths, 'months').format('YYYY-MM-DD');
   let _endpoint = endpointAllCases.replace('${data.RS}', data.RS).replace('${date}', date);
-  // console.log(_endpoint);
+  console.log(_endpoint);
   return _endpoint;
 };
 

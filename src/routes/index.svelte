@@ -123,10 +123,14 @@
 </script>
 
 <script>
+  import RangeSlider from 'svelte-range-slider-pips';
   import Social from '../components/Social.svelte';
   import Card from '../components/Card.svelte';
 
+  const moods = ['😁', '😀', '😊', '😐', '😥', '😫'];
+
   export let data;
+  let values;
 
   const { citys, germannew, bavarianew } = data;
   let sortedData = [];
@@ -194,3 +198,16 @@
     </li>
   </ul>
 </nav>
+
+<div>
+  <h1>slider</h1>
+  <RangeSlider
+    pips
+    all="label"
+    bind:values
+    springValues="{{ stiffness: 0.3, damping: 0.9 }}"
+    formatter="{(v) => moods[v]}"
+    max="{moods.length - 1}"
+  />
+  <p>{moods[values]}</p>
+</div>

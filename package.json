@@ -51,7 +51,8 @@
     "stylelint-high-performance-animation": "^1.5.1",
     "stylelint-images": "^2.0.1",
     "stylelint-scss": "^3.18.0",
-    "svelte": "^3.29.4"
+    "svelte": "^3.29.4",
+    "svelte-range-slider-pips": "^1.5.0"
   },
   "lint-staged": {
     "*.{svelte,js,css,md}": "prettier --write"
