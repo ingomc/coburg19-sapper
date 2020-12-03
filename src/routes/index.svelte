@@ -123,35 +123,28 @@
 </script>
 
 <script>
+  import { onMount } from 'svelte';
   import RangeSlider from 'svelte-range-slider-pips';
   import Social from '../components/Social.svelte';
   import Card from '../components/Card.svelte';
+  import { sortCitys } from '../utils/sortCitys';
 
   const moods = ['😁', '😀', '😊', '😐', '😥', '😫'];
 
   export let data;
   let values;
 
-  const { citys, germannew, bavarianew } = data;
-  let sortedData = [];
-  citys.sort((a, b) => {
-    if (a.name < b.name) {
-      return -1;
-    }
-    if (a.name > b.name) {
-      return 0;
-    }
-    return 0;
-  });
-  citys.forEach((item) => {
-    // SORT COBURG TO THE TOP
-    const city = item.name.toLowerCase();
-    const myCity = 'Coburg';
-    if (city == myCity.toLowerCase()) {
-      sortedData.unshift(item);
-    } else {
-      sortedData.push(item);
-    }
+  let { citys, germannew, bavarianew } = data;
+
+  let sortedCitys = [];
+  sortedCitys = sortCitys(citys);
+
+  onMount(async () => {
+    let d = await fetch('./data/2020-12-02/data.json').then((res) => res.json());
+    // assign timetraveldata
+    sortedCitys = sortCitys(d.citys);
+    germannew = d.germannew;
+    bavarianew = d.bavarianew;
   });
 </script>
 
@@ -184,10 +177,10 @@
 
 <nav>
   <ul id="hp-cardlist">
-    {#each sortedData as city}
+    {#each sortedCitys as city}
       <li>
         <a rel="prefetch" href="{city.slug}/" title="{`Zu ${city.district} ${city.name} ›`}">
-          <Card data="{city}" />
+          <Card bind:data="{city}" />
         </a>
       </li>
     {/each}

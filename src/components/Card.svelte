@@ -66,22 +66,30 @@
   }
 </style>
 
+<script context="module">
+  console.log('module');
+</script>
+
 <script>
   export let data;
-
   let warningclass = 'warning';
 
-  if (data.incidence < 35) {
-    warningclass = 'info';
+  $: {
+    warningclass = 'warning';
+    if (data.incidence < 35) {
+      warningclass = 'info';
+    }
+
+    if (data.incidence >= 50 && data.incidence < 100) {
+      warningclass = 'danger';
+    }
+
+    if (data.incidence >= 100) {
+      warningclass = 'superdanger';
+    }
   }
 
-  if (data.incidence >= 50 && data.incidence < 100) {
-    warningclass = 'danger';
-  }
-
-  if (data.incidence >= 100) {
-    warningclass = 'superdanger';
-  }
+  console.log(warningclass);
 </script>
 
 <div class="{`card ${warningclass}`}">
