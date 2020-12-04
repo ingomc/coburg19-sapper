@@ -136,6 +136,7 @@
 </script>
 
 <script>
+  import { async_data } from '../stores/stores';
   import moment from 'moment';
   import Line from 'svelte-chartjs/src/Line.svelte';
   import Social from '../components/Social.svelte';
@@ -213,19 +214,25 @@
   let warningclass = 'warning';
   let ampelColor = 'GELB';
 
-  if (city.incidence < 35) {
-    warningclass = 'info';
-    ampelColor = 'GRÜN';
-  }
+  $: {
+    // manage warning state
+    warningclass = 'warning';
+    ampelColor = 'GELB';
 
-  if (city.incidence >= 50 && city.incidence < 100) {
-    warningclass = 'danger';
-    ampelColor = 'ROT';
-  }
+    if (city.incidence < 35) {
+      warningclass = 'info';
+      ampelColor = 'GRÜN';
+    }
 
-  if (city.incidence >= 100) {
-    warningclass = 'superdanger';
-    ampelColor = 'DUNKEL-ROT';
+    if (city.incidence >= 50 && city.incidence < 100) {
+      warningclass = 'danger';
+      ampelColor = 'ROT';
+    }
+
+    if (city.incidence >= 100) {
+      warningclass = 'superdanger';
+      ampelColor = 'DUNKEL-ROT';
+    }
   }
 
   // workaround for sapperbug for hash navigation
@@ -234,6 +241,13 @@
       block: 'start',
       behavior: 'smooth',
     });
+  }
+
+  $: {
+    if (!!$async_data.citys) {
+      const found = $async_data.citys.find((element) => element.id == city.id);
+      city = { ...found };
+    }
   }
 </script>
 

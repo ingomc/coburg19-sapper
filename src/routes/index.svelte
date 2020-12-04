@@ -123,29 +123,28 @@
 </script>
 
 <script>
-  import { onMount } from 'svelte';
-  import RangeSlider from 'svelte-range-slider-pips';
+  import { async_data } from '../stores/stores';
   import Social from '../components/Social.svelte';
   import Card from '../components/Card.svelte';
+  import Timetravel from '../components/Timetravel.svelte';
   import { sortCitys } from '../utils/sortCitys';
 
-  const moods = ['😁', '😀', '😊', '😐', '😥', '😫'];
-
   export let data;
-  let values;
 
   let { citys, germannew, bavarianew } = data;
 
   let sortedCitys = [];
   sortedCitys = sortCitys(citys);
 
-  onMount(async () => {
-    let d = await fetch('./data/2020-12-02/data.json').then((res) => res.json());
-    // assign timetraveldata
-    sortedCitys = sortCitys(d.citys);
-    germannew = d.germannew;
-    bavarianew = d.bavarianew;
-  });
+  $: {
+    console.log({ $async_data });
+    if (!!$async_data.citys) {
+      // assign timetraveldata
+      sortedCitys = sortCitys($async_data.citys);
+      germannew = $async_data.germannew;
+      bavarianew = $async_data.bavarianew;
+    }
+  }
 </script>
 
 <svelte:head>
@@ -192,15 +191,4 @@
   </ul>
 </nav>
 
-<div>
-  <h1>slider</h1>
-  <RangeSlider
-    pips
-    all="label"
-    bind:values
-    springValues="{{ stiffness: 0.3, damping: 0.9 }}"
-    formatter="{(v) => moods[v]}"
-    max="{moods.length - 1}"
-  />
-  <p>{moods[values]}</p>
-</div>
+<Timetravel />
