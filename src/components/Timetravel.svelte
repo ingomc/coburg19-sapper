@@ -17,17 +17,19 @@
     changedValue = Math.round(values[0]);
   }
   // just trigger when actual value changes
-  $: if (changedValue >= 0) {
+  $: if (changedValue >= 0 && changedValue != 5) {
     console.log(changedValue);
     if (process.browser) {
       const newData = fetchData();
-      newData.then((res) => console.log(res));
+      newData.then((res) => {
+        console.log(res);
+        async_data.update(() => res);
+      });
     }
   }
 
   onMount(async () => {
     // console.log({ async_data });
-    // async_data.update(() => d);
     // console.log($async_data);
   });
 </script>
