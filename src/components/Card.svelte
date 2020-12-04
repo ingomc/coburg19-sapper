@@ -70,6 +70,7 @@
   export let data;
   let warningclass = 'warning';
 
+  // Subscribe on changes
   $: {
     warningclass = 'warning';
     if (data.incidence < 35) {
