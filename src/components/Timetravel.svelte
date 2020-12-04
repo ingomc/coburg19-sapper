@@ -17,7 +17,7 @@
     changedValue = Math.round(values[0]);
   }
   // just trigger when actual value changes
-  $: if (changedValue >= 0 && changedValue != 5) {
+  $: if (changedValue >= 0 && changedValue != moods.length - 1) {
     console.log(changedValue);
     if (process.browser) {
       const newData = fetchData();
