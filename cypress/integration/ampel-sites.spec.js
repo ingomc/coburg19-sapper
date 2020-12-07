@@ -53,9 +53,9 @@ describe('Test Sites', () => {
   });
   it('Impressum', () => {
     cy.visit(baseUrl + impressum);
-    cy.contains('***@***.de').should('not.contain', 'andre');
+    cy.get('.email').should('not.contain', 'kontakt');
     cy.get('button').contains('Daten im Klartext anzeigen').click();
     cy.wait(200);
-    cy.contains('kontakt@corona-ampel-coburg.de');
+    cy.get('.email').should('not.contain', 'kontakt@corona-ampel-coburg.de');
   });
 });
