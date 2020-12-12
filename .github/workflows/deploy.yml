@@ -42,6 +42,13 @@ jobs:
           git config --local user.name "Andre Robot"
           git add .
           git commit -m "Add generated data"
+        
+      - name: Push changes # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+          branch: master #ignore if your branch is master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
 
       - name: Build Svelte
         run: npm run export
