@@ -102,7 +102,7 @@
   <p>Angaben gemäß § 5 TMG</p>
   <p>{vn} {nn} <br /> {adrs}<br /> {adrp} {adrst} <br /></p>
   <p><strong>Vertreten durch: </strong><br /> {vn} {nn}<br /></p>
-  <p><strong>Kontakt:</strong> <br /> E-Mail: {addi} <br /></p>
+  <p><strong>Kontakt:</strong> <br /> E-Mail: <span class="email">{addi}</span> <br /></p>
   <p>
     <strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br />
     {vn}

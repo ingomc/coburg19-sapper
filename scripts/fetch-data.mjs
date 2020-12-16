@@ -6,18 +6,17 @@ import moment from 'moment';
 const allCasesMonths = 2; // last 2 moths
 const allCasesPeriod = 2; // every second day
 
-const jsTemplate = (jsonLocations, jsonUpdate, jsonGermanNew, jsonBavariaNew) => `
-const data = {
-  "citys": ${jsonLocations},
-  "update": ${jsonUpdate},
-  "germannew": ${jsonGermanNew},
-  "bavarianew": ${jsonBavariaNew},
-}
+const jsTemplate = (allData) => `
+const data = ${allData}
 
 export default data;
 `;
 
 const endFileDataJs = './src/routes/_data.js';
+const endFileDataJsonDaily = (dateString) => {
+  const date = dateString.substring(0, dateString.indexOf(','));
+  return `./static/data/${moment(date, 'DD-MM-YYYY').format('YYYY-MM-DD')}.json`;
+};
 
 const endpoint =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?outFields=*&returnGeometry=false&f=json&outSR=4326&where=';
@@ -224,11 +223,19 @@ fetch(getLocationsEndpoint())
         .then((res) => res.json())
         .then((_json) => _json.features[0].attributes.value),
     );
-    fs.writeFileSync(
-      endFileDataJs,
-      jsTemplate(jsonLocations, jsonDate, jsonGermanNew, jsonBavariaNew),
+    const allDataString = `{
+      "citys": ${jsonLocations},
+      "update": ${jsonDate},
+      "germannew": ${jsonGermanNew},
+      "bavarianew": ${jsonBavariaNew}
+    }`;
+    fs.writeFileSync(endFileDataJs, jsTemplate(allDataString));
+    console.log('\x1b[42m\x1b[30m%s\x1b[0m', ` ✔  Datei gespeichert: ${endFileDataJs}`);
+    fs.writeFileSync(endFileDataJsonDaily(json.date), allDataString);
+    console.log(
+      '\x1b[42m\x1b[30m%s\x1b[0m',
+      ` ✔  Datei gespeichert: ${endFileDataJsonDaily(json.date)}`,
     );
-    console.log('\x1b[42m\x1b[30m%s\x1b[0m', ` ✔ Datei gespeichert: ${endFileDataJs}`);
   })
   .catch((error) => {
     console.log('\x1b[31m%s\x1b[0m', ` x Error fetching getLocationsEndpoint`);

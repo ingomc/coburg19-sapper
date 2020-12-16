@@ -33,6 +33,12 @@
     width: 50%;
   }
 
+  .danger-icon {
+    height: 0.7em;
+    vertical-align: middle;
+    width: 0.7em;
+  }
+
   .number {
     font-size: 2rem;
     font-weight: 500;
@@ -90,7 +96,25 @@
 <div class="{`card ${warningclass}`}">
   <div class="row">
     <div class="column">
-      <h3 class="number">{Number(data.incidence).toFixed(2)}</h3>
+      <h3 class="number">
+        {#if data.incidence >= 200 && data.incidence < 1000}
+          <svg
+            class="danger-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            aria-hidden="true"
+            focusable="false"
+            role="img"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+            style="transform: rotate(360deg);"
+          ><path
+              d="M14.8 4.613l6.701 11.161c.963 1.603.49 3.712-1.057 4.71a3.213 3.213 0 0 1-1.743.516H5.298C3.477 21 2 19.47 2 17.581c0-.639.173-1.264.498-1.807L9.2 4.613c.962-1.603 2.996-2.094 4.543-1.096c.428.276.79.651 1.057 1.096zm-2.22.839a1.077 1.077 0 0 0-1.514.365L4.365 16.98a1.17 1.17 0 0 0-.166.602c0 .63.492 1.14 1.1 1.14H18.7c.206 0 .407-.06.581-.172a1.164 1.164 0 0 0 .353-1.57L12.933 5.817a1.12 1.12 0 0 0-.352-.365zM12 17a1 1 0 1 1 0-2a1 1 0 0 1 0 2zm0-9a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1z"
+              fill="currentColor"
+            ></path></svg>
+        {/if}
+        {Number(data.incidence).toFixed(1)}
+      </h3>
     </div>
     <div class="column">
       <div class="area">{data.district}</div>
