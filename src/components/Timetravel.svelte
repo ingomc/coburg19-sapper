@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import RangeSlider from 'svelte-range-slider-pips';
   import moment from 'moment';
-  import { async_data } from '../stores/stores';
+  import { async_data, sliderValue } from '../stores/stores';
 
   const tt = [
     {
@@ -24,11 +24,12 @@
 
   moment.locale();
 
-  let values = [tt.length - 1];
+  let values = $sliderValue >= 0 ? [$sliderValue] : [tt.length - 1];
 
   let changedValue = 0;
 
   let hasChanged = false;
+  let hasMounted = false;
 
   let newData;
 
@@ -48,10 +49,12 @@
   }
 
   // just trigger when actual value changes
-  $: if (changedValue >= 0 && (changedValue != tt.length - 1 || hasChanged)) {
+  $: if (changedValue >= 0 && (changedValue != tt.length - 1 || hasChanged) && hasMounted) {
     hasChanged = true;
     if (process.browser) {
+      console.log(newData);
       async_data.update(() => newData[changedValue]);
+      sliderValue.update(() => changedValue);
     }
   }
 
@@ -69,6 +72,8 @@
       }
       return 0;
     });
+    hasMounted = true;
+    sliderValue.update(() => changedValue);
   });
 </script>
 
