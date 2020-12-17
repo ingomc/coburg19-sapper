@@ -27,6 +27,7 @@
 
 <script>
   import { stores } from '@sapper/app';
+  import { async_data } from '../stores/stores';
   import Loading from '../components/Loading.svelte';
   import Header from '../components/Header.svelte';
   import UpdateMessage from '../components/UpdateMessage.svelte';
@@ -36,6 +37,13 @@
 
   export let update;
   export let segment;
+
+  $: {
+    if (!!$async_data.update) {
+      // assign timetraveldata
+      update = $async_data.update;
+    }
+  }
 
   const { preloading } = stores();
 </script>

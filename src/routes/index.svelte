@@ -144,7 +144,6 @@
   sortedCitys = sortCitys(citys);
 
   $: {
-    console.log({ $async_data });
     if (!!$async_data.citys) {
       // assign timetraveldata
       sortedCitys = sortCitys($async_data.citys);

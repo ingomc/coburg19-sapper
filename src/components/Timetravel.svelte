@@ -30,6 +30,8 @@
 
   let hasChanged = false;
 
+  let newData;
+
   // todo: array mit dates reingeben, loop, return array
   // todo: tag von heute nicht fetchen , sondern gibts eh in der Komponente?
   function fetchData() {
@@ -51,19 +53,22 @@
   $: if (changedValue >= 0 && (changedValue != tt.length - 1 || hasChanged)) {
     hasChanged = true;
     console.log('slider haschanged: ' + changedValue);
+    if (process.browser) {
+      async_data.update(() => newData[changedValue]);
+    }
   }
 
   onMount(async () => {
-    // console.log({ async_data });
-    // console.log($async_data);
-    const newData = (await fetchData()).sort((a, b) => {
+    const newDateFormat = 'DD.MM.YYYY';
+    // fetch data and sort to date
+    newData = (await fetchData()).sort((a, b) => {
       const updateA = a.update.substring(0, a.update.indexOf(','));
       const updateB = b.update.substring(0, b.update.indexOf(','));
-      if (moment(updateA, 'DD.MM.YYYY').isAfter(moment(updateB, 'DD.MM.YYYY'))) {
-        return -1;
-      }
-      if (moment(updateA, 'DD.MM.YYYY').isBefore(moment(updateB, 'DD.MM.YYYY'))) {
+      if (moment(updateA, newDateFormat).isAfter(moment(updateB, newDateFormat))) {
         return 1;
+      }
+      if (moment(updateA, newDateFormat).isBefore(moment(updateB, newDateFormat))) {
+        return -1;
       }
       return 0;
     });
