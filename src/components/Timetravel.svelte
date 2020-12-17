@@ -32,8 +32,6 @@
 
   let newData;
 
-  // todo: array mit dates reingeben, loop, return array
-  // todo: tag von heute nicht fetchen , sondern gibts eh in der Komponente?
   function fetchData() {
     return Promise.all(
       tt.map(({ date }) =>
@@ -52,7 +50,6 @@
   // just trigger when actual value changes
   $: if (changedValue >= 0 && (changedValue != tt.length - 1 || hasChanged)) {
     hasChanged = true;
-    console.log('slider haschanged: ' + changedValue);
     if (process.browser) {
       async_data.update(() => newData[changedValue]);
     }
@@ -72,7 +69,6 @@
       }
       return 0;
     });
-    console.log({ newData });
   });
 </script>
 
