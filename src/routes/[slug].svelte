@@ -140,6 +140,7 @@
   import Line from 'svelte-chartjs/src/Line.svelte';
   import Bar from 'svelte-chartjs/src/Bar.svelte';
   import Social from '../components/Social.svelte';
+  import Message from '../components/Message.svelte';
 
   export let city;
 
@@ -352,6 +353,9 @@
           wurde sie von mir hier mit den Fällen pro Tag ersetzt.</small>
       </p>
       <Bar data="{city.allCases.casesperday}" options="{options}" />
+      <Message until="2020-12-19T12:00:00Z">
+        <small> <span>Für Susi Sonnenschein</span> </small>
+      </Message>
     </section>
   {/if}
 
