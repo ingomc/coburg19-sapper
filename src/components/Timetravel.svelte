@@ -14,7 +14,10 @@
     position: absolute;
     top: 0;
     right: 0;
+    padding: 2px;
     transform: translate3d(-50%, -50%, 0);
+    border-radius: 50%;
+    overflow: hidden;
   }
   .slider {
   }

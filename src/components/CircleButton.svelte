@@ -9,7 +9,6 @@
     align-items: center;
     background-color: var(--bg-100);
     cursor: pointer;
-    border: none;
     appearance: none;
     color: inherit;
     transition: border-color 0.2s ease-out;
