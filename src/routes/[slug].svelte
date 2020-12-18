@@ -233,8 +233,6 @@
       behavior: 'smooth',
     });
   }
-
-  console.log(city.allCases.recovered);
 </script>
 
 <svelte:head>

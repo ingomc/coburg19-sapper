@@ -24,8 +24,8 @@ describe('Test Sites', () => {
     cy.contains('Todesrate');
     cy.contains('Einwohnerzahl');
     cy.contains('7 Tage Inzidenz in Bayern');
-    cy.contains('Aktive Fälle in Coburg');
-    cy.contains('Bisher erkrankte und bisher erholte Personen in Coburg');
+    cy.contains('Neue Fälle pro Tag in Coburg');
+    cy.contains('Alle Fälle bisher in Coburg');
     cy.get('canvas').should('have.length', '2');
     cy.get('main .social').should('have.length', '1');
   });
@@ -38,8 +38,8 @@ describe('Test Sites', () => {
     cy.contains('Todesrate');
     cy.contains('Einwohnerzahl');
     cy.contains('7 Tage Inzidenz in Bayern');
-    cy.contains('Aktive Fälle in Haßberge');
-    cy.contains('Bisher erkrankte und bisher erholte Personen in Haßberge');
+    cy.contains('Neue Fälle pro Tag in Haßberge');
+    cy.contains('Alle Fälle bisher in Haßberge');
     cy.get('canvas').should('have.length', '2');
     cy.get('main .social').should('have.length', '1');
   });

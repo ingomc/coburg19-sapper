@@ -4,7 +4,7 @@ import fs from 'fs';
 import moment from 'moment';
 
 const allCasesMonths = 2; // last 2 moths
-const allCasesPeriod = 2; // every second day
+const allCasesPeriod = 1; // every second day
 
 const jsTemplate = (allData) => `
 const data = ${allData}
