@@ -346,6 +346,11 @@
   {#if city.allCases.casesperday}
     <section>
       <h2>Neue Fälle pro Tag in {city.name}</h2>
+      <p>
+        <small>*<b>Hinweis:</b>
+          Die Genesenen-Statistik des RKIs ist leider mittlerweile komplett unbrauchbar, deswegen
+          wurde sie von mir hier mit den Fällen pro Tag ersetzt.</small>
+      </p>
       <Bar data="{city.allCases.casesperday}" options="{options}" />
     </section>
   {/if}
