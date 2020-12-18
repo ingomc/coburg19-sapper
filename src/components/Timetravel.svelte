@@ -40,8 +40,8 @@
         aria-hidden="true"
         focusable="false"
         role="img"
-        width="1.25rem"
-        height="1.25rem"
+        width="1.5rem"
+        height="1.5rem"
         preserveAspectRatio="xMidYMid meet"
         viewBox="0 0 24 24"
       ><path
