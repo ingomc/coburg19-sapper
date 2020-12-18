@@ -139,12 +139,10 @@
   import { async_data } from '../stores/stores';
   import moment from 'moment';
   import Line from 'svelte-chartjs/src/Line.svelte';
+  import Bar from 'svelte-chartjs/src/Bar.svelte';
   import Social from '../components/Social.svelte';
 
   export let city;
-  // get active Cases with date
-  let activeCasesObj =
-    city.allCases.recovered.datasets[0].data[city.allCases.recovered.datasets[0].data.length - 1];
 
   // how many months in graphs
   let months = 2;
@@ -346,29 +344,36 @@
     </div>
   {/if}
 </div>
-<!-- <h2>COVID-19-Fälle nach Altersgruppe und Geschlecht</h2> -->
+
 <div class="charts-section" id="hinweis">
-  <section>
-    <h2>Aktive Fälle in {city.name}</h2>
-    <p>
-      <small>*<b>Hinweis:</b>
-        Genesene Patienten können niemals zu 100% richtig in der Statistik auftauchen, deswegen ist
-        diese Statistik wahrscheinlich nicht zu 100% korrekt.</small>
-    </p>
-    <Line data="{city.allCases.recovered}" options="{options}" />
-  </section>
+  {#if city.allCases.recovered}
+    <section>
+      <h2>Aktive Fälle in {city.name}</h2>
+      <p>
+        <small>*<b>Hinweis:</b>
+          Genesene Patienten können niemals zu 100% richtig in der Statistik auftauchen, deswegen
+          ist diese Statistik wahrscheinlich nicht zu 100% korrekt.</small>
+      </p>
+      <Line data="{city.allCases.recovered}" options="{options}" />
+    </section>
+  {/if}
+
+  {#if city.allCases.casesperday}
+    <section>
+      <h2>Neue Fälle pro Tag in {city.name}</h2>
+      <p>
+        <small>*<b>Hinweis:</b>
+          Die Genesenen-Statistik des RKIs ist leider mittlerweile komplett unbrauchbar, deswegen
+          wurde sie von mir hier mit den Fällen pro Tag ersetzt.</small>
+      </p>
+      <Bar data="{city.allCases.casesperday}" options="{options}" />
+    </section>
+  {/if}
 
   <section>
-    <h2>Bisher erkrankte und bisher erholte Personen in {city.name}</h2>
+    <h2>Alle Fälle bisher in {city.name}</h2>
     <Line data="{city.allCases.sick}" options="{options}" />
   </section>
-
-  <!-- <Chart
-    data="{city.statistics}"
-    type="bar"
-    tooltipOptions="{{ formatTooltipX: (d) => d + ' Jahre', formatTooltipY: (d) => d + ' Erkrankte' }}"
-    colors="{['black', '#ffa3ef', 'light-blue']}"
-  /> -->
 </div>
 <div class="social">
   <Social />
@@ -458,20 +463,4 @@
       </div>
     </div>
   {/if}
-
-  <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h2 itemprop="name">Wieviele aktive Fälle gibt es in {city.name} ({city.district})?</h2>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">
-        Aktuell gibt es in
-        {city.name}
-        ({city.district})
-        {activeCasesObj.y}
-        aktive Fälle<a class="hashlink" href="#hinweis" on:click|preventDefault="{scrollTo}">*</a>
-        (Stand:
-        {moment(activeCasesObj.t).format('DD.MM.YYYY, hh:mm')}
-        Uhr).
-      </p>
-    </div>
-  </div>
 </div>
