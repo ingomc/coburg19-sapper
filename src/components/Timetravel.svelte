@@ -1,91 +1,56 @@
+<style>
+  .timetravel {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    z-index: 100;
+    background-color: var(--bg-200);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate3d(-50%, -50%, 0);
+  }
+  .slider {
+  }
+</style>
+
 <script>
-  import { onMount } from 'svelte';
-  import RangeSlider from 'svelte-range-slider-pips';
-  import moment from 'moment';
-  import { async_data, sliderValue } from '../stores/stores';
+  import CircleButton from './CircleButton.svelte';
+  import TimetravelSlider from './TimetravelSlider.svelte';
 
-  const tt = [
-    {
-      sliderLabel: '1 Woche',
-      dateLabel: moment().subtract(1, 'weeks').format('DD.MM.YYYY'),
-      date: moment().subtract(1, 'weeks').format('YYYY-MM-DD'),
-    },
-    {
-      sliderLabel: 'Gestern',
-      dateLabel: 'Gestern',
-      date: moment().subtract(1, 'days').format('YYYY-MM-DD'),
-    },
-    {
-      sliderLabel: 'Heute',
-      dateLabel: 'Heute',
-      date: moment().format('YYYY-MM-DD'),
-    },
-  ];
-
-  moment.locale();
-
-  let values = $sliderValue >= 0 ? [$sliderValue] : [tt.length - 1];
-
-  let changedValue = 0;
-
-  let hasChanged = false;
-  let hasMounted = false;
-
-  let newData;
-
-  function fetchData() {
-    return Promise.all(
-      tt.map(({ date }) =>
-        fetch(`./data/${date}.json`)
-          .then((res) => res.json())
-          .then((data) => data),
-      ),
-    ).then((res) => res);
+  // Handle click on circle button
+  function handleCircleButtonClick() {
+    console.log('Clicki');
+    // Tigger Trackingevent
   }
-
-  // fix slider values firing on every mousemove
-  $: if (values[0] >= 0) {
-    changedValue = Math.round(values[0]);
-  }
-
-  // just trigger when actual value changes
-  $: if (changedValue >= 0 && (changedValue != tt.length - 1 || hasChanged) && hasMounted) {
-    hasChanged = true;
-    if (process.browser) {
-      async_data.update(() => newData[changedValue]);
-      sliderValue.update(() => changedValue);
-    }
-  }
-
-  onMount(async () => {
-    const newDateFormat = 'DD.MM.YYYY';
-    // fetch data and sort to date
-    newData = (await fetchData()).sort((a, b) => {
-      const updateA = a.update.substring(0, a.update.indexOf(','));
-      const updateB = b.update.substring(0, b.update.indexOf(','));
-      if (moment(updateA, newDateFormat).isAfter(moment(updateB, newDateFormat))) {
-        return 1;
-      }
-      if (moment(updateA, newDateFormat).isBefore(moment(updateB, newDateFormat))) {
-        return -1;
-      }
-      return 0;
-    });
-    hasMounted = true;
-    sliderValue.update(() => changedValue);
-  });
 </script>
 
-<div>
-  <h1>slider</h1>
-  <RangeSlider
-    pips
-    all="label"
-    bind:values
-    range="max"
-    springValues="{{ stiffness: 0.3, damping: 0.9 }}"
-    formatter="{(v) => tt[v].sliderLabel}"
-    max="{tt.length - 1}"
-  />
-  <p>{tt[changedValue].dateLabel}</p>
+<div class="timetravel">
+  <div class="btn">
+    <CircleButton on:click="{() => handleCircleButtonClick()}">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        aria-hidden="true"
+        focusable="false"
+        role="img"
+        width="1.25rem"
+        height="1.25rem"
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 24 24"
+      ><path
+          d="M4 2v6H2V2h2M2 22v-6h2v6H2m3-10c0 1.11-.89 2-2 2a2 2 0 1 1 2-2m11-8c4.42 0 8 3.58 8 8s-3.58 8-8 8c-3.6 0-6.64-2.38-7.65-5.65L6 12l2.35-2.35C9.36 6.38 12.4 4 16 4m-1 9l4.53 2.79l.8-1.29l-3.83-2.3V7H15v6z"
+          fill="currentColor"
+        ></path></svg>
+    </CircleButton>
+  </div>
+  <div class="slider">
+    <TimetravelSlider />
+  </div>
 </div>

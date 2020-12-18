@@ -23,6 +23,14 @@
   }
 </style>
 
-<button class="circlebutton">
+<script>
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
+  const onClick = () => {
+    dispatch('click', {});
+  };
+</script>
+
+<button class="circlebutton" on:click="{onClick}">
   <slot />
 </button>

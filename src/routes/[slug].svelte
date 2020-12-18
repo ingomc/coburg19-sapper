@@ -141,6 +141,7 @@
   import Line from 'svelte-chartjs/src/Line.svelte';
   import Bar from 'svelte-chartjs/src/Bar.svelte';
   import Social from '../components/Social.svelte';
+  import Timetravel from '../components/Timetravel.svelte';
 
   export let city;
 
@@ -463,4 +464,6 @@
       </div>
     </div>
   {/if}
+
+  <Timetravel />
 </div>
