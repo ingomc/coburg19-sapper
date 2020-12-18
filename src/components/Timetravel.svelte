@@ -52,7 +52,6 @@
   $: if (changedValue >= 0 && (changedValue != tt.length - 1 || hasChanged) && hasMounted) {
     hasChanged = true;
     if (process.browser) {
-      console.log(newData);
       async_data.update(() => newData[changedValue]);
       sliderValue.update(() => changedValue);
     }

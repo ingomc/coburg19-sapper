@@ -150,6 +150,7 @@
   let months = 2;
 
   // options for graphs
+  // Todo: reducer mit neuestem und ältestem Datum
   let options = {
     responsive: true,
     maintainAspectRatio: true,
