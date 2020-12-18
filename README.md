@@ -1,4 +1,5 @@
 # Welcome to Corona-Ampel-Coburg 👋
+
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M12RXW7)
 [![Twitter: ingomc](https://img.shields.io/twitter/follow/ingomc.svg?style=social)](https://twitter.com/ingomc)
 
