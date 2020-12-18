@@ -75,25 +75,14 @@ const wellFormAllCases = (data) => {
           borderColor: '#f63e02',
           data: [],
         },
-        {
-          label: 'Genesene*',
-          type: 'line',
-          backgroundColor: 'rgba(78,141,38,0.1)',
-          pointRadius: 1,
-          pointHitRadius: 10,
-          pointBackgroundColor: '#4e8d26',
-          borderWidth: 3,
-          borderColor: '#4e8d26',
-          data: [],
-        },
       ],
     },
-    recovered: {
+    casesperday: {
       datasets: [
         {
-          label: 'Aktive Fälle*',
-          type: 'line',
-          backgroundColor: 'rgba(243,183,0,0.1)',
+          label: 'Fälle pro Tag',
+          type: 'bar',
+          backgroundColor: '#f3b700',
           pointRadius: 1,
           pointHitRadius: 10,
           pointBackgroundColor: ' #f3b700',
@@ -112,8 +101,9 @@ const wellFormAllCases = (data) => {
     .map((item) => {
       const day = new Date(item.attributes.Meldedatum);
       const cases = item.attributes.SummeFall;
-      const recovered = item.attributes.SummeGenesen;
-      const activeCases = item.attributes.SummeFall - item.attributes.SummeGenesen;
+      const casesperday = item.attributes.AnzahlFall;
+      // const recovered = item.attributes.SummeGenesen;
+      // const activeCases = item.attributes.SummeFall - item.attributes.SummeGenesen;
       function setDataObject(category) {
         return {
           t: day,
@@ -121,8 +111,9 @@ const wellFormAllCases = (data) => {
         };
       }
       newJson.sick.datasets[0].data.push(setDataObject(cases));
-      newJson.sick.datasets[1].data.push(setDataObject(recovered));
-      newJson.recovered.datasets[0].data.push(setDataObject(activeCases));
+      newJson.casesperday.datasets[0].data.push(setDataObject(casesperday));
+      // newJson.sick.datasets[1].data.push(setDataObject(recovered));
+      // newJson.recovered.datasets[0].data.push(setDataObject(activeCases));
     });
   return newJson;
 };
