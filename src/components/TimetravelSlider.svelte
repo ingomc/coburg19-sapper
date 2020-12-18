@@ -14,6 +14,7 @@
     --range-pip-active: var(--color);
     --range-pip-in-range-text: var(--bg-50);
   }
+
   p {
     margin: 0;
     padding: 0;

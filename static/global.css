@@ -129,10 +129,10 @@ div:focus,
 span:focus,
 button:focus,
 input:focus {
-  outline: none;
   box-shadow: 0 0 0 3px var(--bg-50);
+  outline: none;
 }
-
+/* stylelint-disable-next-line */
 .rangeSlider .rangeHandle {
   border-radius: 50%;
 }

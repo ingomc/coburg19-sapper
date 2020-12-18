@@ -1,25 +1,24 @@
 <style>
   .timetravel {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    padding: 2rem 1.5rem;
-    z-index: 100;
     background-color: var(--bg-200);
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-  }
-  .btn {
-    position: absolute;
-    top: 0;
+    bottom: 0;
+    padding: 2rem 1.5rem;
+    position: fixed;
     right: 0;
-    padding: 2px;
-    transform: translate3d(-50%, -50%, 0);
+    width: 100%;
+    z-index: 100;
+  }
+
+  .btn {
     border-radius: 50%;
     overflow: hidden;
-  }
-  .slider {
+    padding: 2px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate3d(-50%, -50%, 0);
   }
 </style>
 
