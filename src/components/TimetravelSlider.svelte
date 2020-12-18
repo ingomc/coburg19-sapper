@@ -1,4 +1,19 @@
 <style>
+  div {
+    --range-slider: var(--bg-100); /* slider main background color */
+    --range-handle-inactive: var(--color); /* inactive handle color */
+    --range-handle: var(--bg-400); /* non-focussed handle color */
+    --range-handle-focus: var(--color); /* focussed handle color */
+    --range-handle-border: var(--color);
+    --range-range-inactive: var(--color); /* inactive range bar background color */
+    --range-range: var(--color); /* active range bar background color */
+    --range-float-inactive: var(--color); /* inactive floating label background color */
+    --range-float: var(--color); /* floating label background color */
+    --range-float-text: var(--color); /* text color on floating label */
+    --range-pip: var(--bg-50);
+    --range-pip-active: var(--color);
+    --range-pip-in-range-text: var(--bg-50);
+  }
   p {
     margin: 0;
     padding: 0;
