@@ -57,7 +57,7 @@
     </div>
   </div>
 {:else}
-  <div class="timetravel">
+  <div class="timetravel" transition:fly="{{ y: -100, duration: 300 }}">
     <div class="btn">
       <CircleButton on:click="{() => handleCircleButtonClick()}">
         <IconTTinactive />
