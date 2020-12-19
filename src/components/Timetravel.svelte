@@ -30,11 +30,13 @@
 <script>
   import { fly } from 'svelte/transition';
   import IconTTactive from './icons/IconTTactive.svelte';
+  import IconTTactivecheck from './icons/IconTTactivecheck.svelte';
   import IconTTinactive from './icons/IconTTinactive.svelte';
+  import IconTTclose from './icons/IconTTclose.svelte';
 
   import CircleButton from './CircleButton.svelte';
   import TimetravelSlider from './TimetravelSlider.svelte';
-  import { ttIsOpen } from '../stores/stores';
+  import { ttIsActive, ttIsOpen } from '../stores/stores';
 
   // Handle click on circle button
   function handleCircleButtonClick() {
@@ -48,7 +50,7 @@
   <div class="timetravel" transition:fly="{{ y: 200, duration: 300 }}">
     <div class="btn">
       <CircleButton on:click="{() => handleCircleButtonClick()}">
-        <IconTTactive />
+        <IconTTclose />
       </CircleButton>
     </div>
     <div class="slider">
@@ -59,7 +61,11 @@
   <div class="timetravel">
     <div class="btn">
       <CircleButton on:click="{() => handleCircleButtonClick()}">
-        <IconTTinactive />
+        {#if $ttIsActive}
+          <IconTTactivecheck />
+        {:else}
+          <IconTTinactive />
+        {/if}
       </CircleButton>
     </div>
   </div>
