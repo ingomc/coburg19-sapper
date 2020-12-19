@@ -20,8 +20,7 @@
   }
 
   .slider {
-    background-color: rgba(59, 66, 75, 0.98);
-    box-shadow: 0 0 12px 6px var(--bg-400);
+    background-color: rgba(55, 62, 71, 0.98);
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     padding: 1.5rem 0;
@@ -57,7 +56,7 @@
     </div>
   </div>
 {:else}
-  <div class="timetravel" transition:fly="{{ y: -100, duration: 300 }}">
+  <div class="timetravel">
     <div class="btn">
       <CircleButton on:click="{() => handleCircleButtonClick()}">
         <IconTTinactive />
