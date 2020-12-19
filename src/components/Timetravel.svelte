@@ -1,13 +1,11 @@
 <style>
   .timetravel {
-    background-color: var(--bg-200);
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
     bottom: 0;
     position: fixed;
     right: 0;
     width: 100%;
     z-index: 100;
+    min-height: 4rem;
   }
 
   .btn {
@@ -18,28 +16,52 @@
     right: 0;
     top: 0;
     transform: translate3d(-50%, -50%, 0);
+    z-index: 10;
+  }
+
+  .slider {
+    background-color: rgba(59, 66, 75, 0.98);
+    box-shadow: 0 0 12px 6px var(--bg-400);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 1.5rem 0;
   }
 </style>
 
 <script>
+  import { fly } from 'svelte/transition';
   import IconTTactive from './icons/IconTTactive.svelte';
+  import IconTTinactive from './icons/IconTTinactive.svelte';
+
   import CircleButton from './CircleButton.svelte';
   import TimetravelSlider from './TimetravelSlider.svelte';
+  import { ttIsOpen } from '../stores/stores';
 
   // Handle click on circle button
   function handleCircleButtonClick() {
     console.log('Clicki');
     // Tigger Trackingevent
+    ttIsOpen.update(() => !$ttIsOpen);
   }
 </script>
 
-<div class="timetravel">
-  <div class="btn">
-    <CircleButton on:click="{() => handleCircleButtonClick()}">
-      <IconTTactive />
-    </CircleButton>
+{#if $ttIsOpen}
+  <div class="timetravel" transition:fly="{{ y: 200, duration: 300 }}">
+    <div class="btn">
+      <CircleButton on:click="{() => handleCircleButtonClick()}">
+        <IconTTactive />
+      </CircleButton>
+    </div>
+    <div class="slider">
+      <TimetravelSlider />
+    </div>
   </div>
-  <div class="slider">
-    <TimetravelSlider />
+{:else}
+  <div class="timetravel">
+    <div class="btn">
+      <CircleButton on:click="{() => handleCircleButtonClick()}">
+        <IconTTinactive />
+      </CircleButton>
+    </div>
   </div>
-</div>
+{/if}

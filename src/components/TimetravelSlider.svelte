@@ -16,7 +16,6 @@
   }
   .labelwrapper {
     padding: 0.5rem 2.5rem;
-    padding-top: 2rem;
   }
   .icon {
     display: inline-block;
@@ -36,7 +35,7 @@
   import { onMount } from 'svelte';
   import RangeSlider from 'svelte-range-slider-pips';
   import moment from 'moment';
-  import { async_data, sliderValue, timetravelIsActive } from '../stores/stores';
+  import { async_data, sliderValue, ttIsActive } from '../stores/stores';
   import IconTTactive from './icons/IconTTactive.svelte';
   import IconTTinactive from './icons/IconTTinactive.svelte';
 
@@ -96,9 +95,9 @@
       async_data.update(() => newData[changedValue]);
       sliderValue.update(() => changedValue);
       if (changedValue < tt.length - 1) {
-        timetravelIsActive.update(() => true);
+        ttIsActive.update(() => true);
       } else {
-        timetravelIsActive.update(() => false);
+        ttIsActive.update(() => false);
       }
     }
   }
@@ -123,7 +122,7 @@
 </script>
 
 <div class="wrapper">
-  {#if $timetravelIsActive}
+  {#if $ttIsActive}
     <div class="labelwrapper">
       <span class="icon"><IconTTactive /></span>
       <span class="label"> Zeitreise aktiviert: {tt[changedValue].dateLabel} </span>

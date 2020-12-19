@@ -16,7 +16,7 @@
   }
 
   .circlebutton:hover {
-    border-color: var(--bg-50);
+    border-color: var(--bg-100);
   }
 
   .circlebutton:active {
