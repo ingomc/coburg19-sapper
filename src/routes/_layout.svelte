@@ -39,7 +39,7 @@
   export let segment;
 
   $: {
-    if (!!$async_data.update) {
+    if (!!$async_data && !!$async_data.update) {
       // assign timetraveldata
       update = $async_data.update;
     }

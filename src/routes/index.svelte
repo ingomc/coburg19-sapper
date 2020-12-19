@@ -144,7 +144,7 @@
   sortedCitys = sortCitys(citys);
 
   $: {
-    if (!!$async_data.citys) {
+    if (!!$async_data && !!$async_data.citys) {
       // assign timetraveldata
       sortedCitys = sortCitys($async_data.citys);
       germannew = $async_data.germannew;

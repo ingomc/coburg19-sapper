@@ -136,6 +136,7 @@
 </script>
 
 <script>
+  import { tick } from 'svelte';
   import { async_data } from '../stores/stores';
   import moment from 'moment';
   import Line from 'svelte-chartjs/src/Line.svelte';
@@ -144,6 +145,7 @@
   import Timetravel from '../components/Timetravel.svelte';
 
   export let city;
+  export let remount = false;
 
   // how many months in graphs
   let months = 2;
@@ -235,16 +237,20 @@
     }
   }
 
-  // workaround for sapperbug for hash navigation
-  function scrollTo({ target }) {
-    document.querySelector(target.getAttribute('href')).scrollIntoView({
-      block: 'start',
-      behavior: 'smooth',
-    });
+  // Barchart has an update bug, fix it with complete remount the component
+  async function remountComponent() {
+    if (remount) {
+      return;
+    }
+    remount = true;
+    // Wait for the next tick
+    await tick();
+    remount = false;
   }
 
   $: {
-    if (!!$async_data.citys) {
+    remountComponent(); // Barchart has an update bug, fix it with complete remount the component
+    if (!!$async_data && !!$async_data.citys) {
       const found = $async_data.citys.find((element) => element.id == city.id);
       city = { ...found };
     }
@@ -358,8 +364,8 @@
       <Line data="{city.allCases.recovered}" options="{options}" />
     </section>
   {/if}
-
-  {#if city.allCases.casesperday}
+  <!-- Barchart has an update bug, fix it with complete remount the component -->
+  {#if city.allCases && city.allCases.casesperday && !remount}
     <section>
       <h2>Neue Fälle pro Tag in {city.name}</h2>
       <p>
@@ -371,10 +377,12 @@
     </section>
   {/if}
 
-  <section>
-    <h2>Alle Fälle bisher in {city.name}</h2>
-    <Line data="{city.allCases.sick}" options="{options}" />
-  </section>
+  {#if city.allCases.sick}
+    <section>
+      <h2>Alle Fälle bisher in {city.name}</h2>
+      <Line data="{city.allCases.sick}" options="{options}" />
+    </section>
+  {/if}
 </div>
 <div class="social">
   <Social />

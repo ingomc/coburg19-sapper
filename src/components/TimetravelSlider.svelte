@@ -1,5 +1,5 @@
 <style>
-  div {
+  .wrapper {
     --range-slider: var(--bg-100); /* slider main background color */
     --range-handle-inactive: var(--color); /* inactive handle color */
     --range-handle: var(--bg-400); /* non-focussed handle color */
@@ -14,10 +14,21 @@
     --range-pip-active: var(--color);
     --range-pip-in-range-text: var(--bg-50);
   }
-
-  p {
-    margin: 0;
-    padding: 0;
+  .labelwrapper {
+    padding: 0.5rem 2.5rem;
+    padding-top: 2rem;
+  }
+  .icon {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+  }
+  .label {
+    vertical-align: middle;
+  }
+  .rangeslider {
+    padding: 0.25rem 1.5rem;
   }
 </style>
 
@@ -25,13 +36,20 @@
   import { onMount } from 'svelte';
   import RangeSlider from 'svelte-range-slider-pips';
   import moment from 'moment';
-  import { async_data, sliderValue } from '../stores/stores';
+  import { async_data, sliderValue, timetravelIsActive } from '../stores/stores';
+  import IconTTactive from './icons/IconTTactive.svelte';
+  import IconTTinactive from './icons/IconTTinactive.svelte';
 
   const tt = [
     {
       sliderLabel: '1 Woche',
       dateLabel: moment().subtract(1, 'weeks').format('DD.MM.YYYY'),
       date: moment().subtract(1, 'weeks').format('YYYY-MM-DD'),
+    },
+    {
+      sliderLabel: 'Vorgestern',
+      dateLabel: 'Vorgestern',
+      date: moment().subtract(2, 'days').format('YYYY-MM-DD'),
     },
     {
       sliderLabel: 'Gestern',
@@ -77,6 +95,11 @@
     if (process.browser) {
       async_data.update(() => newData[changedValue]);
       sliderValue.update(() => changedValue);
+      if (changedValue < tt.length - 1) {
+        timetravelIsActive.update(() => true);
+      } else {
+        timetravelIsActive.update(() => false);
+      }
     }
   }
 
@@ -99,16 +122,27 @@
   });
 </script>
 
-<div>
-  <p>Blablabla</p>
-  <RangeSlider
-    pips
-    all="label"
-    bind:values
-    range="max"
-    springValues="{{ stiffness: 0.3, damping: 0.9 }}"
-    formatter="{(v) => tt[v].sliderLabel}"
-    max="{tt.length - 1}"
-  />
-  <p>{tt[changedValue].dateLabel}</p>
+<div class="wrapper">
+  {#if $timetravelIsActive}
+    <div class="labelwrapper">
+      <span class="icon"><IconTTactive /></span>
+      <span class="label"> Zeitreise aktiviert: {tt[changedValue].dateLabel} </span>
+    </div>
+  {:else}
+    <div class=" labelwrapper muted">
+      <span class="icon"><IconTTinactive /></span>
+      <span class="label"> Zeitreise inaktiv </span>
+    </div>
+  {/if}
+  <div class="rangeslider">
+    <RangeSlider
+      pips
+      all="label"
+      bind:values
+      range="max"
+      springValues="{{ stiffness: 0.3, damping: 0.9 }}"
+      formatter="{(v) => tt[v].sliderLabel}"
+      max="{tt.length - 1}"
+    />
+  </div>
 </div>

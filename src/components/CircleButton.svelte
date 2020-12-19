@@ -22,6 +22,12 @@
   .circlebutton:active {
     background-color: var(--bg-200);
   }
+
+  .icon {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 </style>
 
 <script>
@@ -33,5 +39,7 @@
 </script>
 
 <button class="circlebutton" on:click="{onClick}">
-  <slot />
+  <div class="icon">
+    <slot />
+  </div>
 </button>
