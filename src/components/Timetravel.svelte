@@ -37,7 +37,6 @@
 
 <script>
   import { fly } from 'svelte/transition';
-  import IconTTactive from './icons/IconTTactive.svelte';
   import IconTTactivecheck from './icons/IconTTactivecheck.svelte';
   import IconTTinactive from './icons/IconTTinactive.svelte';
   import IconTTclose from './icons/IconTTclose.svelte';

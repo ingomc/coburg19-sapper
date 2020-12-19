@@ -6,6 +6,7 @@
     margin: 0 auto;
     max-width: 700px;
     padding: var(--spacing-xs) var(--spacing);
+    border: 3px solid var(--bg-400);
   }
 </style>
 
@@ -14,7 +15,7 @@
   export let until;
 </script>
 
-{#if moment().isBefore(until)}
+{#if moment().isBefore(until) || until == undefined}
   <div class="message">
     <slot />
   </div>
