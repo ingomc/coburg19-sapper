@@ -14,18 +14,22 @@
     --range-pip-active: var(--color);
     --range-pip-in-range-text: var(--bg-50);
   }
+
   .labelwrapper {
     padding: 0.5rem 2.5rem;
   }
+
   .icon {
     display: inline-block;
-    width: 1rem;
     height: 1rem;
     vertical-align: middle;
+    width: 1rem;
   }
+
   .label {
     vertical-align: middle;
   }
+
   .rangeslider {
     padding: 0.25rem 1.5rem;
   }

@@ -1,11 +1,19 @@
 <style>
   .timetravel {
     bottom: 0;
+    min-height: 4rem;
     position: fixed;
     right: 0;
     width: 100%;
     z-index: 100;
-    min-height: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .timetravel {
+      bottom: 0;
+      max-width: 500px;
+      right: var(--spacing-xs);
+    }
   }
 
   .btn {
