@@ -47,7 +47,7 @@
 
   // Handle click on circle button
   function handleCircleButtonClick() {
-    console.log('Clicki');
+    // console.log('Clicki');
     // Tigger Trackingevent
     ttIsOpen.update(() => !$ttIsOpen);
   }

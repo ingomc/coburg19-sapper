@@ -36,7 +36,7 @@
 <script>
   import { stores } from '@sapper/app';
   import { fly } from 'svelte/transition';
-  import { async_data, ttIsActive, ttIsOpen } from '../stores/stores';
+  import { async_data, ttIsActive, ttToday } from '../stores/stores';
   import Loading from '../components/Loading.svelte';
   import Header from '../components/Header.svelte';
   import UpdateMessage from '../components/UpdateMessage.svelte';
@@ -44,9 +44,11 @@
   import Footer from '../components/Footer.svelte';
   import Matomo from '../components/Matomo.svelte';
   import Message from '../components/Message.svelte';
+  import { onMount } from 'svelte';
 
   export let update;
   export let segment;
+  const { preloading } = stores();
 
   $: {
     if (!!$async_data && !!$async_data.update) {
@@ -55,7 +57,9 @@
     }
   }
 
-  const { preloading } = stores();
+  onMount(() => {
+    ttToday.update(() => update.substring(0, update.indexOf(',')));
+  });
 </script>
 
 <svelte:head>

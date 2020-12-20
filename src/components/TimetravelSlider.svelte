@@ -39,30 +39,30 @@
   import { onMount } from 'svelte';
   import RangeSlider from 'svelte-range-slider-pips';
   import moment from 'moment';
-  import { async_data, sliderValue, ttIsActive } from '../stores/stores';
+  import { async_data, sliderValue, ttIsActive, ttToday } from '../stores/stores';
   import IconTTactive from './icons/IconTTactive.svelte';
   import IconTTinactive from './icons/IconTTinactive.svelte';
 
   const tt = [
     {
       sliderLabel: '1 Woche',
-      dateLabel: moment().subtract(1, 'weeks').format('DD.MM.YYYY'),
-      date: moment().subtract(1, 'weeks').format('YYYY-MM-DD'),
+      dateLabel: moment($ttToday, 'DD.MM.YYYY').subtract(1, 'weeks').format('DD.MM.YYYY'),
+      date: moment($ttToday, 'DD.MM.YYYY').subtract(1, 'weeks').format('YYYY-MM-DD'),
     },
     {
       sliderLabel: 'Vorgestern',
       dateLabel: 'Vorgestern',
-      date: moment().subtract(2, 'days').format('YYYY-MM-DD'),
+      date: moment($ttToday, 'DD.MM.YYYY').subtract(2, 'days').format('YYYY-MM-DD'),
     },
     {
       sliderLabel: 'Gestern',
       dateLabel: 'Gestern',
-      date: moment().subtract(1, 'days').format('YYYY-MM-DD'),
+      date: moment($ttToday, 'DD.MM.YYYY').subtract(1, 'days').format('YYYY-MM-DD'),
     },
     {
       sliderLabel: 'Heute',
       dateLabel: 'Heute',
-      date: moment().format('YYYY-MM-DD'),
+      date: moment($ttToday, 'DD.MM.YYYY').format('YYYY-MM-DD'),
     },
   ];
 
