@@ -24,7 +24,7 @@
     position: fixed;
     right: 0;
     transform: translate3d(-50%, -50%, 0);
-    z-index: 20;
+    z-index: 5;
   }
 
   .btn {
