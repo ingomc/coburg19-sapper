@@ -16,6 +16,17 @@
     }
   }
 
+  .tt-button {
+    border-radius: 50%;
+    bottom: 0;
+    overflow: hidden;
+    padding: 2px;
+    position: fixed;
+    right: 0;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 20;
+  }
+
   .btn {
     border-radius: 50%;
     overflow: hidden;
@@ -65,15 +76,13 @@
     </div>
   </div>
 {:else}
-  <div class="timetravel">
-    <div class="btn">
-      <CircleButton on:click="{() => handleCircleButtonClick()}">
-        {#if $ttIsActive}
-          <IconTTactivecheck />
-        {:else}
-          <IconTTinactive />
-        {/if}
-      </CircleButton>
-    </div>
+  <div class="tt-button">
+    <CircleButton on:click="{() => handleCircleButtonClick()}">
+      {#if $ttIsActive}
+        <IconTTactivecheck />
+      {:else}
+        <IconTTinactive />
+      {/if}
+    </CircleButton>
   </div>
 {/if}

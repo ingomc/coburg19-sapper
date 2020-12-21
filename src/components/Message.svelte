@@ -1,12 +1,12 @@
 <style>
   .message {
     background-color: var(--bg-200);
+    border: 3px solid var(--bg-400);
     border-radius: 4px;
     display: inline-block;
     margin: 0 auto;
     max-width: 700px;
     padding: var(--spacing-xs) var(--spacing);
-    border: 3px solid var(--bg-400);
   }
 </style>
 

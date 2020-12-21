@@ -15,9 +15,9 @@
   }
 
   .timetravel {
+    left: 50%;
     position: fixed;
     top: -3px;
-    left: 50%;
     transform: translate3d(-50%, 0, 0);
     z-index: 10;
   }
