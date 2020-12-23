@@ -83,6 +83,8 @@
     <li>Bettina</li>
     <li>Stefan</li>
     <li>Bettina L.</li>
+    <li>Michael</li>
+    <li>Claudius</li>
   </ul>
 
   <p>Diese Seite benutzt:</p>
