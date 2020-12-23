@@ -32,6 +32,7 @@
 
   .rangeslider {
     padding: 0.25rem 1.5rem;
+    font-size: 0.8rem;
   }
 </style>
 
@@ -44,6 +45,11 @@
   import IconTTinactive from './icons/IconTTinactive.svelte';
 
   const tt = [
+    {
+      sliderLabel: '2 Wochen',
+      dateLabel: moment($ttToday, 'DD.MM.YYYY').subtract(2, 'weeks').format('DD.MM.YYYY'),
+      date: moment($ttToday, 'DD.MM.YYYY').subtract(2, 'weeks').format('YYYY-MM-DD'),
+    },
     {
       sliderLabel: '1 Woche',
       dateLabel: moment($ttToday, 'DD.MM.YYYY').subtract(1, 'weeks').format('DD.MM.YYYY'),
