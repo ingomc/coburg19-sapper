@@ -66,7 +66,7 @@ const wellFormAllCases = (data) => {
     sick: {
       datasets: [
         {
-          label: 'Erkrankte',
+          label: 'Infizierte',
           type: 'line',
           backgroundColor: 'rgba(246,62,2,0.1)',
           pointRadius: 1,
