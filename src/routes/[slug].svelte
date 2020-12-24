@@ -400,45 +400,45 @@
       ({city.district}) ist aktuell auf
       {ampelColor}!
     </h1>
-  </div>
-  <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-    <div itemprop="text">
-      <p>
-        Die 7-Tage Inzidenz pro 100.000 Einwohner in
-        {city.name}
-        ist aktuell
-        <strong> {city.incidence > 0 ? city.incidence : '0'}. </strong>
-        {#if warningclass == 'info'}
-          Das ist die geringste Corona Warnstufe für den Bereich
-          {city.district}
-          {city.name}.
-        {/if}
-        {#if warningclass == 'warning'}
-          Somit gilt im Bereich
-          {city.district}
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <div itemprop="text">
+        <p>
+          Die 7-Tage Inzidenz pro 100.000 Einwohner in
           {city.name}
-          die gelbe (mittlere) Corona Warnstufe.
-        {/if}
-        {#if warningclass == 'danger'}
-          Somit gilt im Bereich
-          {city.district}
-          {city.name}
-          die rote (hohe) Corona Warnstufe ⚠️.
-        {/if}
-        {#if warningclass == 'superdanger'}
-          Somit gilt im Bereich
-          {city.district}
-          {city.name}
-          die dunkelrote (höchste) Corona Warnstufe ⚠️.
-        {/if}
-      </p>
-      <p>
-        {`
-        ${city.district} ${city.name} hat insgesamt ${city.population.toLocaleString('de')} Einwohner. 
-        Es gab bisher schon ${city.cases} positive Tests in der Region. Insgesamt sind hier schon 
-        ${city.deaths}  Menschen mit oder an den Folgen des Corona-Virus gestorben.
-        `}
-      </p>
+          ist aktuell
+          <strong> {city.incidence > 0 ? city.incidence : '0'}. </strong>
+          {#if warningclass == 'info'}
+            Das ist die geringste Corona Warnstufe für den Bereich
+            {city.district}
+            {city.name}.
+          {/if}
+          {#if warningclass == 'warning'}
+            Somit gilt im Bereich
+            {city.district}
+            {city.name}
+            die gelbe (mittlere) Corona Warnstufe.
+          {/if}
+          {#if warningclass == 'danger'}
+            Somit gilt im Bereich
+            {city.district}
+            {city.name}
+            die rote (hohe) Corona Warnstufe ⚠️.
+          {/if}
+          {#if warningclass == 'superdanger'}
+            Somit gilt im Bereich
+            {city.district}
+            {city.name}
+            die dunkelrote (höchste) Corona Warnstufe ⚠️.
+          {/if}
+        </p>
+        <p>
+          {`
+          ${city.district} ${city.name} hat insgesamt ${city.population.toLocaleString('de')} Einwohner. 
+          Es gab bisher schon ${city.cases} positive Tests in der Region. Insgesamt sind hier schon 
+          ${city.deaths}  Menschen mit oder an den Folgen des Corona-Virus gestorben.
+          `}
+        </p>
+      </div>
     </div>
   </div>
 
