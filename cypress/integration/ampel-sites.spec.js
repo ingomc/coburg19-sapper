@@ -9,7 +9,7 @@ describe('Test Sites', () => {
   it('Homepage', () => {
     cy.visit(baseUrl);
     cy.get('h1').contains('Ampel');
-    cy.get('#hp-cardlist > li').should('have.length', '12');
+    cy.get('#hp-cardlist > li').should('have.length', '13');
     cy.get('#footer-nav .card').should('have.length', '3');
     cy.get('main .social').should('have.length', '1');
     cy.contains('Neue Fälle in Deutschland');

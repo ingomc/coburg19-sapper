@@ -189,16 +189,15 @@
         </a>
       </li>
     {/each}
-    <li>
-      <div class="social">
-        <Social />
-      </div>
-    </li>
   </ul>
 </nav>
+<div class="social">
+  <Social />
+</div>
+
 <Timetravel />
 <div class="hints">
-  <Message until="2021-01-05T00:00:00Z">
+  <Message until="2020-01-05T00:00:00Z">
     <small>
       <svg
         class="danger-icon"
