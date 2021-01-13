@@ -86,7 +86,13 @@
     <li>Michael</li>
     <li>Claudius</li>
     <li>Jörg</li>
+    <li>Frank</li>
+    <li>Christiane</li>
   </ul>
+  <p>
+    <small><strong>Hinweis:</strong>
+      Spenden sind in diesem Fall Schenkungen da ich eine Privatperson bin.</small>
+  </p>
 
   <p>Diese Seite benutzt:</p>
   <ul>
