@@ -30,19 +30,19 @@ jobs:
       - name: Install
         run: npm i
 
-      - name: Write Version
-        run: npm run version
+      # - name: Write Version
+      #   run: npm run version
 
       - name: Fetch Data
         run: npm run data
-        
+
       - name: Commit files # commit the output folder
         run: |
           git config --local user.email "kontakt@corona-ampel-coburg.de"
           git config --local user.name "Andre Robot"
           git add .
           git commit -m "Add generated data"
-        
+
       - name: Push changes # push the output folder to your repo
         uses: ad-m/github-push-action@master
         with:
