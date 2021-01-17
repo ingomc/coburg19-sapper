@@ -348,11 +348,19 @@
           <div class="number">{city.faelle_covid_aktuell_beatmet}</div>
         </div>
       </div>
-    {:else}
+    {:else if city.its_error == false}
       <div class="title">
         <small>
           Keine Intensivstation-Informationen vorhanden. Intensivpatienten werden in der Regel im
           nächsten Stadtkreis behandelt</small>
+      </div>
+    {:else}
+      <div class="title">
+        <small>
+          Beim beziehen der Daten
+          <strong>"Intensivstation"</strong>
+          vom RKI ist etwas schief gelaufen.
+        </small>
       </div>
     {/if}
   </div>

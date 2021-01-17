@@ -130,18 +130,8 @@ const handleLocation = async (location) => {
     .then((res) => res.json())
     .then((_json) => wellFormAllCases(_json.features));
 
-  try {
-    // Get new Cases from API for this city
-    let itsData = await fetch(getITS(location))
-      .then((res) => res.json())
-      .then((_json) => _json.features[0]);
-  } catch (err) {
-    console.log(`Problem mit ITS Data: ${location.BEZ}, ${location.GEN}`);
-  }
-
-  json.date = location.last_update;
-
   let itsDataFinalJson = {
+    its_error: false,
     betten_frei: null,
     betten_belegt: null,
     betten_gesamt: null,
@@ -153,19 +143,31 @@ const handleLocation = async (location) => {
     daten_stand: null,
   };
 
-  if (typeof itsData !== 'undefined') {
-    itsDataFinalJson = {
-      betten_frei: itsData.attributes.betten_frei,
-      betten_belegt: itsData.attributes.betten_belegt,
-      betten_gesamt: itsData.attributes.betten_gesamt,
-      Anteil_betten_frei: itsData.attributes.Anteil_betten_frei,
-      faelle_covid_aktuell: itsData.attributes.faelle_covid_aktuell,
-      faelle_covid_aktuell_beatmet: itsData.attributes.faelle_covid_aktuell_beatmet,
-      Anteil_covid_beatmet: itsData.attributes.Anteil_covid_beatmet,
-      Anteil_COVID_betten: itsData.attributes.Anteil_COVID_betten,
-      daten_stand: itsData.attributes.daten_stand,
-    };
+  try {
+    // Get new Cases from API for this city
+    let itsData = await fetch(getITS(location))
+      .then((res) => res.json())
+      .then((_json) => _json.features[0]);
+
+    if (typeof itsData !== 'undefined') {
+      itsDataFinalJson = {
+        betten_frei: itsData.attributes.betten_frei,
+        betten_belegt: itsData.attributes.betten_belegt,
+        betten_gesamt: itsData.attributes.betten_gesamt,
+        Anteil_betten_frei: itsData.attributes.Anteil_betten_frei,
+        faelle_covid_aktuell: itsData.attributes.faelle_covid_aktuell,
+        faelle_covid_aktuell_beatmet: itsData.attributes.faelle_covid_aktuell_beatmet,
+        Anteil_covid_beatmet: itsData.attributes.Anteil_covid_beatmet,
+        Anteil_COVID_betten: itsData.attributes.Anteil_COVID_betten,
+        daten_stand: itsData.attributes.daten_stand,
+      };
+    }
+  } catch (err) {
+    console.log(`Problem mit ITS Data: ${location.BEZ}, ${location.GEN}`);
+    itsDataFinalJson.its_error = true;
   }
+
+  json.date = location.last_update;
 
   json.locations.push({
     ...itsDataFinalJson,
