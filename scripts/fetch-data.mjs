@@ -123,17 +123,29 @@ const handleLocation = async (location) => {
   // Get new Cases from API for this city
   const newCases = await fetch(getNewCasesEndpoint(location))
     .then((res) => res.json())
-    .then((_json) => _json.features[0].attributes.value);
+    .then((_json) => _json.features[0].attributes.value)
+    .catch((error) => {
+      console.log('\x1b[31m%s\x1b[0m', ` x getNewCasesEndpoint ${location.BEZ} ${location.GEN}`);
+      console.log(error);
+    });
 
   // Get all cases from API
   const allCases = await fetch(getAllCasesEndpoint(location))
     .then((res) => res.json())
-    .then((_json) => wellFormAllCases(_json.features));
+    .then((_json) => wellFormAllCases(_json.features))
+    .catch((error) => {
+      console.log('\x1b[31m%s\x1b[0m', ` x wellFormAllCases ${location.BEZ} ${location.GEN}`);
+      console.log(error);
+    });
 
   // Get new Cases from API for this city
   let itsData = await fetch(getITS(location))
     .then((res) => res.json())
-    .then((_json) => _json.features[0]);
+    .then((_json) => _json.features[0])
+    .catch((error) => {
+      console.log('\x1b[31m%s\x1b[0m', ` x getITS ${location.BEZ} ${location.GEN}`);
+      console.log(error);
+    });
 
   json.date = location.last_update;
 
@@ -203,12 +215,20 @@ fetch(getLocationsEndpoint())
     const jsonGermanNew = JSON.stringify(
       await fetch(endpointGermanNewCases)
         .then((res) => res.json())
-        .then((_json) => _json.features[0].attributes.value),
+        .then((_json) => _json.features[0].attributes.value)
+        .catch((error) => {
+          console.log('\x1b[31m%s\x1b[0m', ` x endpointGermanNewCases`);
+          console.log(error);
+        }),
     );
     const jsonBavariaNew = JSON.stringify(
       await fetch(endpointBavariaNewCases)
         .then((res) => res.json())
-        .then((_json) => _json.features[0].attributes.value),
+        .then((_json) => _json.features[0].attributes.value)
+        .catch((error) => {
+          console.log('\x1b[31m%s\x1b[0m', ` x endpointBavariaNewCases`);
+          console.log(error);
+        }),
     );
     const allDataString = `{
       "citys": ${jsonLocations},
