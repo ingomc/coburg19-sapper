@@ -29,7 +29,7 @@ const endpointGermanNewCases =
 const endpointBavariaNewCases =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(Bundesland%3D%27Bayern%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
 const endpointITS =
-  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/DIVI_Intensivregister_Landkreise/FeatureServer/0/query?f=json&where=OBJECTID%3D%27${OBJECTID}%27&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*';
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/DIVI_Intensivregister_Landkreise/FeatureServer/0/query?f=json&where=AGS%3D%27${RS}%27&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*';
 
 const getLocationsEndpoint = () => {
   let _endpoint = endpoint;
@@ -57,7 +57,7 @@ const getAllCasesEndpoint = (data) => {
 };
 
 const getITS = (data) => {
-  let _endpoint = endpointITS.replace('${OBJECTID}', data.OBJECTID);
+  let _endpoint = endpointITS.replace('${RS}', data.RS);
   return _endpoint;
 };
 
