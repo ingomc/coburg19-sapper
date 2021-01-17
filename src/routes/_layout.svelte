@@ -48,6 +48,7 @@
 
   export let update;
   export let segment;
+  export let datewarning;
   const { preloading } = stores();
 
   $: {
@@ -59,6 +60,11 @@
 
   onMount(() => {
     ttToday.update(() => update.substring(0, update.indexOf(',')));
+    if (new Date().getDate() == update.split('.')[0]) {
+      datewarning = '';
+    } else {
+      datewarning = `!!!`;
+    }
   });
 </script>
 
@@ -79,7 +85,7 @@
 
 <Header segment="{segment}">
   {#if !segment}
-    <UpdateMessage>Stand: {update}</UpdateMessage>
+    <UpdateMessage>Stand: {update} <strong>{datewarning}</strong></UpdateMessage>
   {/if}
 </Header>
 
