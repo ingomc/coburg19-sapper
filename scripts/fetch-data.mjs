@@ -130,10 +130,14 @@ const handleLocation = async (location) => {
     .then((res) => res.json())
     .then((_json) => wellFormAllCases(_json.features));
 
-  // Get new Cases from API for this city
-  let itsData = await fetch(getITS(location))
-    .then((res) => res.json())
-    .then((_json) => _json.features[0]);
+  try {
+    // Get new Cases from API for this city
+    let itsData = await fetch(getITS(location))
+      .then((res) => res.json())
+      .then((_json) => _json.features[0]);
+  } catch (err) {
+    console.log(`Problem mit ITS Data: ${location.BEZ}, ${location.GEN}`);
+  }
 
   json.date = location.last_update;
 
