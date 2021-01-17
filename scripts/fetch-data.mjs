@@ -139,13 +139,13 @@ const handleLocation = async (location) => {
     });
 
   // Get new Cases from API for this city
-  let itsData = await fetch(getITS(location))
-    .then((res) => res.json())
-    .then((_json) => _json.features[0])
-    .catch((error) => {
-      console.log('\x1b[31m%s\x1b[0m', ` x getITS ${location.BEZ} ${location.GEN}`);
-      console.log(error);
-    });
+  // let itsData = await fetch(getITS(location))
+  //   .then((res) => res.json())
+  //   .then((_json) => _json.features[0])
+  //   .catch((error) => {
+  //     console.log('\x1b[31m%s\x1b[0m', ` x getITS ${location.BEZ} ${location.GEN}`);
+  //     console.log(error);
+  //   });
 
   json.date = location.last_update;
 
