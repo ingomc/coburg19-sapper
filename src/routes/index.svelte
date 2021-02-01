@@ -172,11 +172,11 @@
 <section class="statistics">
   <div class="column left">
     <h3 class="label">Neue Fälle in Deutschland</h3>
-    <div class="cases">+{germannew.toLocaleString('de')}</div>
+    <div class="cases">+{germannew ? germannew.toLocaleString('de') : '0'}</div>
   </div>
   <div class="column right">
     <h3 class="label">Neue Fälle in Bayern</h3>
-    <div class="cases">+{bavarianew.toLocaleString('de')}</div>
+    <div class="cases">+{bavarianew ? bavarianew.toLocaleString('de') : '0'}</div>
   </div>
 </section>
 
