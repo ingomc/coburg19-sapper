@@ -53,15 +53,13 @@ jobs:
 
       - name: Build Svelte
         run: npm run export
-      #temporary
 
-      # - name: Deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./__sapper__/export
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./__sapper__/export
 
-      #temporary
       - name: FTP Upload
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
