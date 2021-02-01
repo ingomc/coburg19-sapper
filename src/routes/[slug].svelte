@@ -445,7 +445,7 @@
           </p>
           <p>
             {`
-          ${city.district} ${city.name} hat insgesamt ${city.population.toLocaleString('de')} Einwohner. 
+          ${city.district} ${city.name} hat insgesamt ${city.population ? city.population.toLocaleString('de') : '-'} Einwohner. 
           Es gab bisher schon ${city.cases} positive Tests in der Region. Insgesamt sind hier schon 
           ${city.deaths}  Menschen mit oder an den Folgen des Corona-Virus gestorben.
           `}
