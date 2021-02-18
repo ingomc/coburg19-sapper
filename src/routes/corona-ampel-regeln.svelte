@@ -10,6 +10,10 @@
   .greentext {
     color: var(--info-bg);
   }
+
+  strike > * {
+    color: rgba(255, 255, 255, 0.2);
+  }
 </style>
 
 <script>
@@ -55,10 +59,10 @@
     für die Region geschaffen wurde, werde ich sie hier wieder Eintragen
   </h1>
   <h2>Folgende Regelungen sind nicht mehr aktuell!</h2>
+  <p>
+    <strong><span class="darkbluetext"><span class="greentext">Grün - Inzidenz&nbsp;bis 35</span></span></strong>
+  </p>
   <strike>
-    <p>
-      <strong><span class="darkbluetext"><span class="greentext">Grün - Inzidenz&nbsp;bis 35</span></span></strong>
-    </p>
     <ul>
       <li>Allgemeine AHA + L-Regeln&nbsp;&nbsp;(Abstand, Hygiene, Alltagsmaske und Lüften)</li>
       <li>
@@ -73,17 +77,18 @@
         Empfehlung, aber keine Pflicht: Private Feierlichkeiten mit bis zu 25 Personen sind erlaubt
       </li>
     </ul>
-    <p>
-      <span class="yellowtext">
-        <strong><span class="yellowtext"><span class="darkbluetext">
-              <span class="yellowtext">Gelb -</span>&nbsp;</span></span></strong><span
-          class="darkbluetext"
-        ><strong> <span class="yellowtext">Inzidenz</span></strong></span></span><b
-        style="background-color: initial;"
-      ><span class="darkbluetext"><span class="yellowtext"><span
-              class="darkbluetext"
-            >&nbsp;</span>35 bis 50</span></span></b>
-    </p>
+  </strike>
+  <p>
+    <span class="yellowtext">
+      <strong><span class="yellowtext"><span class="darkbluetext">
+            <span class="yellowtext">Gelb -</span>&nbsp;</span></span></strong><span
+        class="darkbluetext"
+      ><strong> <span class="yellowtext">Inzidenz</span></strong></span></span><b
+      style="background-color: initial;"
+    ><span class="darkbluetext"><span class="yellowtext"><span class="darkbluetext">&nbsp;</span>35
+          bis 50</span></span></b>
+  </p>
+  <strike>
     <ul>
       <li>
         Maskenpflicht wird ausgeweitet.&nbsp;
@@ -106,11 +111,12 @@
         Egal ob draußen, daheim oder im Lokal.
       </li>
     </ul>
-    <p>
-      <span class="redtext"><strong>Rot - Inzidenz&nbsp;</strong></span><span
-        class="redtext"
-      ><strong>50 bis 100</strong></span>
-    </p>
+  </strike>
+  <p>
+    <span class="redtext"><strong>Rot - Inzidenz&nbsp;</strong></span><span class="redtext"><strong
+      >50 bis 100</strong></span>
+  </p>
+  <strike>
     <ul>
       <li>
         Maskenpflicht wie bei 35-50 und zusätzlich&nbsp;Maskenpflicht auch in der
@@ -124,11 +130,13 @@
         Egal ob draußen, daheim oder im Lokal.
       </li>
     </ul>
-    <p>
-      <span class="redtext"><strong>Dunkel-Rot - Inzidenz&nbsp;</strong></span><span
-        class="redtext"
-      ><strong>ab 100</strong></span>
-    </p>
+  </strike>
+  <p>
+    <span class="redtext"><strong>Dunkel-Rot - Inzidenz&nbsp;</strong></span><span
+      class="redtext"
+    ><strong>ab 100</strong></span>
+  </p>
+  <strike>
     <ul>
       <li>Es gelten die gleichen Regeln der Stufe Rot und nis auf ...</li>
       <li>Allgemeine Sperrstunde ab 21 Uhr</li>
