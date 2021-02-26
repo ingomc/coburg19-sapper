@@ -260,7 +260,11 @@
 </script>
 
 <svelte:head>
-  <title>Corona-Ampel für {city.name}: ⚠️ Alle aktuellen Covid-Zahlen und Inzidenz</title>
+  <title>
+    Corona-Ampel
+    {city.name}
+    (${city.district}): ⚠️ Alle aktuellen Covid-Zahlen und Inzidenz
+  </title>
   <meta
     content="{`⚠️ Alle aktuellen Zahlen für ${city.name}: ⚠️ ${city.newCases} neue Fälle - ⚠️ Aktuelle Inzidenz: {city.incidence}`}"
     name="description"
@@ -406,12 +410,8 @@
 
   <div class="seo" itemscope itemtype="https://schema.org/FAQPage">
     <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <h1 itemprop="name">
-        Die Corona-Ampel für
-        {city.name}
-        ({city.district}) ist aktuell auf
-        {ampelColor}!
-      </h1>
+      <h1>Die Corona-Ampel für {city.name} ({city.district}) ist aktuell auf {ampelColor}!</h1>
+      <h2 itemprop="name">Aktuelle Inzidenz in {city.name} ({city.district})</h2>
       <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
         <div itemprop="text">
           <p>
