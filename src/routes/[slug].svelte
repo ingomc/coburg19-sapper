@@ -260,11 +260,7 @@
 </script>
 
 <svelte:head>
-  <title>
-    Corona-Ampel
-    {city.name}
-    (${city.district}): ⚠️ Alle aktuellen Covid-Zahlen und Inzidenz
-  </title>
+  <title>Corona-Ampel {city.name} ({city.district}): ⚠️ Aktuelle Covid-Zahlen und Inzidenz</title>
   <meta
     content="{`⚠️ Alle aktuellen Zahlen für ${city.name}: ⚠️ ${city.newCases} neue Fälle - ⚠️ Aktuelle Inzidenz: {city.incidence}`}"
     name="description"
