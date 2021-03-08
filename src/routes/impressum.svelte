@@ -70,7 +70,7 @@
   <ul>
     <li>Nici</li>
     <li>Hohni</li>
-    <li>Nina</li>
+    <li>Nina H.</li>
     <li>Flo</li>
     <li>Daniela</li>
     <li>Kerstin</li>
@@ -92,6 +92,7 @@
     <li>Sinan</li>
     <li>Nikkhil</li>
     <li>Michael</li>
+    <li>Nina N.</li>
   </ul>
   <p>
     <small><strong>Hinweis:</strong>
