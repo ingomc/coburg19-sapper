@@ -56,7 +56,7 @@
 
   <h1>
     Aktuell gelten für die meisten Landkreise eigene Regelungen. Sobald eine einheitliche Regelung
-    für die Region geschaffen wurde, werde ich sie hier wieder Eintragen
+    für die Region geschaffen wurde, werde ich sie hier wieder eintragen
   </h1>
   <h2>Folgende Regelungen sind nicht mehr aktuell!</h2>
   <p>
