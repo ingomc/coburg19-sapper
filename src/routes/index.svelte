@@ -169,10 +169,10 @@
   />
 </svelte:head>
 <center>
-  <Message until="2021-02-22T00:00:00Z">
+  <Message until="2021-03-14T18:00:00Z">
+    <!-- +1 Stunde -->
     <small>
-      <span>🥳 Nachdem die Stadt Coburg sieben Tage lang unter dem Inzidenzwert 100 liegt, entfällt
-        ab Samstag (20. Februar 2021), 5 Uhr, die nächtliche Ausgangssperre.
+      <span>🚦 Es gab mal wieder Probleme beim RKI, jetzt sollten die aktuellen Daten da sein
       </span>
     </small>
   </Message>
