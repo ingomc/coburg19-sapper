@@ -93,6 +93,8 @@
     <li>Nikkhil</li>
     <li>Michael</li>
     <li>Nina N.</li>
+    <li>Hans-Georg</li>
+    <li>Marion</li>
   </ul>
   <p>
     <small><strong>Hinweis:</strong>
