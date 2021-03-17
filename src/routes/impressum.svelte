@@ -95,6 +95,7 @@
     <li>Nina N.</li>
     <li>Hans-Georg</li>
     <li>Marion</li>
+    <li>Thomas</li>
   </ul>
   <p>
     <small><strong>Hinweis:</strong>
