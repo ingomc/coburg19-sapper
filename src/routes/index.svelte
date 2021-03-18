@@ -169,12 +169,12 @@
   />
 </svelte:head>
 <center>
-  <Message until="2021-03-18T21:00:00Z">
+  <Message until="2021-03-18T23:00:00Z">
     <!-- +1 Stunde -->
     <small>
-      <span>🤷🏻‍♂️🙆🏻‍♂️ Es gibt immernoch Probleme mit dem RKI.
-        <br />
-        Inoffizieller Inzidenz-Werte sind: Stadt Coburg: 56, LK Coburg: 54,2
+      <span>
+        🥳 🥳 🥳 Die neuen Werte sind da, das RKI ist immernoch am rumwerkeln, also es kann sein das
+        eventuell ein paar Werte nicht stimmen.
       </span>
     </small>
   </Message>
