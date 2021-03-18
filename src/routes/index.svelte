@@ -169,11 +169,10 @@
   />
 </svelte:head>
 <center>
-  <Message until="2021-03-14T18:00:00Z">
+  <Message until="2021-03-18T18:00:00Z">
     <!-- +1 Stunde -->
     <small>
-      <span>🚦 Es gab mal wieder Probleme beim RKI, jetzt sollten die aktuellen Daten da sein
-      </span>
+      <span>🤷🏻‍♂️ Es gibt aktuell Probleme beim RKI, angezeigt werden die Daten von Gestern! </span>
     </small>
   </Message>
 </center>
