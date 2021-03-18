@@ -172,7 +172,7 @@
   <Message until="2021-03-18T18:00:00Z">
     <!-- +1 Stunde -->
     <small>
-      <span>🤷🏻‍♂️ Es gibt aktuell Probleme beim RKI, angezeigt werden die Daten von Gestern! </span>
+      <span>🤷🏻‍♂️ Es gibt aktuell Probleme beim RKI, angezeigt werden die Daten von gestern! </span>
     </small>
   </Message>
 </center>
