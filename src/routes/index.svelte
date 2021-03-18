@@ -173,7 +173,7 @@
     <!-- +1 Stunde -->
     <small>
       <span>
-        🥳 🥳 🥳 Die neuen Werte sind da, das RKI ist immernoch am rumwerkeln, also es kann sein das
+        🥳 🥳 🥳 Die neuen Werte sind da, das RKI ist immernoch am rumwerkeln 🤦🏻‍♂️. Es kann sein, dass
         eventuell ein paar Werte nicht stimmen.
       </span>
     </small>
