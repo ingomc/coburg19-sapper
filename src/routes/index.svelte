@@ -169,12 +169,13 @@
   />
 </svelte:head>
 <center>
-  <Message until="2021-03-18T23:00:00Z">
+  <Message until="2021-03-30T23:00:00Z">
     <!-- +1 Stunde -->
     <small>
       <span>
-        🥳 🥳 🥳 Die neuen Werte sind da, das RKI ist immernoch am rumwerkeln 🤦🏻‍♂️. Es kann sein, dass
-        eventuell ein paar Werte nicht stimmen.
+        🥳
+        <strong>NEU!</strong>
+        Jetzt auch der Inzidenz-Verlauf auf der Landkreis-Detail-Seite. Klicke in deinen Landkreis.
       </span>
     </small>
   </Message>
