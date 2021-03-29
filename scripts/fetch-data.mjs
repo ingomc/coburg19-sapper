@@ -3,6 +3,7 @@ import fetch from 'node-fetch';
 import fs from 'fs';
 import moment from 'moment';
 
+const allIncidencesMonths = 2; // last 2 moths
 const allCasesMonths = 2; // last 2 moths
 const allCasesPeriod = 1; // every second day
 
@@ -24,6 +25,8 @@ const endpointNewCases =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
 const endpointAllCases =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/Covid19_RKI_Sums/FeatureServer/0/query?f=json&where=(Meldedatum%3Etimestamp%20%27${date}%2022%3A59%3A59%27)%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Meldedatum%20asc&resultOffset=0&resultRecordCount=32000&resultType=standard&cacheHint=true';
+const endpointAllIncidences =
+  'https://services-eu1.arcgis.com/XfUqDXJfAezaKUnU/arcgis/rest/services/Tabelle_Ampelkarte/FeatureServer/0/query?f=json&where=(last_update%3Etimestamp%20%27${date}%2022%3A59%3A59%27)%20AND%20(rs%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=last_update%20desc&outSR=102100&resultOffset=0&resultRecordCount=100&resultType=standard';
 const endpointGermanNewCases =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=NeuerFall%20IN(1%2C%20-1)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
 const endpointBavariaNewCases =
@@ -52,6 +55,13 @@ const getNewCasesEndpoint = (data) => {
 const getAllCasesEndpoint = (data) => {
   let date = moment().subtract(allCasesMonths, 'months').format('YYYY-MM-DD');
   let _endpoint = endpointAllCases.replace('${data.RS}', data.RS).replace('${date}', date);
+  // console.log(_endpoint);
+  return _endpoint;
+};
+
+const getAllIncidencesEndpoint = (data) => {
+  let date = moment().subtract(allIncidencesMonths, 'months').format('YYYY-MM-DD');
+  let _endpoint = endpointAllIncidences.replace('${data.RS}', data.RS).replace('${date}', date);
   // console.log(_endpoint);
   return _endpoint;
 };
@@ -115,6 +125,35 @@ const wellFormAllCases = (data) => {
   return newJson;
 };
 
+const wellFormIncidences = (data) => {
+  const newJson = {
+    incidences: {
+      datasets: [
+        {
+          label: 'Inzidenz',
+          type: 'bar',
+          backgroundColor: '#4e8d26',
+          borderColor: ' #4e8d26',
+          data: [],
+        },
+      ],
+    },
+  };
+
+  data.map((item) => {
+    const day = new Date(item.attributes.last_update);
+    const incidence = item.attributes.cases7_per_100k;
+    function setDataObject(category) {
+      return {
+        t: day,
+        y: category,
+      };
+    }
+    newJson.incidences.datasets[0].data.push(setDataObject(incidence.toFixed(1)));
+  });
+  return newJson;
+};
+
 let json = {
   locations: [],
 };
@@ -135,6 +174,15 @@ const handleLocation = async (location) => {
     .then((_json) => wellFormAllCases(_json.features))
     .catch((error) => {
       console.log('\x1b[31m%s\x1b[0m', ` x wellFormAllCases ${location.BEZ} ${location.GEN}`);
+      console.log(error);
+    });
+
+  // Get all cases from API
+  const allIncidences = await fetch(getAllIncidencesEndpoint(location))
+    .then((res) => res.json())
+    .then((_json) => wellFormIncidences(_json.features))
+    .catch((error) => {
+      console.log('\x1b[31m%s\x1b[0m', ` x wellFormIncidences ${location.BEZ} ${location.GEN}`);
       console.log(error);
     });
 
@@ -191,6 +239,7 @@ const handleLocation = async (location) => {
     BL: location.BL,
     newCases,
     allCases,
+    allIncidences,
   });
   // console.log(statistics);
 };

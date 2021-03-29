@@ -107,6 +107,15 @@
     padding: var(--spacing-xs) var(--spacing);
   }
 
+  .new {
+    background-color: var(--warning-bg);
+    border-radius: var(--border-radius);
+    color: var(--warning-contrast);
+    font-size: 0.8em;
+    padding: 0.1rem 0.25rem;
+    margin: 0 0.2rem;
+  }
+
   @media (min-width: 1024px) {
     .container--header {
       grid-template-columns: 1fr 1fr;
@@ -378,6 +387,14 @@
       </section>
     {/if}
     <!-- Barchart has an update bug, fix it with complete remount the component -->
+    {#if city.allIncidences && city.allIncidences.incidences && !remount}
+      <section>
+        <h2><span class="new">NEU</span> Inzidenz-Verlauf {city.name}</h2>
+        <Bar data="{city.allIncidences.incidences}" options="{options}" />
+      </section>
+    {/if}
+
+    <!-- Barchart has an update bug, fix it with complete remount the component -->
     {#if city.allCases && city.allCases.casesperday && !remount}
       <section>
         <h2>Neue Fälle pro Tag in {city.name}</h2>
@@ -387,9 +404,6 @@
             wurde sie von mir hier mit den Fällen pro Tag ersetzt.</small>
         </p>
         <Bar data="{city.allCases.casesperday}" options="{options}" />
-        <Message until="2020-12-19T12:00:00Z">
-          <small> <span>Für Susi Sonnenschein</span> </small>
-        </Message>
       </section>
     {/if}
 
