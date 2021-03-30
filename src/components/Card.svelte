@@ -65,8 +65,8 @@
     fill: var(--card-color);
     height: 1em;
     position: absolute;
-    right: 0;
-    /* right: var(--spacing); */
+    /* right: 0; */
+    right: calc(-0.5 * var(--spacing));
     top: 50%;
     transform: translate3d(0, -50%, 0);
     width: 1em;
