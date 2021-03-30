@@ -106,9 +106,7 @@
     >
       <FooterButton>
         <div slot="icon">❤️</div>
-        <div slot="label">
-          <strong>Jetzt spenden</strong>, damit diese Seite weiterhin Werbefrei bleibt
-        </div>
+        <div slot="label">Werbefrei durch deine Spende</div>
       </FooterButton>
     </a>
   </nav>
