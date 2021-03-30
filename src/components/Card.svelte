@@ -88,11 +88,11 @@
 </style>
 
 <script>
-  import { onMount } from 'svelte';
   export let data;
   let canvas;
-  console.log(canvas);
   let warningclass = 'warning';
+  let points = Array.from(data.allIncidences.incidences.datasets[0].data, (x) => x.y);
+  let max = Math.ceil(Math.max(...points) / 100) * 100;
 
   // Subscribe on changes
   $: {
@@ -108,42 +108,46 @@
     if (data.incidence >= 100) {
       warningclass = 'superdanger';
     }
-  }
-
-  const points = Array.from(data.allIncidences.incidences.datasets[0].data, (x) => x.y);
-  const max = Math.ceil(Math.max(...points) / 100) * 100;
-
-  onMount(() => {
+    if (data.allIncidences) {
+      points = Array.from(data.allIncidences.incidences.datasets[0].data, (x) => x.y);
+      max = Math.ceil(Math.max(...points) / 100) * 100;
+    }
     function draw() {
-      if (!canvas.getContext) {
+      if (!canvas && !canvas.getContext) {
         return;
       }
       const width = canvas.width;
       const height = canvas.height;
       const ctx = canvas.getContext('2d');
+      ctx.clearRect(-10, 0, width + 10, height);
 
-      ctx.fillStyle = 'rgba(0,0,0,0.2)';
+      if (!!data.allIncidences) {
+        ctx.fillStyle = 'rgba(0,0,0,0.2)';
 
-      // draw the area
-      ctx.beginPath();
-      // Startpoint
-      ctx.moveTo(0, height);
-      // Draw each point
-      points.forEach((point, index) => {
-        ctx.lineTo((width / (points.length - 1)) * index, height - point / (max / height));
-      });
-      // Last point
-      ctx.lineTo(600, height);
-      ctx.strokeStyle = 'rgba(0,0,0,0.3)';
-      ctx.stroke();
-      ctx.fill();
+        // draw the area
+        ctx.beginPath();
+        // Startpoint
+        ctx.moveTo(-10, height);
+        // Draw each point
+        points.reverse().forEach((point, index) => {
+          ctx.lineTo((width / (points.length - 1)) * index, height - point / (max / height));
+        });
+        // Last point
+        ctx.lineTo(600, height);
+        ctx.strokeStyle = 'rgba(0,0,0,0.3)';
+        ctx.stroke();
+        ctx.fill();
+      }
     }
-    draw();
-  });
+    if (typeof window != 'undefined' && typeof canvas != 'undefined') {
+      draw();
+    }
+  }
 </script>
 
 <div class="{`card ${warningclass}`}">
   <canvas class="canvas" bind:this="{canvas}"></canvas>
+
   <div class="content">
     <div class="row">
       <div class="column">
