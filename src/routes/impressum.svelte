@@ -61,10 +61,17 @@
     Wer diese Seite gut findet und mir vielleicht ein 🥙 oder 🍕 ausgeben mag, der kann mir gerne
     etwas Spenden:
   </p>
-  <form action="https://www.paypal.com/donate" method="post" target="_top">
-    <input type="hidden" name="hosted_button_id" value="TFHBVMBB9LMM2" />
-    <button class="spende" type="submit">Jetzt Spenden</button>
-  </form>
+
+  <a
+    href="https://ko-fi.com/coronaampel/?hidefeed=true&widget=true&embed=true"
+    target="_blank"
+    rel="noopener"
+  ><button class="spende" type="submit">Jetzt Spenden</button>
+  </a>
+  <p>
+    Mit einer Spende kannst du dafür sorgen, dass ich hier nie Werbung einbinden oder meine Daten an
+    Dritte weiterverkaufen werde.
+  </p>
 
   <p>Danke an meine bisherigen Gönner ❤️❤️❤️:</p>
   <ul>
@@ -91,11 +98,15 @@
     <li>Mounett</li>
     <li>Sinan</li>
     <li>Nikkhil</li>
-    <li>Michael</li>
+    <li>Michael R.</li>
     <li>Nina N.</li>
     <li>Hans-Georg</li>
     <li>Marion</li>
-    <li>Thomas</li>
+    <li>Thomas P.</li>
+    <li>Thomas E.</li>
+    <li>Cathrin</li>
+    <li>Marie</li>
+    <li>Eva</li>
   </ul>
   <p>
     <small><strong>Hinweis:</strong>

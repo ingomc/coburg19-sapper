@@ -106,15 +106,16 @@
         <div slot="label">Corona-Ampel-Regeln</div>
       </FooterButton>
     </a>
-    <form action="https://www.paypal.com/donate" method="post" target="_top">
-      <input type="hidden" name="hosted_button_id" value="TFHBVMBB9LMM2" />
-      <button class="spende" type="submit">
-        <FooterButton>
-          <div slot="icon">❤️</div>
-          <div slot="label">Unterstütze mich</div>
-        </FooterButton>
-      </button>
-    </form>
+    <a
+      href="https://ko-fi.com/coronaampel/?hidefeed=true&widget=true&embed=true"
+      target="_blank"
+      rel="noopener"
+    >
+      <FooterButton>
+        <div slot="icon">❤️</div>
+        <div slot="label">Werbefrei durch Spende</div>
+      </FooterButton>
+    </a>
   </nav>
 
   <footer itemscope itemtype="https://schema.org/Person">
