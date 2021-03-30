@@ -70,10 +70,28 @@
     transform: translate3d(0, -50%, 0);
     width: 1em;
   }
+
+  .content {
+    position: relative;
+    z-index: 5;
+  }
+  .canvas {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;
+  }
 </style>
 
 <script>
+  import { onMount } from 'svelte';
   export let data;
+  let canvas;
+  console.log(canvas);
   let warningclass = 'warning';
 
   // Subscribe on changes
@@ -91,45 +109,79 @@
       warningclass = 'superdanger';
     }
   }
+
+  const points = Array.from(data.allIncidences.incidences.datasets[0].data, (x) => x.y);
+  const max = Math.ceil(Math.max(...points) / 100) * 100;
+
+  onMount(() => {
+    function draw() {
+      if (!canvas.getContext) {
+        return;
+      }
+      const width = canvas.width;
+      const height = canvas.height;
+      const ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = 'rgba(0,0,0,0.2)';
+
+      // draw the area
+      ctx.beginPath();
+      // Startpoint
+      ctx.moveTo(0, height);
+      // Draw each point
+      points.forEach((point, index) => {
+        ctx.lineTo((width / (points.length - 1)) * index, height - point / (max / height));
+      });
+      // Last point
+      ctx.lineTo(600, height);
+      ctx.strokeStyle = 'rgba(0,0,0,0.3)';
+      ctx.stroke();
+      ctx.fill();
+    }
+    draw();
+  });
 </script>
 
 <div class="{`card ${warningclass}`}">
-  <div class="row">
-    <div class="column">
-      <h3 class="number">
-        {#if data.incidence >= 200 && data.incidence < 1000}
-          <svg
-            class="danger-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            aria-hidden="true"
-            focusable="false"
-            role="img"
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 24 24"
-            style="transform: rotate(360deg);"
-          ><path
-              d="M14.8 4.613l6.701 11.161c.963 1.603.49 3.712-1.057 4.71a3.213 3.213 0 0 1-1.743.516H5.298C3.477 21 2 19.47 2 17.581c0-.639.173-1.264.498-1.807L9.2 4.613c.962-1.603 2.996-2.094 4.543-1.096c.428.276.79.651 1.057 1.096zm-2.22.839a1.077 1.077 0 0 0-1.514.365L4.365 16.98a1.17 1.17 0 0 0-.166.602c0 .63.492 1.14 1.1 1.14H18.7c.206 0 .407-.06.581-.172a1.164 1.164 0 0 0 .353-1.57L12.933 5.817a1.12 1.12 0 0 0-.352-.365zM12 17a1 1 0 1 1 0-2a1 1 0 0 1 0 2zm0-9a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1z"
-              fill="currentColor"
-            ></path></svg>
-        {/if}
-        {Number(data.incidence).toFixed(1)}
-      </h3>
+  <canvas class="canvas" bind:this="{canvas}"></canvas>
+  <div class="content">
+    <div class="row">
+      <div class="column">
+        <h3 class="number">
+          {#if data.incidence >= 200 && data.incidence < 1000}
+            <svg
+              class="danger-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              focusable="false"
+              role="img"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+              style="transform: rotate(360deg);"
+            ><path
+                d="M14.8 4.613l6.701 11.161c.963 1.603.49 3.712-1.057 4.71a3.213 3.213 0 0 1-1.743.516H5.298C3.477 21 2 19.47 2 17.581c0-.639.173-1.264.498-1.807L9.2 4.613c.962-1.603 2.996-2.094 4.543-1.096c.428.276.79.651 1.057 1.096zm-2.22.839a1.077 1.077 0 0 0-1.514.365L4.365 16.98a1.17 1.17 0 0 0-.166.602c0 .63.492 1.14 1.1 1.14H18.7c.206 0 .407-.06.581-.172a1.164 1.164 0 0 0 .353-1.57L12.933 5.817a1.12 1.12 0 0 0-.352-.365zM12 17a1 1 0 1 1 0-2a1 1 0 0 1 0 2zm0-9a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1z"
+                fill="currentColor"
+              ></path></svg>
+          {/if}
+          {Number(data.incidence).toFixed(1)}
+        </h3>
+      </div>
+      <div class="column">
+        <div class="area">{data.district}</div>
+        <div class="city">{data.name}</div>
+      </div>
     </div>
-    <div class="column">
-      <div class="area">{data.district}</div>
-      <div class="city">{data.name}</div>
+    <div class="row">
+      <div class="column">
+        <div class="cases">Neue Fälle: {data.newCases > 0 ? data.newCases : 0}</div>
+      </div>
+      <div class="column">
+        <div class="cases">Fälle insgesamt: {data.cases}</div>
+      </div>
     </div>
+    <svg class="arrow-right-mini" viewBox="-100.9 99.1 61.9 105.9"><path
+        d="M-41.7 145.3l-43.5-43.5c-1.7-1.7-4-2.7-6.5-2.7s-4.8 1-6.5 2.7c-1.7 1.7-2.7 4-2.7 6.5s1 4.8 2.7 6.5L-61 152l-37.2 37.2c-1.7 1.7-2.7 4-2.7 6.5s1 4.8 2.6 6.5c1.8 1.9 4.2 2.8 6.6 2.8 2.3 0 4.6-.9 6.5-2.6 11.5-11.4 41.2-41 43.3-43l.2-.2c3.6-3.6 3.6-10.4 0-13.9z"
+      ></path></svg>
   </div>
-  <div class="row">
-    <div class="column">
-      <div class="cases">Neue Fälle: {data.newCases > 0 ? data.newCases : 0}</div>
-    </div>
-    <div class="column">
-      <div class="cases">Fälle insgesamt: {data.cases}</div>
-    </div>
-  </div>
-  <svg class="arrow-right-mini" viewBox="-100.9 99.1 61.9 105.9"><path
-      d="M-41.7 145.3l-43.5-43.5c-1.7-1.7-4-2.7-6.5-2.7s-4.8 1-6.5 2.7c-1.7 1.7-2.7 4-2.7 6.5s1 4.8 2.7 6.5L-61 152l-37.2 37.2c-1.7 1.7-2.7 4-2.7 6.5s1 4.8 2.6 6.5c1.8 1.9 4.2 2.8 6.6 2.8 2.3 0 4.6-.9 6.5-2.6 11.5-11.4 41.2-41 43.3-43l.2-.2c3.6-3.6 3.6-10.4 0-13.9z"
-    ></path></svg>
 </div>

@@ -4,7 +4,7 @@
     grid-area: header;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 100;
   }
 
   header {
@@ -13,7 +13,7 @@
     display: block;
     position: relative;
     text-align: center;
-    z-index: 10;
+    z-index: 100;
   }
 
   .wrapper {
