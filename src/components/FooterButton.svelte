@@ -9,6 +9,7 @@
     position: relative;
     /* background-color: var(--bg-200); */
     transition: border 0.1s ease-in-out;
+    align-items: center;
   }
 
   .card:focus {

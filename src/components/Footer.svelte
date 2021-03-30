@@ -16,11 +16,16 @@
     text-align: center;
   }
 
-  nav a,
-  nav form {
+  nav a {
     display: block;
     margin: var(--spacing-sm);
     text-decoration: none;
+  }
+
+  .hint {
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 1000px;
   }
   @media (min-width: 1024px) {
     nav {
@@ -39,18 +44,6 @@
     display: block;
     height: 1.5em;
     width: 1.5em;
-  }
-
-  button {
-    appearance: none;
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-    display: block;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    width: 100%;
   }
 </style>
 
@@ -113,10 +106,20 @@
     >
       <FooterButton>
         <div slot="icon">❤️</div>
-        <div slot="label">Werbefrei durch Spende</div>
+        <div slot="label">
+          <strong>Jetzt spenden</strong>, damit diese Seite weiterhin Werbefrei bleibt
+        </div>
       </FooterButton>
     </a>
   </nav>
+  <p class="hint">
+    <small>Diese Webseite soll weiterhin ohne Werbung bleiben. Auch möchte ich unsere Daten nicht an
+      Dritte verkaufen und genau da kannst
+      <strong>DU</strong>
+      helfen. Mit einer kleinen Spende bleibt alles beim Alten und ihr könnt völlig entspannt ohne
+      Cookies, ohne Werbung, ohne Datenweitergabe etc. "weiterampeln". Und natürlich soll ab und zu
+      mal eine neue Funktion dazu kommen.</small>
+  </p>
 
   <footer itemscope itemtype="https://schema.org/Person">
     Crafted with ❤️ from
