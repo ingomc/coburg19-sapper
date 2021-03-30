@@ -7,7 +7,7 @@
     display: block;
     overflow: hidden;
     padding: var(--spacing);
-    padding-right: var(--spacing-xl);
+    /* padding-right: var(--spacing-xl); */
     position: relative;
     transition: border 0.1s ease-in-out;
     user-select: none;
@@ -65,7 +65,8 @@
     fill: var(--card-color);
     height: 1em;
     position: absolute;
-    right: var(--spacing);
+    right: 0;
+    /* right: var(--spacing); */
     top: 50%;
     transform: translate3d(0, -50%, 0);
     width: 1em;
