@@ -31,8 +31,8 @@
   }
 
   .rangeslider {
-    padding: 0.25rem 1.5rem;
     font-size: 0.8rem;
+    padding: 0.25rem 1.5rem;
   }
 </style>
 

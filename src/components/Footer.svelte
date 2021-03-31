@@ -23,9 +23,9 @@
   }
 
   .hint {
-    padding: 1rem;
     margin: 0 auto;
     max-width: 1000px;
+    padding: 1rem;
   }
   @media (min-width: 1024px) {
     nav {

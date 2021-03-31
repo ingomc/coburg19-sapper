@@ -1,5 +1,6 @@
 <style>
   .card {
+    align-items: center;
     border: 2px solid var(--bg-200);
     border-radius: var(--border-radius);
     color: var(--color);
@@ -9,7 +10,6 @@
     position: relative;
     /* background-color: var(--bg-200); */
     transition: border 0.1s ease-in-out;
-    align-items: center;
   }
 
   .card:focus {

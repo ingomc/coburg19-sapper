@@ -112,8 +112,8 @@
     border-radius: var(--border-radius);
     color: var(--warning-contrast);
     font-size: 0.8em;
-    padding: 0.1rem 0.25rem;
     margin: 0 0.2rem;
+    padding: 0.1rem 0.25rem;
   }
 
   @media (min-width: 1024px) {
