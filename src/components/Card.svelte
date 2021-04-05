@@ -93,8 +93,8 @@
   export let data;
   let canvas;
   let warningclass = 'warning';
-  let points = Array.from(data.allIncidences.incidences.datasets[0].data, (x) => x.y);
-  let max = Math.ceil(Math.max(...points) / 100) * 100;
+  let points;
+  let max;
 
   // Subscribe on changes
   $: {
