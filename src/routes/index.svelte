@@ -113,6 +113,28 @@
     display: flex;
     justify-content: center;
   }
+
+  .list-tile {
+    display: flex;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    width: 64px;
+  }
+
+  .logo img {
+    border-radius: var(--border-radius--xl);
+    display: block;
+    overflow: hidden;
+  }
+
+  .details {
+    align-self: center;
+    margin: 0;
+    padding: 0 0.75rem;
+    text-align: left;
+  }
 </style>
 
 <script context="module">
@@ -168,6 +190,32 @@
     content="🚦 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Coburg, Bamberg, Kronach, Schweinfurt, Lichtenfels, Haßberge, Hildburghausen und Sonneberg !  ⚠️ Alle aktuellen Zahlen ⚠️ Alle aktuellen Fälle"
   />
 </svelte:head>
+<center>
+  <Message until="2021-04-07T23:00:00Z">
+    <!-- +1 Stunde -->
+    <a class="list-tile" href="https://corona-ampel.app/?coburg">
+      <div class="logo">
+        <img
+          src="https://www.corona-ampel.app/favicons/maskable_icon_x128.png"
+          width="64"
+          height="64"
+          alt="Ampel-Icon"
+          style=" height: auto;
+  max-width: 100%;"
+        />
+      </div>
+      <p class="details">
+        <small> <strong>Jetzt auch als App mit ALLEN Landkreisen &rsaquo;</strong> </small>
+        <br />
+        <small>
+          <span>Eigene Landkreise speichern, Impfstatistik und vieles mehr findest du
+            <u>HIER &raquo;</u></span>
+        </small>
+      </p>
+    </a>
+  </Message>
+</center>
+
 <center>
   <Message until="2021-03-30T23:00:00Z">
     <!-- +1 Stunde -->

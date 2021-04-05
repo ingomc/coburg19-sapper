@@ -2,11 +2,12 @@
   .message {
     background-color: var(--bg-200);
     border: 3px solid var(--bg-400);
-    border-radius: 4px;
+    border-radius: var(--border-radius--xl);
     display: inline-block;
     margin: 0 auto;
     max-width: 700px;
-    padding: var(--spacing-xs) var(--spacing);
+    overflow: hidden;
+    padding: var(--spacing-xs);
   }
 </style>
 
