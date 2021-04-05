@@ -132,7 +132,7 @@
   .details {
     align-self: center;
     margin: 0;
-    padding: 0 0.75rem;
+    padding-left: 0.75rem;
     text-align: left;
   }
 </style>
