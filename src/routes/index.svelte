@@ -205,7 +205,7 @@
         />
       </div>
       <p class="details">
-        <small> <strong>Jetzt auch als App mit ALLEN Landkreisen &rsaquo;</strong> </small>
+        <small> <strong>Jetzt auch als App mit ALLEN Landkreisen&nbsp;&rsaquo;</strong> </small>
         <br />
         <small>
           <span>Eigene Landkreise speichern, Impfstatistik und vieles mehr findest du
