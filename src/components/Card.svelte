@@ -79,13 +79,15 @@
 
   .canvas {
     bottom: 0;
-    height: 100%;
+    height: 200%;
     left: 0;
     position: absolute;
     right: 0;
     top: 0;
-    width: 100%;
+    width: 200%;
     z-index: 0;
+    transform: scale(0.5);
+    transform-origin: 0 0;
   }
 </style>
 
@@ -124,7 +126,7 @@
       ctx.clearRect(-10, 0, width + 10, height);
 
       if (!!data.allIncidences) {
-        ctx.fillStyle = data.incidence >= 100 ? 'rgba(255,100,100,0.075)' : 'rgba(0,0,0,0.1)';
+        ctx.fillStyle = data.incidence >= 100 ? 'rgba(255,100,100,0.1)' : 'rgba(0,0,0,0.1)';
 
         // draw the area
         ctx.beginPath();
@@ -135,8 +137,9 @@
           ctx.lineTo((width / (points.length - 1)) * index, height - point / (max / height));
         });
         // Last point
-        ctx.lineTo(600, height);
-        ctx.strokeStyle = data.incidence >= 100 ? 'rgba(255,100,100,0.15)' : 'rgba(0,0,0,0.2)';
+        ctx.lineTo(610, height);
+        ctx.strokeStyle = data.incidence >= 100 ? 'rgba(255,100,100,0.2)' : 'rgba(0,0,0,0.2)';
+        ctx.lineWidth = 1;
         ctx.stroke();
         ctx.fill();
       }
