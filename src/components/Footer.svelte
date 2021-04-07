@@ -23,6 +23,7 @@
   }
 
   .hint {
+    text-align: center;
     margin: 0 auto;
     max-width: 1000px;
     padding: 1rem;
@@ -106,17 +107,13 @@
     >
       <FooterButton>
         <div slot="icon">❤️</div>
-        <div slot="label">Werbefrei durch deine Spende</div>
+        <div slot="label">Deine Spende hilft</div>
       </FooterButton>
     </a>
   </nav>
   <p class="hint">
-    <small>Diese Webseite soll weiterhin ohne Werbung bleiben. Auch möchte ich unsere Daten nicht an
-      Dritte verkaufen und genau da kannst
-      <strong>DU</strong>
-      helfen. Mit einer kleinen Spende bleibt alles beim Alten und ihr könnt völlig entspannt ohne
-      Cookies, ohne Werbung, ohne Datenweitergabe etc. "weiterampeln". Und natürlich soll ab und zu
-      mal eine neue Funktion dazu kommen.</small>
+    <small>Durch die bisherigen Spenden kann ich diese Seite werbefrei und ohne Datenverkauf an
+      Dritte betreiben. Das soll auch weiterhin so bleiben.</small>
   </p>
 
   <footer itemscope itemtype="https://schema.org/Person">
