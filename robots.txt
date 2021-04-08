@@ -1,0 +1,19 @@
+# Erstellt am: 21.11.2020, 12:00
+# Webseite: http://http://www.corona-ampel-coburg.de
+# ===================================
+
+Sitemap: http://www.corona-ampel-coburg.de/sitemap.xml
+
+
+# ===================================
+# Schließe folgende Spider komplett aus:
+# ===================================
+
+User-agent: WebReaper
+User-agent: WebCopier
+User-agent: Offline Explorer
+User-agent: HTTrack
+User-agent: Microsoft.URL.Control
+User-agent: EmailCollector
+User-agent: penthesilea
+Disallow: /
