@@ -191,7 +191,7 @@
   />
 </svelte:head>
 <center>
-  <Message until="2021-04-07T23:00:00Z">
+  <Message until="2021-04-13T23:00:00Z">
     <!-- +1 Stunde -->
     <a class="list-tile" href="https://corona-ampel.app/?coburg">
       <div class="logo">
@@ -205,11 +205,13 @@
         />
       </div>
       <p class="details">
-        <small> <strong>Jetzt auch als App mit ALLEN Landkreisen&nbsp;&rsaquo;</strong> </small>
+        <small> <strong>Jetzt als App mit ALLEN Landkreisen&nbsp;&rsaquo;</strong> </small>
         <br />
         <small>
-          <span>Eigene Landkreise speichern, Impfstatistik und vieles mehr findest du
-            <u>HIER &raquo;</u></span>
+          <span>⭐️&nbsp;Eigene Landkreise speichern ⭐️&nbsp;Impfstatistik ⭐️&nbsp;Bundesländer
+            ⭐️&nbsp;Weltweit
+            <!-- <u>HIER &raquo;</u> -->
+          </span>
         </small>
       </p>
     </a>
