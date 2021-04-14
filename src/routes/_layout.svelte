@@ -19,7 +19,7 @@
     position: fixed;
     top: -3px;
     transform: translate3d(-50%, 0, 0);
-    z-index: 10;
+    z-index: 110;
   }
 </style>
 
