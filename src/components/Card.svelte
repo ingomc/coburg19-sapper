@@ -79,14 +79,15 @@
 
   .canvas {
     bottom: 0;
-    height: 100%;
+    height: 200%;
     left: 0;
     position: absolute;
     right: 0;
     top: 0;
-    transform-origin: 0 0;
-    width: 100%;
+    width: 200%;
     z-index: 0;
+    transform: scale(0.5);
+    transform-origin: 0 0;
   }
 </style>
 
@@ -119,20 +120,10 @@
       if (!canvas && !canvas.getContext) {
         return;
       }
-      const canvasWidth = canvas.width;
-      const canvasHeight = canvas.height;
+      const width = canvas.width;
+      const height = canvas.height;
       const ctx = canvas.getContext('2d');
-
-      if (window.devicePixelRatio > 1) {
-        canvas.width = canvasWidth * window.devicePixelRatio;
-        canvas.height = canvasHeight * window.devicePixelRatio;
-        canvas.style.width = canvasWidth;
-        canvas.style.height = canvasHeight;
-
-        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-      }
-
-      ctx.clearRect(-10, 0, canvasWidth + 10, canvasHeight);
+      ctx.clearRect(-10, 0, width + 10, height);
 
       if (!!data.allIncidences) {
         ctx.fillStyle = data.incidence >= 100 ? 'rgba(255,100,100,0.1)' : 'rgba(0,0,0,0.1)';
@@ -140,16 +131,13 @@
         // draw the area
         ctx.beginPath();
         // Startpoint
-        ctx.moveTo(-10, canvasHeight);
+        ctx.moveTo(-10, height);
         // Draw each point
         points.reverse().forEach((point, index) => {
-          ctx.lineTo(
-            (canvasWidth / (points.length - 1)) * index,
-            canvasHeight - point / (max / canvasHeight),
-          );
+          ctx.lineTo((width / (points.length - 1)) * index, height - point / (max / height));
         });
         // Last point
-        ctx.lineTo(610, canvasHeight);
+        ctx.lineTo(610, height);
         ctx.strokeStyle = data.incidence >= 100 ? 'rgba(255,100,100,0.2)' : 'rgba(0,0,0,0.2)';
         ctx.lineWidth = 1;
         ctx.stroke();
