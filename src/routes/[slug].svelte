@@ -22,9 +22,37 @@
     justify-content: center;
   }
 
+  .daysinfo-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .daysinfo-row {
+    font-size: 80%;
+    display: flex;
+    flex-wrap: nowrap;
+
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .daysinfo {
+    font-weight: 600;
+    color: var(--info-bg);
+    text-align: center;
+    background-color: var(--bg-200);
+    border-radius: 4px;
+    padding: var(--spacing);
+    margin-right: var(--spacing);
+    white-space: nowrap;
+  }
+  .daysinfo.above {
+    color: var(--danger-bg);
+  }
+
   .title {
     color: var(--bg-50);
     text-align: center;
+    margin: 0 1em;
   }
 
   .percent {
@@ -228,6 +256,14 @@
   let warningclass = 'warning';
   let ampelColor = 'GELB';
 
+  let daysinfo = {
+    165: { above: 0, below: 0 },
+    150: { above: 0, below: 0 },
+    100: { above: 0, below: 0 },
+    50: { above: 0, below: 0 },
+    35: { above: 0, below: 0 },
+  };
+
   // Barchart has an update bug, fix it with complete remount the component
   async function remountComponent() {
     if (remount) {
@@ -247,6 +283,48 @@
       const found = $async_data.citys.find((el) => cityId == el.id);
       city = { ...found };
     }
+
+    const slicedData = city.allIncidences.incidences.datasets[0].data.slice(0, 7);
+    const limits = [165, 150, 100, 50, 35];
+
+    daysinfo = {
+      165: { above: 0, below: 0 },
+      150: { above: 0, below: 0 },
+      100: { above: 0, below: 0 },
+      50: { above: 0, below: 0 },
+      35: { above: 0, below: 0 },
+    };
+
+    console.log(slicedData);
+    // unter limit
+    slicedData.reverse().forEach((num) => {
+      // console.log(num.y);
+      limits.forEach((limit) => {
+        if (num.y < limit) {
+          // console.log(daysinfo[limit]);
+          daysinfo[limit].below++;
+        } else {
+          daysinfo[limit].below = 0;
+        }
+      });
+    });
+
+    // über limit
+    slicedData.forEach((num) => {
+      // console.log(num.y);
+      limits.forEach((limit) => {
+        if (num.y >= limit) {
+          console.log('above', num.t, num.y, limit);
+          // console.log(limit);
+          daysinfo[limit].above++;
+        } else {
+          daysinfo[limit].above = 0;
+        }
+      });
+    });
+    daysinfo = Object.entries(daysinfo);
+    console.log(daysinfo);
+
     // manage warning state
     warningclass = 'warning';
     ampelColor = 'GELB';
@@ -308,6 +386,31 @@
         <div class="card card--light">
           <div>Fälle insgesamt</div>
           <div class="number number--big">{city.cases}</div>
+        </div>
+      </div>
+    </div>
+    <div class="card card--ghost">
+      <div class="daysinfo-container">
+        <div class="daysinfo-row">
+          <div class="title">Stabilität:</div>
+          {#each daysinfo as dayinfo}
+            {#if dayinfo[1].above > 0 && dayinfo[1].above < 7}
+              <span class="daysinfo above">{dayinfo[1].above}
+                {dayinfo[1].above == 1 ? 'Tag' : 'Tage'}
+                über
+                {dayinfo[0]}</span>
+            {:else if dayinfo[1].above >= 7}
+              <span class="daysinfo above">>7 Tage über {dayinfo[0]}</span>
+            {/if}
+            {#if dayinfo[1].below > 0 && dayinfo[1].below < 7}
+              <span class="daysinfo">{dayinfo[1].below}
+                {dayinfo[1].below == 1 ? 'Tag' : 'Tage'}
+                unter
+                {dayinfo[0]}</span>
+            {:else if dayinfo[1].below >= 7}
+              <span class="daysinfo">>7 Tage unter {dayinfo[0]}</span>
+            {/if}
+          {/each}
         </div>
       </div>
     </div>
@@ -389,7 +492,7 @@
     <!-- Barchart has an update bug, fix it with complete remount the component -->
     {#if city.allIncidences && city.allIncidences.incidences && !remount}
       <section>
-        <h2><span class="new">NEU</span> Inzidenz-Verlauf {city.name}</h2>
+        <h2>Inzidenz-Verlauf {city.name}</h2>
         <Bar data="{city.allIncidences.incidences}" options="{options}" />
       </section>
     {/if}
@@ -398,11 +501,6 @@
     {#if city.allCases && city.allCases.casesperday && !remount}
       <section>
         <h2>Neue Fälle pro Tag in {city.name}</h2>
-        <p>
-          <small>*<b>Hinweis:</b>
-            Die Genesenen-Statistik des RKIs ist leider mittlerweile komplett unbrauchbar, deswegen
-            wurde sie von mir hier mit den Fällen pro Tag ersetzt.</small>
-        </p>
         <Bar data="{city.allCases.casesperday}" options="{options}" />
       </section>
     {/if}
