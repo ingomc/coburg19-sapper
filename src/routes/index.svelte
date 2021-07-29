@@ -219,7 +219,7 @@
 </center>
 
 <center>
-  <Message until="2021-07-29T16:00:00Z">
+  <Message until="2021-02-29T16:00:00Z">
     <!-- +1 Stunde -->
     <small>
       <span>
