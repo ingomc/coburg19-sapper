@@ -219,13 +219,14 @@
 </center>
 
 <center>
-  <Message until="2021-03-30T23:00:00Z">
+  <Message until="2021-07-29T16:00:00Z">
     <!-- +1 Stunde -->
     <small>
       <span>
         🥳
-        <strong>NEU!</strong>
-        Jetzt auch der Inzidenz-Verlauf auf der Landkreis-Detail-Seite. Klicke in deinen Landkreis.
+        <strong>ACHTUNG!</strong>
+        RKI verbreitet gerade falsche Zahlen, sobald die richtigen Zahlen veröffentlich werden,
+        aktualisiere ich die Webseite wieder.
       </span>
     </small>
   </Message>
