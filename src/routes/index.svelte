@@ -225,7 +225,7 @@
       <span>
         🥳
         <strong>ACHTUNG!</strong>
-        RKI verbreitet gerade falsche Zahlen, sobald die richtigen Zahlen veröffentlich werden,
+        RKI verbreitet gerade falsche Zahlen, sobald die richtigen Zahlen veröffentlicht werden
         aktualisiere ich die Webseite wieder.
       </span>
     </small>
