@@ -219,14 +219,13 @@
 </center>
 
 <center>
-  <Message until="2021-02-29T16:00:00Z">
+  <Message until="2021-07-30T17:00:00Z">
     <!-- +1 Stunde -->
     <small>
       <span>
-        🥳
+        💥
         <strong>ACHTUNG!</strong>
-        RKI verbreitet gerade falsche Zahlen, sobald die richtigen Zahlen veröffentlicht werden
-        aktualisiere ich die Webseite wieder.
+        Aktuell sind noch die alten Zahlen von gestern online, da das RKI mal wieder Probleme hat.
       </span>
     </small>
   </Message>
