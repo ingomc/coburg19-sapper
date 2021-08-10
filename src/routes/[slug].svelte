@@ -469,10 +469,8 @@
     {:else}
       <div class="title">
         <small>
-          Beim beziehen der Daten
-          <strong>"Intensivstation"</strong>
-          vom RKI ist etwas schief gelaufen.
-        </small>
+          Keine Intensivstation-Informationen vorhanden. Intensivpatienten werden in der Regel im
+          nächsten Stadtkreis behandelt</small>
       </div>
     {/if}
   </div>
