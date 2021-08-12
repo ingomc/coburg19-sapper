@@ -1,3 +1,5 @@
+[![Deploy](https://github.com/ingomc/coburg19-sapper/actions/workflows/deploy.yml/badge.svg)](https://github.com/ingomc/coburg19-sapper/actions/workflows/deploy.yml)
+
 # Welcome to Corona-Ampel-Coburg 👋
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M12RXW7)
