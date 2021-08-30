@@ -173,7 +173,10 @@
                 fill="currentColor"
               ></path></svg>
           {/if}
-          {Number(data.incidence).toFixed(1)}
+          {Number(data.incidence).toLocaleString('de-DE', {
+            minimumFractionDigits: 1,
+            maximumFractionDigits: 1,
+          })}
         </h3>
       </div>
       <div class="column">
@@ -183,10 +186,13 @@
     </div>
     <div class="row">
       <div class="column">
-        <div class="cases">Neue Fälle: {data.newCases > 0 ? data.newCases : 0}</div>
+        <div class="cases">
+          Neue Fälle:
+          {data.newCases > 0 ? data.newCases.toLocaleString('de-DE') : 0}
+        </div>
       </div>
       <div class="column">
-        <div class="cases">Fälle insgesamt: {data.cases}</div>
+        <div class="cases">Fälle insgesamt: {data.cases.toLocaleString('de-DE')}</div>
       </div>
     </div>
     <svg class="arrow-right-mini" viewBox="-100.9 99.1 61.9 105.9"><path

@@ -370,22 +370,29 @@
           </div>
           <div class="row">
             <div class="text--big">{city.name}</div>
-            <div class="text--big incidence">{city.incidence > 0 ? city.incidence : '0'}</div>
+            <div class="text--big incidence">
+              {city.incidence > 0 ? Number(city.incidence).toLocaleString('de-DE', {
+                    minimumFractionDigits: 1,
+                    maximumFractionDigits: 1,
+                  }) : '0'}
+            </div>
           </div>
         </div>
       </div>
       <div class="container container--aside">
         <div class="card card--light">
           <div>Neue Fälle von gestern</div>
-          <div class="number number--big">{city.newCases > 0 ? '+' + city.newCases : '0'}</div>
+          <div class="number number--big">
+            {city.newCases > 0 ? '+' + city.newCases.toLocaleString('de-DE') : '0'}
+          </div>
         </div>
         <div class="card card--light">
           <div>Fälle der letzten 7 Tage</div>
-          <div class="number number--big">+{city.cases_in_7_days}</div>
+          <div class="number number--big">+{city.cases_in_7_days.toLocaleString('de-DE')}</div>
         </div>
         <div class="card card--light">
           <div>Fälle insgesamt</div>
-          <div class="number number--big">{city.cases}</div>
+          <div class="number number--big">{city.cases.toLocaleString('de-DE')}</div>
         </div>
       </div>
     </div>
@@ -417,11 +424,17 @@
     <div class="container container--details">
       <div class="card row card--ghost">
         <div class="label">Tote bisher</div>
-        <div class="number">{city.deaths}</div>
+        <div class="number">{city.deaths.toLocaleString('de-DE')}</div>
       </div>
       <div class="card row card--ghost">
         <div class="label">Todesrate</div>
-        <div class="number">{Number(city.death_rate).toFixed(2)} %</div>
+        <div class="number">
+          {Number(city.death_rate).toLocaleString('de-DE', {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 2,
+          })}
+          %
+        </div>
       </div>
       <div class="card row card--ghost">
         <div class="label">Einwohnerzahl</div>
@@ -430,7 +443,10 @@
       <div class="card row card--ghost">
         <div class="label">7 Tage Inzidenz in {city.BL}</div>
         <div class="number">
-          {city.cases7_bl_per_100k ? Number(city.cases7_bl_per_100k).toFixed(2) : '-'}
+          {city.cases7_bl_per_100k ? Number(city.cases7_bl_per_100k).toLocaleString('de-DE', {
+                minimumFractionDigits: 1,
+                maximumFractionDigits: 1,
+              }) : '-'}
         </div>
       </div>
     </div>
@@ -524,7 +540,12 @@
             Die 7-Tage Inzidenz pro 100.000 Einwohner in
             {city.name}
             ist aktuell
-            <strong> {city.incidence > 0 ? city.incidence : '0'}. </strong>
+            <strong>
+              {city.incidence > 0 ? Number(city.incidence).toLocaleString('de-DE', {
+                    minimumFractionDigits: 1,
+                    maximumFractionDigits: 1,
+                  }) : '0'}.
+            </strong>
             {#if warningclass == 'info'}
               Das ist die geringste Corona Warnstufe für den Bereich
               {city.district}
@@ -552,7 +573,7 @@
           <p>
             {`
           ${city.district} ${city.name} hat insgesamt ${city.population ? city.population.toLocaleString('de') : '-'} Einwohner. 
-          Es gab bisher schon ${city.cases} positive Tests in der Region. Insgesamt sind hier schon 
+          Es gab bisher schon ${city.cases.toLocaleString('de-DE')} positive Tests in der Region. Insgesamt sind hier schon 
           ${city.deaths}  Menschen mit oder an den Folgen des Corona-Virus gestorben.
           `}
           </p>
