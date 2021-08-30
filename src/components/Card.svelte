@@ -190,9 +190,20 @@
           Neue Fälle:
           {data.newCases > 0 ? data.newCases.toLocaleString('de-DE') : 0}
         </div>
+        {#if data.faelle_covid_aktuell !== null}
+          <div class="cases">Betten frei: {data.betten_frei > 0 ? data.betten_frei : 0}</div>
+        {/if}
       </div>
       <div class="column">
-        <div class="cases">Fälle insgesamt: {data.cases.toLocaleString('de-DE')}</div>
+        {#if data.faelle_covid_aktuell !== null}
+          <div class="cases">
+            Intensiv-Betten belegt mit Covid-19:
+            <span class="percent">({Number(data.Anteil_COVID_betten).toFixed(0)}%)</span>
+            {data.faelle_covid_aktuell}
+          </div>
+        {:else}
+          <div class="cases">Es gibt keine Intensiv-Betten in diesem Landkreis</div>
+        {/if}
       </div>
     </div>
     <svg class="arrow-right-mini" viewBox="-100.9 99.1 61.9 105.9"><path
