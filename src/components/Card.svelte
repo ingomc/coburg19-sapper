@@ -191,7 +191,10 @@
           {data.newCases > 0 ? data.newCases.toLocaleString('de-DE') : 0}
         </div>
         {#if data.faelle_covid_aktuell !== null}
-          <div class="cases">Betten frei: {data.betten_frei > 0 ? data.betten_frei : 0}</div>
+          <div class="cases">
+            Betten frei:
+            {data.betten_frei > 0 ? `(${Number(data.Anteil_betten_frei).toFixed(0)}%) ${data.betten_frei}` : 0}
+          </div>
         {/if}
       </div>
       <div class="column">
@@ -202,7 +205,7 @@
             {data.faelle_covid_aktuell}
           </div>
         {:else}
-          <div class="cases">Es gibt keine Intensiv-Betten in diesem Landkreis</div>
+          <div class="cases">Keine Intensiv-Betten vorhanden</div>
         {/if}
       </div>
     </div>
