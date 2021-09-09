@@ -219,14 +219,10 @@
 </center>
 
 <center>
-  <Message until="2021-07-30T17:00:00Z">
+  <Message until="2021-09-09T17:00:00Z">
     <!-- +1 Stunde -->
     <small>
-      <span>
-        💥
-        <strong>ACHTUNG!</strong>
-        Aktuell sind noch die alten Zahlen von gestern online, da das RKI mal wieder Probleme hat.
-      </span>
+      <span> 💥 <strong>ACHTUNG!</strong> Das RKI aktualisiert aktuell noch ihre Daten ... </span>
     </small>
   </Message>
 </center>
