@@ -6,6 +6,8 @@
   --bg-400: #292f36;
   --body-bg: var(--bg-400);
   --color: #fffafb;
+  --info-bg: #373e47;
+  --info-contrast: #fff;
   --danger-bg: #f63e02;
   --danger-contrast: #4a190d;
   --superdanger-bg: #421000;
@@ -29,8 +31,8 @@
 
   --box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 
-  --card-bg: var(--warning-bg);
-  --card-color: var(--warning-contrast);
+  --card-bg: var(--bg-300);
+  --card-color: var(--color);
 
   --z-index--header: 10;
   --z-index--loading: 100;
@@ -75,21 +77,6 @@ body {
 
 a {
   color: var(--color);
-}
-
-.info {
-  --card-bg: var(--info-bg);
-  --card-color: var(--info-contrast);
-}
-
-.danger {
-  --card-bg: var(--danger-bg);
-  --card-color: var(--danger-contrast);
-}
-
-.superdanger {
-  --card-bg: var(--superdanger-bg);
-  --card-color: var(--superdanger-contrast);
 }
 
 small {

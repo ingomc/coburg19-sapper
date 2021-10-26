@@ -55,93 +55,9 @@
   </Message> -->
 
   <h1>
-    Aktuell gelten für die meisten Landkreise eigene Regelungen. Sobald eine einheitliche Regelung
-    für die Region geschaffen wurde, werde ich sie hier wieder eintragen
+    Aktuell werden keine Farben mehr dargestellt, nur noch reine Inzidenzwerte, da die Corona-Ampel
+    nun auch die Hospitalisierung berücksichtigt, und es hier leider keine zuverlässigen offiziellen
+    Daten gibt. Es gibt Zahlen vom RKI aber diese sind auf grund von Nachmeldungen schlicht nicht
+    genau genug.
   </h1>
-  <h2>Folgende Regelungen sind nicht mehr aktuell!</h2>
-  <p>
-    <strong><span class="darkbluetext"><span class="greentext">Grün - Inzidenz&nbsp;bis 35</span></span></strong>
-  </p>
-  <strike>
-    <ul>
-      <li>Allgemeine AHA + L-Regeln&nbsp;&nbsp;(Abstand, Hygiene, Alltagsmaske und Lüften)</li>
-      <li>
-        Kontaktbeschränkungen: Bis zu 10 Personen oder zwei Haushalte in der Öffentlichkeit treffen
-        ist erlaubt
-      </li>
-      <li>
-        Maskenpflicht im ÖPNV, in Geschäften und im Einzelhandel, sowie in der Gastronomie bis zum
-        Platz
-      </li>
-      <li>
-        Empfehlung, aber keine Pflicht: Private Feierlichkeiten mit bis zu 25 Personen sind erlaubt
-      </li>
-    </ul>
-  </strike>
-  <p>
-    <span class="yellowtext">
-      <strong><span class="yellowtext"><span class="darkbluetext">
-            <span class="yellowtext">Gelb -</span>&nbsp;</span></span></strong><span
-        class="darkbluetext"
-      ><strong> <span class="yellowtext">Inzidenz</span></strong></span></span><b
-      style="background-color: initial;"
-    ><span class="darkbluetext"><span class="yellowtext"><span class="darkbluetext">&nbsp;</span>35
-          bis 50</span></span></b>
-  </p>
-  <strike>
-    <ul>
-      <li>
-        Maskenpflicht wird ausgeweitet.&nbsp;
-        <ul>
-          <li>Maskenpflicht auch im Unterricht ab der 5. Klasse</li>
-          <li>Maskenpflicht an Hochschulen&nbsp;</li>
-          <li>in öffentlichen Gebäuden</li>
-          <li>
-            am Arbeitsplatz, wenn der Abstand von 1,5m&nbsp;nicht eingehalten werden kann. Im
-            Betrieb, sobald man den Platz verlässt.
-          </li>
-          <li>Öffentlichen Plätzen, die stark frequentiert sind.</li>
-        </ul>
-      </li>
-      <li>Allgemeine Sperrstunde ab 23 Uhr&nbsp;</li>
-      <li>Generelles Alkoholverkaufsverbot&nbsp;an Tankstellen ab 23 Uhr&nbsp;</li>
-      <li>Auf öffentlichen Plätzen besteht ab 23 Uhr ein Alkoholverbot.</li>
-      <li>
-        private Feiern und Treffen&nbsp;sind auf zwei Haushalte oder maximal 10 Personen beschränkt.
-        Egal ob draußen, daheim oder im Lokal.
-      </li>
-    </ul>
-  </strike>
-  <p>
-    <span class="redtext"><strong>Rot - Inzidenz&nbsp;</strong></span><span class="redtext"><strong
-      >50 bis 100</strong></span>
-  </p>
-  <strike>
-    <ul>
-      <li>
-        Maskenpflicht wie bei 35-50 und zusätzlich&nbsp;Maskenpflicht auch in der
-        Grundschule&nbsp;&nbsp;
-      </li>
-      <li>Allgemeine Sperrstunde ab 22 Uhr</li>
-      <li>Generelles Alkoholverkaufsverbot an Tankstellen ab 22 Uhr&nbsp;</li>
-      <li>Auf öffentlichen Plätzen besteht ab 22 Uhr ein Alkoholverbot.</li>
-      <li>
-        private Feiern und Treffen&nbsp;sind auf 5 Personen oder zwei Haushalte&nbsp;beschränkt.
-        Egal ob draußen, daheim oder im Lokal.
-      </li>
-    </ul>
-  </strike>
-  <p>
-    <span class="redtext"><strong>Dunkel-Rot - Inzidenz&nbsp;</strong></span><span
-      class="redtext"
-    ><strong>ab 100</strong></span>
-  </p>
-  <strike>
-    <ul>
-      <li>Es gelten die gleichen Regeln der Stufe Rot und nis auf ...</li>
-      <li>Allgemeine Sperrstunde ab 21 Uhr</li>
-      <li>Generelles Alkoholverkaufsverbot an Tankstellen ab 21 Uhr&nbsp;</li>
-      <li>Auf öffentlichen Plätzen besteht ab 21 Uhr ein Alkoholverbot.</li>
-    </ul>
-  </strike>
 </div>
