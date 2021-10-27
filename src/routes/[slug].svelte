@@ -546,7 +546,7 @@
                     maximumFractionDigits: 1,
                   }) : '0'}.
             </strong>
-            {#if warningclass == 'info'}
+            <!-- {#if warningclass == 'info'}
               Das ist die geringste Corona Warnstufe für den Bereich
               {city.district}
               {city.name}.
@@ -568,7 +568,7 @@
               {city.district}
               {city.name}
               die dunkelrote (höchste) Corona Warnstufe ⚠️.
-            {/if}
+            {/if} -->
           </p>
           <p>
             {`
