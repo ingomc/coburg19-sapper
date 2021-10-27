@@ -126,7 +126,8 @@
       ctx.clearRect(-10, 0, width + 10, height);
 
       if (!!data.allIncidences) {
-        ctx.fillStyle = data.incidence >= 100 ? 'rgba(255,100,100,0.1)' : 'rgba(0,0,0,0.1)';
+        // ctx.fillStyle = data.incidence >= 100 ? 'rgba(255,100,100,0.1)' : 'rgba(0,0,0,0.1)';
+        ctx.fillStyle = 'rgba(0,0,0,0.1)';
 
         // draw the area
         ctx.beginPath();
@@ -138,7 +139,8 @@
         });
         // Last point
         ctx.lineTo(610, height);
-        ctx.strokeStyle = data.incidence >= 100 ? 'rgba(255,100,100,0.2)' : 'rgba(0,0,0,0.2)';
+        // ctx.strokeStyle = data.incidence >= 100 ? 'rgba(255,100,100,0.2)' : 'rgba(0,0,0,0.2)';
+        ctx.strokeStyle = 'rgba(0,0,0,0.2)';
         ctx.lineWidth = 1;
         ctx.stroke();
         ctx.fill();
