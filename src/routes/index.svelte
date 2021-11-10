@@ -253,7 +253,7 @@
 </section>
 
 {#if !!hospitalization}
-  <h2>Krankenhausampel Bayern</h2>
+  <h2>Hospitalisierung in Bayern</h2>
   <Hospitalization bind:data="{hospitalization[0]}" />
   <h2>7 Tage Inzidenz</h2>
 {/if}

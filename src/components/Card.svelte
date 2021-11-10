@@ -55,6 +55,7 @@
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: 600;
   }
 
   .cases {
