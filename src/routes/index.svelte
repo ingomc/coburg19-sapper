@@ -4,7 +4,7 @@
   }
 
   h2 {
-    color: var(--bg-100);
+    /* color: var(--bg-100); */
     padding: var(--spacing-sm) var(--spacing-xl);
     text-align: center;
   }
