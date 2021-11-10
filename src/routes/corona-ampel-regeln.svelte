@@ -74,6 +74,16 @@
   <h1>Aktuelle Regeln der Corona-Ampel für Bayern</h1>
 
   <h2>Inzidenz-Farben</h2>
+  <p>
+    Ab einer 7-Tage-Inzidenz von über 35 in einem Landkreis oder in einer kreisfreien Stadt gilt für
+    geschlossene Räume breitflächig das 3G-Prinzip: Zugang haben dann nur Geimpfte, Genesene oder
+    aktuell Getestete.
+  </p>
+  <p>
+    Das zuständige Landratsamt oder die kreisfreie Stadt geben bekannt, sobald in ihrem Gebiet an
+    drei aufeinanderfolgenden Tagen die 7-Tage-Inzidenz den Wert von 35 überschreitet oder
+    unterschreitet.
+  </p>
   <ul>
     <li><span class="green text"> Grün: &lt; 35</span></li>
     <li><span class="yellow text"> Gelb: 35 &lt; 50</span></li>
@@ -81,7 +91,7 @@
     <li><span class="darkred text"> Dunkelrot: &gt; 100</span></li>
   </ul>
 
-  <h2>Krankhaus Regeln</h2>
+  <h2>Krankhausampel Regeln</h2>
   <p><strong class="green text">GRÜN</strong><br /><br /></p>
   <ul>
     <li>

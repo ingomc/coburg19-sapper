@@ -97,7 +97,7 @@
               fill="currentColor"
             ></path></svg>
         </div>
-        <div slot="label">Corona-Ampel-Regeln</div>
+        <div slot="label">Regeln und Farben</div>
       </FooterButton>
     </a>
     <a
