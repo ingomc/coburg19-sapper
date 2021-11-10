@@ -294,7 +294,8 @@ fetch(getLocationsEndpoint())
       "citys": ${jsonLocations},
       "update": ${jsonDate},
       "germannew": ${jsonGermanNew},
-      "bavarianew": ${jsonBavariaNew}
+      "bavarianew": ${jsonBavariaNew},
+      "hospitalization": ${jsonHospitalization}
     }`;
     fs.writeFileSync(endFileDataJs, jsTemplate(allDataString));
     console.log('\x1b[42m\x1b[30m%s\x1b[0m', ` ✔  Datei gespeichert: ${endFileDataJs}`);

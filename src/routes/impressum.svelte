@@ -74,7 +74,7 @@
   </p>
 
   <p>Danke an meine bisherigen Gönner ❤️❤️❤️:</p>
-  <ul>
+  <!-- <ul>
     <li>Nici</li>
     <li>Hohni</li>
     <li>Nina H.</li>
@@ -110,7 +110,7 @@
     <li>Horst</li>
     <li>Julian</li>
     <li>Alexandra</li>
-  </ul>
+  </ul> -->
   <p>
     <small><strong>Hinweis:</strong>
       Spenden sind in diesem Fall Schenkungen da ich eine Privatperson bin.</small>

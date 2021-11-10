@@ -55,9 +55,7 @@
   </Message> -->
 
   <h1>
-    Aktuell werden keine Farben mehr dargestellt, nur noch reine Inzidenzwerte, da die Corona-Ampel
-    nun auch die Hospitalisierung berücksichtigt, und es hier leider keine zuverlässigen offiziellen
-    Daten gibt. Es gibt Zahlen vom RKI aber diese sind auf grund von Nachmeldungen schlicht nicht
-    genau genug.
+    Das ist nicht die offizielle Corona-Ampel für Bayern. Farben dienen zu reinen besseren
+    lesbarkeit und sind nicht verbindlich übereinstimmend mit andere Corona-Ampeln.
   </h1>
 </div>

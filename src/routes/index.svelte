@@ -3,6 +3,12 @@
     text-decoration: none;
   }
 
+  h2 {
+    color: var(--bg-100);
+    padding: var(--spacing-sm) var(--spacing-xl);
+    text-align: center;
+  }
+
   /* Allgemeine Statistiken  */
   .statistics {
     display: flex;
@@ -120,11 +126,11 @@
 
   .logo {
     flex-shrink: 0;
-    width: 64px;
+    width: 24px;
   }
 
   .logo img {
-    border-radius: var(--border-radius--xl);
+    border-radius: var(--border-radius);
     display: block;
     overflow: hidden;
   }
@@ -134,6 +140,7 @@
     margin: 0;
     padding-left: 0.75rem;
     text-align: left;
+    line-height: 1rem;
   }
 </style>
 
@@ -157,10 +164,11 @@
   import { sortCitys } from '../utils/sortCitys';
   import Message from '../components/Message.svelte';
   import Timetravel from '../components/Timetravel.svelte';
+  import Hospitalization from '../components/Hospitalization.svelte';
 
   export let data;
 
-  let { citys, germannew, bavarianew } = data;
+  let { citys, germannew, bavarianew, hospitalization } = data;
 
   let sortedCitys = [];
   sortedCitys = sortCitys(citys);
@@ -197,22 +205,15 @@
       <div class="logo">
         <img
           src="https://www.corona-ampel.app/favicons/maskable_icon_x128.png"
-          width="64"
-          height="64"
+          width="24"
+          height="24"
           alt="Ampel-Icon"
           style=" height: auto;
   max-width: 100%;"
         />
       </div>
       <p class="details">
-        <small> <strong>Jetzt als App mit ALLEN Landkreisen&nbsp;&rsaquo;</strong> </small>
-        <br />
-        <small>
-          <span>⭐️&nbsp;Eigene Landkreise speichern ⭐️&nbsp;Impfstatistik ⭐️&nbsp;Bundesländer
-            ⭐️&nbsp;Weltweit
-            <!-- <u>HIER &raquo;</u> -->
-          </span>
-        </small>
+        <small> <strong>Zur App mit ALLEN Landkreisen&nbsp;&rsaquo;</strong> </small>
       </p>
     </a>
   </Message>
@@ -237,17 +238,12 @@
     <div class="cases">+{bavarianew ? bavarianew.toLocaleString('de') : '0'}</div>
   </div>
 </section>
-<!-- 
-<section class="statistics">
-  <div class="column left">
-    <h3 class="label">Hospitalization</h3>
-    <div class="cases">{hospitalization[0].hospitalizationLast7Days}</div>
-  </div>
-  <div class="column right">
-    <h3 class="label">Intensivpatienten</h3>
-    <div class="cases">{hospitalization[0].currentIntensiveCarePatients}</div>
-  </div>
-</section> -->
+
+<h2>Krankenhausampel Bayern</h2>
+
+<Hospitalization bind:data="{hospitalization[0]}" />
+
+<h2>7 Tage Inzidenz</h2>
 
 <nav>
   <ul id="hp-cardlist">
@@ -263,6 +259,16 @@
 <div class="social">
   <Social />
 </div>
+<br />
+<center>
+  <Message until="2024-09-09T17:00:00Z">
+    <!-- +1 Stunde -->
+    <small style="text-align:left;">
+      <span><strong>Hinweis</strong>: Alle Angaben sind ohne Gewähr. Dies ist nicht die offizielle
+        Corona-Ampel. Farben können eventuell abweichen und sind nur zur Orientierung gedacht.</span>
+    </small>
+  </Message>
+</center>
 
 <Timetravel />
 <div class="hints">
