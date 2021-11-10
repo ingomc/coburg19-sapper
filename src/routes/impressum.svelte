@@ -126,9 +126,17 @@
     <a
       href="https://npgeo-corona-npgeo-de.hub.arcgis.com/datasets/917fc37a709542548cc3be077a786c17_0"
       target="_blank"
-      rel="noopener"
+      rrel="noopener noreferrer"
       title="Zum RKI"
     >RKI</a>
+    <a
+      href="https://www.lgl.bayern.de/gesundheit/infektionsschutz/infektionskrankheiten_a_z/coronavirus/karte_coronavirus/index.htm#wKennzahlen"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="LGL Bayern"
+    >
+      Hospitalisierung: LGL
+    </a>
     <br />
     <small>Alle Angaben auf der gesamten Website sind ohne Gewähr und können sich jederzeit ändern.</small>
   </p>
