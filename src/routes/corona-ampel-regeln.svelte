@@ -1,18 +1,35 @@
 <style>
-  .redtext {
-    color: var(--danger-bg);
+  .text {
+    padding: 0.5em;
+    display: inline-block;
+    border-radius: var(--border-radius);
+  }
+  .text.darkred {
+    background-color: var(--superdanger-bg);
+    color: var(--superdanger-contrast);
   }
 
-  .yellowtext {
-    color: var(--warning-bg);
+  .text.red {
+    background-color: var(--danger-bg);
+    color: var(--danger-contrast);
   }
 
-  .greentext {
-    color: var(--info-bg);
+  .text.yellow {
+    background-color: var(--warning-bg);
+    color: var(--warning-contrast);
+  }
+
+  .text.green {
+    background-color: var(--info-bg);
+    color: var(--info-contrast);
   }
 
   strike > * {
     color: rgba(255, 255, 255, 0.2);
+  }
+  i {
+    font-weight: 100;
+    opacity: 0.8;
   }
 </style>
 
@@ -54,8 +71,90 @@
     </small>
   </Message> -->
 
-  <h1>
-    Das ist nicht die offizielle Corona-Ampel für Bayern. Farben dienen zu reinen besseren
-    lesbarkeit und sind nicht verbindlich übereinstimmend mit andere Corona-Ampeln.
-  </h1>
+  <h1>Aktuelle Regeln der Corona-Ampel für Bayern</h1>
+
+  <h2>Inzidenz-Farben</h2>
+  <ul>
+    <li><span class="green text"> Grün: &lt; 35</span></li>
+    <li><span class="yellow text"> Gelb: 35 &lt; 50</span></li>
+    <li><span class="red text"> Rot: 50 &lt; 100</span></li>
+    <li><span class="darkred text"> Dunkelrot: &gt; 100</span></li>
+  </ul>
+
+  <h2>Krankhaus Regeln</h2>
+  <p><strong class="green text">GRÜN</strong><br /><br /></p>
+  <ul>
+    <li>
+      Bei regionaler 7-Tage-Inzidenz über 35 gilt Indoor die 3G-Regel (Geimpft, Getestet, Genesen)
+      u.a. bei:
+      <ul>
+        <li>Veranstaltungen, Fitnessstudios, Gastronomie, Freizeiteinrichtungen, Kultur</li>
+        <li>körpernahen Dienstleistungen</li>
+      </ul>
+    </li>
+    <li>
+      Maskenpflicht:
+      <ul>
+        <li>Indoor und ÖPNV: medizinische oder FFP2-Maske</li>
+        <li>Outdoor: keine Maskenpflicht</li>
+      </ul>
+    </li>
+    <li>
+      Gastronomie und Hotellerie:
+      <ul>
+        <li>Innen- und Außengastronomie ist geöffnet</li>
+        <li>Beherbergungsbetriebe sind geöffnet</li>
+      </ul>
+    </li>
+    <li>
+      Kultur und Freizeiteinrichtungen, Sport:
+      <ul>
+        <li>3G Regel in geschlossenen Räumen</li>
+      </ul>
+    </li>
+    <li>
+      3G-PLUS/2G:
+      <ul>
+        <li>
+          Überall dort wo 3G Regeln gelten, dürfen Betreiber freiwillig 3G-PLUS oder 2G festlegen
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <p><strong class="yellow text">GELB </strong></p>
+  <ul>
+    <li>3G-PLUS, wo vorher 3G galt <i>(PCR-Test statt Schnelltest nötig)</i></li>
+    <li>2G, wo vorher 3G-PLUS galt <i>(Ausgenommen ÖPNV, Handel)</i></li>
+    <li>2G in Discotheken, Clubs, Bordellen und ähnlichen Freizeiteinrichtungen</li>
+    <li>Anhebung Maskenstandard auf FFP2</li>
+  </ul>
+
+  <p><strong class="red text">ROT </strong></p>
+  <ul>
+    <li>
+      3G am Arbeitsplatz und bei zehn oder mehr Beschäftigten regelmäßige Tests bei Kontakt mit
+      anderen Personen
+      <i>(Ausgenommen ÖPNV, Handel)</i>
+    </li>
+    <li>
+      3G-PLUS für Gastronomie
+      <i>(Hotels, Restaurants)</i>
+      und körpernahe Dienstleistungen
+      <i>(Friseure)</i>
+    </li>
+    <li>2G bei Veranstaltungen, Kultur und Sport</li>
+    <li>Anhebung Maskenstandard auf FFP2</li>
+  </ul>
+  <p><strong>Hotspot-Regelung</strong></p>
+  <p>
+    Ab einer 7-Tage-Inzidenz von 300 und 80% belegten Intensivbetten gelten die Regeln der roten
+    Ampel.
+  </p>
+  <p>
+    <strong>HINWEIS:</strong>
+    Alle Angaben sind ohne Gewähr. Jeder sollte für sich und seinen Landkreis die aktuellen Regeln
+    noch einmal nachprüfen. Regeln ändern sich viel zu oft deshalb: Falls ihr denkt es stimmt
+    irgendetwas nicht, meldet euch einfach bei mir!
+  </p>
 </div>

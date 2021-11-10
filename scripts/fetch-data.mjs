@@ -29,6 +29,10 @@ const endpointAllIncidences =
   'https://services-eu1.arcgis.com/XfUqDXJfAezaKUnU/arcgis/rest/services/Tabelle_Ampelkarte/FeatureServer/0/query?f=json&where=(last_update%3Etimestamp%20%27${date}%2022%3A59%3A59%27)%20AND%20(rs%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=last_update%20desc&outSR=102100&resultOffset=0&resultRecordCount=100&resultType=standard';
 const endpointGermanNewCases =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=NeuerFall%20IN(1%2C%20-1)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
+const endpointIncidenceGermany =
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/rki_key_data_blbrdv/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=AdmUnitId%20asc&resultOffset=0&resultRecordCount=1&resultType=standard&cacheHint=true';
+const endpointIncidenceBavaria =
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/Coronaf%C3%A4lle_in_den_Bundesl%C3%A4ndern/FeatureServer/0/query?f=json&where=LAN_ew_AGS%3D09&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID,LAN_ew_AGS,LAN_ew_GEN,LAN_ew_BEZ,LAN_ew_EWZ,Fallzahl,Aktualisierung,Death,cases7_bl_per_100k,cases7_bl,death7_bl&orderByFields=LAN_ew_GEN%20asc&cacheHint=true02100&resultOffset=0&resultRecordCount=25&resultType=standard&cacheHint=true';
 const endpointBavariaNewCases =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(Bundesland%3D%27Bayern%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
 const endpointITS =
@@ -271,6 +275,24 @@ fetch(getLocationsEndpoint())
           console.log(error);
         }),
     );
+    const jsonGermanIncidence = JSON.stringify(
+      await fetch(endpointIncidenceGermany)
+        .then((res) => res.json())
+        .then((_json) => _json.features[0].attributes.Inz7T)
+        .catch((error) => {
+          console.log('\x1b[31m%s\x1b[0m', ` x endpointIncidenceGermany`);
+          console.log(error);
+        }),
+    );
+    const jsonBavariaIncidence = JSON.stringify(
+      await fetch(endpointIncidenceBavaria)
+        .then((res) => res.json())
+        .then((_json) => _json.features[0].attributes.cases7_bl_per_100k)
+        .catch((error) => {
+          console.log('\x1b[31m%s\x1b[0m', ` x endpointGermanNewCases`);
+          console.log(error);
+        }),
+    );
     const jsonHospitalization = JSON.stringify(
       await fetch(endpointHospitalization)
         .then((res) => res.json())
@@ -295,6 +317,8 @@ fetch(getLocationsEndpoint())
       "update": ${jsonDate},
       "germannew": ${jsonGermanNew},
       "bavarianew": ${jsonBavariaNew},
+      "germanincidence": ${jsonGermanIncidence},
+      "bavariaincidence": ${jsonBavariaIncidence},
       "hospitalization": ${jsonHospitalization}
     }`;
     fs.writeFileSync(endFileDataJs, jsTemplate(allDataString));

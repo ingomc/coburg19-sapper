@@ -168,7 +168,7 @@
 
   export let data;
 
-  let { citys, germannew, bavarianew, hospitalization } = data;
+  let { citys, germannew, bavarianew, germanincidence, bavariaincidence, hospitalization } = data;
 
   let sortedCitys = [];
   sortedCitys = sortCitys(citys);
@@ -179,6 +179,9 @@
       sortedCitys = sortCitys($async_data.citys);
       germannew = $async_data.germannew;
       bavarianew = $async_data.bavarianew;
+      germanincidence = $async_data.germanincidence;
+      bavariaincidence = $async_data.bavariaincidence;
+      hospitalization = $async_data.hospitalization;
     }
   }
 </script>
@@ -231,19 +234,29 @@
 <section class="statistics">
   <div class="column left">
     <h3 class="label">Neue Fälle in Deutschland</h3>
-    <div class="cases">+{germannew ? germannew.toLocaleString('de') : '0'}</div>
+    <div class="cases">
+      +{germannew ? germannew.toLocaleString('de', { maximumFractionDigits: 1 }) : '0'}
+    </div>
+    <!-- <div class="cases">
+      {germanincidence ? germanincidence.toLocaleString('de', { maximumFractionDigits: 1 }) : '0'}
+    </div> -->
   </div>
   <div class="column right">
     <h3 class="label">Neue Fälle in Bayern</h3>
-    <div class="cases">+{bavarianew ? bavarianew.toLocaleString('de') : '0'}</div>
+    <div class="cases">
+      +{bavarianew ? bavarianew.toLocaleString('de', { maximumFractionDigits: 1 }) : '0'}
+    </div>
+    <!-- <div class="cases">
+      {bavariaincidence ? bavariaincidence.toLocaleString('de', { maximumFractionDigits: 1 }) : '0'}
+    </div> -->
   </div>
 </section>
 
-<h2>Krankenhausampel Bayern</h2>
-
-<Hospitalization bind:data="{hospitalization[0]}" />
-
-<h2>7 Tage Inzidenz</h2>
+{#if !!hospitalization}
+  <h2>Krankenhausampel Bayern</h2>
+  <Hospitalization bind:data="{hospitalization[0]}" />
+  <h2>7 Tage Inzidenz</h2>
+{/if}
 
 <nav>
   <ul id="hp-cardlist">
@@ -261,11 +274,27 @@
 </div>
 <br />
 <center>
-  <Message until="2024-09-09T17:00:00Z">
+  <Message until="2024-09-09T17:00:00Z" left>
     <!-- +1 Stunde -->
-    <small style="text-align:left;">
+    <small>
       <span><strong>Hinweis</strong>: Alle Angaben sind ohne Gewähr. Dies ist nicht die offizielle
         Corona-Ampel. Farben können eventuell abweichen und sind nur zur Orientierung gedacht.</span>
+    </small>
+  </Message>
+  <Message until="2024-09-09T17:00:00Z" left>
+    <!-- +1 Stunde -->
+    <small>
+      <span><strong>Hinweis zur Krankenhausampel</strong>: Die wirklichen Zahlen zur
+        Krankenhausampel können nicht zu 100% korrekt angegeben werden, da es über Tage und Wochen
+        hinweg noch Nachmeldungen gibt. Ich kann hier leider nur die offiziellen Zahlen des LGLs
+        angeben, nach der sich unsere Regierung in Bayern orientiert.
+        <a
+          href="https://www.lgl.bayern.de/gesundheit/infektionsschutz/infektionskrankheiten_a_z/coronavirus/karte_coronavirus/index.htm#wKennzahlen"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <small>Quelle: LGL</small>
+        </a></span>
     </small>
   </Message>
 </center>
