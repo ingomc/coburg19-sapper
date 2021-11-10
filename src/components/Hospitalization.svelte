@@ -65,6 +65,10 @@
     background-color: var(--circle);
   }
 
+  .text {
+    width: 100%;
+  }
+
   .text-column {
     flex: 1 1 0;
     display: flex;
