@@ -237,6 +237,17 @@
     <div class="cases">+{bavarianew ? bavarianew.toLocaleString('de') : '0'}</div>
   </div>
 </section>
+<!-- 
+<section class="statistics">
+  <div class="column left">
+    <h3 class="label">Hospitalization</h3>
+    <div class="cases">{hospitalization[0].hospitalizationLast7Days}</div>
+  </div>
+  <div class="column right">
+    <h3 class="label">Intensivpatienten</h3>
+    <div class="cases">{hospitalization[0].currentIntensiveCarePatients}</div>
+  </div>
+</section> -->
 
 <nav>
   <ul id="hp-cardlist">
