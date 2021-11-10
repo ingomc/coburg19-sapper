@@ -31,8 +31,8 @@
 
   --box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 
-  --card-bg: var(--bg-300);
-  --card-color: var(--color);
+  --card-bg: var(--warning-bg);
+  --card-color: var(--warning-contrast);
 
   --z-index--header: 10;
   --z-index--loading: 100;
@@ -129,4 +129,19 @@ input:focus {
 /* stylelint-disable-next-line */
 .rangeSlider .rangeHandle {
   border-radius: 50%;
+}
+
+.info {
+  --card-bg: var(--info-bg);
+  --card-color: var(--info-contrast);
+}
+
+.danger {
+  --card-bg: var(--danger-bg);
+  --card-color: var(--danger-contrast);
+}
+
+.superdanger {
+  --card-bg: var(--superdanger-bg);
+  --card-color: var(--superdanger-contrast);
 }
