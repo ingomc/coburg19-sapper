@@ -46,13 +46,52 @@
 
   <!-- Frage -->
   <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">Was sind die Symptome von Corona (COVID-19)?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <div itemprop="text">
+        <p>
+          Die häufigsten Symptome sind Fieber über 38°C, Husten, Schnupfen, Kopf- und
+          Gliederschmerzen, Abgeschlagenheit sowie Kratzen im Hals. Bei einigen Personen kommt es zu
+          einem vorübergehenden Verlust des Geruchs- und Geschmackssinns, dessen Ursache derzeit
+          erforscht wird.
+          <br />
+          <br />
+          Typische Symptome sind:
+        </p>
+        <ul>
+          <li>Husten</li>
+          <li>Fieber</li>
+          <li>Schnupfen</li>
+          <li>Geruchs- und Geschmacksstörungen</li>
+        </ul>
+        <p>Auch diese Symptome können auf COVID-19 hinweisen:</p>
+        <ul>
+          <li>Kurzatmigkeit, Atemnot</li>
+          <li>Halsschmerzen</li>
+          <li>Kopf- und Gliederschmerzen</li>
+          <li>Bauchschmerzen</li>
+          <li>Magen-Darm-Symptome</li>
+          <li>Hautausschlag</li>
+          <li>Augenbindehautentzündung</li>
+          <li>Lymphknotenschwellung</li>
+          <li>Schläfrigkeit</li>
+          <li>Bewusstseinsstörungen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frage -->
+  <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
     <h3 itemprop="name">Wieviel neue Fälle Corona gibt es aktuell in Deutschland?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <div itemprop="text">
-        Seit gestern gibt es
-        <strong>+{germannew} neue Fälle in Deutschland</strong>
-        (Stand:
-        {update})
+        <p>
+          Seit gestern gibt es
+          <strong>+{germannew} neue Fälle in Deutschland</strong>
+          (Stand:
+          {update})
+        </p>
       </div>
     </div>
   </div>
@@ -62,10 +101,12 @@
     <h3 itemprop="name">Wieviel neue Fälle Corona gibt es aktuell in Bayern?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <div itemprop="text">
-        Seit gestern gibt es
-        <strong>+{bavarianew} neue Fälle in Bayern</strong>
-        (Stand:
-        {update})
+        <p>
+          Seit gestern gibt es
+          <strong>+{bavarianew} neue Fälle in Bayern</strong>
+          (Stand:
+          {update})
+        </p>
       </div>
     </div>
   </div>
@@ -95,13 +136,15 @@
     <h3 itemprop="name">Wie lange ist eine mit COVID-19 infizierte Person ansteckend?</h3>
     <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <div itemprop="text">
-        Der genaue Zeitraum, in dem eine mit dem Corona-Virus SARS-CoV-2 infizierte Person andere
-        anstecken kann, ist noch nicht klar festgelegt. Man geht aktuell davon aus, dass die
-        Ansteckungsfähigkeit zu Beginn am größten ist und dass ein erheblicher Teil der
-        Übertragungen bereits vor dem Auftreten erster Krankheitszeichen erfolgt. Die
-        Ansteckungsfähigkeit nimmt im Laufe der Erkrankung ab. Bei milden Verlauf der Krankheit ist
-        eine Ansteckung nach mehr als 10 Tagen unwahrscheinlich. Bei schweren Erkrankungen können
-        Betroffene auch noch wesentlich länger ansteckend sein.
+        <p>
+          Der genaue Zeitraum, in dem eine mit dem Corona-Virus SARS-CoV-2 infizierte Person andere
+          anstecken kann, ist noch nicht klar festgelegt. Man geht aktuell davon aus, dass die
+          Ansteckungsfähigkeit zu Beginn am größten ist und dass ein erheblicher Teil der
+          Übertragungen bereits vor dem Auftreten erster Krankheitszeichen erfolgt. Die
+          Ansteckungsfähigkeit nimmt im Laufe der Erkrankung ab. Bei milden Verlauf der Krankheit
+          ist eine Ansteckung nach mehr als 10 Tagen unwahrscheinlich. Bei schweren Erkrankungen
+          können Betroffene auch noch wesentlich länger ansteckend sein.
+        </p>
       </div>
     </div>
   </div>
@@ -132,41 +175,6 @@
           <li>Kontakt zu Corona-Kranken hatten</li>
           <li>in einem Gesundheitsberuf arbeiten</li>
           <li>nach bestimmten Reisen</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Frage -->
-  <div class="question" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Was sind die Symptome von Corona (COVID-19)?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <div itemprop="text">
-        Die häufigsten Symptome sind Fieber über 38°C, Husten, Schnupfen, Kopf- und
-        Gliederschmerzen, Abgeschlagenheit sowie Kratzen im Hals. Bei einigen Personen kommt es zu
-        einem vorübergehenden Verlust des Geruchs- und Geschmackssinns, dessen Ursache derzeit
-        erforscht wird.
-        <br />
-        <br />
-        Typische Symptome sind:
-        <ul>
-          <li>Husten</li>
-          <li>Fieber</li>
-          <li>Schnupfen</li>
-          <li>Geruchs- und Geschmacksstörungen</li>
-        </ul>
-        Auch diese Symptome können auf COVID-19 hinweisen:
-        <ul>
-          <li>Kurzatmigkeit, Atemnot</li>
-          <li>Halsschmerzen</li>
-          <li>Kopf- und Gliederschmerzen</li>
-          <li>Bauchschmerzen</li>
-          <li>Magen-Darm-Symptome</li>
-          <li>Hautausschlag</li>
-          <li>Augenbindehautentzündung</li>
-          <li>Lymphknotenschwellung</li>
-          <li>Schläfrigkeit</li>
-          <li>Bewusstseinsstörungen</li>
         </ul>
       </div>
     </div>
