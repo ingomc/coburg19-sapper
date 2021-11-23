@@ -114,7 +114,7 @@
   }
 
   .number--big {
-    font-size: 3em;
+    font-size: 2em;
     padding-top: var(--spacing-xs);
   }
 
