@@ -91,6 +91,50 @@
     <li><span class="darkred text"> Dunkelrot: &gt; 100</span></li>
   </ul>
 
+  <h2>Ab dem 24.11. gelten folgende zusätzliche Verschärfungen</h2>
+  <ul>
+    <li>
+      Alle
+      <strong>Clubs, Diskotheken, Bars und Schankwirtschaften</strong>
+      werden für drei Wochen geschlossen.
+    </li>
+    <li>
+      Alle
+      <strong>Jahrmärkte und Weihnachtsmärkte werden abgesagt</strong>
+      und finden nicht statt.
+    </li>
+    <li>
+      Für Ungeimpfte gelten in Bayern jetzt Kontaktbeschränkungen:<strong>
+        Maximal fünf Personen aus zwei Haushalten dürfen sich treffen.</strong>
+      Kinder unter 12 und Geimpfte werden hierbei nicht eingerechnet. Schulen sind hiervon natürlich
+      eine Ausnahme.
+    </li>
+    <li>
+      Angesichts der dramatischen Corona-Lage dürfen
+      <strong>Kultur- und Sportveranstaltungen in Bayern nur noch in deutlich kleinerem Rahmen</strong>
+      stattfinden: mit einer Auslastung von maximal 25 Prozent an Zuschauern. Zudem gilt dort die
+      2G-plus-Regel - Zugang also auch für Geimpfte und Genesene nur noch mit Test.
+    </li>
+    <li>
+      In<strong> Inzidenz-Hotspots mit mehr als 1000 Neuinfektionen</strong>
+      in den letzten 7 Tagen gelten noch härtere Maßnahmen:<strong>
+        Hier werden Gastronomie, Sport- und Kulturstätten geschlossen. Veranstaltungen werden
+        untersagt.</strong>
+    </li>
+    <li>
+      <strong>Schulen und Kitas bleiben offen</strong>, aber hier gilt weiter Maskenpflicht.
+      Pooltests werden ausgweitet, vor allem in Kitas soll hier mehr passieren. In
+      Bildungseinrichtungen gilt durchgehend 3G.&nbsp;
+    </li>
+    <li>
+      2G und 2g-Plus werden verschärft:
+      <strong>2G gilt bei körpernahen Dienstleistungen, in Hochschulen, Volkshochschulen, Musik- und
+        Fahrschulen.&nbsp;</strong>
+    </li>
+    <li>Im Handel gilt eine Quadratmeter-Regel von <strong>einem Kunden pro 10 qm.</strong></li>
+    <li>2G und 2G-Plus sollen <strong>"massiv kontrolliert"</strong> werden, so Söder.&nbsp;</li>
+  </ul>
+
   <h2>Krankhausampel Regeln</h2>
   <p><strong class="green text">GRÜN</strong><br /><br /></p>
   <ul>
