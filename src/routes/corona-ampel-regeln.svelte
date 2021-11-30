@@ -104,8 +104,8 @@
       und finden nicht statt.
     </li>
     <li>
-      Für Ungeimpfte gelten in Bayern jetzt Kontaktbeschränkungen:<strong>
-        Maximal fünf Personen aus zwei Haushalten dürfen sich treffen.</strong>
+      Für Ungeimpfte gelten in Bayern jetzt Kontaktbeschränkungen:
+      <strong> Maximal fünf Personen aus zwei Haushalten dürfen sich treffen.</strong>
       Kinder unter 12 und Geimpfte werden hierbei nicht eingerechnet. Schulen sind hiervon natürlich
       eine Ausnahme.
     </li>
@@ -116,8 +116,10 @@
       2G-plus-Regel - Zugang also auch für Geimpfte und Genesene nur noch mit Test.
     </li>
     <li>
-      In<strong> Inzidenz-Hotspots mit mehr als 1000 Neuinfektionen</strong>
-      in den letzten 7 Tagen gelten noch härtere Maßnahmen:<strong>
+      In
+      <strong> Inzidenz-Hotspots mit mehr als 1000 Neuinfektionen</strong>
+      in den letzten 7 Tagen gelten noch härtere Maßnahmen:
+      <strong>
         Hier werden Gastronomie, Sport- und Kulturstätten geschlossen. Veranstaltungen werden
         untersagt.</strong>
     </li>
@@ -126,6 +128,7 @@
       Pooltests werden ausgweitet, vor allem in Kitas soll hier mehr passieren. In
       Bildungseinrichtungen gilt durchgehend 3G.&nbsp;
     </li>
+    <li>Gastro: 2G mit Sperrstunde ab 22 Uhr</li>
     <li>
       2G und 2g-Plus werden verschärft:
       <strong>2G gilt bei körpernahen Dienstleistungen, in Hochschulen, Volkshochschulen, Musik- und
