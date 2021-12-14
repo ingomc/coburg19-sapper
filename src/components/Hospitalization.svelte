@@ -3,7 +3,6 @@
     --circle: var(--info-bg);
     --card-bg: var(--bg-200);
     --card-contrast: white;
-    margin: -0.25rem;
     display: grid;
     grid-gap: var(--spacing-sm);
   }
