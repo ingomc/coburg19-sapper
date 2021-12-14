@@ -30,6 +30,11 @@
     ul.cols2 {
       grid-template-columns: 1fr 1fr;
     }
+
+    ul.cols2 {
+      max-width: 620px;
+      margin: 0 auto;
+    }
   }
   @media (min-width: 1024px) {
     ul {
