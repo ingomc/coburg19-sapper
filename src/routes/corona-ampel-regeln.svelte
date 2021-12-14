@@ -91,6 +91,47 @@
     <li><span class="darkred text"> Dunkelrot: &gt; 100</span></li>
   </ul>
 
+  <h2>Ab dem 8.12. gelten folgende zusätzliche Verschärfungen</h2>
+  <ul>
+    <li>
+      Alle
+      <strong>Clubs, Diskotheken, Bars und Schankwirtschaften</strong>
+       geschlossen.
+    </li>
+    <li>
+      Alle
+      <strong>Jahrmärkte und Weihnachtsmärkte werden abgesagt</strong>
+      und finden nicht statt.
+    </li>
+    <li>
+      <strong>Kontaktbeschränkungen für Ungeimpfte</strong>: Eigener Hausstand und max. 2 Personen aus einem weiteren Hausstand <i>(Kinder unter 12 Jahren und 3 Monaten sowie Geimpfte und Genesene zählen nicht mit)
+    </li>
+    <li>
+      <strong>Große Sportveranstaltungen</strong>: Keine Zuschauer zugelassen
+    </li>
+    <li>
+      In
+      <strong> Inzidenz-Hotspots mit mehr als 1000 Neuinfektionen</strong>
+      in den letzten 7 Tagen gelten noch härtere Maßnahmen:
+      <strong>
+        Hier werden Gastronomie, Sport- und Kulturstätten geschlossen. Veranstaltungen werden
+        untersagt.</strong>
+    </li>
+    <li>
+      <strong>Schulen und Kitas bleiben offen</strong>, aber hier gilt weiter Maskenpflicht.
+      Pooltests werden ausgweitet, vor allem in Kitas soll hier mehr passieren. In
+      Bildungseinrichtungen gilt durchgehend 3G.
+    </li>
+    <li>Gastro: 2G im Innen- und Außenbereich mit Sperrstunde ab 22 Uhr</li>
+    <li>
+      2G und 2g-Plus werden verschärft:
+      <strong>2G gilt bei körpernahen Dienstleistungen, in Hochschulen, Volkshochschulen, Musik- und
+        Fahrschulen.&nbsp;</strong>
+    </li>
+    <li><strong>Handel: </strong> Personenobergrenzen (10 m2 pro Person), ab 08.12. gilt 2G für Ladengeschäfte mit Kundenverkehr (Geschäfte des täglichen Bedarfs ausgenommen)</li>
+    <li>In Alten- und Pflegeheimen sowie in Krankenhäusern müssen Besucher einen negativen Schnelltest vorweisen</li>
+  </ul>
+
   <h2>Krankhausampel Regeln</h2>
   <p><strong class="green text">GRÜN</strong><br /><br /></p>
   <ul>
@@ -145,8 +186,9 @@
     <li>
       3G am Arbeitsplatz und bei zehn oder mehr Beschäftigten regelmäßige Tests bei Kontakt mit
       anderen Personen
-      <i>(Ausgenommen ÖPNV, Handel)</i>
+      <i>(Ausgenommen Handel)</i>
     </li>
+    <li>3G im ÖPNV</li>
     <li>
       3G-PLUS für Gastronomie
       <i>(Hotels, Restaurants)</i>
