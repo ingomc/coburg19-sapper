@@ -49,7 +49,7 @@
     </li>
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
       <span> | </span>
-      <span itemprop="name">{data.replace(/-/g, ' ')}</span>
+      <span itemprop="name">{data.replace(/-/g, ' ').replace(/%C3%B6/g, 'ö')}</span>
       <meta itemprop="position" content="2" />
     </li>
   </ol>

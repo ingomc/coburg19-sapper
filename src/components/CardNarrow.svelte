@@ -6,7 +6,7 @@
     color: var(--card-color);
     display: block;
     overflow: hidden;
-    padding: var(--spacing);
+    padding: var(--spacing-xs) var(--spacing);
     /* padding-right: var(--spacing-xl); */
     position: relative;
     transition: border 0.1s ease-in-out;
@@ -15,14 +15,14 @@
     line-height: initial;
   }
 
-  .card:focus {
+  /* .card:focus {
     border-color: var(--color);
-  }
-  @media (hover: hover) {
+  } */
+  /* @media (hover: hover) {
     .card:hover {
       border-color: var(--color);
     }
-  }
+  } */
 
   .row {
     align-items: center;
@@ -41,7 +41,7 @@
   }
 
   .number {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     margin: 0;
     padding: 0;
@@ -52,7 +52,7 @@
   }
 
   .city {
-    font-size: 1.4rem;
+    font-size: 1rem;
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -186,37 +186,11 @@
           <div class="area">{data.district}</div>
         {/if}
         <div class="city">{data.name}</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column">
         <div class="cases">
           Neue Fälle:
           {data.newCases > 0 ? data.newCases.toLocaleString('de-DE') : 0}
         </div>
-        {#if data.faelle_covid_aktuell !== null && data.faelle_covid_aktuell !== undefined}
-          <div class="cases">
-            Betten frei:
-            {data.betten_frei > 0 ? `(${Number(data.Anteil_betten_frei).toFixed(0)}%) ${data.betten_frei}` : 0}
-          </div>
-        {/if}
-      </div>
-      <div class="column">
-        {#if data.faelle_covid_aktuell !== null && data.faelle_covid_aktuell !== undefined}
-          <div class="cases">
-            Intensiv-Betten belegt mit Covid-19:
-            <span class="percent">({Number(data.Anteil_COVID_betten).toFixed(0)}%)</span>
-            {data.faelle_covid_aktuell}
-          </div>
-        {:else if data.faelle_covid_aktuell !== undefined}
-          <div class="cases">Keine Intensiv-Betten vorhanden</div>
-        {/if}
       </div>
     </div>
-    {#if data.slug !== undefined}
-      <svg class="arrow-right-mini" viewBox="-100.9 99.1 61.9 105.9"><path
-          d="M-41.7 145.3l-43.5-43.5c-1.7-1.7-4-2.7-6.5-2.7s-4.8 1-6.5 2.7c-1.7 1.7-2.7 4-2.7 6.5s1 4.8 2.7 6.5L-61 152l-37.2 37.2c-1.7 1.7-2.7 4-2.7 6.5s1 4.8 2.6 6.5c1.8 1.9 4.2 2.8 6.6 2.8 2.3 0 4.6-.9 6.5-2.6 11.5-11.4 41.2-41 43.3-43l.2-.2c3.6-3.6 3.6-10.4 0-13.9z"
-        ></path></svg>
-    {/if}
   </div>
 </div>

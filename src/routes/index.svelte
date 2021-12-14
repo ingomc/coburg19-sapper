@@ -9,73 +9,6 @@
     text-align: center;
   }
 
-  /* Allgemeine Statistiken  */
-  .statistics {
-    display: flex;
-    margin: var(--spacing-lg) auto;
-    position: relative;
-    text-align: center;
-    width: 100%;
-  }
-
-  .statistics::after {
-    background-color: var(--bg-100);
-    content: '';
-    display: block;
-    height: 100%;
-    left: 50%;
-    position: absolute;
-    top: 0;
-    width: 1px;
-  }
-
-  .column {
-    flex: 1;
-    padding: var(--spacing-sm);
-  }
-
-  .label {
-    color: var(--bg-100);
-    font-size: 0.7rem;
-    font-weight: 400;
-    margin-bottom: var(--spacing-sm);
-    margin-top: 0;
-  }
-
-  .cases {
-    color: var(--bg-50);
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-
-  @media (min-width: 768px) {
-    .statistics {
-      display: block;
-      margin: 0 auto;
-      text-align: center;
-      white-space: nowrap;
-      width: auto;
-    }
-
-    .statistics::after {
-      display: none;
-    }
-
-    .column {
-      display: inline-flex;
-    }
-
-    .label {
-      font-size: 0.8rem;
-      margin: 0 0.5rem;
-    }
-
-    .cases {
-      font-size: 0.8rem;
-      margin: 0 0.5rem;
-    }
-  }
-
   /* Landkreise  */
 
   /* reset liststyling */
@@ -93,7 +26,8 @@
     grid-template-columns: 1fr;
   }
   @media (min-width: 768px) {
-    ul {
+    ul,
+    ul.cols2 {
       grid-template-columns: 1fr 1fr;
     }
   }
@@ -162,6 +96,7 @@
   import { async_data } from '../stores/stores';
   import Social from '../components/Social.svelte';
   import Card from '../components/Card.svelte';
+  import CardNarrow from '../components/CardNarrow.svelte';
   import { sortCitys } from '../utils/sortCitys';
   import Message from '../components/Message.svelte';
   import Timetravel from '../components/Timetravel.svelte';
@@ -173,6 +108,17 @@
 
   let sortedCitys = [];
   sortedCitys = sortCitys(citys);
+
+  let germanycard = {
+    name: 'Deutschland',
+    incidence: germanincidence,
+    newCases: germannew,
+  };
+  let bavariacard = {
+    name: 'Bayern',
+    incidence: bavariaincidence,
+    newCases: bavarianew,
+  };
 
   $: {
     if (!!$async_data && !!$async_data.citys) {
@@ -232,26 +178,16 @@
   </Message>
 </center>
 
-<section class="statistics">
-  <div class="column left">
-    <h3 class="label">Neue Fälle in Deutschland</h3>
-    <div class="cases">
-      +{germannew ? germannew.toLocaleString('de', { maximumFractionDigits: 1 }) : '0'}
-    </div>
-    <!-- <div class="cases">
-      {germanincidence ? germanincidence.toLocaleString('de', { maximumFractionDigits: 1 }) : '0'}
-    </div> -->
-  </div>
-  <div class="column right">
-    <h3 class="label">Neue Fälle in Bayern</h3>
-    <div class="cases">
-      +{bavarianew ? bavarianew.toLocaleString('de', { maximumFractionDigits: 1 }) : '0'}
-    </div>
-    <!-- <div class="cases">
-      {bavariaincidence ? bavariaincidence.toLocaleString('de', { maximumFractionDigits: 1 }) : '0'}
-    </div> -->
-  </div>
-</section>
+<nav style="margin-top:10px;">
+  <ul class="cols2">
+    <li>
+      <CardNarrow bind:data="{germanycard}" />
+    </li>
+    <li>
+      <CardNarrow bind:data="{bavariacard}" />
+    </li>
+  </ul>
+</nav>
 
 {#if !!hospitalization}
   <h2>Hospitalisierung in Bayern</h2>
@@ -285,8 +221,8 @@
   <Message until="2024-09-09T17:00:00Z" left>
     <!-- +1 Stunde -->
     <small>
-      <span><strong>Hinweis zur Krankenhausampel</strong>: Die wirklichen Zahlen zur
-        Krankenhausampel können nicht zu 100% korrekt angegeben werden, da es über Tage und Wochen
+      <span><strong>Hinweis zur Hospitalisierung</strong>: Die wirklichen Zahlen zur
+        Hospitalisierung können nicht zu 100% korrekt angegeben werden, da es über Tage und Wochen
         hinweg noch Nachmeldungen gibt. Ich kann hier leider nur die offiziellen Zahlen des LGLs
         angeben, nach der sich unsere Regierung in Bayern orientiert.
         <a
