@@ -163,6 +163,7 @@
   import Card from '../components/Card.svelte';
   import { sortCitys } from '../utils/sortCitys';
   import Message from '../components/Message.svelte';
+  import Snow from '../components/Snow.svelte';
   import Timetravel from '../components/Timetravel.svelte';
   import Hospitalization from '../components/Hospitalization.svelte';
 
@@ -231,6 +232,7 @@
   </Message>
 </center>
 
+<Snow />
 <section class="statistics">
   <div class="column left">
     <h3 class="label">Neue Fälle in Deutschland</h3>
