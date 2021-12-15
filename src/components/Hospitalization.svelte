@@ -3,18 +3,16 @@
     --circle: var(--info-bg);
     --card-bg: var(--bg-200);
     --card-contrast: white;
-    display: flex;
-    margin: -0.25rem;
-    flex-direction: column;
+    display: grid;
+    grid-gap: var(--spacing-sm);
   }
 
   .card {
     background-color: var(--card-bg);
     color: var(--card-contrast);
     display: flex;
-    border-radius: var(--border-radius--xl);
+    border-radius: var(--border-radius);
     padding: 0.25rem;
-    margin: 0.25rem;
     overflow: hidden;
     align-items: center;
     opacity: 0.75;
@@ -45,11 +43,6 @@
     opacity: 1;
     box-shadow: 0 0 0px 2px var(--card-bg) inset, 0 0 0px 3px var(--card-contrast) inset;
   }
-  .card.active.yellow {
-  }
-  .card.active.red {
-  }
-
   .circle {
     margin: 0.5rem;
     margin-right: 0.5rem;
@@ -102,10 +95,8 @@
 
   @media (min-width: 1024px) {
     .wrapper {
-      flex-direction: row;
-    }
-    .card {
-      flex: 1 1 0;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: var(--spacing);
     }
   }
 </style>
