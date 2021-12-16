@@ -95,6 +95,13 @@
 
 <script>
   export let data;
+  import { tweened } from 'svelte/motion';
+  import { quintOut } from 'svelte/easing';
+
+  const progress = tweened(0, {
+    duration: 2000,
+    easing: quintOut,
+  });
   let canvas;
   let warningclass = 'warning';
   let points;
@@ -102,6 +109,7 @@
 
   // Subscribe on changes
   $: {
+    progress.set(data.incidence);
     warningclass = 'warning';
     if (data.incidence < 35) {
       warningclass = 'info';
@@ -175,7 +183,7 @@
                 fill="currentColor"
               ></path></svg>
           {/if}
-          {Number(data.incidence).toLocaleString('de-DE', {
+          {Number($progress).toLocaleString('de-DE', {
             minimumFractionDigits: 1,
             maximumFractionDigits: 1,
           })}

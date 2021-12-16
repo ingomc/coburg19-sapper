@@ -13,6 +13,7 @@
     --range-pip: var(--bg-50);
     --range-pip-active: var(--color);
     --range-pip-in-range-text: var(--bg-50);
+    cursor: initial;
   }
 
   .labelwrapper {
