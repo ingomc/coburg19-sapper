@@ -187,8 +187,7 @@
         {/if}
         <div class="city">{data.name}</div>
         <div class="cases">
-          Neue Fälle:
-          {data.newCases > 0 ? data.newCases.toLocaleString('de-DE') : 0}
+          Neue Fälle: +{data.newCases > 0 ? data.newCases.toLocaleString('de-DE') : 0}
         </div>
       </div>
     </div>
