@@ -32,13 +32,14 @@
 
 <script>
   import { createEventDispatcher } from 'svelte';
+  export let label;
   const dispatch = createEventDispatcher();
   const onClick = () => {
     dispatch('click', {});
   };
 </script>
 
-<button class="circlebutton" on:click="{onClick}">
+<button class="circlebutton" on:click="{onClick}" aria-label="{label}">
   <div class="icon">
     <slot />
   </div>

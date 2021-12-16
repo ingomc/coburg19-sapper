@@ -67,7 +67,10 @@
 {#if $ttIsOpen}
   <div class="timetravel" transition:fly="{{ y: 200, duration: 300 }}">
     <div class="btn">
-      <CircleButton on:click="{() => handleCircleButtonClick()}">
+      <CircleButton
+        on:click="{() => handleCircleButtonClick()}"
+        label="Zeitreise-Funktion schließen"
+      >
         <IconTTclose />
       </CircleButton>
     </div>
@@ -77,7 +80,10 @@
   </div>
 {:else}
   <div class="tt-button">
-    <CircleButton on:click="{() => handleCircleButtonClick()}">
+    <CircleButton
+      on:click="{() => handleCircleButtonClick()}"
+      label="Zeitreise-Funktion aufklappen"
+    >
       {#if $ttIsActive}
         <IconTTactivecheck />
       {:else}
