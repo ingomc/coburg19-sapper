@@ -132,8 +132,8 @@
       sortedCitys = sortCitys($async_data.citys);
       germannew = $async_data.germannew;
       bavarianew = $async_data.bavarianew;
-      germanincidence = $async_data.germanincidence;
-      bavariaincidence = $async_data.bavariaincidence;
+      germanycard.incidence = $async_data.germanincidence;
+      bavariacard.incidence = $async_data.bavariaincidence;
       hospitalization = $async_data.hospitalization;
     }
   }
