@@ -110,6 +110,7 @@
   import Snow from '../components/Snow.svelte';
   import Timetravel from '../components/Timetravel.svelte';
   import Hospitalization from '../components/Hospitalization.svelte';
+  import moment from 'moment';
 
   export let data;
 
@@ -191,87 +192,121 @@
 
   <Snow />
 
-  <div style="margin-top:10px;">
-    <ul class="cols2">
-      <li>
-        <CardNarrow bind:data="{germanycard}" />
-      </li>
-      <li>
-        <CardNarrow bind:data="{bavariacard}" />
-      </li>
-    </ul>
-  </div>
-
-  {#if !!hospitalization}
-    <h2>Hospitalisierung in Bayern</h2>
-    <Hospitalization bind:data="{hospitalization[0]}" />
-    <h2>7 Tage Inzidenz</h2>
+  {#if moment().isAfter('2021-12-24T16:00:00+01:00')}
+    <center>
+      <Message until="2021-12-24T23:00:00+01:00">
+        <div style="font-size: 4rem; text-align:center;">🎄❄️🥂🍖</div>
+        <h1 style="text-align:left;">Ich wünsche euch allen ein frohes Fest!</h1>
+        <p style="text-align:left;">
+          <strong>
+            Heute ist Heiligabend, d.h. du solltest dir heute mal KEINE Gedanken um die Inzidenz
+            machen! Und beim Familientreffen sollte es auch an Weihnachten andere Themen als immer
+            nur Corona geben. Spielt doch einfach mal ein Brettspiel aus den guten alten Zeiten oder
+            scrollt durch eure Handy-Galerie und erinnert euch, dass es dieses Jahr vielleicht doch
+            auch postive Momente gab.
+          </strong>
+        </p>
+        <p style="text-align:left;">
+          Vielen Dank an dieser Stelle für die vielen tollen Nachrichten wie z.B.: "Jeden morgen
+          schaue ich als allerstes auf deine Ampel ...". Solche Nachrichten geben einem extra
+          Motivation noch mehr sinnvolle Funktionen heir einzubauen.
+        </p>
+        <p style="text-align:left;">
+          Ich wünsche euch allen eine wunderschöne Zeit!
+          <br />
+          Euer André
+          <br />
+          <br />
+          <strong>P.S. Morgen ist die Corona-Ampel wie gewohnt wieder da!</strong>
+        </p>
+      </Message>
+    </center>
   {/if}
 
-  <nav>
-    <ul id="hp-cardlist">
-      {#each sortedCitys as city}
+  {#if moment().isAfter('2021-12-24T23:00:00+01:00') || moment().isBefore('2021-12-24T16:00:00+01:00')}
+    <div style="margin-top:10px;">
+      <ul class="cols2">
         <li>
-          <a rel="prefetch" href="{city.slug}/" title="{`Zu ${city.district} ${city.name} ›`}">
-            <Card bind:data="{city}" />
-          </a>
+          <CardNarrow bind:data="{germanycard}" />
         </li>
-      {/each}
-    </ul>
-  </nav>
-  <div class="social">
-    <Social />
-  </div>
-  <br />
-  <center>
-    <Message until="2024-09-09T17:00:00Z" left>
-      <!-- +1 Stunde -->
-      <small>
-        <span><strong>Hinweis</strong>: Alle Angaben sind ohne Gewähr. Dies ist nicht die offizielle
-          Corona-Ampel. Farben können eventuell abweichen und sind nur zur Orientierung gedacht.</span>
-      </small>
-    </Message>
-    <Message until="2024-09-09T17:00:00Z" left>
-      <!-- +1 Stunde -->
-      <small>
-        <span><strong>Hinweis zur Hospitalisierung</strong>: Die wirklichen Zahlen zur
-          Hospitalisierung können nicht zu 100% korrekt angegeben werden, da es über Tage und Wochen
-          hinweg noch Nachmeldungen gibt. Ich kann hier leider nur die offiziellen Zahlen des LGLs
-          angeben, nach der sich unsere Regierung in Bayern orientiert.
-          <a
-            href="https://www.lgl.bayern.de/gesundheit/infektionsschutz/infektionskrankheiten_a_z/coronavirus/karte_coronavirus/index.htm#wKennzahlen"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <small>Quelle: LGL</small>
-          </a></span>
-      </small>
-    </Message>
-  </center>
+        <li>
+          <CardNarrow bind:data="{bavariacard}" />
+        </li>
+      </ul>
+    </div>
 
-  <Timetravel />
-  <div class="hints">
-    <Message until="2021-01-31T00:00:00Z">
-      <small>
-        <svg
-          class="danger-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          aria-hidden="true"
-          focusable="false"
-          role="img"
-          width="1.5em"
-          height="1.5em"
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 24 24"
-          style="transform: translate3d(0, -2px, 0);
+    {#if !!hospitalization}
+      <h2>Hospitalisierung in Bayern</h2>
+      <Hospitalization bind:data="{hospitalization[0]}" />
+      <h2>7 Tage Inzidenz</h2>
+    {/if}
+
+    <nav>
+      <ul id="hp-cardlist">
+        {#each sortedCitys as city}
+          <li>
+            <a rel="prefetch" href="{city.slug}/" title="{`Zu ${city.district} ${city.name} ›`}">
+              <Card bind:data="{city}" />
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </nav>
+    <div class="social">
+      <Social />
+    </div>
+    <br />
+    <center>
+      <Message until="2024-09-09T17:00:00Z" left>
+        <!-- +1 Stunde -->
+        <small>
+          <span><strong>Hinweis</strong>: Alle Angaben sind ohne Gewähr. Dies ist nicht die
+            offizielle Corona-Ampel. Farben können eventuell abweichen und sind nur zur Orientierung
+            gedacht.</span>
+        </small>
+      </Message>
+      <Message until="2024-09-09T17:00:00Z" left>
+        <!-- +1 Stunde -->
+        <small>
+          <span><strong>Hinweis zur Hospitalisierung</strong>: Die wirklichen Zahlen zur
+            Hospitalisierung können nicht zu 100% korrekt angegeben werden, da es über Tage und
+            Wochen hinweg noch Nachmeldungen gibt. Ich kann hier leider nur die offiziellen Zahlen
+            des LGLs angeben, nach der sich unsere Regierung in Bayern orientiert.
+            <a
+              href="https://www.lgl.bayern.de/gesundheit/infektionsschutz/infektionskrankheiten_a_z/coronavirus/karte_coronavirus/index.htm#wKennzahlen"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <small>Quelle: LGL</small>
+            </a></span>
+        </small>
+      </Message>
+    </center>
+
+    <Timetravel />
+    <div class="hints">
+      <Message until="2021-01-31T00:00:00Z">
+        <small>
+          <svg
+            class="danger-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            aria-hidden="true"
+            focusable="false"
+            role="img"
+            width="1.5em"
+            height="1.5em"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+            style="transform: translate3d(0, -2px, 0);
   vertical-align: middle;"
-        ><path
-            d="M14.8 4.613l6.701 11.161c.963 1.603.49 3.712-1.057 4.71a3.213 3.213 0 0 1-1.743.516H5.298C3.477 21 2 19.47 2 17.581c0-.639.173-1.264.498-1.807L9.2 4.613c.962-1.603 2.996-2.094 4.543-1.096c.428.276.79.651 1.057 1.096zm-2.22.839a1.077 1.077 0 0 0-1.514.365L4.365 16.98a1.17 1.17 0 0 0-.166.602c0 .63.492 1.14 1.1 1.14H18.7c.206 0 .407-.06.581-.172a1.164 1.164 0 0 0 .353-1.57L12.933 5.817a1.12 1.12 0 0 0-.352-.365zM12 17a1 1 0 1 1 0-2a1 1 0 0 1 0 2zm0-9a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1z"
-            fill="currentColor"
-          ></path></svg>
-        <span> Ab 200 gelten weitere Maßnahmen in Bayern! </span>
-      </small>
-    </Message>
-  </div>
+          ><path
+              d="M14.8 4.613l6.701 11.161c.963 1.603.49 3.712-1.057 4.71a3.213 3.213 0 0 1-1.743.516H5.298C3.477 21 2 19.47 2 17.581c0-.639.173-1.264.498-1.807L9.2 4.613c.962-1.603 2.996-2.094 4.543-1.096c.428.276.79.651 1.057 1.096zm-2.22.839a1.077 1.077 0 0 0-1.514.365L4.365 16.98a1.17 1.17 0 0 0-.166.602c0 .63.492 1.14 1.1 1.14H18.7c.206 0 .407-.06.581-.172a1.164 1.164 0 0 0 .353-1.57L12.933 5.817a1.12 1.12 0 0 0-.352-.365zM12 17a1 1 0 1 1 0-2a1 1 0 0 1 0 2zm0-9a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1z"
+              fill="currentColor"
+            ></path></svg>
+          <span> Ab 200 gelten weitere Maßnahmen in Bayern! </span>
+        </small>
+      </Message>
+    </div>
+  {/if}
 </div>
