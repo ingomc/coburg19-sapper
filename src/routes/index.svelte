@@ -209,7 +209,7 @@
         <p style="text-align:left;">
           Vielen Dank an dieser Stelle für die vielen tollen Nachrichten wie z.B.: "Jeden morgen
           schaue ich als allerstes auf deine Ampel ...". Solche Nachrichten geben einem extra
-          Motivation noch mehr sinnvolle Funktionen heir einzubauen.
+          Motivation noch mehr sinnvolle Funktionen hier einzubauen.
         </p>
         <p style="text-align:left;">
           Ich wünsche euch allen eine wunderschöne Zeit!
