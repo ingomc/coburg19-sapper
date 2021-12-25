@@ -138,6 +138,8 @@
       bavarianew = $async_data.bavarianew;
       germanycard.incidence = $async_data.germanincidence;
       bavariacard.incidence = $async_data.bavariaincidence;
+      germanycard.newCases = $async_data.germannew;
+      bavariacard.newCases = $async_data.bavarianew;
       hospitalization = $async_data.hospitalization;
     }
   }
