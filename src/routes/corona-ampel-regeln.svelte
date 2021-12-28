@@ -91,24 +91,45 @@
     <li><span class="darkred text"> Dunkelrot: &gt; 100</span></li>
   </ul>
 
-  <h2>Ab dem 8.12. gelten folgende zusätzliche Verschärfungen</h2>
+  <h2>Ab dem 28.12.21 gelten folgende Regeln</h2>
   <ul>
+    <li>
+      <div><strong>Private Treffen:</strong></div>
+      <ul>
+        <li>
+          Bei privaten Zusammenkünften außerhalb der Gastronomie, an denen ausschließlich Geimpfte
+          und Genesene teilnehmen, sind
+          <strong>maximal 10 Personen</strong>
+          erlaubt.
+        </li>
+        <li>
+          Kinder
+          <strong>unter 14 Jahren</strong>
+          sind bei den Kontaktbeschränkungen ausgenommen. Die Altersgrenze von 14 Jahren findet
+          künftig auch für die 2G Plus- und 2G-Erfordernisse Anwendung.
+        </li>
+      </ul>
+    </li>
+    <li>
+      Für die Silvesternacht wird die Sperrstunde von 22 bis 5 Uhr in der Gastronomie aufgehoben.
+      Auf publikumsträchtigen Plätzen gilt landesweit ein Verbot von Menschenansammlungen über 10
+      Personen von 31. Dezember 15 Uhr, bis 1. Januar 9 Uhr
+    </li>
+    <li>
+      <strong>Mit Booster-Impfung</strong>
+      Testbefreiung bei 2G-PLUS
+      <i>(Dreifach Geimpfte müssen sich in Bereichen, in denen2G-PLUS gilt, nicht mehr testen; gilt
+        ab Tag 15 nach der dritten Impfung)</i>
+    </li>
     <li>
       Alle
       <strong>Clubs, Diskotheken, Bars und Schankwirtschaften</strong>
-       geschlossen.
+      geschlossen.
+      <i>, soweit es sich nicht um Sportausübung handelt</i>
+      Tanzveranstaltungen sind zukünftig auch außerhalb von Clubs und Diskotheken untersagt<i>,
+        soweit es sich nicht um Sportausübung handelt</i>
     </li>
-    <li>
-      Alle
-      <strong>Jahrmärkte und Weihnachtsmärkte werden abgesagt</strong>
-      und finden nicht statt.
-    </li>
-    <li>
-      <strong>Kontaktbeschränkungen für Ungeimpfte</strong>: Eigener Hausstand und max. 2 Personen aus einem weiteren Hausstand <i>(Kinder unter 12 Jahren und 3 Monaten sowie Geimpfte und Genesene zählen nicht mit)
-    </li>
-    <li>
-      <strong>Große Sportveranstaltungen</strong>: Keine Zuschauer zugelassen
-    </li>
+    <li><strong>Große Sportveranstaltungen</strong>: Keine Zuschauer zugelassen</li>
     <li>
       In
       <strong> Inzidenz-Hotspots mit mehr als 1000 Neuinfektionen</strong>
@@ -128,11 +149,18 @@
       <strong>2G gilt bei körpernahen Dienstleistungen, in Hochschulen, Volkshochschulen, Musik- und
         Fahrschulen.&nbsp;</strong>
     </li>
-    <li><strong>Handel: </strong> Personenobergrenzen (10 m2 pro Person), ab 08.12. gilt 2G für Ladengeschäfte mit Kundenverkehr (Geschäfte des täglichen Bedarfs ausgenommen)</li>
-    <li>In Alten- und Pflegeheimen sowie in Krankenhäusern müssen Besucher einen negativen Schnelltest vorweisen</li>
+    <li>
+      <strong>Handel: </strong>
+      Personenobergrenzen (10 m2 pro Person), ab 08.12. gilt 2G für Ladengeschäfte mit Kundenverkehr
+      (Geschäfte des täglichen Bedarfs ausgenommen)
+    </li>
+    <li>
+      In Alten- und Pflegeheimen sowie in Krankenhäusern müssen Besucher einen negativen Schnelltest
+      vorweisen
+    </li>
   </ul>
-
-  <h2>Krankhausampel Regeln</h2>
+  <hr />
+  <h2>🏥 Krankhausampel Regeln 🚑</h2>
   <p><strong class="green text">GRÜN</strong><br /><br /></p>
   <ul>
     <li>
@@ -198,10 +226,22 @@
     <li>2G bei Veranstaltungen, Kultur und Sport</li>
     <li>Anhebung Maskenstandard auf FFP2</li>
   </ul>
-  <p><strong>Hotspot-Regelung</strong></p>
+  <hr />
+  <h3>Hotspot-Regelung</h3>
   <p>
-    Ab einer 7-Tage-Inzidenz von 300 und 80% belegten Intensivbetten gelten die Regeln der roten
-    Ampel.
+    In Landkreisen, in denen die 7-Tage-Inzidenz über 1.000 liegt, soll das öffentliche Leben
+    weitestgehend heruntergefahren werden. Es gelten dann folgende verschärfte Regeln:
+  </p>
+  <ul>
+    <li>Schließung von Gastronomie und Beherbergung</li>
+    <li>keine Freizeit-, Sport- und Kulturveranstaltungen</li>
+    <li>keine körpernahen Dienstleistungen <i>(ausgenommen Friseurläden)</i></li>
+    <li>Online-Lehre bei Hochschulen</li>
+    <li>Personenobergrenzen im Handel von 20&nbsp;m<sup>2</sup> pro Person</li>
+  </ul>
+  <p>
+    Sinkt die Inzidenz für mindestens
+    <strong>fünf Tage unter die 1.000er-Grenze</strong>, werden die Regeln aufgehoben.
   </p>
   <p>
     <strong>HINWEIS:</strong>
