@@ -124,10 +124,8 @@
     <li>
       Alle
       <strong>Clubs, Diskotheken, Bars und Schankwirtschaften</strong>
-      geschlossen.
-      <i>, soweit es sich nicht um Sportausübung handelt</i>
-      Tanzveranstaltungen sind zukünftig auch außerhalb von Clubs und Diskotheken untersagt<i>,
-        soweit es sich nicht um Sportausübung handelt</i>
+      geschlossen. Tanzveranstaltungen sind zukünftig auch außerhalb von Clubs und Diskotheken
+      untersagt<i>, soweit es sich nicht um Sportausübung handelt</i>
     </li>
     <li><strong>Große Sportveranstaltungen</strong>: Keine Zuschauer zugelassen</li>
     <li>
