@@ -247,7 +247,11 @@
       <ul id="hp-cardlist">
         {#each sortedCitys as city}
           <li>
-            <a rel="prefetch" href="{city.slug}/" title="{`Zu ${city.district} ${city.name} ›`}">
+            <a
+              rel="prefetch"
+              href="{city.slug}/?{moment().format('YYYYMMDD')}"
+              title="{`Zu ${city.district} ${city.name} ›`}"
+            >
               <Card bind:data="{city}" />
             </a>
           </li>
