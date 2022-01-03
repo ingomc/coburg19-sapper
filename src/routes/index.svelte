@@ -249,7 +249,7 @@
           <li>
             <a
               rel="prefetch"
-              href="{city.slug}/?{moment().format('YYYYMMDD')}"
+              href="{city.slug}/?{moment().format('YYYYMMDDHH')}"
               title="{`Zu ${city.district} ${city.name} ›`}"
             >
               <Card bind:data="{city}" />
