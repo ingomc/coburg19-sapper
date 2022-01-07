@@ -159,6 +159,7 @@
   </ul>
   <hr />
   <h2>🏥 Krankhausampel Regeln 🚑</h2>
+  <p><small>Erweiterte Maßnahmen, siehe oben</small></p>
   <p><strong class="green text">GRÜN</strong><br /><br /></p>
   <ul>
     <li>
