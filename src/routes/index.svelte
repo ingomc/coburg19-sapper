@@ -192,7 +192,7 @@
     </Message>
   </center>
 
-  <Snow />
+  <!-- <Snow /> -->
   <div style="margin-top:10px;">
     <ul class="cols2">
       <li>
