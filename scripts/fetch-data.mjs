@@ -37,7 +37,7 @@ const endpointIncidenceGermany =
 const endpointIncidenceBavaria =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/Coronaf%C3%A4lle_in_den_Bundesl%C3%A4ndern/FeatureServer/0/query?f=json&where=LAN_ew_AGS%3D09&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID,LAN_ew_AGS,LAN_ew_GEN,LAN_ew_BEZ,LAN_ew_EWZ,Fallzahl,Aktualisierung,Death,cases7_bl_per_100k,cases7_bl,death7_bl&orderByFields=LAN_ew_GEN%20asc&cacheHint=true02100&resultOffset=0&resultRecordCount=25&resultType=standard&cacheHint=true';
 const endpointBavariaNewCases =
-  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(Bundesland%3D%27Bayern%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/rki_key_data_blbrdv/FeatureServer/0/query?f=json&where=(AnzAktivNeu%3C%3E0)%20AND%20(AdmUnitId%3D9)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=AdmUnitId%20asc&resultOffset=0&resultRecordCount=1&resultType=standard&cacheHint=true';
 const endpointITS =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/DIVI_Intensivregister_Landkreise/FeatureServer/0/query?f=json&where=AGS%3D%27${RS}%27&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*';
 const endpointHospitalization = 'https://corona-ampel-bayern.de/data/history14days.json';
@@ -309,7 +309,7 @@ fetch(getLocationsEndpoint())
     const jsonBavariaNew = JSON.stringify(
       await fetch(endpointBavariaNewCases)
         .then((res) => res.json())
-        .then((_json) => _json.features[0].attributes.value)
+        .then((_json) => _json.features[0].attributes.AnzFallNeu)
         .catch((error) => {
           console.log('\x1b[31m%s\x1b[0m', ` x endpointBavariaNewCases`);
           console.log(error);
