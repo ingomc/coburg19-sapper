@@ -107,10 +107,10 @@
   import CardNarrow from '../components/CardNarrow.svelte';
   import { sortCitys } from '../utils/sortCitys';
   import Message from '../components/Message.svelte';
-  import Snow from '../components/Snow.svelte';
+  // import Snow from '../components/Snow.svelte';
   import Timetravel from '../components/Timetravel.svelte';
   import Hospitalization from '../components/Hospitalization.svelte';
-  import moment from 'moment';
+  // import moment from 'moment';
 
   export let data;
 

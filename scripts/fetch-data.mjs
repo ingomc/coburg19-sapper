@@ -22,7 +22,10 @@ const endFileDataJsonDaily = (dateString) => {
 const endpoint =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?outFields=*&returnGeometry=false&f=json&outSR=4326&where=';
 const endpointNewCases =
-  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/rki_key_data_v/FeatureServer/0/query?f=json&where=AdmUnitId%3D${data.AdmUnitId}&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=AdmUnitId%20asc&resultOffset=0&resultRecordCount=1&resultType=standard&cacheHint=true';
+// Old until 1.2.2022
+// const endpointNewCases =
+//   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
 const endpointAllCases =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/Covid19_RKI_Sums/FeatureServer/0/query?f=json&where=(Meldedatum%3Etimestamp%20%27${date}%2022%3A59%3A59%27)%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Meldedatum%20asc&resultOffset=0&resultRecordCount=32000&resultType=standard&cacheHint=true';
 const endpointAllIncidences =
@@ -52,8 +55,8 @@ const getLocationsEndpoint = () => {
 };
 
 const getNewCasesEndpoint = (data) => {
-  let _endpoint = endpointNewCases.replace('${data.RS}', data.RS);
-  // console.log(_endpoint);
+  let _endpoint = endpointNewCases.replace('${data.AdmUnitId}', data.AdmUnitId);
+  console.log(_endpoint);
   return _endpoint;
 };
 
@@ -167,7 +170,7 @@ const handleLocation = async (location) => {
   // Get new Cases from API for this city
   const newCases = await fetch(getNewCasesEndpoint(location))
     .then((res) => res.json())
-    .then((_json) => _json.features[0].attributes.value)
+    .then((_json) => _json.features[0].attributes.AnzFallNeu)
     .catch((error) => {
       console.log('\x1b[31m%s\x1b[0m', ` x getNewCasesEndpoint ${location.BEZ} ${location.GEN}`);
       console.log(error);
