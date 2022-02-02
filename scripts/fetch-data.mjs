@@ -31,7 +31,7 @@ const endpointAllCases =
 const endpointAllIncidences =
   'https://services-eu1.arcgis.com/XfUqDXJfAezaKUnU/arcgis/rest/services/Tabelle_Ampelkarte/FeatureServer/0/query?f=json&where=(last_update%3Etimestamp%20%27${date}%2022%3A59%3A59%27)%20AND%20(rs%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=last_update%20desc&outSR=102100&resultOffset=0&resultRecordCount=100&resultType=standard';
 const endpointGermanNewCases =
-  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=NeuerFall%20IN(1%2C%20-1)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
+  'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/rki_key_data_blbrdv/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=AdmUnitId%20asc&resultOffset=0&resultRecordCount=1&resultType=standard&cacheHint=true';
 const endpointIncidenceGermany =
   'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/rki_key_data_blbrdv/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=AdmUnitId%20asc&resultOffset=0&resultRecordCount=1&resultType=standard&cacheHint=true';
 const endpointIncidenceBavaria =
@@ -56,7 +56,7 @@ const getLocationsEndpoint = () => {
 
 const getNewCasesEndpoint = (data) => {
   let _endpoint = endpointNewCases.replace('${data.AdmUnitId}', data.AdmUnitId);
-  console.log(_endpoint);
+  // console.log(_endpoint);
   return _endpoint;
 };
 
@@ -272,7 +272,7 @@ fetch(getLocationsEndpoint())
     const jsonGermanNew = JSON.stringify(
       await fetch(endpointGermanNewCases)
         .then((res) => res.json())
-        .then((_json) => _json.features[0].attributes.value)
+        .then((_json) => _json.features[0].attributes.AnzFallNeu)
         .catch((error) => {
           console.log('\x1b[31m%s\x1b[0m', ` x endpointGermanNewCases`);
           console.log(error);
