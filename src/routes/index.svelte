@@ -207,14 +207,14 @@
   {#if !!hospitalization}
     <h2>Hospitalisierung in Bayern</h2>
     <Hospitalization bind:data="{hospitalization[0]}" />
-    <br />
+    <!-- <br />
     <center>
       <Message until="2022-12-15T23:00:00Z">
         <p style="margin:0 .5rem;">
           <small> <strong>Erweiterte Maßnahmen seit 28.12.2021</strong> </small>
         </p>
       </Message>
-    </center>
+    </center> -->
     <h2>7 Tage Inzidenz</h2>
   {/if}
 
