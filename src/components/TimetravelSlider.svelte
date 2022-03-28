@@ -89,7 +89,8 @@
       tt.map(({ date }) =>
         fetch(`./data/${date}.json`)
           .then((res) => res.json())
-          .then((data) => data),
+          .then((data) => data)
+          .catch((err) => console.error({ date, err })),
       ),
     ).then((res) => res);
   }
