@@ -16,32 +16,14 @@
     overflow: hidden;
     align-items: center;
     opacity: 0.75;
-    --circle-contrast: var(--info-contrast);
     --circle: var(--info-bg);
-    --card-bg: var(--info-bg);
-    --card-contrast: var(--info-contrast);
     transition: opacity 0.3s ease-in-out;
   }
-
-  .card:hover {
-    opacity: 0.75;
-  }
   .card.yellow {
-    --circle-contrast: var(--warning-contrast);
     --circle: var(--warning-bg);
-    --card-bg: var(--warning-bg);
-    --card-contrast: var(--warning-contrast);
   }
   .card.red {
-    --circle-contrast: var(--danger-contrast);
     --circle: var(--danger-bg);
-    --card-bg: var(--danger-bg);
-    --card-contrast: var(--danger-contrast);
-  }
-
-  .card.active {
-    opacity: 1;
-    box-shadow: 0 0 0px 2px var(--card-bg) inset, 0 0 0px 3px var(--card-contrast) inset;
   }
   .circle {
     margin: 0.5rem;
@@ -51,11 +33,8 @@
     width: 2rem;
     height: 2rem;
     flex: 0 0 auto;
-    background-color: var(--circle-contrast);
-    box-shadow: 0 0 0 5px var(--circle-contrast) inset;
-  }
-  .active .circle {
     background-color: var(--circle);
+    box-shadow: 0 0 0 5px var(--circle) inset;
   }
 
   .text {
@@ -106,9 +85,7 @@
 </script>
 
 <div class="wrapper">
-  <div
-    class="{`card ${data.hospitalizationLast7Days < 1200 && data.currentIntensiveCarePatients < 450 ? 'active' : ''}`}"
-  >
+  <div class="card">
     <div class="circle"></div>
     <div class="text">
       <div class="text-column">

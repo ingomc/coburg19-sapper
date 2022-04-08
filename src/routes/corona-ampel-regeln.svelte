@@ -24,13 +24,14 @@
     color: var(--info-contrast);
   }
 
-  strike > * {
+  /* strike > * {
     color: rgba(255, 255, 255, 0.2);
   }
+  
   i {
     font-weight: 100;
     opacity: 0.8;
-  }
+  } */
 </style>
 
 <script>
