@@ -1,29 +1,21 @@
 <style>
   .wrapper {
-    --circle: var(--info-bg);
-    --card-bg: var(--bg-200);
-    --card-contrast: white;
-    display: grid;
-    grid-gap: var(--spacing-sm);
+    --_circle: var(--info-bg);
   }
 
   .card {
-    background-color: var(--card-bg);
-    color: var(--card-contrast);
-    display: flex;
+    background-color: var(--bg-200);
+    color: white;
     border-radius: var(--border-radius);
     padding: 0.25rem;
     overflow: hidden;
-    align-items: center;
-    opacity: 0.75;
-    --circle: var(--info-bg);
-    transition: opacity 0.3s ease-in-out;
+    --_circle: var(--info-bg);
   }
-  .card.yellow {
-    --circle: var(--warning-bg);
+  .card.warning {
+    --_circle: var(--warning-bg);
   }
-  .card.red {
-    --circle: var(--danger-bg);
+  .card.danger {
+    --_circle: var(--danger-bg);
   }
   .circle {
     margin: 0.5rem;
@@ -33,8 +25,8 @@
     width: 2rem;
     height: 2rem;
     flex: 0 0 auto;
-    background-color: var(--circle);
-    box-shadow: 0 0 0 5px var(--circle) inset;
+    background-color: var(--_circle);
+    box-shadow: 0 0 0 5px var(--_circle) inset;
   }
 
   .text {
@@ -82,9 +74,30 @@
 
 <script>
   export let data;
+  export let getStage = () => {
+    if (data.currentIntensiveCarePatients >= 60) {
+      return 'danger';
+    }
+    if (
+      (data.hospitalizationLast7Days >= 1200 && data.currentIntensiveCarePatients < 600) ||
+      (data.currentIntensiveCarePatients >= 450 && data.currentIntensiveCarePatients < 600)
+    ) {
+      return 'warning';
+    }
+    return 'info';
+  };
 </script>
 
 <div class="wrapper">
+  <div class="{`card ${getStage()}`}">
+    <div class="circle"></div>
+    <div class="text">
+      <div class="text-column">
+        <p><span class="label"> blablabl {getStage()}</span></p>
+      </div>
+    </div>
+  </div>
+  <!-- 
   <div class="card">
     <div class="circle"></div>
     <div class="text">
@@ -122,5 +135,5 @@
         </span>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
