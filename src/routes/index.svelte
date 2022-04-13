@@ -1,7 +1,4 @@
 <style>
-  .homepage {
-    cursor: url('../cursor.png'), default;
-  }
   a {
     text-decoration: none;
   }
@@ -35,7 +32,7 @@
     }
 
     ul.cols2 {
-      max-width: 620px;
+      max-width: var(--max-width-container);
       margin: 0 auto;
     }
   }

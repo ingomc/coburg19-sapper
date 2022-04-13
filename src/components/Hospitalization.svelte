@@ -10,7 +10,16 @@
     padding: 0.25rem;
     overflow: hidden;
     --_circle: var(--info-bg);
+    max-width: var(--max-width-container);
+    margin: auto;
   }
+
+  .stage-wrapper {
+    display: flex;
+    place-content: center;
+    justify-content: space-around;
+  }
+
   .card.stage-1 {
     --_circle: var(--warning-bg);
   }
@@ -18,6 +27,7 @@
     --_circle: var(--danger-bg);
   }
   .circle {
+    position: relative;
     margin: 0.5rem;
     margin-right: 0.5rem;
     border-radius: 50%;
@@ -29,19 +39,23 @@
     box-shadow: 0 0 0 5px var(--_circle) inset;
   }
 
-  .text {
-    width: 100%;
+  .circle::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -60%, 0) rotate(45deg);
+    content: '';
+    width: 0.6rem;
+    height: 1rem;
+    border: 3px solid var(--info-contrast);
+    border-top-width: 0;
+    border-left-width: 0;
   }
 
   .text-column {
     flex: 1 1 0;
     display: flex;
     align-items: center;
-  }
-
-  p {
-    margin: 0;
-    padding-bottom: 0.15rem;
   }
 
   .label {
@@ -58,17 +72,6 @@
     flex: 0 0 auto;
     min-width: 100px;
     text-align: right;
-  }
-
-  .light {
-    font-weight: 300;
-  }
-
-  @media (min-width: 1024px) {
-    .wrapper {
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: var(--spacing);
-    }
   }
 </style>
 
@@ -92,61 +95,19 @@
 </script>
 
 <div class="wrapper">
-  <div class="{`card stage-${getStage()}`}">
-    <div class="circle"></div>
-    <div class="text">
-      <div class="text-column">
-        <p>
-          <span class="label">
-            currentIntensiveCarePatients:
-            <strong>{data.currentIntensiveCarePatients}</strong></span>
-        </p>
-        <p>
-          <span class="label">
-            hospitalizationLast7Days:
-            <strong>{data.hospitalizationLast7Days}</strong></span>
-        </p>
-        <p><span class="label"> blablabl {getStage()}</span></p>
-      </div>
-    </div>
-  </div>
-  <!-- 
   <div class="card">
-    <div class="circle"></div>
-    <div class="text">
-      <div class="text-column">
-        <p><span class="label">Keine Werte überschritten</span></p>
+    <div class="{`stage-wrapper stage-${getStage()}`}">
+      <div class="circle"></div>
+      <div class="text">
+        <div class="text-column">
+          <span class="label"> Neue Krankenhaus-Corona-Einweisungen in den letzten 7 Tagen </span>
+          <span class="number">{data.hospitalizationLast7Days} </span>
+        </div>
+        <div class="text-column">
+          <span class="label"> COVID-19 Patienten auf Intensivstationen </span>
+          <span class="number">{data.currentIntensiveCarePatients} </span>
+        </div>
       </div>
     </div>
   </div>
-  <div
-    class="{`card yellow ${(data.hospitalizationLast7Days > 1200 && data.currentIntensiveCarePatients < 600) || (data.currentIntensiveCarePatients >= 450 && data.currentIntensiveCarePatients < 600) ? 'active' : ''}`}"
-  >
-    <div class="circle"></div>
-    <div class="text">
-      <div class="text-column">
-        <span class="label">Neue Krankenhaus-Corona-Einweisungen in den letzten 7 Tagen</span>
-        <span class="number"><span class="light">{data.hospitalizationLast7Days}</span>
-          / 1200
-        </span>
-      </div>
-      <div class="text-column">
-        <span class="label">COVID-19 Patienten auf Intensivstationen</span>
-        <span class="number"><span class="light">{data.currentIntensiveCarePatients}</span>
-          / 450
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="{`card red ${data.currentIntensiveCarePatients > 600 ? 'active' : ''}`}">
-    <div class="circle"></div>
-    <div class="text">
-      <div class="text-column">
-        <span class="label">COVID-19 Patienten auf Intensivstationen</span>
-        <span class="number"><span class="light">{data.currentIntensiveCarePatients}</span>
-          / 600
-        </span>
-      </div>
-    </div>
-  </div> -->
 </div>
