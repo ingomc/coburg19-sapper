@@ -11,10 +11,10 @@
     overflow: hidden;
     --_circle: var(--info-bg);
   }
-  .card.warning {
+  .card.stage-1 {
     --_circle: var(--warning-bg);
   }
-  .card.danger {
+  .card.stage-2 {
     --_circle: var(--danger-bg);
   }
   .circle {
@@ -74,25 +74,38 @@
 
 <script>
   export let data;
+  const red = 600;
+  const yellowH = 1200;
+  const yellowP = 450;
   export let getStage = () => {
-    if (data.currentIntensiveCarePatients >= 60) {
-      return 'danger';
+    if (data.currentIntensiveCarePatients >= red) {
+      return 2;
     }
     if (
-      (data.hospitalizationLast7Days >= 1200 && data.currentIntensiveCarePatients < 600) ||
-      (data.currentIntensiveCarePatients >= 450 && data.currentIntensiveCarePatients < 600)
+      (data.hospitalizationLast7Days >= yellowH && data.currentIntensiveCarePatients < red) ||
+      (data.currentIntensiveCarePatients >= yellowP && data.currentIntensiveCarePatients < red)
     ) {
-      return 'warning';
+      return 1;
     }
-    return 'info';
+    return 0;
   };
 </script>
 
 <div class="wrapper">
-  <div class="{`card ${getStage()}`}">
+  <div class="{`card stage-${getStage()}`}">
     <div class="circle"></div>
     <div class="text">
       <div class="text-column">
+        <p>
+          <span class="label">
+            currentIntensiveCarePatients:
+            <strong>{data.currentIntensiveCarePatients}</strong></span>
+        </p>
+        <p>
+          <span class="label">
+            hospitalizationLast7Days:
+            <strong>{data.hospitalizationLast7Days}</strong></span>
+        </p>
         <p><span class="label"> blablabl {getStage()}</span></p>
       </div>
     </div>
