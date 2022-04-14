@@ -18,6 +18,7 @@
     display: flex;
     place-content: center;
     justify-content: space-around;
+    align-items: center;
   }
 
   .card.stage-1 {
