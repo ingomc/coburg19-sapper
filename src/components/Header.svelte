@@ -90,10 +90,10 @@
     <a class="wrapper" href="./" title="Zur Startseite &rsaquo;">
       {#if segment}
         <div class="h1">🚦 www.<strong>Corona-Ampel-Coburg</strong>.de 🚦</div>
-        <div class="h2">7 Tage Inzidenz für Coburg und Umgebung</div>
+        <div class="h2">7 Tage Inzidenz und Hospitalisierung für Coburg und Umgebung</div>
       {:else}
         <h1 class="h1">🚦 www.<strong>Corona-Ampel-Coburg</strong>.de 🚦</h1>
-        <h2 class="h2">7 Tage Inzidenz für Coburg und Umgebung</h2>
+        <h2 class="h2">7 Tage Inzidenz und Hospitalisierung für Coburg und Umgebung</h2>
       {/if}
     </a>
   </header>
