@@ -503,14 +503,14 @@
         <Line data="{city.allCases.recovered}" options="{options}" />
       </section>
     {/if}
-    <!-- Barchart has an update bug, fix it with complete remount the component -->
+    <!-- Barchart has an update bug, fix it with complete remount the component 
     {#if city.allIncidences && city.allIncidences.incidences && !remount}
       <section>
         <h2>Inzidenz-Verlauf {city.name}</h2>
         <Bar data="{city.allIncidences.incidences}" options="{options}" />
       </section>
     {/if}
-
+-->
     <!-- Barchart has an update bug, fix it with complete remount the component -->
     {#if city.allCases && city.allCases.casesperday && !remount}
       <section>

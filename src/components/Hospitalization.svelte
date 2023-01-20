@@ -98,7 +98,7 @@
 <div class="wrapper">
   <div class="card">
     <div class="{`stage-wrapper stage-${getStage()}`}">
-      <div class="circle"></div>
+      <!-- <div class="circle"></div> -->
       <div class="text">
         <div class="text-column">
           <span class="label"> Neue Krankenhaus-Corona-Einweisungen in den letzten 7 Tagen </span>

@@ -75,12 +75,8 @@
   <h1>Aktuelle Regeln der Corona-Ampel für Bayern</h1>
 
   <h2>Inzidenz-Farben</h2>
-  <ul>
-    <li><span class="green text"> Grün: &lt; 35</span></li>
-    <li><span class="yellow text"> Gelb: 35 &lt; 50</span></li>
-    <li><span class="red text"> Rot: 50 &lt; 100</span></li>
-    <li><span class="darkred text"> Dunkelrot: &gt; 100</span></li>
-  </ul>
-
-  <h3>Bald werde ich hier die aktuellen Regeln wieder ablegen.</h3>
+  <span class="green text"> Grün: &lt; 35</span><br /><br />
+  <span class="yellow text"> Gelb: 35 &lt; 50</span><br /><br />
+  <span class="red text"> Rot: 50 &lt; 100</span><br /><br />
+  <span class="darkred text"> Dunkelrot: &gt; 100</span><br /><br />
 </div>

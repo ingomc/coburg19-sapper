@@ -160,7 +160,7 @@
 
 <div class="homepage">
   <center>
-    <Message until="2022-12-15T23:00:00Z">
+    <Message until="2023-12-15T23:00:00Z">
       <!-- +1 Stunde -->
       <a class="list-tile" href="https://corona-ampel.app/?coburg">
         <div class="logo">
