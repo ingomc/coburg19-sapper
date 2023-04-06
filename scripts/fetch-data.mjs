@@ -1,4 +1,4 @@
-import data from '../data/locations.json' assert { type: 'json' };
+import data from '../data/locations.json';
 import fetch from 'node-fetch';
 import fs from 'fs';
 import moment from 'moment';
