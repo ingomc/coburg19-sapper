@@ -3,7 +3,7 @@
   
     <url>
       <loc>https://www.corona-ampel-coburg.de</loc>
-      <lastmod>2023-09-17T06:18:59Z</lastmod>
+      <lastmod>2023-09-17T07:13:06Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.85</priority>
     </url>
@@ -11,7 +11,7 @@
 
     <url>
       <loc>https://www.corona-ampel-coburg.de/aktuelle-fragen-zu-covid/</loc>
-      <lastmod>2023-09-17T06:18:59Z</lastmod>
+      <lastmod>2023-09-17T07:13:06Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.85</priority>
     </url>
@@ -19,7 +19,7 @@
 
     <url>
       <loc>https://www.corona-ampel-coburg.de/corona-ampel-regeln/</loc>
-      <lastmod>2023-09-17T06:18:59Z</lastmod>
+      <lastmod>2023-09-17T07:13:06Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.85</priority>
     </url>
@@ -27,95 +27,15 @@
 
     <url>
       <loc>https://www.corona-ampel-coburg.de/impressum/</loc>
-      <lastmod>2023-09-17T06:18:59Z</lastmod>
+      <lastmod>2023-09-17T07:13:06Z</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.50</priority>
     </url>
   
   
       <url>
-        <loc>https://www.corona-ampel-coburg.de/landkreis-schweinfurt/</loc>
-        <lastmod>2023-09-17T06:18:59Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.90</priority>
-      </url>
-    
-
-      <url>
-        <loc>https://www.corona-ampel-coburg.de/kreisfreie-stadt-coburg/</loc>
-        <lastmod>2023-09-17T06:18:59Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.90</priority>
-      </url>
-    
-
-      <url>
-        <loc>https://www.corona-ampel-coburg.de/landkreis-coburg/</loc>
-        <lastmod>2023-09-17T06:18:59Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.90</priority>
-      </url>
-    
-
-      <url>
-        <loc>https://www.corona-ampel-coburg.de/landkreis-hildburghausen/</loc>
-        <lastmod>2023-09-17T06:18:59Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.90</priority>
-      </url>
-    
-
-      <url>
         <loc>https://www.corona-ampel-coburg.de/kreisfreie-stadt-schweinfurt/</loc>
-        <lastmod>2023-09-17T06:18:59Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.90</priority>
-      </url>
-    
-
-      <url>
-        <loc>https://www.corona-ampel-coburg.de/landkreis-kronach/</loc>
-        <lastmod>2023-09-17T06:18:59Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.90</priority>
-      </url>
-    
-
-      <url>
-        <loc>https://www.corona-ampel-coburg.de/landkreis-sonneberg/</loc>
-        <lastmod>2023-09-17T06:18:59Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.90</priority>
-      </url>
-    
-
-      <url>
-        <loc>https://www.corona-ampel-coburg.de/landkreis-hassberge/</loc>
-        <lastmod>2023-09-17T06:18:59Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.90</priority>
-      </url>
-    
-
-      <url>
-        <loc>https://www.corona-ampel-coburg.de/landkreis-bamberg/</loc>
-        <lastmod>2023-09-17T06:18:59Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.90</priority>
-      </url>
-    
-
-      <url>
-        <loc>https://www.corona-ampel-coburg.de/landkreis-rhön-grabfeld/</loc>
-        <lastmod>2023-09-17T06:18:59Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.90</priority>
-      </url>
-    
-
-      <url>
-        <loc>https://www.corona-ampel-coburg.de/landkreis-lichtenfels/</loc>
-        <lastmod>2023-09-17T06:18:59Z</lastmod>
+        <lastmod>2023-09-17T07:13:06Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.90</priority>
       </url>
@@ -123,7 +43,87 @@
 
       <url>
         <loc>https://www.corona-ampel-coburg.de/kreisfreie-stadt-bamberg/</loc>
-        <lastmod>2023-09-17T06:18:59Z</lastmod>
+        <lastmod>2023-09-17T07:13:06Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.90</priority>
+      </url>
+    
+
+      <url>
+        <loc>https://www.corona-ampel-coburg.de/landkreis-coburg/</loc>
+        <lastmod>2023-09-17T07:13:06Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.90</priority>
+      </url>
+    
+
+      <url>
+        <loc>https://www.corona-ampel-coburg.de/kreisfreie-stadt-coburg/</loc>
+        <lastmod>2023-09-17T07:13:06Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.90</priority>
+      </url>
+    
+
+      <url>
+        <loc>https://www.corona-ampel-coburg.de/landkreis-lichtenfels/</loc>
+        <lastmod>2023-09-17T07:13:06Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.90</priority>
+      </url>
+    
+
+      <url>
+        <loc>https://www.corona-ampel-coburg.de/landkreis-rhön-grabfeld/</loc>
+        <lastmod>2023-09-17T07:13:06Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.90</priority>
+      </url>
+    
+
+      <url>
+        <loc>https://www.corona-ampel-coburg.de/landkreis-hildburghausen/</loc>
+        <lastmod>2023-09-17T07:13:06Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.90</priority>
+      </url>
+    
+
+      <url>
+        <loc>https://www.corona-ampel-coburg.de/landkreis-hassberge/</loc>
+        <lastmod>2023-09-17T07:13:06Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.90</priority>
+      </url>
+    
+
+      <url>
+        <loc>https://www.corona-ampel-coburg.de/landkreis-kronach/</loc>
+        <lastmod>2023-09-17T07:13:06Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.90</priority>
+      </url>
+    
+
+      <url>
+        <loc>https://www.corona-ampel-coburg.de/landkreis-bamberg/</loc>
+        <lastmod>2023-09-17T07:13:06Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.90</priority>
+      </url>
+    
+
+      <url>
+        <loc>https://www.corona-ampel-coburg.de/landkreis-sonneberg/</loc>
+        <lastmod>2023-09-17T07:13:06Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.90</priority>
+      </url>
+    
+
+      <url>
+        <loc>https://www.corona-ampel-coburg.de/landkreis-schweinfurt/</loc>
+        <lastmod>2023-09-17T07:13:06Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.90</priority>
       </url>
